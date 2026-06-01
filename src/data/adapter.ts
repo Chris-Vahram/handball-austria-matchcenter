@@ -1,8 +1,6 @@
 import { curatedDataset } from "./curated";
+import { reviewedDemoDataset } from "./reviewed-demo";
 import { datasetSchema, type Dataset } from "../domain/schema";
-import { existsSync, readFileSync } from "node:fs";
-import path from "node:path";
-import { SOURCE_ALLOWLIST } from "../importer/config";
 import { reviewedDemoReports } from "./reports";
 
 export interface DataSourceAdapter {
@@ -43,29 +41,6 @@ export const curatedAdapter: DataSourceAdapter = {
   getDataset: () => validateDataset(curatedDataset)
 };
 
-const unique = <T extends { id: string }>(items: T[]) => [...new Map(items.map((item) => [item.id, item])).values()];
-
-export const cachedNormalizedAdapter: DataSourceAdapter = {
-  getDataset: () => {
-    const imported = Object.keys(SOURCE_ALLOWLIST).flatMap((competitionId) => {
-      const file = path.join(process.cwd(), "data/import-cache/normalized", `${competitionId}.json`);
-      return existsSync(file) ? [validateDataset(JSON.parse(readFileSync(file, "utf8")))] : [];
-    });
-    if (!imported.length) return curatedAdapter.getDataset();
-    const matches = unique(imported.flatMap((dataset) => dataset.matches));
-    return validateDataset({
-      metadata: imported[0].metadata,
-      associations: unique(imported.flatMap((dataset) => dataset.associations)),
-      seasons: unique(imported.flatMap((dataset) => dataset.seasons)),
-      competitions: unique(imported.flatMap((dataset) => dataset.competitions)),
-      clubs: unique(imported.flatMap((dataset) => dataset.clubs)),
-      teams: unique(imported.flatMap((dataset) => dataset.teams)),
-      venues: unique(imported.flatMap((dataset) => dataset.venues)),
-      matches,
-      standings: imported.flatMap((dataset) => dataset.standings),
-      matchReports: reviewedDemoReports.filter((report) => matches.some((match) => match.id === report.matchId)),
-      parserProvenance: imported.flatMap((dataset) => dataset.parserProvenance),
-      publicationProfiles: imported.flatMap((dataset) => dataset.publicationProfiles)
-    });
-  }
+export const reviewedDemoAdapter: DataSourceAdapter = {
+  getDataset: () => validateDataset({ ...reviewedDemoDataset, matchReports: reviewedDemoReports })
 };

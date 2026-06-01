@@ -3,7 +3,7 @@ import { expect, test } from "@playwright/test";
 test("landing exposes main navigation and fixtures", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { name: /Dein Spiel/ })).toBeVisible();
-  await expect(page.getByRole("link", { name: "Bewerb auswählen" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Bewerb auswählen" }).first()).toBeVisible();
 });
 
 test("schedule filters and empty reset work", async ({ page }) => {
@@ -19,11 +19,11 @@ test("competition switcher opens complete selected schedule", async ({ page }) =
   await expect(page.getByRole("heading", { name: "HLA CHALLENGE" })).toBeVisible();
   await page.getByRole("link", { name: "Vollständigen Spielplan öffnen" }).click();
   await expect(page.getByRole("heading", { name: "Spielplan", exact: true })).toBeVisible();
-  await expect(page.getByText("30 Spiele im aktuellen Ergebnis")).toBeVisible();
+  await expect(page.getByText("2 Spiele im aktuellen Ergebnis")).toBeVisible();
 });
 
 test("report exposes team statistics and keeps player section gated", async ({ page }) => {
-  await page.goto("/spiele/oohv-maenner-landesliga-2025-10-03-1");
+  await page.goto("/spiele/m-2025-10-03");
   await expect(page.getByText("7-Meter").first()).toBeVisible();
   await expect(page.getByRole("link", { name: "Öffentlichen ÖHB-Bericht öffnen" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Spielerstatistik" })).toHaveCount(0);
@@ -60,4 +60,45 @@ test("mobile navigation stays usable", async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== "mobile");
   await page.goto("/");
   await expect(page.getByRole("navigation", { name: "Mobile Navigation" })).toBeVisible();
+});
+
+test("saved team favorite personalizes landing", async ({ page }) => {
+  await page.goto("/teams/hc-linz-neue-heimat");
+  await page.getByRole("button", { name: "Team merken" }).click();
+  await page.goto("/");
+  await expect(page.getByRole("heading", { name: "Dein nächstes Spiel" })).toBeVisible();
+});
+
+test("fixture convenience actions export, share and open maps", async ({ page }) => {
+  await page.goto("/spiele/m-2025-10-03");
+  const calendar = await page.request.get("/api/kalender/spiel/m-2025-10-03");
+  expect(calendar.headers()["content-type"]).toContain("text/calendar");
+  expect(await calendar.text()).toContain("BEGIN:VEVENT");
+  await page.getByRole("button", { name: "Spiel teilen" }).click();
+  await expect(page.getByText("Link kopieren:")).toBeVisible();
+  await expect(page.getByRole("link", { name: "In Google Maps öffnen" })).toHaveAttribute("href", /google\.com\/maps\/search/);
+});
+
+test("team schedule calendar exports validated fixtures", async ({ page }) => {
+  const calendar = await page.request.get("/api/kalender/team/hc-linz-neue-heimat");
+  expect(calendar.headers()["content-disposition"]).toContain(".ics");
+  expect(await calendar.text()).toContain("BEGIN:VCALENDAR");
+});
+
+test("sales demo shell exposes manifest, legal links and feedback", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.getByRole("link", { name: "Impressum" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Datenschutz" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Feedback senden" })).toHaveAttribute("href", "mailto:c.vahram@students.htl-leonding.ac.at");
+  const manifest = await page.request.get("/manifest.webmanifest");
+  expect(await manifest.json()).toMatchObject({ short_name: "Matchcenter", display: "standalone" });
+});
+
+test("legal placeholders, sitemap and robots remain explicit", async ({ page }) => {
+  await page.goto("/impressum");
+  await expect(page.getByText("[Vor öffentlichem Launch ergänzen]").first()).toBeVisible();
+  await page.goto("/datenschutz");
+  await expect(page.getByText("[Vor öffentlichem Launch ergänzen]")).toBeVisible();
+  expect(await (await page.request.get("/robots.txt")).text()).toContain("Sitemap:");
+  expect(await (await page.request.get("/sitemap.xml")).text()).toContain("/impressum");
 });

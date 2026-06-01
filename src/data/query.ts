@@ -1,7 +1,7 @@
-import { cachedNormalizedAdapter } from "@/data/adapter";
+import { reviewedDemoAdapter } from "@/data/adapter";
 import type { Match, MatchReport } from "@/domain/schema";
 
-export const data = cachedNormalizedAdapter.getDataset();
+export const data = reviewedDemoAdapter.getDataset();
 export const byId = <T extends { id: string }>(items: T[], id: string) => items.find((item) => item.id === id);
 export const sortMatches = (matches: Match[]) => [...matches].sort((a, b) => a.startsAt.localeCompare(b.startsAt));
 export const competitionBySlug = (slug: string) => data.competitions.find((competition) => competition.slug === slug);

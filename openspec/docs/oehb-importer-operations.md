@@ -13,6 +13,10 @@ competition page. Supported IDs:
 The CLI is separate from Next.js rendering. It must never receive credentials
 or access login-protected pages.
 
+The public sales-demo build uses committed reviewed demo fixtures. Operators can
+inspect local validated importer output under `data/import-cache/normalized/`.
+Importer cache files are intentionally not an application runtime dependency.
+
 ## Cache and Pacing
 
 - Raw snapshots: `data/import-cache/raw/`
@@ -46,4 +50,3 @@ If source markup, fetching, or validation fails:
 3. Review ignored raw snapshot locally.
 4. Update parser fixtures and tests before retrying.
 5. Fall back to committed curated pilot data if no validated cache exists.
-
