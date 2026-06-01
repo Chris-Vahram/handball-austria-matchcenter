@@ -1,0 +1,21 @@
+schema: spec-driven
+
+context: |
+  Project: handball-austria-matchcenter
+  Goal: German-language, mobile-first public handball match center pilot.
+  Initial demo: OOHV Maenner Landesliga. Architecture must support more competitions.
+  Later demos: Elite Cup MU18 and HLA CHALLENGE.
+  Allowed pilot data: public sports data only. Do not include player lists, private
+  contacts, phone numbers, email addresses, referee data, or personal details.
+  Data integration: prefer official API/export or written permission. Do not add
+  automated scraping without an explicit reviewed decision.
+  Planned stack: Next.js, TypeScript, Tailwind CSS, Zod, Vitest, Playwright.
+  UI: German first, light theme, dark blue/white/red, mobile-first.
+  Workflow: specification-driven. Implement only after approved OpenSpec change.
+
+rules:
+  proposal:
+    - Keep proposals concise and state data-source limitations.
+  tasks:
+    - Keep tasks independently verifiable.
+    - Include tests for core logic.
