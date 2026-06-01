@@ -23,14 +23,15 @@ npm run test:e2e
 
 ## Sales-Demo Deployment
 
-Der dokumentierte Standard für einen späteren Preview-Deploy ist Vercel. In
-diesem Projektstand wird kein tatsächlicher Deploy ausgeführt.
+Der dokumentierte Standard für einen Preview-Deploy ist Vercel. In diesem
+Projektstand wird kein tatsächlicher Deploy ausgeführt.
 
-Vor öffentlichem Deployment müssen Impressum, Datenschutz, Domain und
-Pre-Launch-Checkliste final geprüft werden:
+Für den gezielten Versand an nuLiga und für einen späteren öffentlichen Launch
+gelten getrennte Freigaben:
 
 - [Deployment-Guide](openspec/docs/sales-demo-deployment.md)
 - [Pre-Launch-Checkliste](openspec/docs/sales-demo-prelaunch-checklist.md)
+- [Sales-Demo-Handoff](openspec/docs/sales-demo-handoff.md)
 
 ## Datenhinweis
 

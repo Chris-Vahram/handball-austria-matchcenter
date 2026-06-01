@@ -63,6 +63,7 @@ test("mobile navigation stays usable", async ({ page }, testInfo) => {
 });
 
 test("saved team favorite personalizes landing", async ({ page }) => {
+  await page.clock.install({ time: new Date("2026-06-01T12:00:00.000Z") });
   await page.goto("/teams/hc-linz-neue-heimat");
   await page.getByRole("button", { name: "Team merken" }).click();
   await page.goto("/");
