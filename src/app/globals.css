@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-mist text-ink antialiased;
+  background-image: radial-gradient(circle at top right, rgba(215, 40, 63, 0.06), transparent 24rem), linear-gradient(180deg, #f8fafc 0%, #f3f6fa 34rem);
+}
+
+a,
+button,
+input,
+select {
+  @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
+}
+
+@layer components {
+  .surface {
+    @apply rounded-3xl border border-line bg-white shadow-card;
+  }
+
+  .surface-interactive {
+    @apply surface transition duration-200 hover:-translate-y-0.5 hover:border-navy-100 hover:shadow-lift;
+  }
+
+  .eyebrow {
+    @apply text-[0.68rem] font-black uppercase tracking-[0.16em] text-accent;
+  }
+
+  .page-title {
+    @apply text-3xl font-black tracking-tight text-navy md:text-5xl;
+  }
+
+  .section-title {
+    @apply text-2xl font-black tracking-tight text-navy md:text-3xl;
+  }
+
+  .button-primary {
+    @apply inline-flex items-center justify-center rounded-xl bg-navy px-4 py-3 text-sm font-black text-white shadow-sm transition hover:bg-navy-800 active:translate-y-px;
+  }
+
+  .button-secondary {
+    @apply inline-flex items-center justify-center rounded-xl border border-line bg-white px-4 py-3 text-sm font-black text-navy transition hover:border-navy-100 hover:bg-navy-50 active:translate-y-px;
+  }
+
+  .field {
+    @apply mt-1.5 w-full rounded-xl border border-line bg-white px-3 py-2.5 text-sm text-ink shadow-sm transition placeholder:text-slate-400 hover:border-navy-100 focus:border-navy;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full border border-line bg-white px-3 py-1.5 text-xs font-bold text-navy;
+  }
+
+  .skeleton {
+    @apply animate-pulse rounded-xl bg-slate-200;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

@@ -7,3 +7,10 @@ coverage/
 .env
 .env.*
 !.env.example
+.npm-cache
+playwright-report
+test-results
+.playwright
+.playwright-mcp/
+*.tsbuildinfo
+data/import-cache/
