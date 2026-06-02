@@ -22,6 +22,16 @@ test("competition switcher opens complete selected schedule", async ({ page }) =
   await expect(page.getByText("2 Spiele im aktuellen Ergebnis")).toBeVisible();
 });
 
+test("hla challenge hub exposes confirmed phases without invented fixtures", async ({ page }) => {
+  await page.goto("/bewerbe/hla-challenge");
+  await expect(page.getByRole("heading", { name: "Phase auswählen" })).toBeVisible();
+  await expect(page.getByRole("link", { name: /Grunddurchgang · Staffel Ost/ })).toBeVisible();
+  await expect(page.getByRole("link", { name: /Grunddurchgang · Staffel West/ })).toBeVisible();
+  await expect(page.getByRole("link", { name: /Aufstiegsrunde/ }).first()).toBeVisible();
+  await page.getByRole("link", { name: /Grunddurchgang · Staffel Ost/ }).click();
+  await expect(page.getByRole("heading", { name: "Noch keine geprüften Pilotdaten" })).toBeVisible();
+});
+
 test("report exposes team statistics and keeps player section gated", async ({ page }) => {
   await page.goto("/spiele/m-2025-10-03");
   await expect(page.getByText("7-Meter").first()).toBeVisible();

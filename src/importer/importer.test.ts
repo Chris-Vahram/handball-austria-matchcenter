@@ -57,7 +57,7 @@ describe("paced fetcher", () => {
 describe("import service", () => {
   it("writes normalized output and reuses fresh raw cache", async () => {
     const root = await mkdtemp(path.join(os.tmpdir(), "oehb-import-"));
-    const fetcher = { fetch: vi.fn().mockResolvedValue({ sourceUrl: "https://www.oehb.at/de/bewerbe/lv/nul-OOoeHV-LLM", retrievedAt: "2026-06-01T00:00:00.000Z", body: snapshot() }) };
+    const fetcher = { fetch: vi.fn().mockResolvedValue({ sourceUrl: "https://www.oehb.at/de/bewerbe/lv/nul-OOoeHV-LLM", retrievedAt: new Date().toISOString(), body: snapshot() }) };
     const importer = new OehbPublicImporter(new ImportCache(root, 24 * 60 * 60 * 1000), fetcher);
     expect((await importer.importCompetition("oohv-maenner-landesliga")).cacheHit).toBe(false);
     expect((await importer.importCompetition("oohv-maenner-landesliga")).cacheHit).toBe(true);

@@ -79,4 +79,9 @@ describe("queries", () => {
     expect(search("Wels").map((result) => result.kind)).toEqual(expect.arrayContaining(["Verein", "Team", "Halle"]));
     expect(search("kein treffer")).toEqual([]);
   });
+
+  it("keeps the EDELWEISS and Traun playing group label consistent", () => {
+    expect(data.clubs.find((club) => club.id === "edelweiss-traun")?.name).toBe("Sportunion EDELWEISS Linz / SK Traun");
+    expect(data.teams.find((team) => team.id === "edelweiss-traun")?.name).toBe("Sportunion EDELWEISS Linz / SK Traun");
+  });
 });

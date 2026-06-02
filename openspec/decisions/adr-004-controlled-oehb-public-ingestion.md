@@ -32,6 +32,12 @@ disabled while privacy and legal review is pending.
 | OOHV mU18 Grunddurchgang 25/26 | `https://www.oehb.at/de/bewerbe/lv/nul-OOoeHV-mU18` |
 | Elite Cup MU18 B-Bewerb | `https://www.oehb.at/de/bewerbe/oems/nul-OeHB-OoeHB--Elite--Cup--MU18` |
 | HLA CHALLENGE | `https://www.oehb.at/de/bewerbe/maennerbewerbe/nul-OoeHB-HLA--CHALLENGE` |
+| HLA CHALLENGE Aufstiegsspiele und Regionalligen | `https://www.oehb.at/de/bewerbe/maennerbewerbe/nul-OoeHB-HLA--CHALLENGE--Aufstiegsspiele--u.--Regionalligen` |
+
+The HLA CHALLENGE frontend hub also names the publicly documented 2025/26
+structure: Grunddurchgang Staffel Ost, Grunddurchgang Staffel West,
+Aufstiegsrunde, and Aufstiegsspiele und Regionalligen. A phase without reviewed
+fixtures remains an explicit empty state. Do not invent schedules or tables.
 
 Subresources such as public report links require separate parser validation and
 must match the same OEHB host before retrieval.
@@ -47,4 +53,3 @@ operator can disable imports without changing the frontend adapter contract.
 OEHB competition pages contain useful sports records and can also contain
 excluded personal fields. Separate fetching, normalization, validation, and
 publication decisions reduce source traffic and prevent accidental exposure.
-
