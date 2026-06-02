@@ -44,5 +44,8 @@ timestamp, and import mode such as `manual-demo`, `official-export`, or
   match status information.
 - Public OOHV competition information is represented within OEHB competition
   pages.
+- Public nuLiga group pages expose reviewed HLA CHALLENGE 2025/26 tables and
+  schedules. The demo commits normalized sports records only, never raw pages
+  or adjacent contact and personal fields.
 - nuPortalRS documentation describes a REST interface. Austria-specific access,
   contract terms, and authorization remain open.

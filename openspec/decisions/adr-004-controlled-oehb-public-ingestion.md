@@ -35,9 +35,19 @@ disabled while privacy and legal review is pending.
 | HLA CHALLENGE Aufstiegsspiele und Regionalligen | `https://www.oehb.at/de/bewerbe/maennerbewerbe/nul-OoeHB-HLA--CHALLENGE--Aufstiegsspiele--u.--Regionalligen` |
 
 The HLA CHALLENGE frontend hub also names the publicly documented 2025/26
-structure: Grunddurchgang Staffel Ost, Grunddurchgang Staffel West,
-Aufstiegsrunde, and Aufstiegsspiele und Regionalligen. A phase without reviewed
-fixtures remains an explicit empty state. Do not invent schedules or tables.
+structure using reviewed public nuLiga group pages:
+
+| HLA CHALLENGE phase | Public nuLiga group page |
+| --- | --- |
+| Ost Hauptrunde | `https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupPage?championship=%C3%96HB+25%2F26&group=216473` |
+| West Hauptrunde | `https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupPage?championship=%C3%96HB+25%2F26&group=216502` |
+| Aufstiegsrunde | `https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupPage?championship=%C3%96HB+25%2F26&group=216503` |
+| Ost Abstiegsrunde | `https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupPage?championship=%C3%96HB+25%2F26&group=216490` |
+| West Abstiegsrunde | `https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupPage?championship=%C3%96HB+25%2F26&group=216460` |
+
+The committed frontend fixture contains reviewed normalized tables and a small
+schedule sample only. It must not copy contact sections, addresses, officials,
+player statistics, or broader page content. Do not invent schedules or tables.
 
 Subresources such as public report links require separate parser validation and
 must match the same OEHB host before retrieval.

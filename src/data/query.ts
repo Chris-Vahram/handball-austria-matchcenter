@@ -1,7 +1,9 @@
 import { reviewedDemoAdapter } from "@/data/adapter";
 import type { Match, MatchReport } from "@/domain/schema";
+import { hlaChallengeDemo } from "@/data/hla-challenge";
 
 export const data = reviewedDemoAdapter.getDataset();
+export const topLevelCompetitions = data.competitions.filter((competition) => !competition.id.startsWith("hla-challenge-"));
 export const byId = <T extends { id: string }>(items: T[], id: string) => items.find((item) => item.id === id);
 export const sortMatches = (matches: Match[]) => [...matches].sort((a, b) => a.startsAt.localeCompare(b.startsAt));
 export const competitionBySlug = (slug: string) => data.competitions.find((competition) => competition.slug === slug);
@@ -18,6 +20,7 @@ export const filterMatches = (matches: Match[], competitionId: string, filters: 
 export const filterMatchesAcrossCompetitions = (matches: Match[], filters: { team?: string; club?: string; venue?: string; date?: string }) =>
   data.competitions.flatMap((competition) => filterMatches(matches, competition.id, filters));
 export const standingsForCompetition = (competitionId: string) => data.standings.find((standings) => standings.competitionId === competitionId);
+export const metadataForCompetition = (competitionId: string) => hlaChallengeDemo.metadataByCompetition[competitionId as keyof typeof hlaChallengeDemo.metadataByCompetition] ?? data.metadata;
 export const reportForMatch = (matchId: string) => data.matchReports.find((report) => report.matchId === matchId);
 export const visiblePlayerStatistics = (report: MatchReport) => {
   const match = byId(data.matches, report.matchId);

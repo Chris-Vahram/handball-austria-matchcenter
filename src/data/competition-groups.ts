@@ -3,16 +3,17 @@ export type CompetitionPhase = {
   name: string;
   description: string;
   sourceReference: string;
-  scheduleHref?: string;
+  competitionSlug: string;
 };
 
-export const HLA_CHALLENGE_SOURCE = "https://www.oehb.at/de/bewerbe/maennerbewerbe/nul-OoeHB-HLA--CHALLENGE";
+const nuLigaGroup = (group: number) => `https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupPage?championship=%C3%96HB+25%2F26&group=${group}`;
 
 export const hlaChallengePhases: CompetitionPhase[] = [
-  { slug: "grunddurchgang-staffel-ost", name: "Grunddurchgang · Staffel Ost", description: "Öffentlich bestätigte Staffel des HLA-CHALLENGE-Grunddurchgangs.", sourceReference: HLA_CHALLENGE_SOURCE },
-  { slug: "grunddurchgang-staffel-west", name: "Grunddurchgang · Staffel West", description: "Öffentlich bestätigte Staffel des HLA-CHALLENGE-Grunddurchgangs.", sourceReference: HLA_CHALLENGE_SOURCE },
-  { slug: "aufstiegsrunde", name: "Aufstiegsrunde", description: "Ausgewählte validierte Pilottermine sind in der Demo verfügbar.", sourceReference: HLA_CHALLENGE_SOURCE, scheduleHref: "/bewerbe/hla-challenge/spielplan" },
-  { slug: "aufstiegsspiele-regionalligen", name: "Aufstiegsspiele & Regionalligen", description: "Öffentlich bestätigter Anschlussbewerb für Aufstiegsspiele und Regionalligen.", sourceReference: "https://www.oehb.at/de/bewerbe/maennerbewerbe/nul-OoeHB-HLA--CHALLENGE--Aufstiegsspiele--u.--Regionalligen" }
+  { slug: "ost-hauptrunde", competitionSlug: "hla-challenge-ost-hauptrunde", name: "Ost Hauptrunde", description: "Vollständige öffentliche nuLiga-Tabelle 2025/26.", sourceReference: nuLigaGroup(216473) },
+  { slug: "west-hauptrunde", competitionSlug: "hla-challenge-west-hauptrunde", name: "West Hauptrunde", description: "Vollständige öffentliche nuLiga-Tabelle 2025/26 mit Traun / Edelweiss.", sourceReference: nuLigaGroup(216502) },
+  { slug: "aufstiegsrunde", competitionSlug: "hla-challenge-aufstiegsrunde", name: "Aufstiegsrunde", description: "Vollständige öffentliche nuLiga-Tabelle 2025/26.", sourceReference: nuLigaGroup(216503) },
+  { slug: "ost-abstiegsrunde", competitionSlug: "hla-challenge-ost-abstiegsrunde", name: "Ost Abstiegsrunde", description: "Vollständige öffentliche nuLiga-Tabelle 2025/26.", sourceReference: nuLigaGroup(216490) },
+  { slug: "west-abstiegsrunde", competitionSlug: "hla-challenge-west-abstiegsrunde", name: "West Abstiegsrunde", description: "Öffentliche nuLiga-Tabelle und geprüfter Spielplan-Ausschnitt mit Traun / Edelweiss.", sourceReference: nuLigaGroup(216460) }
 ];
 
 export const hlaChallengePhase = (slug: string) => hlaChallengePhases.find((phase) => phase.slug === slug);

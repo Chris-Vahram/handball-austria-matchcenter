@@ -22,6 +22,10 @@ function assertReferences(data: Dataset): Dataset {
   for (const match of data.matches) {
     if (!competitions.has(match.competitionId) || !seasons.has(match.seasonId) || !teams.has(match.homeTeamId) || !teams.has(match.awayTeamId) || (match.venueId && !venues.has(match.venueId))) throw new Error(`Broken match reference: ${match.id}`);
   }
+  for (const standings of data.standings) {
+    if (!competitions.has(standings.competitionId) || !seasons.has(standings.seasonId)) throw new Error(`Broken standings reference: ${standings.competitionId}`);
+    for (const row of standings.rows) if (!teams.has(row.teamId)) throw new Error(`Broken standings team reference: ${row.teamId}`);
+  }
   for (const report of data.matchReports) {
     if (!data.matches.some((match) => match.id === report.matchId)) throw new Error(`Broken report reference: ${report.matchId}`);
     for (const statistics of report.teamStatistics) if (!teams.has(statistics.teamId)) throw new Error(`Broken team statistics reference: ${statistics.teamId}`);

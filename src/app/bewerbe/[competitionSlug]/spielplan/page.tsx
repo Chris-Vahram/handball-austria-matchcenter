@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { competitionBySlug, data, filterMatches } from "@/data/query";
+import { competitionBySlug, data, filterMatches, metadataForCompetition } from "@/data/query";
 import { FilterIcon } from "@/components/icons";
 import { CompetitionSwitcher, MatchList, Metadata, PageHeader, ScheduleSummary } from "@/components/ui";
 
@@ -16,6 +16,7 @@ export default async function SchedulePage({ params, searchParams }: { params: P
   const clubs = data.clubs.filter((club) => teams.some((team) => team.clubId === club.id));
   const venues = data.venues.filter((venue) => data.matches.some((match) => match.competitionId === competition.id && match.venueId === venue.id));
   const activeFilters = [["Datum", filters.date], ["Team", teams.find((team) => team.id === filters.team)?.name], ["Verein", clubs.find((club) => club.id === filters.club)?.name], ["Halle", venues.find((venue) => venue.id === filters.venue)?.name]].filter((filter) => filter[1]);
+  const metadata = metadataForCompetition(competition.id);
   return <><CompetitionSwitcher activeId={competition.id} /><div className="mt-6"><PageHeader eyebrow={`${competition.name} · 2025/26`} title="Spielplan" description="Alle Termine, Hallen und Ergebnisse. Filter bleiben in der URL teilbar." /><ScheduleSummary matches={matches} /></div>
     <form className="surface my-6 p-4 md:p-5"><div className="mb-3 flex items-center gap-2"><FilterIcon className="size-4 text-accent" /><h2 className="text-sm font-black text-navy">Spielplan filtern</h2></div><div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
       <label className="text-xs font-black uppercase tracking-wide text-slate-600">Datum<input className="field font-normal normal-case tracking-normal" defaultValue={filters.date} name="date" type="date" /></label>
@@ -25,5 +26,5 @@ export default async function SchedulePage({ params, searchParams }: { params: P
     </div><div className="mt-4 flex flex-wrap items-center gap-2"><button className="button-primary" type="submit">Filter anwenden</button>{activeFilters.length > 0 && <Link className="button-secondary" href={`/bewerbe/${competition.slug}/spielplan`}>Alle Filter löschen</Link>}</div>
     </form>
     {activeFilters.length > 0 && <div className="mb-4 flex flex-wrap gap-2" aria-label="Aktive Filter">{activeFilters.map(([label, value]) => <span className="chip" key={label}><strong>{label}:</strong> {value}</span>)}</div>}
-    <MatchList emptyHref={`/bewerbe/${competition.slug}/spielplan`} matches={matches} /><div className="mt-6"><Metadata /></div></>;
+    <MatchList emptyHref={`/bewerbe/${competition.slug}/spielplan`} matches={matches} /><div className="mt-6"><Metadata {...metadata} /></div></>;
 }

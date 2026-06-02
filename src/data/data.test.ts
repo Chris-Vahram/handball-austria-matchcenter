@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { curatedDataset } from "@/data/curated";
 import { validateDataset } from "@/data/adapter";
 import { data, filterMatches, search, sortMatches, standingsForCompetition, visiblePlayerStatistics } from "@/data/query";
+import { PUBLIC_NULIGA_HLA_GROUP_ALLOWLIST } from "@/data/hla-challenge";
 
 describe("curated dataset", () => {
   it("validates official pilot sample", () => {
@@ -83,5 +84,15 @@ describe("queries", () => {
   it("keeps the EDELWEISS and Traun playing group label consistent", () => {
     expect(data.clubs.find((club) => club.id === "edelweiss-traun")?.name).toBe("Sportunion EDELWEISS Linz / SK Traun");
     expect(data.teams.find((team) => team.id === "edelweiss-traun")?.name).toBe("Sportunion EDELWEISS Linz / SK Traun");
+    expect(data.teams.find((team) => team.id === "hla-traun-edelweiss")?.name).toBe("SK Konstant Traun / Edelweiss");
+  });
+
+  it("includes five reviewed public nuLiga HLA CHALLENGE groups", () => {
+    const hlaGroups = data.competitions.filter((competition) => competition.id.startsWith("hla-challenge-") && competition.id !== "hla-challenge");
+    expect(hlaGroups).toHaveLength(5);
+    expect(standingsForCompetition("hla-challenge-west-main")?.rows.find((row) => row.teamId === "hla-traun-edelweiss")?.rank).toBe(7);
+    expect(standingsForCompetition("hla-challenge-west-relegation")?.rows.find((row) => row.teamId === "hla-traun-edelweiss")?.rank).toBe(5);
+    expect(Object.values(PUBLIC_NULIGA_HLA_GROUP_ALLOWLIST)).toHaveLength(5);
+    expect(Object.values(PUBLIC_NULIGA_HLA_GROUP_ALLOWLIST).every((url) => new URL(url).hostname === "oehb-handball.liga.nu")).toBe(true);
   });
 });

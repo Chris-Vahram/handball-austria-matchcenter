@@ -13,23 +13,24 @@ test("schedule filters and empty reset work", async ({ page }) => {
   await expect(page.getByRole("heading", { name: "Spielplan", exact: true })).toBeVisible();
 });
 
-test("competition switcher opens complete selected schedule", async ({ page }) => {
+test("competition switcher opens HLA challenge phase hub", async ({ page }) => {
   await page.goto("/bewerbe/oohv-maenner-landesliga");
   await page.getByRole("link", { name: "HLA CHALLENGE" }).click();
   await expect(page.getByRole("heading", { name: "HLA CHALLENGE" })).toBeVisible();
-  await page.getByRole("link", { name: "Vollständigen Spielplan öffnen" }).click();
-  await expect(page.getByRole("heading", { name: "Spielplan", exact: true })).toBeVisible();
-  await expect(page.getByText("2 Spiele im aktuellen Ergebnis")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Phase auswählen" })).toBeVisible();
 });
 
-test("hla challenge hub exposes confirmed phases without invented fixtures", async ({ page }) => {
+test("hla challenge hub exposes reviewed public nuLiga groups", async ({ page }) => {
   await page.goto("/bewerbe/hla-challenge");
   await expect(page.getByRole("heading", { name: "Phase auswählen" })).toBeVisible();
-  await expect(page.getByRole("link", { name: /Grunddurchgang · Staffel Ost/ })).toBeVisible();
-  await expect(page.getByRole("link", { name: /Grunddurchgang · Staffel West/ })).toBeVisible();
+  await expect(page.getByRole("link", { name: /Ost Hauptrunde/ })).toBeVisible();
+  await expect(page.getByRole("link", { name: /West Hauptrunde/ })).toBeVisible();
   await expect(page.getByRole("link", { name: /Aufstiegsrunde/ }).first()).toBeVisible();
-  await page.getByRole("link", { name: /Grunddurchgang · Staffel Ost/ }).click();
-  await expect(page.getByRole("heading", { name: "Noch keine geprüften Pilotdaten" })).toBeVisible();
+  await expect(page.getByRole("link", { name: /Ost Abstiegsrunde/ })).toBeVisible();
+  await page.getByRole("link", { name: /West Abstiegsrunde/ }).click();
+  await page.locator('a[href="/bewerbe/hla-challenge-west-abstiegsrunde/tabelle"]').click();
+  await expect(page).toHaveURL("/bewerbe/hla-challenge-west-abstiegsrunde/tabelle");
+  await expect(page.getByRole("link", { name: "SK Konstant Traun / Edelweiss" })).toBeVisible();
 });
 
 test("report exposes team statistics and keeps player section gated", async ({ page }) => {

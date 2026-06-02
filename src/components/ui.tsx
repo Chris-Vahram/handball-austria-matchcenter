@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Match } from "@/domain/schema";
-import { data, teamName, venueName } from "@/data/query";
+import { data, teamName, topLevelCompetitions, venueName } from "@/data/query";
 import { ArrowIcon, CalendarIcon, PinIcon } from "@/components/icons";
 
 export const Panel = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => <section className={`surface p-5 md:p-6 ${className}`}>{children}</section>;
@@ -55,7 +55,7 @@ export function EmptyState({ title = "Keine Treffer", text = "Keine passenden Sp
 }
 
 export function CompetitionSwitcher({ activeId }: { activeId?: string }) {
-  return <nav aria-label="Bewerb wechseln" className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-2 md:mx-0 md:px-0">{data.competitions.map((competition) => <Link aria-current={competition.id === activeId ? "page" : undefined} className={`whitespace-nowrap rounded-full border px-3.5 py-2 text-[0.68rem] font-black uppercase tracking-wide transition ${competition.id === activeId ? "border-navy bg-navy text-white shadow-sm" : "border-line bg-white text-navy hover:border-navy-100 hover:bg-navy-50"}`} href={`/bewerbe/${competition.slug}`} key={competition.id}>{competition.name}</Link>)}</nav>;
+  return <nav aria-label="Bewerb wechseln" className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-2 md:mx-0 md:px-0">{topLevelCompetitions.map((competition) => <Link aria-current={competition.id === activeId ? "page" : undefined} className={`whitespace-nowrap rounded-full border px-3.5 py-2 text-[0.68rem] font-black uppercase tracking-wide transition ${competition.id === activeId ? "border-navy bg-navy text-white shadow-sm" : "border-line bg-white text-navy hover:border-navy-100 hover:bg-navy-50"}`} href={`/bewerbe/${competition.slug}`} key={competition.id}>{competition.name}</Link>)}</nav>;
 }
 
 export function MatchList({ matches, emptyHref }: { matches: Match[]; emptyHref?: string }) {
