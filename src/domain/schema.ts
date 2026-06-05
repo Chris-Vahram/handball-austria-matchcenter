@@ -68,7 +68,13 @@ export const playerStatisticsSchema = strict({
   teamId: id,
   sourcePlayerReference: z.string().min(1),
   displayLabel: z.string().min(1),
-  goals: z.number().int().nonnegative().optional()
+  shirtNumber: z.number().int().nonnegative().optional(),
+  goals: z.number().int().nonnegative().optional(),
+  sevenMetreGoals: z.number().int().nonnegative().optional(),
+  sevenMetreAttempts: z.number().int().nonnegative().optional(),
+  twoMinutePenalties: z.number().int().nonnegative().optional(),
+  yellowCards: z.number().int().nonnegative().optional(),
+  redCards: z.number().int().nonnegative().optional()
 });
 export const matchEventSchema = strict({
   minute: z.number().int().nonnegative(),

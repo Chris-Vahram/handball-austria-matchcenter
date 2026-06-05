@@ -13,6 +13,9 @@ Reviewed: 2026-06-01
 - Standings
 - Team totals: goals, seven-metre throws, two-minute penalties, yellow cards,
   red cards
+- Approved adult player-level public report fields: display name, shirt number,
+  team context, goals, seven-metre summary, two-minute penalty count, card
+  counts
 - Allowlisted sports events without player identity: clock, action type, team
   context, and score only
 - Source URL, retrieval timestamp, parser version, validation status, raw-cache
@@ -25,4 +28,5 @@ Reviewed: 2026-06-01
 - Referee data
 - Private data and unrelated personal fields
 - Player lists and player personal data
+- Player portrait links and source person IDs
 - Login-protected data

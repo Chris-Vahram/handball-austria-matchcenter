@@ -68,7 +68,7 @@ describe("queries", () => {
 
   it("hides player statistics while publication review is pending", () => {
     expect(visiblePlayerStatistics({
-      matchId: data.matches[0].id,
+      matchId: "mu18-2026-06-08",
       publicReportUrl: "https://www.oehb.at/de/bewerbe/public-report",
       teamStatistics: [],
       playerStatistics: [{ teamId: "edelweiss-traun", sourcePlayerReference: "private-source-id", displayLabel: "Hidden", goals: 1 }],
@@ -80,7 +80,8 @@ describe("queries", () => {
     const match = data.matches.find((item) => item.id === "m-2026-06-01");
     const report = data.matchReports.find((item) => item.matchId === "m-2026-06-01");
     expect(match?.publicReportUrl).toContain("groupMeetingReport");
-    expect(report?.playerStatistics).toEqual([]);
+    expect(report?.playerStatistics).toHaveLength(25);
+    expect(report?.playerStatistics.find((item) => item.displayLabel === "PETRISIC, David")?.goals).toBe(12);
     expect(report?.events.some((event) => event.type === "seven-metre-missed")).toBe(true);
   });
 
