@@ -8,6 +8,7 @@ import { PacedPublicPageFetcher } from "./fetcher";
 import { parsePublicMatchReportSnapshot, parsePublicSportsSnapshot } from "./parser";
 import { OehbPublicImporter } from "./service";
 import { SANITIZED_REPORT_FIXTURE } from "./fixtures";
+import { isAllowedPublicReportUrl } from "./config";
 
 const snapshot = (payload: unknown = curatedDataset) => `<html><script id="matchcenter-sports-data" type="application/json">${JSON.stringify(payload)}</script></html>`;
 
@@ -33,6 +34,11 @@ describe("public sports parser", () => {
 
   it("rejects forbidden report fields", () => {
     expect(() => parsePublicMatchReportSnapshot(SANITIZED_REPORT_FIXTURE.replace('"events": [', '"referees": [], "events": ['))).toThrow("Forbidden field rejected");
+  });
+
+  it("allows only public report pages, not player portraits", () => {
+    expect(isAllowedPublicReportUrl("https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingReport?meeting=85068&championship=O%C3%96HV+25%2F26&group=216574")).toBe(true);
+    expect(isAllowedPublicReportUrl("https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/playerPortrait?person=123")).toBe(false);
   });
 });
 

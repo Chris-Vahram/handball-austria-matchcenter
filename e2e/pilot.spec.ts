@@ -36,8 +36,16 @@ test("hla challenge hub exposes reviewed public nuLiga groups", async ({ page })
 test("report exposes team statistics and keeps player section gated", async ({ page }) => {
   await page.goto("/spiele/m-2025-10-03");
   await expect(page.getByText("7-Meter").first()).toBeVisible();
-  await expect(page.getByRole("link", { name: "Öffentlichen ÖHB-Bericht öffnen" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Spielerstatistik" })).toHaveCount(0);
+  await expect(page.getByRole("link", { name: "Öffentlichen nuLiga-Bericht öffnen" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Spielerstatistik noch nicht öffentlich" })).toBeVisible();
+});
+
+test("nuliga report shows anonymized match flow", async ({ page }) => {
+  await page.goto("/spiele/m-2026-06-01");
+  await expect(page.getByText("41:37").first()).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Spielverlauf" })).toBeVisible();
+  await expect(page.getByText("7-Meter vergeben")).toBeVisible();
+  await expect(page.getByText("Veröffentlichung pending")).toBeVisible();
 });
 
 test("standings, team and club routes link together", async ({ page }) => {

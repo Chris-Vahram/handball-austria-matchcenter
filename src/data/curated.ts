@@ -46,7 +46,7 @@ export const curatedDataset = {
     { id: "m-2025-10-03", competitionId: "oohv-maenner-landesliga", seasonId: "2025-26", homeTeamId: "edelweiss-traun", awayTeamId: "hc-urfahr", venueId: "sms-kleinmuenchen", startsAt: "2025-10-03T18:15:00.000Z", status: "finished", homeScore: 37, awayScore: 20 },
     { id: "m-2026-04-24", competitionId: "oohv-maenner-landesliga", seasonId: "2025-26", homeTeamId: "hc-eferding", awayTeamId: "edelweiss-traun", venueId: "bsh-eferding", startsAt: "2026-04-24T18:15:00.000Z", status: "finished", homeScore: 37, awayScore: 36 },
     { id: "m-2026-05-21", competitionId: "oohv-maenner-landesliga", seasonId: "2025-26", homeTeamId: "hc-linz-neue-heimat", awayTeamId: "hc-urfahr", venueId: "sms-kleinmuenchen", startsAt: "2026-05-21T18:00:00.000Z", status: "finished", homeScore: 31, awayScore: 27 },
-    { id: "m-2026-06-01", competitionId: "oohv-maenner-landesliga", seasonId: "2025-26", homeTeamId: "hc-linz-neue-heimat", awayTeamId: "spiders-wels", venueId: "sms-kleinmuenchen", startsAt: "2026-06-01T18:00:00.000Z", status: "scheduled" }
+    { id: "m-2026-06-01", competitionId: "oohv-maenner-landesliga", seasonId: "2025-26", homeTeamId: "hc-linz-neue-heimat", awayTeamId: "spiders-wels", venueId: "sh-pernau", startsAt: "2026-06-01T18:00:00.000Z", status: "finished", homeScore: 41, awayScore: 37, halfTimeHomeScore: 18, halfTimeAwayScore: 17, publicReportUrl: "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingReport?meeting=85068&championship=O%C3%96HV+25%2F26&group=216574" }
   ],
   standings: [{
     competitionId: "oohv-maenner-landesliga",

@@ -9,11 +9,12 @@ Reviewed: 2026-06-01
 - Venue name
 - Schedule timestamp, round when available, status
 - Final result and half-time result when available
-- Public OEHB match-report URL
+- Public OEHB or nuLiga match-report URL
 - Standings
 - Team totals: goals, seven-metre throws, two-minute penalties, yellow cards,
   red cards
-- Allowlisted sports events without player identity
+- Allowlisted sports events without player identity: clock, action type, team
+  context, and score only
 - Source URL, retrieval timestamp, parser version, validation status, raw-cache
   reference
 - Publication profile decision and category
@@ -25,4 +26,3 @@ Reviewed: 2026-06-01
 - Private data and unrelated personal fields
 - Player lists and player personal data
 - Login-protected data
-

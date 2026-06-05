@@ -29,5 +29,7 @@ export function isAllowedSourceUrl(url: string): boolean {
 
 export function isAllowedPublicReportUrl(url: string): boolean {
   const parsed = new URL(url);
-  return parsed.protocol === "https:" && parsed.hostname === "www.oehb.at";
+  if (parsed.protocol !== "https:") return false;
+  if (parsed.hostname === "www.oehb.at") return true;
+  return parsed.hostname === "oehb-handball.liga.nu" && parsed.pathname.endsWith("/wa/groupMeetingReport") && parsed.searchParams.has("meeting") && parsed.searchParams.has("group");
 }

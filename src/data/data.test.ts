@@ -23,7 +23,7 @@ describe("curated dataset", () => {
   });
 
   it("rejects score on scheduled match", () => {
-    const invalid = { ...curatedDataset, matches: [{ ...curatedDataset.matches[3], homeScore: 1, awayScore: 0 }] };
+    const invalid = { ...curatedDataset, matches: [{ ...curatedDataset.matches[0], status: "scheduled" as const, homeScore: 1, awayScore: 0 }] };
     expect(() => validateDataset(invalid)).toThrow("Only finished match may contain score");
   });
 
@@ -74,6 +74,14 @@ describe("queries", () => {
       playerStatistics: [{ teamId: "edelweiss-traun", sourcePlayerReference: "private-source-id", displayLabel: "Hidden", goals: 1 }],
       events: []
     })).toEqual([]);
+  });
+
+  it("keeps the public nuLiga report as team and event data only", () => {
+    const match = data.matches.find((item) => item.id === "m-2026-06-01");
+    const report = data.matchReports.find((item) => item.matchId === "m-2026-06-01");
+    expect(match?.publicReportUrl).toContain("groupMeetingReport");
+    expect(report?.playerStatistics).toEqual([]);
+    expect(report?.events.some((event) => event.type === "seven-metre-missed")).toBe(true);
   });
 
   it("searches allowed public entities", () => {

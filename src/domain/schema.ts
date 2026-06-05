@@ -2,6 +2,12 @@ import { z } from "zod";
 
 const id = z.string().min(1).regex(/^[a-z0-9-]+$/);
 const strict = <T extends z.ZodRawShape>(shape: T) => z.object(shape).strict();
+const publicReportUrl = z.string().url().refine((url) => {
+  const parsed = new URL(url);
+  if (parsed.protocol !== "https:") return false;
+  if (parsed.hostname === "www.oehb.at") return true;
+  return parsed.hostname === "oehb-handball.liga.nu" && parsed.pathname.endsWith("/wa/groupMeetingReport");
+}, "Report URL must use an allowlisted public report host");
 
 export const metadataSchema = strict({
   sourceLabel: z.string().min(1),
@@ -36,7 +42,7 @@ export const matchSchema = strict({
   awayScore: z.number().int().nonnegative().optional(),
   halfTimeHomeScore: z.number().int().nonnegative().optional(),
   halfTimeAwayScore: z.number().int().nonnegative().optional(),
-  publicReportUrl: z.string().url().refine((url) => new URL(url).hostname === "www.oehb.at", "Report URL must use public OEHB host").optional()
+  publicReportUrl: publicReportUrl.optional()
 }).superRefine((match, ctx) => {
   const scoreCount = Number(match.homeScore !== undefined) + Number(match.awayScore !== undefined);
   const halfTimeScoreCount = Number(match.halfTimeHomeScore !== undefined) + Number(match.halfTimeAwayScore !== undefined);
@@ -66,14 +72,15 @@ export const playerStatisticsSchema = strict({
 });
 export const matchEventSchema = strict({
   minute: z.number().int().nonnegative(),
-  type: z.enum(["goal", "seven-metre", "two-minute-penalty", "yellow-card", "red-card", "half-time", "full-time"]),
+  clock: z.string().regex(/^\d{1,2}:\d{2}$/).optional(),
+  type: z.enum(["goal", "seven-metre", "seven-metre-missed", "two-minute-penalty", "yellow-card", "red-card", "timeout", "half-time", "full-time"]),
   teamId: id.optional(),
   homeScore: z.number().int().nonnegative().optional(),
   awayScore: z.number().int().nonnegative().optional()
 });
 export const matchReportSchema = strict({
   matchId: id,
-  publicReportUrl: z.string().url().refine((url) => new URL(url).hostname === "www.oehb.at", "Report URL must use public OEHB host"),
+  publicReportUrl,
   teamStatistics: z.array(teamStatisticsSchema),
   playerStatistics: z.array(playerStatisticsSchema),
   events: z.array(matchEventSchema)
