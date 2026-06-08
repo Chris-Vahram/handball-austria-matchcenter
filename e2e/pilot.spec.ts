@@ -31,7 +31,7 @@ test("hla challenge hub exposes reviewed public nuLiga groups", async ({ page })
   await page.getByRole("link", { name: /West Abstiegsrunde/ }).click();
   await page.locator('a[href="/bewerbe/hla-challenge-west-abstiegsrunde/tabelle"]').click();
   await expect(page).toHaveURL("/bewerbe/hla-challenge-west-abstiegsrunde/tabelle");
-  await expect(page.getByRole("link", { name: "SK Konstant Traun / Edelweiss" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "SK Konstant Traun / Edelweiss" }).first()).toBeVisible();
 });
 
 test("report exposes team statistics and keeps player section gated", async ({ page }) => {
@@ -54,7 +54,7 @@ test("nuliga report shows anonymized match flow", async ({ page }) => {
 test("standings, team and club routes link together", async ({ page }) => {
   await page.goto("/bewerbe/oohv-maenner-landesliga/tabelle");
   await expect(page.getByRole("heading", { name: "Tabelle" })).toBeVisible();
-  await page.getByRole("link", { name: "ASKÖ HC Urfahr" }).click();
+  await page.getByRole("link", { name: "ASKÖ HC Urfahr" }).first().click();
   await expect(page.getByText("Verein:")).toBeVisible();
   await page.getByRole("link", { name: "ASKÖ HC Urfahr" }).first().click();
   await expect(page.getByRole("heading", { name: "Teams", exact: true })).toBeVisible();
@@ -70,7 +70,7 @@ test("mobile standings use scannable cards", async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== "mobile");
   await page.goto("/bewerbe/oohv-maenner-landesliga/tabelle");
   await expect(page.getByRole("list")).toBeVisible();
-  await expect(page.getByRole("table")).toBeHidden();
+  await expect(page.locator("table").first()).toHaveCSS("display", "none");
 });
 
 test("search finds venue", async ({ page }) => {
@@ -97,7 +97,9 @@ test("first-run onboarding saves a team favorite", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { name: "Wähle dein Team" })).toBeVisible();
   await page.getByRole("button", { name: /Sportunion EDELWEISS Linz \/ SK Traun/ }).first().click();
+  await expect(page.getByRole("heading", { name: "Wähle dein Team" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Dein nächstes Spiel" })).toBeVisible();
+  await expect(page.getByRole("button", { name: /Sportunion EDELWEISS Linz \/ SK Traun/ }).first()).toHaveAttribute("aria-pressed", "true");
   await expect(page.getByText("SMS Kleinmünchen, Linz").first()).toBeVisible();
 });
 
