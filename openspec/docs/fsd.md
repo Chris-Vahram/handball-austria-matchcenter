@@ -14,6 +14,12 @@ mobile-first German user interface. The first demo competition is the OOHV
 Maenner Landesliga. The architecture shall allow additional OOHV and OEHB
 competitions to be added later, including Elite Cup MU18 and HLA CHALLENGE.
 
+The current product direction is a targeted nuLiga sales prototype. The
+prototype shall demonstrate a clearer alternative to dense existing competition
+views by focusing on the main user questions: which team am I looking at, when
+is the next match, where is the hall, what was the result, where are we in the
+table, and what happened in the match report.
+
 ### Background and Current Situation
 
 Public handball information is available through association websites, but users
@@ -33,6 +39,9 @@ the venue, what is the result, and what is the current table?
 - Support multiple competitions without redesigning the domain model.
 - Use only approved public sports data and keep data-source provenance visible.
 - Prepare a clean path to an official API, export, or cooperation agreement.
+- Make the prototype understandable for players, parents, trainers, fans, and
+  club officials without requiring nuLiga system knowledge.
+- Provide a focused pitch/demo path for a targeted preview to nuLiga or nu GmbH.
 
 ## 2. Scope
 
@@ -45,6 +54,14 @@ the venue, what is the result, and what is the current table?
 - Team page with match schedule and summary information.
 - Club page with associated teams and matches.
 - Search for competitions, clubs, teams, and venues.
+- Browser-local favorite selection and personalized next-match entry point.
+- First-visit team-selection onboarding for a stronger aha moment.
+- Team insight page with next match, last result, table position, form curve,
+  and links to relevant match reports.
+- Internal match report demo with approved adult player statistics, team
+  totals, and event timeline.
+- Dedicated pitch/demo page explaining problem, solution, target users,
+  privacy boundaries, and demo flow before sending a targeted preview.
 - Small manually curated demo sample based on publicly visible sports data.
 - Initial OOHV Maenner Landesliga demo.
 - Domain model prepared for OOHV and OEHB competitions.
@@ -52,12 +69,14 @@ the venue, what is the result, and what is the current table?
 ### Out of Scope
 
 - Automated scraping before explicit legal and organizational approval.
-- Player lists, private contacts, phone numbers, email addresses, referee data,
-  and other personal detail data.
+- U18 player-level publication unless separately approved.
+- Private contacts, phone numbers, email addresses, referee data, source person
+  IDs, player portrait links, and unrelated personal detail data.
 - Login, administration, editing, and official result entry.
 - Live score ingestion unless an approved source is available.
-- Calendar export and Apple Calendar integration in the first MVP.
 - English UI and dark mode in the first MVP.
+- Native app distribution, push notifications, productive result entry, and full
+  report import for every public match before the first targeted sales preview.
 
 ## 3. Users and Stakeholders
 
@@ -96,6 +115,24 @@ information without navigating through unrelated data.
 A fan selects OOHV Maenner Landesliga and opens the standings view to compare
 rank, team, matches played, points, and goal difference.
 
+### UC-04 Save a Favorite Team
+
+A parent or player opens the prototype for the first time, selects a team as a
+local favorite, and later lands directly on the next relevant match and team
+context.
+
+### UC-05 Review a Match Report
+
+A user opens a highlighted demo match report and sees result, venue, team
+statistics, approved adult player statistics, seven-metre information,
+two-minute penalties, and a chronological event timeline.
+
+### UC-06 Evaluate the Sales Demo
+
+A nuLiga or association representative opens a dedicated demo page and quickly
+understands the problem, proposed solution, target audiences, data boundaries,
+and suggested next discussion step.
+
 ## 5. Functional Requirements
 
 - **FR-01:** The system shall show current and upcoming matches on the landing
@@ -122,6 +159,22 @@ rank, team, matches played, points, and goal difference.
 - **FR-13:** The domain model shall support adding further competitions without
   changing page-level contracts.
 - **FR-14:** Each displayed dataset shall retain source and update metadata.
+- **FR-15:** The system shall provide a first-visit team selection prompt that
+  helps users personalize the landing page without creating an account.
+- **FR-16:** The system shall store favorites only as browser-local public entity
+  IDs and shall keep browsing usable when local storage is unavailable.
+- **FR-17:** The landing page shall prominently link to a complete demo match
+  report that demonstrates the prototype's strongest matchcenter experience.
+- **FR-18:** Team pages shall summarize next match, latest result, table
+  position, form curve, and relevant match-report links when data is available.
+- **FR-19:** The system shall display approved adult player-level match-report
+  statistics only for competitions with an approved publication profile.
+- **FR-20:** The system shall keep U18 player-level statistics hidden unless a
+  separate documented approval exists.
+- **FR-21:** The system shall provide a dedicated pitch/demo page for targeted
+  preview recipients.
+- **FR-22:** The pitch/demo page shall explain pilot status, data source
+  boundaries, privacy decisions, and the recommended demo flow.
 
 ## 6. Non-Functional Requirements
 
@@ -130,11 +183,15 @@ rank, team, matches played, points, and goal difference.
 - Core paths shall be usable on narrow mobile screens.
 - Main information shall be reachable with few navigation steps.
 - German labels shall be understandable without association-system knowledge.
+- The first-time experience shall guide non-technical users toward their team
+  before exposing dense competition structures.
 
 ### Performance
 
 - Static or cached pilot data shall load quickly on typical mobile connections.
 - Lists shall avoid unnecessary client-side work.
+- Personalization shall remain lightweight and not introduce a remote user
+  account or analytics dependency.
 
 ### Reliability
 
@@ -160,8 +217,14 @@ rank, team, matches played, points, and goal difference.
 
 ### Excluded Data
 
-- Player lists, private contacts, phone numbers, email addresses, referee data,
-  and personal detail data.
+- U18 player-level statistics unless separately approved.
+- Private contacts, phone numbers, email addresses, referee data, source person
+  IDs, player portrait links, and unrelated personal detail data.
+
+### Conditionally Allowed Data
+
+- Adult player-level sports statistics from reviewed public match reports when
+  a publication profile explicitly approves display.
 
 ### Provenance
 
@@ -180,6 +243,10 @@ export, or written permission.
 - A standings table must identify its competition, season, and source update
   time.
 - Personal detail records shall not be imported.
+- Adult player statistics may be displayed only from reviewed public source
+  records and only for approved competitions.
+- U18 player statistics shall remain hidden without a separate approval.
+- Local favorites shall not be sent to a remote service.
 
 ## 9. Error Handling / Edge Cases
 
@@ -207,6 +274,13 @@ export, or written permission.
 - Imported fixture data passes schema validation.
 - Loading, empty, and error states exist for major list views.
 - Automated tests cover core validation and filtering logic.
+- First-visit users can select a team favorite and return to a personalized
+  landing experience.
+- A team page shows next match, latest result, table position, and form curve
+  using validated demo data.
+- A dedicated pitch/demo page is reachable and explains the prototype value and
+  boundaries.
+- The highlighted demo match report remains reachable from the landing page.
 
 ## 12. Open Questions
 
@@ -215,3 +289,7 @@ export, or written permission.
 - Which exact season and curated match sample should seed the first UI demo?
 - Which HLA brand assets may legally be used?
 - Is venue address display approved when already publicly visible?
+- Which exact recipient and contact path should be used for the targeted nuLiga
+  preview?
+- Should the first targeted preview be unlisted, password-protected, or shared
+  only inside a private call?
