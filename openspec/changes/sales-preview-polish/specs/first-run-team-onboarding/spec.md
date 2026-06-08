@@ -17,6 +17,14 @@ team-selection context visible after a favorite is saved.
   exists
 - **AND** the landing page keeps the selected team context visible and editable
 
+#### Scenario: Spielgemeinschaft appears in multiple competitions
+- **WHEN** multiple public team records belong to the same club or
+  Spielgemeinschaft context
+- **THEN** the first-run team-selection prompt shows only one selectable entry
+  for that club context
+- **AND** competition-specific team pages and tables remain available through
+  their normal routes
+
 ### Requirement: Onboarding remains optional
 The system SHALL keep ordinary matchcenter browsing available when the user does
 not select a team.

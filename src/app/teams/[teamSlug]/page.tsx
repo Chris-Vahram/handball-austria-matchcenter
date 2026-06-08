@@ -18,7 +18,7 @@ export default async function TeamPage({ params }: { params: Promise<{ teamSlug:
   const competitions = data.competitions.filter((competition) => matches.some((match) => match.competitionId === competition.id));
   const insights = teamInsights(team.id);
   return <>
-    <PageHeader eyebrow="Team" title={team.name}>
+    <PageHeader eyebrow="Team" title={team.name} description="Für Spieler, Eltern und Trainer: hier stehen die wichtigsten Spieltagsfragen zuerst, bevor der komplette Spielplan kommt.">
       <p className="mt-3 text-sm text-slate-600">Verein: <Link className="font-black text-navy underline decoration-slate-300 underline-offset-2" href={`/vereine/${club?.slug}`}>{club?.name}</Link></p>
       <div className="mt-4 flex flex-wrap gap-2">{competitions.map((competition) => <Link className="chip" href={`/bewerbe/${competition.slug}`} key={competition.id}>{competition.name}</Link>)}</div>
       <div className="mt-4"><FavoriteToggle id={team.id} kind="team" /></div>

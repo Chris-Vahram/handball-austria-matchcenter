@@ -21,9 +21,10 @@ until every public-launch item is reviewed.
 - [ ] Create a Vercel preview deployment from the reviewed commit.
 - [ ] Set `NEXT_PUBLIC_SITE_URL` to the final preview URL and redeploy.
 - [ ] Open the final preview URL on a phone and desktop.
-- [ ] Verify pitch page, start page, team onboarding, team insights, search,
-      competition, table, match report, favorite, calendar export, share
-      fallback, Maps link, footer, and legal routes.
+- [ ] Verify pitch page guided flow, start page, deduplicated team onboarding,
+      persistent favorite state, team insights, search, competition, HLA
+      CHALLENGE phases, table, match report, calendar export, share fallback,
+      Maps link, footer, and legal routes.
 - [ ] Decide whether the recipient receives an unlisted link or a
       password-protected preview.
 - [ ] Confirm the intended recipient through the current official nuLiga or

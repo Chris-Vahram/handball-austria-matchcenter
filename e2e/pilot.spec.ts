@@ -96,6 +96,7 @@ test("first-run onboarding saves a team favorite", async ({ page }) => {
   await page.clock.install({ time: new Date("2026-06-08T09:00:00.000Z") });
   await page.goto("/");
   await expect(page.getByRole("heading", { name: "Wähle dein Team" })).toBeVisible();
+  await expect(page.getByRole("button", { name: /EDELWEISS.*Traun|Traun.*Edelweiss/i })).toHaveCount(1);
   await page.getByRole("button", { name: /Sportunion EDELWEISS Linz \/ SK Traun/ }).first().click();
   await expect(page.getByRole("heading", { name: "Wähle dein Team" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Dein nächstes Spiel" })).toBeVisible();
@@ -116,8 +117,10 @@ test("team page shows matchday insights", async ({ page }) => {
 test("pitch demo explains value and links flows", async ({ page }) => {
   await page.goto("/demo");
   await expect(page.getByRole("heading", { name: "Moderner Handball-Matchcenter für alle" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "In fünf Minuten vorzeigbar" })).toBeVisible();
+  await expect(page.getByText("Geführter Demo-Flow")).toBeVisible();
   await expect(page.getByText("Produktive Synchronisierung erst mit genehmigter API")).toBeVisible();
-  await expect(page.locator('a[href="/spiele/m-2026-06-01"]').filter({ hasText: "Spielbericht" })).toBeVisible();
+  await expect(page.locator('a[href="/spiele/m-2026-06-01"]').filter({ hasText: "Spielbericht + Route" })).toBeVisible();
   await expect(page.getByRole("main").getByRole("link", { name: "Feedback senden" })).toHaveAttribute("href", "mailto:c.vahram@students.htl-leonding.ac.at");
 });
 

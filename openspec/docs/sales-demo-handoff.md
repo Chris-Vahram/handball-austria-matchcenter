@@ -51,19 +51,22 @@ Mit freundlichen Grüßen
 
 ## 5-Minute Demo Script
 
-1. Pitch page `/demo`: explain problem, solution, target users, pilot status,
-   and data boundaries.
-2. Start page: explain mobile-first orientation and direct next-match answer.
-3. Save a team favorite: return to the start page and show the personalized
-   next match.
+1. Pitch page `/demo`: use the numbered guided flow and explain problem,
+   solution, target users, pilot status, and data boundaries.
+2. Start page: show that team selection is simple, deduplicated by club context,
+   and local-only.
+3. Save a team favorite: show that the selected team stays visible and the
+   personalized next match appears below it.
 4. Open a team page: show next match, latest result, table position, form curve,
    and report links.
-5. Open a competition: show schedule and table without desktop-table
-   compression on mobile.
-6. Open the sample match report: show result, venue, team statistics, calendar
+5. Open HLA CHALLENGE: show that phases remain separated instead of mixing
+   Grunddurchgang, Aufstiegsrunde, and Playoffs.
+6. Open a table: show mobile cards and desktop table without squeezing a table
+   into a phone layout.
+7. Open the sample match report: show result, venue, team statistics, calendar
    export, sharing, Maps search link, approved adult player statistics, and
    public source transparency.
-7. Close with the boundary: reviewed demo fixtures today; official approved
+8. Close with the boundary: reviewed demo fixtures today; official approved
    adapter or export only after agreement.
 
 ## Discussion Goals
