@@ -104,6 +104,17 @@ test("first-run onboarding saves a team favorite", async ({ page }) => {
   await expect(page.getByText("SMS Kleinmünchen, Linz").first()).toBeVisible();
 });
 
+test("edelweiss traun club context aggregates aliases and matches", async ({ page }) => {
+  await page.goto("/suche?q=Konstant%20Traun");
+  await expect(page.getByRole("link", { name: /Verein[\s\S]*Sportunion EDELWEISS Linz \/ SK Traun/ }).first()).toBeVisible();
+  await page.getByRole("link", { name: /Verein[\s\S]*Sportunion EDELWEISS Linz \/ SK Traun/ }).first().click();
+  await expect(page).toHaveURL("/vereine/edelweiss-traun");
+  await expect(page.getByRole("heading", { name: "Sportunion EDELWEISS Linz / SK Traun" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "SK Konstant Traun / Edelweiss" }).first()).toBeVisible();
+  await expect(page.getByRole("link", { name: "HLA CHALLENGE West Hauptrunde" })).toBeVisible();
+  await expect(page.getByText("OÖHV mU18 Grunddurchgang").first()).toBeVisible();
+});
+
 test("team page shows matchday insights", async ({ page }) => {
   await page.goto("/teams/hc-linz-neue-heimat");
   await expect(page.getByRole("heading", { name: "Team-Überblick" })).toBeVisible();

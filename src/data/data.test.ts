@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { curatedDataset } from "@/data/curated";
 import { validateDataset } from "@/data/adapter";
-import { data, filterMatches, search, sortMatches, standingsForCompetition, teamInsights, visiblePlayerStatistics } from "@/data/query";
+import { clubAliases, competitionsForTeam, data, filterMatches, matchesForClub, search, sortMatches, standingsForCompetition, teamInsights, teamsForClub, visiblePlayerStatistics } from "@/data/query";
 import { PUBLIC_NULIGA_HLA_GROUP_ALLOWLIST } from "@/data/hla-challenge";
 
 describe("curated dataset", () => {
@@ -130,6 +130,19 @@ describe("queries", () => {
     expect(data.clubs.find((club) => club.id === "edelweiss-traun")?.name).toBe("Sportunion EDELWEISS Linz / SK Traun");
     expect(data.teams.find((team) => team.id === "edelweiss-traun")?.name).toBe("Sportunion EDELWEISS Linz / SK Traun");
     expect(data.teams.find((team) => team.id === "hla-traun-edelweiss")?.name).toBe("SK Konstant Traun / Edelweiss");
+  });
+
+  it("unifies Edelweiss Traun through one canonical club context", () => {
+    expect(teamsForClub("edelweiss-traun").map((team) => team.id)).toEqual(expect.arrayContaining(["edelweiss-traun", "mu18-edelweiss-traun", "hla-traun-edelweiss"]));
+    expect(matchesForClub("edelweiss-traun").map((match) => match.id)).toEqual(expect.arrayContaining(["m-2025-10-03", "mu18-2026-06-08", "hla-west-relegation-2026-03-07-2"]));
+    expect(competitionsForTeam("hla-traun-edelweiss").map((competition) => competition.id)).toEqual(expect.arrayContaining(["hla-challenge-west-main", "hla-challenge-west-relegation"]));
+    expect(clubAliases("edelweiss-traun")).toContain("konstant traun");
+  });
+
+  it("ranks the canonical Edelweiss Traun club before team aliases in search", () => {
+    const results = search("Konstant Traun");
+    expect(results[0]).toMatchObject({ kind: "Verein", id: "edelweiss-traun", href: "/vereine/edelweiss-traun" });
+    expect(results.map((result) => result.href)).toContain("/teams/hla-traun-edelweiss");
   });
 
   it("includes five reviewed public nuLiga HLA CHALLENGE groups", () => {
