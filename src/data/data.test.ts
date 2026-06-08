@@ -85,6 +85,18 @@ describe("queries", () => {
     expect(report?.events.some((event) => event.type === "seven-metre-missed")).toBe(true);
   });
 
+  it("keeps the verified 8 June MU18 fixture against Edelweiss Traun", () => {
+    const match = data.matches.find((item) => item.id === "mu18-2026-06-08");
+    expect(match).toMatchObject({
+      competitionId: "oohv-mu18-grunddurchgang",
+      homeTeamId: "mu18-hc-linz-neue-heimat",
+      awayTeamId: "mu18-edelweiss-traun",
+      venueId: "sms-kleinmuenchen",
+      startsAt: "2026-06-08T18:00:00.000Z"
+    });
+    expect(standingsForCompetition("oohv-mu18-grunddurchgang")?.rows.find((row) => row.teamId === "mu18-edelweiss-traun")?.rank).toBe(2);
+  });
+
   it("searches allowed public entities", () => {
     expect(search("Wels").map((result) => result.kind)).toEqual(expect.arrayContaining(["Verein", "Team", "Halle"]));
     expect(search("kein treffer")).toEqual([]);

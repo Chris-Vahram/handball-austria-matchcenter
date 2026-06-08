@@ -4,6 +4,7 @@ test("landing exposes main navigation and fixtures", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { name: /Dein Spiel/ })).toBeVisible();
   await expect(page.getByRole("link", { name: "Bewerb auswählen" }).first()).toBeVisible();
+  await expect(page.getByRole("link", { name: /Vollen Bericht ansehen/ })).toBeVisible();
 });
 
 test("schedule filters and empty reset work", async ({ page }) => {

@@ -26,6 +26,7 @@ export const reviewedDemoDataset = {
   teams: [
     ...curatedDataset.teams,
     { id: "mu18-hc-linz-neue-heimat", slug: "mu18-hc-linz-neue-heimat", name: "SG HC LINZ AG/Neue Heimat", clubId: "hc-linz-neue-heimat" },
+    { id: "mu18-edelweiss-traun", slug: "mu18-edelweiss-traun", name: "Sportunion EDELWEISS Linz / SK Traun", clubId: "edelweiss-traun" },
     { id: "mu18-spiders-wels", slug: "mu18-spiders-wels", name: "Spiders Wels", clubId: "spiders-wels" },
     { id: "elite-spiders-wels", slug: "elite-spiders-wels", name: "Spiders Wels", clubId: "spiders-wels" },
     { id: "elite-falken-st-poelten", slug: "elite-falken-st-poelten", name: "Sportunion DIE FALKEN St. Pölten", clubId: "falken-st-poelten" },
@@ -44,13 +45,13 @@ export const reviewedDemoDataset = {
   ],
   matches: [
     ...curatedDataset.matches,
-    { id: "mu18-2026-06-08", competitionId: "oohv-mu18-grunddurchgang", seasonId: "2025-26", homeTeamId: "mu18-hc-linz-neue-heimat", awayTeamId: "mu18-spiders-wels", venueId: "sh-huettner", startsAt: "2026-06-08T16:00:00.000Z", status: "scheduled" as const },
+    { id: "mu18-2026-06-08", competitionId: "oohv-mu18-grunddurchgang", seasonId: "2025-26", homeTeamId: "mu18-hc-linz-neue-heimat", awayTeamId: "mu18-edelweiss-traun", venueId: "sms-kleinmuenchen", startsAt: "2026-06-08T18:00:00.000Z", status: "scheduled" as const },
     { id: "elite-2026-06-10", competitionId: "elite-cup-mu18-b", seasonId: "2025-26", homeTeamId: "elite-spiders-wels", awayTeamId: "elite-falken-st-poelten", venueId: "sh-pernau", startsAt: "2026-06-10T17:00:00.000Z", status: "scheduled" as const },
     ...hlaChallengeDemo.matches
   ],
   standings: [
     ...curatedDataset.standings,
-    { competitionId: "oohv-mu18-grunddurchgang", seasonId: "2025-26", metadata, rows: [{ rank: 1, teamId: "mu18-hc-linz-neue-heimat", played: 1, wins: 1, draws: 0, losses: 0, goalsFor: 30, goalsAgainst: 25, goalDifference: 5, points: 2 }, { rank: 2, teamId: "mu18-spiders-wels", played: 1, wins: 0, draws: 0, losses: 1, goalsFor: 25, goalsAgainst: 30, goalDifference: -5, points: 0 }] },
+    { competitionId: "oohv-mu18-grunddurchgang", seasonId: "2025-26", metadata, rows: [{ rank: 1, teamId: "mu18-hc-linz-neue-heimat", played: 5, wins: 5, draws: 0, losses: 0, goalsFor: 187, goalsAgainst: 152, goalDifference: 35, points: 10 }, { rank: 2, teamId: "mu18-edelweiss-traun", played: 5, wins: 2, draws: 0, losses: 3, goalsFor: 177, goalsAgainst: 174, goalDifference: 3, points: 4 }, { rank: 3, teamId: "mu18-spiders-wels", played: 6, wins: 1, draws: 0, losses: 5, goalsFor: 197, goalsAgainst: 235, goalDifference: -38, points: 2 }] },
     { competitionId: "elite-cup-mu18-b", seasonId: "2025-26", metadata, rows: [{ rank: 1, teamId: "elite-spiders-wels", played: 1, wins: 1, draws: 0, losses: 0, goalsFor: 28, goalsAgainst: 24, goalDifference: 4, points: 2 }, { rank: 2, teamId: "elite-falken-st-poelten", played: 1, wins: 0, draws: 0, losses: 1, goalsFor: 24, goalsAgainst: 28, goalDifference: -4, points: 0 }] },
     ...hlaChallengeDemo.standings
   ],
