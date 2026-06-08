@@ -34,10 +34,12 @@ Der Prototyp zeigt anhand geprüfter Demo-Daten:
 - Kalenderexport, Teilen und externe Routenlinks.
 
 Demo-Link: [Vercel-Preview-URL ergänzen]
+Pitch-Seite: [Vercel-Preview-URL]/demo
 
 Der Link ist ein unabhängiger UX-Prototyp und keine offizielle
-nuLiga-Anwendung. Es gibt keine produktive Datenanbindung, keine Anmeldung und
-keine Veröffentlichung personenbezogener Spielerdaten.
+nuLiga-Anwendung. Es gibt keine produktive Datenanbindung, keine Anmeldung,
+keine U18-Spielerstatistik und keine Veröffentlichung von Kontakten,
+Schiedsrichterdaten, Portraitlinks oder Personen-IDs.
 
 Gerne würde ich das Konzept in einem kurzen Gespräch vorstellen und erfahren,
 ob ein moderner Matchcenter-Ansatz für nuLiga interessant ist. Wären in den
@@ -49,14 +51,19 @@ Mit freundlichen Grüßen
 
 ## 5-Minute Demo Script
 
-1. Start page: explain mobile-first orientation and direct next-match answer.
-2. Save a competition favorite: return to the start page and show the
-   personalized next match.
-3. Open a competition: show schedule and table without desktop-table
+1. Pitch page `/demo`: explain problem, solution, target users, pilot status,
+   and data boundaries.
+2. Start page: explain mobile-first orientation and direct next-match answer.
+3. Save a team favorite: return to the start page and show the personalized
+   next match.
+4. Open a team page: show next match, latest result, table position, form curve,
+   and report links.
+5. Open a competition: show schedule and table without desktop-table
    compression on mobile.
-4. Open the sample match report: show result, venue, team statistics, calendar
-   export, sharing, Maps search link, and public source transparency.
-5. Close with the boundary: reviewed demo fixtures today; official approved
+6. Open the sample match report: show result, venue, team statistics, calendar
+   export, sharing, Maps search link, approved adult player statistics, and
+   public source transparency.
+7. Close with the boundary: reviewed demo fixtures today; official approved
    adapter or export only after agreement.
 
 ## Discussion Goals
@@ -73,4 +80,4 @@ Mit freundlichen Grüßen
 - Do not claim partnership, official status, live data, or production
   readiness.
 - Do not promise a productive integration before access and contract review.
-- Do not publish player-level or U18 personal data.
+- Do not publish U18 player-level data or non-allowlisted personal data.

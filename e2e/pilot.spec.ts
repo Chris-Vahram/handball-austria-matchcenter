@@ -92,6 +92,33 @@ test("saved team favorite personalizes landing", async ({ page }) => {
   await expect(page.getByRole("heading", { name: "Dein nächstes Spiel" })).toBeVisible();
 });
 
+test("first-run onboarding saves a team favorite", async ({ page }) => {
+  await page.clock.install({ time: new Date("2026-06-08T09:00:00.000Z") });
+  await page.goto("/");
+  await expect(page.getByRole("heading", { name: "Wähle dein Team" })).toBeVisible();
+  await page.getByRole("button", { name: /Sportunion EDELWEISS Linz \/ SK Traun/ }).first().click();
+  await expect(page.getByRole("heading", { name: "Dein nächstes Spiel" })).toBeVisible();
+  await expect(page.getByText("SMS Kleinmünchen, Linz").first()).toBeVisible();
+});
+
+test("team page shows matchday insights", async ({ page }) => {
+  await page.goto("/teams/hc-linz-neue-heimat");
+  await expect(page.getByRole("heading", { name: "Team-Überblick" })).toBeVisible();
+  await expect(page.getByText("Nächstes Spiel")).toBeVisible();
+  await expect(page.getByText("Letztes Ergebnis")).toBeVisible();
+  await expect(page.getByText("Formkurve")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Spielberichte" })).toBeVisible();
+  await expect(page.getByRole("link", { name: /SG HC LINZ AG\/Neue Heimat : Spiders Wels/ })).toBeVisible();
+});
+
+test("pitch demo explains value and links flows", async ({ page }) => {
+  await page.goto("/demo");
+  await expect(page.getByRole("heading", { name: "Moderner Handball-Matchcenter für alle" })).toBeVisible();
+  await expect(page.getByText("Produktive Synchronisierung erst mit genehmigter API")).toBeVisible();
+  await expect(page.locator('a[href="/spiele/m-2026-06-01"]').filter({ hasText: "Spielbericht" })).toBeVisible();
+  await expect(page.getByRole("main").getByRole("link", { name: "Feedback senden" })).toHaveAttribute("href", "mailto:c.vahram@students.htl-leonding.ac.at");
+});
+
 test("fixture convenience actions export, share and open maps", async ({ page }) => {
   await page.goto("/spiele/m-2025-10-03");
   const calendar = await page.request.get("/api/kalender/spiel/m-2025-10-03");

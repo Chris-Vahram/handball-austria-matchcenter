@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { curatedDataset } from "@/data/curated";
 import { validateDataset } from "@/data/adapter";
-import { data, filterMatches, search, sortMatches, standingsForCompetition, visiblePlayerStatistics } from "@/data/query";
+import { data, filterMatches, search, sortMatches, standingsForCompetition, teamInsights, visiblePlayerStatistics } from "@/data/query";
 import { PUBLIC_NULIGA_HLA_GROUP_ALLOWLIST } from "@/data/hla-challenge";
 
 describe("curated dataset", () => {
@@ -95,6 +95,30 @@ describe("queries", () => {
       startsAt: "2026-06-08T18:00:00.000Z"
     });
     expect(standingsForCompetition("oohv-mu18-grunddurchgang")?.rows.find((row) => row.teamId === "mu18-edelweiss-traun")?.rank).toBe(2);
+  });
+
+  it("derives team insights from validated demo data", () => {
+    const insights = teamInsights("mu18-hc-linz-neue-heimat", "2026-06-08T09:00:00.000Z");
+    expect(insights.nextMatch?.id).toBe("mu18-2026-06-08");
+    expect(insights.standingsRow?.rank).toBe(1);
+    expect(insights.form).toEqual([]);
+  });
+
+  it("derives finished-result form and report links", () => {
+    const insights = teamInsights("hc-linz-neue-heimat", "2026-06-08T09:00:00.000Z");
+    expect(insights.latestResult?.id).toBe("m-2026-06-01");
+    expect(insights.standingsRow?.rank).toBe(2);
+    expect(insights.form.map((item) => item.outcome)).toEqual(["W", "W"]);
+    expect(insights.reportMatches.map((match) => match.id)).toContain("m-2026-06-01");
+  });
+
+  it("returns empty team insights instead of inventing data", () => {
+    const insights = teamInsights("missing-team", "2026-06-11T12:00:00.000Z");
+    expect(insights.nextMatch).toBeUndefined();
+    expect(insights.latestResult).toBeUndefined();
+    expect(insights.standingsRow).toBeUndefined();
+    expect(insights.form).toEqual([]);
+    expect(insights.reportMatches).toEqual([]);
   });
 
   it("searches allowed public entities", () => {

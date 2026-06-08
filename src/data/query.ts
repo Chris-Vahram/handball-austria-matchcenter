@@ -22,6 +22,28 @@ export const filterMatchesAcrossCompetitions = (matches: Match[], filters: { tea
 export const standingsForCompetition = (competitionId: string) => data.standings.find((standings) => standings.competitionId === competitionId);
 export const metadataForCompetition = (competitionId: string) => hlaChallengeDemo.metadataByCompetition[competitionId as keyof typeof hlaChallengeDemo.metadataByCompetition] ?? data.metadata;
 export const reportForMatch = (matchId: string) => data.matchReports.find((report) => report.matchId === matchId);
+export type TeamFormOutcome = "W" | "D" | "L";
+const matchOutcome = (match: Match, teamId: string): TeamFormOutcome | undefined => {
+  if (match.status !== "finished" || match.homeScore === undefined || match.awayScore === undefined) return undefined;
+  const own = match.homeTeamId === teamId ? match.homeScore : match.awayScore;
+  const opponent = match.homeTeamId === teamId ? match.awayScore : match.homeScore;
+  return own === opponent ? "D" : own > opponent ? "W" : "L";
+};
+export const teamInsights = (teamId: string, now = new Date().toISOString()) => {
+  const matches = sortMatches(filterMatchesAcrossCompetitions(data.matches, { team: teamId }));
+  const finishedMatches = matches.filter((match) => match.status === "finished");
+  const nextMatch = matches.find((match) => match.status === "scheduled" && match.startsAt >= now);
+  const latestResult = finishedMatches.at(-1);
+  const standings = data.standings.find((table) => table.rows.some((row) => row.teamId === teamId));
+  const standingsRow = standings?.rows.find((row) => row.teamId === teamId);
+  const standingsCompetition = standings ? byId(data.competitions, standings.competitionId) : undefined;
+  const form = finishedMatches.slice(-5).flatMap((match) => {
+    const outcome = matchOutcome(match, teamId);
+    return outcome ? [{ matchId: match.id, outcome }] : [];
+  });
+  const reportMatches = matches.filter((match) => reportForMatch(match.id));
+  return { matches, nextMatch, latestResult, standings, standingsRow, standingsCompetition, form, reportMatches };
+};
 export const visiblePlayerStatistics = (report: MatchReport) => {
   const match = byId(data.matches, report.matchId);
   const profile = match && data.publicationProfiles.find((item) => item.competitionId === match.competitionId);
