@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { data } from "@/data/query";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = ["/", "/demo", "/bewerbe", "/suche", "/impressum", "/datenschutz"];
