@@ -135,6 +135,15 @@ test("pitch demo explains value and links flows", async ({ page }) => {
   await expect(page.getByRole("main").getByRole("link", { name: "Feedback senden" })).toHaveAttribute("href", "mailto:c.vahram@students.htl-leonding.ac.at");
 });
 
+test("sales pitch page is sendable to nuliga", async ({ page }) => {
+  await page.goto("/pitch");
+  await expect(page.getByRole("heading", { name: "Moderner Matchcenter statt Verwaltungsansicht" })).toBeVisible();
+  await expect(page.getByText("Fünf Antworten in unter zehn Sekunden.")).toBeVisible();
+  await expect(page.getByRole("link", { name: "Demo starten" })).toHaveAttribute("href", "/demo");
+  await expect(page.getByRole("link", { name: "Feedback senden" }).first()).toHaveAttribute("href", "mailto:c.vahram@students.htl-leonding.ac.at");
+  await expect(page.getByText("Dies ist kein offizieller Launch.")).toBeVisible();
+});
+
 test("fixture convenience actions export, share and open maps", async ({ page }) => {
   await page.goto("/spiele/m-2025-10-03");
   const calendar = await page.request.get("/api/kalender/spiel/m-2025-10-03");
