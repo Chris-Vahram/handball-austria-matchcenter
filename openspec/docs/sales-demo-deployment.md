@@ -13,19 +13,25 @@ Use Vercel as the documented managed Next.js host for the sales demo:
 1. Push the reviewed Git commit to a private GitHub repository.
 2. Import the repository in Vercel.
 3. Use the default Next.js build command: `npm run build`.
-4. Configure `NEXT_PUBLIC_SITE_URL` from `.env.example` to the generated
-   preview URL and redeploy.
+4. Let the sitemap derive the preview base URL from `VERCEL_URL`, or configure
+   `NEXT_PUBLIC_SITE_URL` for a fixed public/custom domain.
 5. Review the final preview URL before sharing it.
 6. Add a custom domain only after legal owner details and privacy text are
    finalized.
 
-The first handoff should use a reviewed, unlisted or access-controlled preview
-URL. Do not advertise or index the preview as a public launch while legal
-placeholders remain visible. No actual deployment is part of this change.
+The first handoff uses a reviewed, unlisted Vercel preview URL. Do not
+advertise or index the preview as a public launch while legal placeholders
+remain visible.
+
+Current reviewed preview:
+
+`https://handball-austria-matchcenter-k1il6x1uu-chris-vahrams-projects.vercel.app`
 
 ## Environment Boundary
 
 - `NEXT_PUBLIC_SITE_URL`: canonical public base URL for sitemap and social links.
+- `VERCEL_URL`: fallback preview host used when `NEXT_PUBLIC_SITE_URL` is not
+  configured.
 - Reviewed static demo fixtures: allowed.
 - `data/import-cache/`: forbidden in Git and deployment artifacts.
 - `.env*`: forbidden in Git except documented `.env.example`.

@@ -20,6 +20,16 @@ views by focusing on the main user questions: which team am I looking at, when
 is the next match, where is the hall, what was the result, where are we in the
 table, and what happened in the match report.
 
+Current sales-preview status:
+
+- Private GitHub repository and Vercel preview deployment exist.
+- Pitch route: `/pitch`.
+- Guided demo route: `/demo`.
+- Sales documents exist in `docs/sales-pitch.md` and
+  `docs/nuliga-email-template.md`.
+- Reviewed screenshots are generated locally under ignored `output/playwright/`.
+- The preview remains a targeted unlisted demo, not a public launch.
+
 ### Background and Current Situation
 
 Public handball information is available through association websites, but users
@@ -42,6 +52,7 @@ the venue, what is the result, and what is the current table?
 - Make the prototype understandable for players, parents, trainers, fans, and
   club officials without requiring nuLiga system knowledge.
 - Provide a focused pitch/demo path for a targeted preview to nuLiga or nu GmbH.
+- Provide a concise outreach package for OEHB and nuLiga stakeholders.
 
 ## 2. Scope
 
@@ -62,6 +73,8 @@ the venue, what is the result, and what is the current table?
   totals, and event timeline.
 - Dedicated pitch/demo page explaining problem, solution, target users,
   privacy boundaries, and demo flow before sending a targeted preview.
+- Sales handoff material with pitch document, email template, and recommended
+  screenshots.
 - Small manually curated demo sample based on publicly visible sports data.
 - Initial OOHV Maenner Landesliga demo.
 - Domain model prepared for OOHV and OEHB competitions.
@@ -97,6 +110,8 @@ the venue, what is the result, and what is the current table?
 - Pilot owner and development team.
 - OOHV and OEHB representatives.
 - Potential approved data-source provider.
+- OEHB contact path for content and competition ownership.
+- nu Datenautomaten GmbH contact path for nuLiga software/product ownership.
 
 ## 4. Use Cases / User Scenarios
 
@@ -132,6 +147,12 @@ two-minute penalties, and a chronological event timeline.
 A nuLiga or association representative opens a dedicated demo page and quickly
 understands the problem, proposed solution, target audiences, data boundaries,
 and suggested next discussion step.
+
+### UC-07 Send a Targeted Outreach Package
+
+The pilot owner sends a short email with the pitch link, guided demo link, and
+selected screenshots to the verified OEHB contact path and requests a
+20-minute feedback discussion.
 
 ## 5. Functional Requirements
 
@@ -175,6 +196,11 @@ and suggested next discussion step.
   preview recipients.
 - **FR-22:** The pitch/demo page shall explain pilot status, data source
   boundaries, privacy decisions, and the recommended demo flow.
+- **FR-23:** The repository shall include a concise sales pitch document and
+  outreach email template for the targeted preview.
+- **FR-24:** The sales handoff documentation shall state that the prototype is
+  independent, unlisted, fixture-backed, and not an official nuLiga or OEHB
+  product.
 
 ## 6. Non-Functional Requirements
 
@@ -264,6 +290,9 @@ export, or written permission.
 - Public OEHB competition pages currently expose relevant sports information.
 - An official nuPortalRS REST interface exists, but Austria-specific access and
   permission are open questions.
+- The first verified OEHB outreach path is the public OEHB office contact.
+- A direct nu Datenautomaten product email is not yet verified; use the nuLiga
+  imprint contact path or phone route before sending product material directly.
 
 ## 11. Acceptance Criteria
 
@@ -281,6 +310,9 @@ export, or written permission.
 - A dedicated pitch/demo page is reachable and explains the prototype value and
   boundaries.
 - The highlighted demo match report remains reachable from the landing page.
+- A dedicated `/pitch` page is reachable from the preview deployment and footer.
+- Sales pitch and email template files exist in `docs/`.
+- The Vercel preview can be shared as an unlisted targeted preview.
 
 ## 12. Open Questions
 
@@ -289,7 +321,8 @@ export, or written permission.
 - Which exact season and curated match sample should seed the first UI demo?
 - Which HLA brand assets may legally be used?
 - Is venue address display approved when already publicly visible?
-- Which exact recipient and contact path should be used for the targeted nuLiga
-  preview?
+- Which named person at OEHB or nu Datenautomaten should receive the targeted
+  preview after the first contact?
 - Should the first targeted preview be unlisted, password-protected, or shared
   only inside a private call?
+- Should the pitch package be converted into a one-page PDF before first send?

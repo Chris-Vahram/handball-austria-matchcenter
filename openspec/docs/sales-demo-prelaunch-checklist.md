@@ -17,19 +17,23 @@ until every public-launch item is reviewed.
 
 ## Required Before Sending Targeted Preview
 
-- [ ] Push the reviewed commit to a private Git repository.
-- [ ] Create a Vercel preview deployment from the reviewed commit.
-- [ ] Set `NEXT_PUBLIC_SITE_URL` to the final preview URL and redeploy.
-- [ ] Open the final preview URL on a phone and desktop.
-- [ ] Verify pitch page guided flow, start page, deduplicated team onboarding,
+- [x] Push the reviewed commit to a private Git repository.
+- [x] Create a Vercel preview deployment from the reviewed commit.
+- [x] Confirm sitemap uses the final preview URL through `VERCEL_URL` fallback.
+- [x] Open the final preview URL on a phone and desktop.
+- [x] Verify pitch page guided flow, start page, deduplicated team onboarding,
       persistent favorite state, team insights, search, competition, HLA
       CHALLENGE phases, table, match report, calendar export, share fallback,
       Maps link, footer, and legal routes.
-- [ ] Decide whether the recipient receives an unlisted link or a
+- [x] Decide whether the recipient receives an unlisted link or a
       password-protected preview.
-- [ ] Confirm the intended recipient through the current official nuLiga or
-      nu GmbH contact channel.
-- [ ] Insert preview URL and recipient into the handoff template.
+- [x] Insert preview URL into the handoff template.
+- [ ] Confirm the named recipient after first OEHB office contact or nu
+      Datenautomaten phone/imprint contact.
+- [ ] Polish and send the first email.
+
+Decision: use an unlisted Vercel preview link for the first targeted outreach.
+Do not post publicly.
 
 ## Required Before Public Launch
 

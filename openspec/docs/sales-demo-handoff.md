@@ -11,10 +11,17 @@ launch.
 
 1. Complete the targeted-preview section in
    `openspec/docs/sales-demo-prelaunch-checklist.md`.
-2. Use the final Vercel preview URL in the email template below.
-3. Verify the current recipient through the official nuLiga or nu GmbH contact
-   channel before sending.
+2. Use the current Vercel preview URLs:
+   - Pitch: `https://handball-austria-matchcenter-k1il6x1uu-chris-vahrams-projects.vercel.app/pitch`
+   - Demo: `https://handball-austria-matchcenter-k1il6x1uu-chris-vahrams-projects.vercel.app/demo`
+3. Send first through the verified OEHB office contact path, optionally CC the
+   OEHB competition coordinator. Use the nu Datenautomaten imprint/phone path
+   only after confirming the right product recipient.
 4. Keep the initial message short and request a 20-minute product discussion.
+5. Attach at most three screenshots:
+   `output/playwright/pitch-mobile.png`,
+   `output/playwright/home-mobile.png`, and
+   `output/playwright/report-mobile.png`.
 
 ## Email Template
 
@@ -33,8 +40,11 @@ Der Prototyp zeigt anhand geprüfter Demo-Daten:
 - lokale Favoriten für einen persönlichen Einstieg,
 - Kalenderexport, Teilen und externe Routenlinks.
 
-Demo-Link: [Vercel-Preview-URL ergänzen]
-Pitch-Seite: [Vercel-Preview-URL]/demo
+Pitch-Seite:
+https://handball-austria-matchcenter-k1il6x1uu-chris-vahrams-projects.vercel.app/pitch
+
+Demo-Link:
+https://handball-austria-matchcenter-k1il6x1uu-chris-vahrams-projects.vercel.app/demo
 
 Der Link ist ein unabhängiger UX-Prototyp und keine offizielle
 nuLiga-Anwendung. Es gibt keine produktive Datenanbindung, keine Anmeldung,
@@ -51,22 +61,24 @@ Mit freundlichen Grüßen
 
 ## 5-Minute Demo Script
 
-1. Pitch page `/demo`: use the numbered guided flow and explain problem,
+1. Pitch page `/pitch`: explain problem, target users, pilot status, and
+   safety boundaries.
+2. Demo page `/demo`: use the numbered guided flow and explain problem,
    solution, target users, pilot status, and data boundaries.
-2. Start page: show that team selection is simple, deduplicated by club context,
+3. Start page: show that team selection is simple, deduplicated by club context,
    and local-only.
-3. Save a team favorite: show that the selected team stays visible and the
+4. Save a team favorite: show that the selected team stays visible and the
    personalized next match appears below it.
-4. Open a team page: show next match, latest result, table position, form curve,
+5. Open a team page: show next match, latest result, table position, form curve,
    and report links.
-5. Open HLA CHALLENGE: show that phases remain separated instead of mixing
+6. Open HLA CHALLENGE: show that phases remain separated instead of mixing
    Grunddurchgang, Aufstiegsrunde, and Playoffs.
-6. Open a table: show mobile cards and desktop table without squeezing a table
+7. Open a table: show mobile cards and desktop table without squeezing a table
    into a phone layout.
-7. Open the sample match report: show result, venue, team statistics, calendar
+8. Open the sample match report: show result, venue, team statistics, calendar
    export, sharing, Maps search link, approved adult player statistics, and
    public source transparency.
-8. Close with the boundary: reviewed demo fixtures today; official approved
+9. Close with the boundary: reviewed demo fixtures today; official approved
    adapter or export only after agreement.
 
 ## Discussion Goals
@@ -84,3 +96,46 @@ Mit freundlichen Grüßen
   readiness.
 - Do not promise a productive integration before access and contract review.
 - Do not publish U18 player-level data or non-allowlisted personal data.
+
+## ChatGPT Email Polish Prompt
+
+Use this prompt only to improve wording. Do not ask ChatGPT to invent legal
+claims, partnership status, or unverified recipients.
+
+```text
+Verbessere diese E-Mail für einen professionellen Erstkontakt an den
+Österreichischen Handballbund / nuLiga / nu Datenautomaten.
+
+Ziel: kurzer Feedbacktermin, nicht aggressiv verkaufen. Ton: seriös, knapp,
+selbstbewusst, nicht übertrieben.
+
+Was schon vorhanden ist:
+- funktionierender Next.js/Vercel Prototyp
+- private GitHub-Ablage
+- mobile-first Pitch-Seite
+- geführter Demo-Flow
+- Startseite mit nächstem Spiel und Favoritenteam
+- HLA CHALLENGE Phasenübersicht
+- Edelweiss/Traun Vereinskontext
+- Teamseiten mit nächstem Spiel, letztem Ergebnis, Tabellenposition und Form
+- Demo-Spielbericht mit Statistik und Spielverlauf
+- Kalenderexport, Teilen und Google-Maps-Suchlink
+- sichtbare Datenschutz-/Impressum-Platzhalter für späteren öffentlichen Launch
+- keine Kontakte, Telefonnummern, E-Mails, Schiedsrichterdaten, Login-Seiten
+  oder privaten Daten
+
+Links:
+Pitch:
+https://handball-austria-matchcenter-k1il6x1uu-chris-vahrams-projects.vercel.app/pitch
+
+Demo:
+https://handball-austria-matchcenter-k1il6x1uu-chris-vahrams-projects.vercel.app/demo
+
+Bitte liefere:
+1. finale E-Mail auf Deutsch
+2. kurze Version
+3. Betreffzeilen
+4. Version an ÖHB
+5. Version an nu Datenautomaten
+6. Follow-up nach 7 Tagen
+```

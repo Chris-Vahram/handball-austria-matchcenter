@@ -36,6 +36,16 @@ responsive checks, and automated tests.
 - Add unit tests and E2E smoke flows.
 - Verify accessibility basics, mobile layout, linting, and type safety.
 
+### WP-05 Sales Package
+
+- Add a dedicated `/pitch` route for the targeted nuLiga/OEHB preview.
+- Add a guided `/demo` route and keep it linked from the footer.
+- Add `docs/sales-pitch.md` and `docs/nuliga-email-template.md`.
+- Generate local ignored screenshots for pitch, home, team, HLA, table, and
+  match report views.
+- Deploy a reviewed unlisted Vercel preview and keep public launch blocked until
+  legal text, data permission, and owner details are finalized.
+
 ## 4. Dependencies
 
 - Productive synchronization remains blocked until approved data path exists.
@@ -46,3 +56,5 @@ responsive checks, and automated tests.
 - Calendar export and Apple Calendar integration.
 - More competitions including Elite Cup MU18 and HLA CHALLENGE.
 - English UI and dark mode.
+- One-page PDF pitch export.
+- Custom domain after legal review.
