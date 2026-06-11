@@ -27,6 +27,7 @@ Current sales-preview status:
 - Guided demo route: `/demo`.
 - Sales documents exist in `docs/sales-pitch.md` and
   `docs/nuliga-email-template.md`.
+- Outreach context exists in `openspec/docs/sales-outreach-contact-plan.md`.
 - Reviewed screenshots are generated locally under ignored `output/playwright/`.
 - The preview remains a targeted unlisted demo, not a public launch.
 

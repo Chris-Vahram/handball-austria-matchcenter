@@ -10,6 +10,9 @@
 | Brand assets are used without permission | Trademark or licensing issue | Use neutral visual assets until approved |
 | Multiple competition formats differ | Table or status assumptions break | Use source-supported optional fields and competition-aware adapters |
 | Venue location approval remains unclear | Location UX may be incomplete | Store hall name first; clarify allowed address fields |
+| Recipient path for nuLiga product review is not confirmed | Outreach may land at general office instead of decision maker | Start through verified OEHB office path, optionally ask nu Datenautomaten by phone/imprint for product contact |
+| Preview is mistaken for official or public launch | Reputational/legal risk | Keep wording explicit: independent, unlisted, fixture-backed, no official status |
+| Legal placeholders remain visible | Public launch blocked | Use only targeted preview; finalize imprint/privacy before custom domain or public marketing |
 
 ## Required Clarifications Before Productive Data Integration
 
@@ -18,3 +21,5 @@
 - Permitted public venue fields.
 - Permitted use of OEHB, OOHV, and HLA visual assets.
 - Exact target season for pilot.
+- Named product recipient for OEHB/nuLiga review.
+- Whether first pitch should include PDF one-pager or only links/screenshots.

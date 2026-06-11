@@ -5,7 +5,7 @@
 Status: `partially-approved`
 
 Recorded: 2026-06-01
-Updated: 2026-06-05
+Updated: 2026-06-11
 
 Player-level publication is approved for reviewed adult public match reports in
 this prototype when the source is an allowlisted public OEHB or nuLiga match
@@ -19,6 +19,11 @@ names, player portrait links, source person IDs, officials, or referee sections.
 U18 player-level publication remains disabled. Contacts, phone numbers, email
 addresses, referee data, private data, portrait links, source person IDs, and
 unrelated personal fields remain excluded for all competitions.
+
+The current sales preview is unlisted and fixture-backed. It is not a public
+launch and not an official nuLiga, OEHB, OOHV, or HLA service. Legal imprint and
+privacy text placeholders must be replaced before any public launch or custom
+domain rollout.
 
 ## Required Approval Before Change
 

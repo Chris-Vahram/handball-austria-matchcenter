@@ -38,8 +38,12 @@ requested import and do not publish partially normalized data.
 
 Only sports fields may reach normalized output. Contacts, phone numbers, email
 addresses, referee data, private data, unrelated personal fields, player lists,
-and player personal data are excluded. Player-level publication profiles remain
-disabled while review is pending.
+source person IDs, and portrait links are excluded.
+
+Adult player-level publication is allowed only for separately reviewed public
+adult match-report demo records under the documented publication profile. U18
+player-level publication remains disabled until explicit privacy and legal
+approval exists.
 
 ## Rollback
 

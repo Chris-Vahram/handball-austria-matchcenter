@@ -4,9 +4,9 @@
 
 Der Prototyp zeigt, wie ein moderner, mobiler Matchcenter fuer oesterreichischen Handball aussehen kann. Ziel ist eine einfachere Oberflaeche fuer Spieler, Eltern, Trainer, Funktionaere und Fans.
 
-Preview: https://handball-austria-matchcenter-1u2sqe7zy-chris-vahrams-projects.vercel.app/pitch
+Preview: https://handball-austria-matchcenter-k1il6x1uu-chris-vahrams-projects.vercel.app/pitch
 
-Demo-Flow: https://handball-austria-matchcenter-1u2sqe7zy-chris-vahrams-projects.vercel.app/demo
+Demo-Flow: https://handball-austria-matchcenter-k1il6x1uu-chris-vahrams-projects.vercel.app/demo
 
 ## Problem
 

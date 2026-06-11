@@ -20,8 +20,20 @@ traceable, and independent from an unapproved extraction mechanism.
 
 ## Excluded Data Fields
 
+- U18 player-level statistics unless separately approved.
 - Player lists, private contacts, phone numbers, email addresses, referee data,
-  and personal details.
+  source person IDs, player portrait links, and unrelated personal details.
+
+## Conditionally Allowed Fields
+
+- Approved adult player-level public match-report sports statistics may be used
+  only for reviewed adult report demo records and only within the documented
+  publication profile.
+- Allowed adult player fields are limited to display name, shirt number, team
+  context, goals, seven-metre summary, card counts, and two-minute penalty
+  count.
+- Public match-flow events may show clock, action type, team context, and score;
+  they must not expose player identity in the timeline.
 
 ## Productive Integration Preference
 
@@ -49,3 +61,10 @@ timestamp, and import mode such as `manual-demo`, `official-export`, or
   or adjacent contact and personal fields.
 - nuPortalRS documentation describes a REST interface. Austria-specific access,
   contract terms, and authorization remain open.
+
+## Current Sales Preview
+
+- The public Vercel preview reads committed reviewed demo fixtures only.
+- `data/import-cache/` remains ignored and is not a runtime dependency.
+- The preview is not live data and must not be presented as official nuLiga,
+  OEHB, OOHV, or HLA output.

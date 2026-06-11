@@ -61,13 +61,22 @@ reusable across routes.
 
 ```text
 /
+/pitch
+/demo
 /bewerbe
+/bewerbe/hla-challenge
+/bewerbe/hla-challenge/phasen/[phaseSlug]
 /bewerbe/[competitionSlug]
 /bewerbe/[competitionSlug]/spielplan
 /bewerbe/[competitionSlug]/tabelle
+/spiele/[matchId]
 /teams/[teamSlug]
 /vereine/[clubSlug]
 /suche
+/impressum
+/datenschutz
+/api/kalender/spiel/[matchId]
+/api/kalender/team/[teamId]
 ```
 
 ## 5. Domain Model
@@ -112,7 +121,8 @@ Future approved integration shall implement same adapter contract.
 - Primary components: `AppShell`, `Header`, `MobileBottomNav`,
   `CompetitionSelector`, `MatchCard`, `MatchStatusBadge`, `StandingsTable`,
   `ScheduleFilter`, `SearchCommand`, `EmptyState`, `ErrorState`,
-  `LoadingSkeleton`, and `VenueInfo`.
+  `LoadingSkeleton`, `VenueInfo`, `FavoriteToggle`, `PersonalizedStart`,
+  `ShareButton`, and sales pitch cards.
 - Dark mode is deferred.
 - Use original neutral assets until brand-asset permissions are clarified.
 
@@ -142,8 +152,14 @@ Future approved integration shall implement same adapter contract.
 
 ## 12. Deployment
 
-Local first. Later deployment target can be selected after pilot review. Use
-environment-specific configuration only when productive integration starts.
+- Local development uses `npm run dev` or `npm run start` after build.
+- Sales preview deployment target is Vercel.
+- Current reviewed preview is an unlisted Vercel preview:
+  `https://handball-austria-matchcenter-k1il6x1uu-chris-vahrams-projects.vercel.app`.
+- Sitemap derives preview host from `VERCEL_URL` when
+  `NEXT_PUBLIC_SITE_URL` is not configured.
+- Custom domain remains blocked until legal owner details and privacy text are
+  finalized.
 
 ## 13. Future Integration
 
@@ -151,3 +167,5 @@ environment-specific configuration only when productive integration starts.
 - Possible: authorized nuPortalRS integration if available for Austrian tenant.
 - Avoid scraping unless explicitly reviewed and approved.
 - Add calendar export as a separate OpenSpec change.
+- Current app uses reviewed fixture-backed demo data only; no productive
+  synchronization job runs in the sales preview.

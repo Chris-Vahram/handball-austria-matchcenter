@@ -11,14 +11,16 @@ launch.
 
 1. Complete the targeted-preview section in
    `openspec/docs/sales-demo-prelaunch-checklist.md`.
-2. Use the current Vercel preview URLs:
+2. Review the contact plan in
+   `openspec/docs/sales-outreach-contact-plan.md`.
+3. Use the current Vercel preview URLs:
    - Pitch: `https://handball-austria-matchcenter-k1il6x1uu-chris-vahrams-projects.vercel.app/pitch`
    - Demo: `https://handball-austria-matchcenter-k1il6x1uu-chris-vahrams-projects.vercel.app/demo`
-3. Send first through the verified OEHB office contact path, optionally CC the
+4. Send first through the verified OEHB office contact path, optionally CC the
    OEHB competition coordinator. Use the nu Datenautomaten imprint/phone path
    only after confirming the right product recipient.
-4. Keep the initial message short and request a 20-minute product discussion.
-5. Attach at most three screenshots:
+5. Keep the initial message short and request a 20-minute product discussion.
+6. Attach at most three screenshots:
    `output/playwright/pitch-mobile.png`,
    `output/playwright/home-mobile.png`, and
    `output/playwright/report-mobile.png`.

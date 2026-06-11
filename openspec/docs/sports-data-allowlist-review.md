@@ -1,6 +1,6 @@
 # Sports Data Allowlist Review
 
-Reviewed: 2026-06-01
+Reviewed: 2026-06-11
 
 ## Normalized and Displayed Fields
 
@@ -30,3 +30,11 @@ Reviewed: 2026-06-01
 - Player lists and player personal data
 - Player portrait links and source person IDs
 - Login-protected data
+
+## Runtime Boundary
+
+- The sales preview displays committed reviewed fixture data.
+- Ignored raw snapshots and normalized importer cache files under
+  `data/import-cache/` are not shipped as app runtime data.
+- Public match-report URLs may be linked as provenance, but login-protected
+  pages and broader scraping remain out of scope.

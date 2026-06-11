@@ -17,10 +17,10 @@ Mir ist aufgefallen, dass viele Spieler, Eltern, Trainer und Funktionaere im All
 Der Prototyp zeigt diese Informationen mobile-first und deutlich einfacher strukturiert:
 
 Pitch-Seite:
-https://handball-austria-matchcenter-1u2sqe7zy-chris-vahrams-projects.vercel.app/pitch
+https://handball-austria-matchcenter-k1il6x1uu-chris-vahrams-projects.vercel.app/pitch
 
 Gefuehrter Demo-Flow:
-https://handball-austria-matchcenter-1u2sqe7zy-chris-vahrams-projects.vercel.app/demo
+https://handball-austria-matchcenter-k1il6x1uu-chris-vahrams-projects.vercel.app/demo
 
 Wichtig: Das ist kein offizieller Launch und keine offizielle nuLiga-Anwendung. Der Prototyp ist bewusst als kontrollierte Preview gebaut. Er verwendet keine Kontakte, Telefonnummern, E-Mail-Adressen, Schiedsrichterdaten oder Login-geschuetzten Inhalte. Fuer einen produktiven Einsatz waere ein offiziell abgestimmter Datenzugang und eine rechtliche Pruefung notwendig.
 
