@@ -1,0 +1,5 @@
+import { PageHeader, Tile } from "@ui/ui";
+
+export default function ImprintPage() {
+  return <><PageHeader eyebrow="Rechtliches" title="Impressum" description="Angaben für den unabhängigen Handball-Matchcenter Pilot." /><Tile className="mt-6 space-y-4 text-sm leading-6 text-ink-700"><p className="rounded-2xl bg-warn-soft p-3 font-bold text-warn">[Vor öffentlichem Launch ergänzen]</p><div><h2 className="font-display font-extrabold tracking-tight text-ink">Medieninhaber und Betreiber</h2><p className="mt-1">[Vor öffentlichem Launch ergänzen]</p></div><div><h2 className="font-display font-extrabold tracking-tight text-ink">Kontakt</h2><p className="mt-1">[Vor öffentlichem Launch ergänzen]</p></div><div><h2 className="font-display font-extrabold tracking-tight text-ink">Hinweis</h2><p className="mt-1">Diese Website ist ein unabhängiger Pilot und keine offizielle ÖHB- oder nuLiga-Anwendung. Vor einem öffentlichen Deployment müssen alle Betreiberangaben geprüft und finalisiert werden.</p></div></Tile></>;
+}

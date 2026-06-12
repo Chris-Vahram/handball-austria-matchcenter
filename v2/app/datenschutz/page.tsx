@@ -1,0 +1,5 @@
+import { PageHeader, Tile } from "@ui/ui";
+
+export default function PrivacyPage() {
+  return <><PageHeader eyebrow="Rechtliches" title="Datenschutz" description="Datenschutzhinweise für den unabhängigen Handball-Matchcenter Pilot." /><Tile className="mt-6 space-y-4 text-sm leading-6 text-ink-700"><p className="rounded-2xl bg-warn-soft p-3 font-bold text-warn">[Vor öffentlichem Launch ergänzen]</p><div><h2 className="font-display font-extrabold tracking-tight text-ink">Aktueller Demo-Stand</h2><p className="mt-1">Gefolgte Teams werden ausschließlich lokal im Browser als öffentliche IDs gespeichert. Es gibt kein Benutzerkonto, kein Feedback-Formular, keine eingebettete Karte und keine nicht notwendigen Tracking-Skripte.</p></div><div><h2 className="font-display font-extrabold tracking-tight text-ink">Vor öffentlichem Deployment</h2><p className="mt-1">Verantwortliche Stelle, Hostinganbieter, Rechtsgrundlagen und finaler Datenschutzhinweis müssen geprüft und ergänzt werden.</p></div></Tile></>;
+}
