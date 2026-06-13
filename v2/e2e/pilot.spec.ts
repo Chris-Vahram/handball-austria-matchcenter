@@ -109,6 +109,18 @@ test("team page shows widget board and reports", async ({ page }) => {
   await expect(page.getByText("Formkurve")).toBeVisible();
   await expect(page.getByText("Tabelle").first()).toBeVisible();
   await expect(page.getByRole("heading", { name: "Spielberichte" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Top-Torschützen" })).toBeVisible();
+});
+
+test("competition top scorers list shows released player goals", async ({ page }) => {
+  await page.goto("/bewerbe/oohv-maenner-landesliga/torschuetzen");
+  await expect(page.getByRole("heading", { name: "Torschützen" })).toBeVisible();
+  await expect(page.getByText("PETRISIC, David")).toBeVisible();
+});
+
+test("u18 competition keeps player scorers gated", async ({ page }) => {
+  await page.goto("/bewerbe/oohv-mu18-grunddurchgang/torschuetzen");
+  await expect(page.getByRole("heading", { name: /noch nicht freigegeben/ })).toBeVisible();
 });
 
 test("edelweiss traun club context aggregates aliases and matches", async ({ page }) => {

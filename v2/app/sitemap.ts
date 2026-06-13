@@ -5,6 +5,6 @@ const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? (process.env.VERCEL_URL ? `h
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = ["/", "/entdecken", "/pitch", "/demo", "/bewerbe", "/suche", "/impressum", "/datenschutz"];
-  const competitionRoutes = data.competitions.flatMap((competition) => [`/bewerbe/${competition.slug}`, `/bewerbe/${competition.slug}/spielplan`, `/bewerbe/${competition.slug}/tabelle`]);
+  const competitionRoutes = data.competitions.flatMap((competition) => [`/bewerbe/${competition.slug}`, `/bewerbe/${competition.slug}/spielplan`, `/bewerbe/${competition.slug}/tabelle`, `/bewerbe/${competition.slug}/torschuetzen`]);
   return [...staticRoutes, ...competitionRoutes].map((route) => ({ url: `${baseUrl}${route}`, changeFrequency: "daily" as const }));
 }
