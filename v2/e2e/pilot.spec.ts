@@ -123,6 +123,20 @@ test("u18 competition keeps player scorers gated", async ({ page }) => {
   await expect(page.getByRole("heading", { name: /noch nicht freigegeben/ })).toBeVisible();
 });
 
+test("player profile shows season scores and links from the scorers list", async ({ page }) => {
+  await page.goto("/bewerbe/oohv-maenner-landesliga/torschuetzen");
+  await page.getByRole("link", { name: /PETRISIC, David/ }).first().click();
+  await expect(page).toHaveURL(/\/spieler\//);
+  await expect(page.getByRole("heading", { name: "PETRISIC, David" })).toBeVisible();
+  await expect(page.getByText("Tore").first()).toBeVisible();
+  await expect(page.getByText("Spiele").first()).toBeVisible();
+});
+
+test("unknown player slug shows the not-found page", async ({ page }) => {
+  await page.goto("/spieler/gibt-es-nicht-99");
+  await expect(page.getByRole("heading", { name: "Seite nicht gefunden" })).toBeVisible();
+});
+
 test("edelweiss traun club context aggregates aliases and matches", async ({ page }) => {
   await page.goto("/suche?q=Konstant%20Traun");
   await page.getByRole("link", { name: /Verein[\s\S]*Sportunion EDELWEISS Linz \/ SK Traun/ }).first().click();

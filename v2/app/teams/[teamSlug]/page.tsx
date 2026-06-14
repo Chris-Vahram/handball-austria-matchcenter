@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { data, standingsForCompetition, teamInsights, teamName, venueName } from "@/data/query";
-import { topScorersForTeam } from "@/data/player-stats";
+import { playerSlug, topScorersForTeam } from "@/data/player-stats";
 import { teamVars } from "@/lib/team-color";
 import { ArrowIcon } from "@ui/icons";
 import { FavoriteToggle } from "@ui/favorite-toggle";
@@ -34,7 +34,7 @@ export default async function TeamPage({ params }: { params: Promise<{ teamSlug:
       <div className="md:col-span-2"><QuickLinksTile teamSlug={team.slug} teamId={team.id} venue={insights.nextMatch ? venueName(insights.nextMatch.venueId) : undefined} /></div>
     </section>
 
-    {topScorers.length > 0 && <section><div className="mb-4 flex items-end justify-between gap-3"><h2 className="section-title">Top-Torschützen</h2>{insights.standingsCompetition && <Link className="text-sm font-bold text-team" href={`/bewerbe/${insights.standingsCompetition.slug}/torschuetzen`}>Ganze Liste →</Link>}</div><Tile className="divide-y divide-line p-0">{topScorers.map((scorer, index) => <div className="flex items-center gap-3 px-4 py-3" key={scorer.ref}><span className="num w-5 text-center font-extrabold text-muted">{index + 1}</span><span className="min-w-0 flex-1 truncate text-sm font-semibold text-ink">{index === 0 && <span aria-hidden="true" className="mr-1 text-team">★</span>}{scorer.displayLabel}</span><span className="num shrink-0 text-sm font-extrabold text-team">{scorer.goals} <span className="text-[0.7rem] font-bold text-muted">Tore</span></span></div>)}</Tile></section>}
+    {topScorers.length > 0 && <section><div className="mb-4 flex items-end justify-between gap-3"><h2 className="section-title">Top-Torschützen</h2>{insights.standingsCompetition && <Link className="text-sm font-bold text-team" href={`/bewerbe/${insights.standingsCompetition.slug}/torschuetzen`}>Ganze Liste →</Link>}</div><Tile className="divide-y divide-line p-0">{topScorers.map((scorer, index) => <div className="flex items-center gap-3 px-4 py-3" key={scorer.ref}><span className="num w-5 text-center font-extrabold text-muted">{index + 1}</span><Link className="min-w-0 flex-1 truncate text-sm font-semibold text-ink hover:text-team" href={`/spieler/${playerSlug(scorer.displayLabel, scorer.shirtNumber)}`}>{index === 0 && <span aria-hidden="true" className="mr-1 text-team">★</span>}{scorer.displayLabel}</Link><span className="num shrink-0 text-sm font-extrabold text-team">{scorer.goals} <span className="text-[0.7rem] font-bold text-muted">Tore</span></span></div>)}</Tile></section>}
 
     {insights.reportMatches.length > 0 && <section><h2 className="section-title mb-4">Spielberichte</h2><div className="grid gap-3 md:grid-cols-2">{insights.reportMatches.map((match) => <Link className="tile-interactive group flex items-center justify-between gap-3 p-4" href={`/spiele/${match.id}`} key={match.id}><span className="flex min-w-0 items-center gap-2 text-sm font-bold text-ink"><TeamAvatar name={teamName(match.homeTeamId)} teamId={match.homeTeamId} className="size-6 text-[0.5rem]" /><span className="truncate">{teamName(match.homeTeamId)} : {teamName(match.awayTeamId)}</span></span><ArrowIcon className="size-4 shrink-0 text-team" /></Link>)}</div></section>}
 

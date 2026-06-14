@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { teamName } from "@/data/query";
-import { sevenMetreQuota, type PlayerScorer } from "@/data/player-stats";
+import { playerSlug, sevenMetreQuota, type PlayerScorer } from "@/data/player-stats";
 import { TeamAvatar, Tile } from "@ui/ui";
 
 export function ScorerTable({ rows, showTeam = true }: { rows: PlayerScorer[]; showTeam?: boolean }) {
@@ -14,7 +14,7 @@ export function ScorerTable({ rows, showTeam = true }: { rows: PlayerScorer[]; s
         const quota = sevenMetreQuota(row.sevenMetreGoals, row.sevenMetreAttempts);
         return <tr className={index === 0 ? "team-soft-bg" : undefined} key={row.ref}>
           <td className="num px-3 py-3 font-extrabold text-muted">{index + 1}</td>
-          <td className="px-2 py-3"><span className="flex items-center gap-1.5 font-semibold text-ink">{index === 0 && <span aria-hidden="true" className="text-team">★</span>}{row.displayLabel}</span></td>
+          <td className="px-2 py-3"><Link className="flex items-center gap-1.5 font-semibold text-ink hover:text-team" href={`/spieler/${playerSlug(row.displayLabel, row.shirtNumber)}`}>{index === 0 && <span aria-hidden="true" className="text-team">★</span>}{row.displayLabel}</Link></td>
           {showTeam && <td className="px-2 py-3"><Link className="flex items-center gap-1.5 text-xs font-bold text-muted hover:text-team" href={`/teams/${row.teamId}`}><TeamAvatar name={teamName(row.teamId)} teamId={row.teamId} className="size-5 text-[0.45rem]" /><span className="hidden sm:inline">{teamName(row.teamId)}</span></Link></td>}
           <td className="num px-2 py-3 text-right text-muted">{row.matches}</td>
           <td className="num px-2 py-3 text-right font-extrabold text-team">{row.goals}</td>
