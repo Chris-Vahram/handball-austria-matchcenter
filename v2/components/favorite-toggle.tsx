@@ -5,7 +5,7 @@ import { isFavorite, readFavorites, toggleFavorite, type FavoriteKind } from "@/
 import { setActiveClub, notifyFollowChange } from "@ui/team-theme";
 import { StarIcon } from "@ui/icons";
 
-const labels = { competition: "Bewerb", team: "Team", club: "Verein" };
+const labels = { competition: "Bewerb", team: "Team", club: "Verein", player: "Spieler" };
 
 export function FavoriteToggle({ kind, id }: { kind: FavoriteKind; id: string }) {
   const [selected, setSelected] = useState(false);

@@ -3,13 +3,16 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
-import { data, sortMatches } from "@/data/query";
+import { data, sortMatches, teamInsights, teamName } from "@/data/query";
+import { getPlayerProfile } from "@/data/player-stats";
 import { readFavorites, type Favorites } from "@/lib/favorites";
 import { readActiveClub, setActiveClub } from "@ui/team-theme";
 import { MatchList, SectionHeader, TeamAvatar } from "@ui/ui";
 import { ClubSummary } from "@ui/club-summary";
 import { FollowStar } from "@ui/follow-star";
-import { SearchIcon, CompassIcon } from "@ui/icons";
+import { SearchIcon, CompassIcon, ArrowIcon } from "@ui/icons";
+
+const shortDate = (iso: string) => new Intl.DateTimeFormat("de-AT", { weekday: "short", day: "2-digit", month: "short", hour: "2-digit", minute: "2-digit", timeZone: "Europe/Vienna" }).format(new Date(iso));
 
 const greeting = () => {
   const hour = new Date().getHours();
@@ -57,6 +60,7 @@ export function Home() {
   if (!favorites) return null;
   const followedClubs = favorites.club.map((id) => data.clubs.find((club) => club.id === id)).filter((club): club is (typeof data.clubs)[number] => Boolean(club));
   const active = followedClubs.find((club) => club.id === activeClub) ?? followedClubs[0];
+  const followedPlayers = favorites.player.map((slug) => getPlayerProfile(slug)).filter((profile): profile is NonNullable<typeof profile> => Boolean(profile));
 
   return <div className="space-y-8">
     <header className="space-y-4">
@@ -74,6 +78,16 @@ export function Home() {
       <p className="mt-2 max-w-xl text-sm leading-6 text-muted">Suche dein Team oder folge direkt aus den aktuellen Spielen — danach zeigt dir die Startseite die nächsten Spiele deiner Vereine über alle Bewerbe hinweg. Gespeichert wird nur lokal.</p>
       {suggestionClubs.length > 0 && <div className="mt-4"><p className="mb-2 text-[0.7rem] font-extrabold uppercase tracking-wider text-muted">Bald im Einsatz</p><div className="grid gap-2 sm:grid-cols-2">{suggestionClubs.map((club) => <div className="flex items-center gap-3 rounded-2xl bg-surface p-3" key={club.id}><TeamAvatar name={club.name} clubId={club.id} className="size-9 text-xs" /><span className="min-w-0 flex-1 truncate text-sm font-bold text-ink">{club.name}</span><FollowStar clubId={club.id} name={club.name} /></div>)}</div></div>}
     </section>}
+
+    {followedPlayers.length > 0 && <section><SectionHeader eyebrow="Folge deinen Spielern" title="Deine Spieler" /><div className="grid gap-3 md:grid-cols-2">{followedPlayers.map((profile) => {
+      const next = teamInsights(profile.teamId).nextMatch;
+      const opponent = next ? (next.homeTeamId === profile.teamId ? next.awayTeamId : next.homeTeamId) : undefined;
+      return <Link className="tile-interactive group flex items-center gap-3 p-4" href={`/spieler/${profile.slug}`} key={profile.slug}>
+        <TeamAvatar name={profile.displayLabel} teamId={profile.teamId} className="size-10 text-xs" />
+        <div className="min-w-0 flex-1"><span className="block truncate text-sm font-bold text-ink">{profile.displayLabel}</span><span className="block truncate text-xs text-muted">{teamName(profile.teamId)}{next && opponent ? ` · ${shortDate(next.startsAt)} vs ${teamName(opponent)}` : ` · ${profile.totals.goals} Saisontore`}</span></div>
+        <ArrowIcon className="size-4 shrink-0 text-faint transition group-hover:translate-x-0.5 group-hover:text-team" />
+      </Link>;
+    })}</div></section>}
 
     <section><SectionHeader eyebrow="Über alle Bewerbe" title="Aktuelle Spiele" action={<Link className="flex items-center gap-1 text-sm font-bold text-muted hover:text-team" href="/entdecken"><CompassIcon className="size-4" />Entdecken</Link>} /><MatchList matches={feed} showFollow /></section>
   </div>;

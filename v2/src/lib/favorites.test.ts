@@ -6,12 +6,12 @@ describe("favorites", () => {
     let value = "";
     const storage = { getItem: () => value, setItem: (_key: string, next: string) => { value = next; } };
     expect(toggleFavorite(storage, "team", "hc-urfahr").team).toEqual(["hc-urfahr"]);
-    expect(JSON.parse(value)).toEqual({ competition: [], team: ["hc-urfahr"], club: [] });
+    expect(JSON.parse(value)).toEqual({ competition: [], team: ["hc-urfahr"], club: [], player: [] });
     expect(toggleFavorite(storage, "team", "Not Allowed!").team).toEqual(["hc-urfahr"]);
   });
 
   it("sanitizes persisted unknown values", () => {
-    expect(parseFavorites(JSON.stringify({ team: ["hc-urfahr", "Bad Value", 7], contact: ["private"] }))).toEqual({ competition: [], team: ["hc-urfahr"], club: [] });
+    expect(parseFavorites(JSON.stringify({ team: ["hc-urfahr", "Bad Value", 7], contact: ["private"] }))).toEqual({ competition: [], team: ["hc-urfahr"], club: [], player: [] });
   });
 
   it("fails gracefully when storage is unavailable", () => {

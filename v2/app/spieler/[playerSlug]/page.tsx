@@ -4,6 +4,7 @@ import { byId, data, teamName, venueName } from "@/data/query";
 import { getPlayerProfile, sevenMetreQuota } from "@/data/player-stats";
 import { teamVars } from "@/lib/team-color";
 import { Metadata, Stat, Tile, TeamAvatar, teamInitials } from "@ui/ui";
+import { PlayerFollowButton } from "@ui/player-follow-button";
 import { ArrowIcon } from "@ui/icons";
 
 const fmtDate = (iso: string) => new Intl.DateTimeFormat("de-AT", { day: "2-digit", month: "short", year: "numeric", timeZone: "Europe/Vienna" }).format(new Date(iso));
@@ -26,6 +27,7 @@ export default async function PlayerProfilePage({ params }: { params: Promise<{ 
         </div>
       </div>
       <div className="mt-4 flex flex-wrap gap-2">{competitions.map((competition) => <Link className="chip hover:text-team" href={`/bewerbe/${competition!.slug}/torschuetzen`} key={competition!.id}>{competition!.name}</Link>)}</div>
+      <div className="mt-5"><PlayerFollowButton slug={profile.slug} /></div>
     </header>
 
     <section className="grid grid-cols-2 gap-3 sm:grid-cols-4">

@@ -1,10 +1,10 @@
 export const FAVORITES_STORAGE_KEY = "handball-matchcenter:favorites:v1";
-export const favoriteKinds = ["competition", "team", "club"] as const;
+export const favoriteKinds = ["competition", "team", "club", "player"] as const;
 export type FavoriteKind = (typeof favoriteKinds)[number];
 export type Favorites = Record<FavoriteKind, string[]>;
 export type StorageLike = Pick<Storage, "getItem" | "setItem">;
 
-export const emptyFavorites = (): Favorites => ({ competition: [], team: [], club: [] });
+export const emptyFavorites = (): Favorites => ({ competition: [], team: [], club: [], player: [] });
 
 const isPublicId = (value: unknown): value is string => typeof value === "string" && /^[a-z0-9-]+$/.test(value);
 

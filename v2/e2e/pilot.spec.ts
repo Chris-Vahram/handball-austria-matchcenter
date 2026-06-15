@@ -137,6 +137,14 @@ test("unknown player slug shows the not-found page", async ({ page }) => {
   await expect(page.getByRole("heading", { name: "Seite nicht gefunden" })).toBeVisible();
 });
 
+test("following a player surfaces them on the home", async ({ page }) => {
+  await page.goto("/spieler/petrisic-david-73");
+  await page.getByRole("button", { name: "Spieler folgen" }).click();
+  await page.goto("/");
+  await expect(page.getByRole("heading", { name: "Deine Spieler" })).toBeVisible();
+  await expect(page.getByText("PETRISIC, David")).toBeVisible();
+});
+
 test("edelweiss traun club context aggregates aliases and matches", async ({ page }) => {
   await page.goto("/suche?q=Konstant%20Traun");
   await page.getByRole("link", { name: /Verein[\s\S]*Sportunion EDELWEISS Linz \/ SK Traun/ }).first().click();
