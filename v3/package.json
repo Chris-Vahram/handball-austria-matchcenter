@@ -1,0 +1,37 @@
+{
+  "name": "handball-matchcenter-v3",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3030",
+    "start": "next start -p 3030",
+    "build": "next build",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "import": "tsx src/importer/cli.ts",
+    "test:e2e": "PLAYWRIGHT_BROWSERS_PATH=.playwright playwright test",
+    "playwright:install": "PLAYWRIGHT_BROWSERS_PATH=.playwright playwright install chromium"
+  },
+  "dependencies": {
+    "next": "^15.5.16",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^22.18.0",
+    "@types/react": "^18.3.24",
+    "@types/react-dom": "^18.3.7",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^15.5.16",
+    "node-html-parser": "^6.1.13",
+    "tsx": "^4.19.2",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  },
+  "overrides": {
+    "postcss": "^8.5.23"
+  }
+}

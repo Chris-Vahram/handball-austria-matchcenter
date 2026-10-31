@@ -1,0 +1,65 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HLA Challenge West – Matchcenter</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--red:#C8102E;--red-soft:#FCE8EB;--ink:#15171A;--mute:#5E636B;--line:#E4E6EA;--bg:#F3F4F6;--w:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:390px;min-height:844px;background:var(--bg);color:var(--ink);font-family:Barlow,sans-serif;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
+.app{background:var(--w);border-top:4px solid var(--red)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 16px}
+.brand{font-family:"Barlow Condensed";font-weight:800;font-size:22px;letter-spacing:.01em;text-transform:uppercase}
+.brand span{color:var(--red)}
+.bar button{all:unset;font-size:14px;font-weight:600;color:var(--mute)}
+.comp{display:grid;grid-template-columns:1fr 1fr;margin:0 16px 14px;border:1.5px solid var(--ink);border-radius:6px;overflow:hidden}
+.comp a{font-size:14px;font-weight:600;padding:9px 8px;text-align:center;color:var(--ink);white-space:nowrap;text-decoration:none}
+.comp a.on{background:var(--ink);color:#fff}
+.title{padding:4px 16px 12px}
+.title h1{font-family:"Barlow Condensed";font-weight:800;font-size:30px;line-height:1;text-transform:uppercase}
+.title p{font-size:14px;color:var(--mute);margin-top:4px}
+.tabs{display:flex;border-bottom:1px solid var(--line);padding:0 16px;gap:22px;position:sticky;top:0;background:var(--w)}
+.tabs a{font-size:15px;font-weight:600;color:var(--mute);padding:10px 0 11px;text-decoration:none}
+.tabs a.on{color:var(--ink);box-shadow:inset 0 -3px var(--red)}
+table{width:100%;border-collapse:collapse;background:var(--w)}
+th{font-size:12px;font-weight:600;color:var(--mute);padding:10px 2px 6px;text-align:right}
+th.t{text-align:left;padding-left:4px}th:first-child{padding-left:12px}th:last-child{padding-right:12px}
+td{height:46px;border-top:1px solid var(--line);text-align:right;font-size:15px;padding:0 2px}
+td:first-child{padding-left:12px;width:34px;text-align:left;font-weight:700}
+td:last-child{padding-right:12px;width:42px;font-family:"Barlow Condensed";font-weight:800;font-size:20px}
+td.t{text-align:left;font-weight:600;padding-left:4px;white-space:nowrap}
+td.n{width:22px;color:var(--mute)}td.g{width:64px}td.d{width:36px}
+tr.me td{background:var(--red-soft)}tr.me td.t{color:var(--red);font-weight:700}
+tr.cut td{border-bottom:2px solid var(--ink)}
+.legend{display:flex;justify-content:space-between;font-size:12px;color:var(--mute);padding:8px 12px 14px;background:var(--w)}
+.sec{margin-top:8px;background:var(--w)}
+.sec h2{font-family:"Barlow Condensed";font-weight:800;font-size:22px;text-transform:uppercase;padding:14px 16px 8px}
+.round{display:flex;align-items:center;justify-content:space-between;padding:0 8px 10px}
+.round button{all:unset;width:40px;height:40px;display:grid;place-items:center;border-radius:50%;background:var(--bg)}
+.round strong{font-size:15px;font-weight:700;text-align:center}.round small{display:block;font-size:12px;color:var(--mute);font-weight:500}
+.day{font-size:12px;font-weight:700;color:var(--mute);background:var(--bg);padding:6px 16px}
+.m{display:grid;grid-template-columns:52px 1fr auto;gap:0 10px;padding:10px 16px;border-top:1px solid var(--line);align-items:center;text-decoration:none;color:inherit}
+.m time{font-size:13px;color:var(--mute);grid-row:span 2}
+.m .tm{font-size:15px;line-height:22px}.m .sc{font-size:16px;line-height:22px;font-weight:600;text-align:right}
+.m .win{font-weight:700}.m .me{color:var(--red);font-weight:700}
+.m .live{grid-row:span 2;font-size:13px;font-weight:700;color:var(--red)}
+.m .rep{grid-column:2/-1;font-size:12px;color:var(--mute);margin-top:2px}
+.foot{display:grid;gap:12px;padding:16px 16px 28px;font-size:12px;color:var(--mute)}
+.foot a{text-align:center;font-size:15px;font-weight:600;color:var(--ink);border:1.5px solid var(--ink);border-radius:6px;padding:8px 12px;text-decoration:none}
+td.t{white-space:normal!important;line-height:18px;font-size:14px;padding-top:7px;padding-bottom:7px}td.sun{width:48px;color:var(--mute)}td.g{width:60px}</style></head><body><div class="app">
+<div class="bar"><span class="brand">Match<span>center</span></span><button>Suchen</button></div>
+<nav class="comp"><a class="on" href="#">HLA Challenge West</a><a href="#">Landesliga OÖ</a></nav>
+<div class="title"><h1>HLA Challenge West</h1><p>Hauptrunde 2026/27 · Stand 31.10., 20:15</p></div>
+<nav class="tabs"><a class="on" href="#">Tabelle</a><a href="#">Spielplan</a><a href="#">Torschützen</a></nav>
+<table><thead><tr><th>#</th><th class="t">Team</th><th>Sp</th><th>S-U-N</th><th>Tore</th><th>+/−</th><th>Pkt</th></tr></thead><tbody><tr><td>1</td><td class="t">HSC Wels</td><td class="n">5</td><td class="sun">5-0-0</td><td class="g">197:134</td><td class="d">+63</td><td>10</td></tr><tr><td>2</td><td class="t">SMC Innsbruck Handball Tirol</td><td class="n">5</td><td class="sun">3-0-2</td><td class="g">145:123</td><td class="d">+22</td><td>6</td></tr><tr><td>3</td><td class="t">SG HC Linz AG/Neue Heimat FT</td><td class="n">6</td><td class="sun">3-0-3</td><td class="g">181:172</td><td class="d">+9</td><td>6</td></tr><tr><td>4</td><td class="t">Bregenz Handball FT</td><td class="n">6</td><td class="sun">3-0-3</td><td class="g">180:185</td><td class="d">−5</td><td>6</td></tr><tr><td>5</td><td class="t">UHC Salzburg</td><td class="n">6</td><td class="sun">3-0-3</td><td class="g">158:163</td><td class="d">−5</td><td>6</td></tr><tr><td>6</td><td class="t">Alpla HC Hard FT</td><td class="n">6</td><td class="sun">3-0-3</td><td class="g">165:184</td><td class="d">−19</td><td>6</td></tr><tr class="me"><td>7</td><td class="t">SK Konstant Traun / Edelweiss</td><td class="n">6</td><td class="sun">3-0-3</td><td class="g">170:191</td><td class="d">−21</td><td>6</td></tr><tr><td>8</td><td class="t">Sparkasse Schwaz Handball Tirol FT</td><td class="n">6</td><td class="sun">0-0-6</td><td class="g">155:199</td><td class="d">−44</td><td>0</td></tr></tbody></table>
+<div class="legend"><span>S-U-N = Siege-Unentschieden-Niederlagen</span></div>
+</div>
+<section class="sec"><h2>Spielplan</h2>
+<div class="round"><button aria-label="Vorherige Runde"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button><strong>Runde 6<small>31.10. – 01.11.2026</small></strong><button aria-label="Nächste Runde"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button></div>
+<div class="day">Samstag, 31. Oktober</div>
+<a class="m" href="#"><time>16:15</time><span class="tm win">Alpla HC Hard FT</span><span class="sc win">35</span><span class="tm">UHC Salzburg</span><span class="sc">33</span></a>
+<a class="m" href="#"><time>17:00</time><span class="tm">Sparkasse Schwaz Handball Tirol FT</span><span class="sc">28</span><span class="tm win">SG HC Linz AG/Neue Heimat FT</span><span class="sc win">31</span><span class="rep">Bericht noch nicht genehmigt</span></a>
+<a class="m" href="#"><time>18:00</time><span class="tm win">Bregenz Handball FT</span><span class="sc win">37</span><span class="tm me">SK Konstant Traun / Edelweiss</span><span class="sc">35</span></a>
+<div class="day">Sonntag, 1. November</div>
+<a class="m" href="#"><time>16:30</time><span class="tm">SMC Innsbruck Handball Tirol</span><span class="sc"></span><span class="tm">HSC Wels</span><span class="sc"></span></a>
+<div class="foot"><a href="#">Tabelle &amp; Spielplan als PDF</a><span>Quelle: nuLiga · unabhängiger Prototyp, kein Angebot von ÖHB oder nuLiga</span></div>
+</section>
+</body></html>

@@ -1,0 +1,27 @@
+---
+version: 1
+slug: "v3-app-liga"
+primary_target: "v3/app/liga"
+related_targets: []
+---
+
+# Liga-Seite: Tabelle + Spielplan (v3)
+
+Scope: first v3 surface, one league page (HLA Challenge West Hauptrunde 26/27, OÖHV Landesliga LLM-GD 26/27). Mode: Operate. Mobile-first.
+Audience/job: players, coaches, fans check the standings and the round's results/schedule, mostly on the phone; then open a Spielbericht or the PDF.
+Constraints: PRODUCT.md (privacy, nuLiga-backed data only, full official team names, no abbreviations, no horizontal scrolling on 390px).
+Later surfaces: Spielbericht, Spielerstatistik, Tabelle/Spielplan-PDF inherit this world.
+
+## Direction contract
+
+THESIS: A real sports results site, built properly: the full table is the first thing you see, with real table semantics and full club names, the round's games below, red only where it means something. It refuses abstract art-worlds, card mosaics, pill tabs and the v2 look.
+
+OWN-WORLD: White ground #FFFFFF with section gaps on #F3F4F6, ink #15171A, secondary #5E636B, hairlines #E4E6EA. Austrian red #C8102E marks: the 4px top rule, the active tab underline, the brand's second half, the own team (row tint #FCE8EB + red name), live/today. On desktop (≥900px) sections sit as white panels with 8px radius on the #F3F4F6 field, so table and round column read as two work areas. Barlow for text and figures (tabular), Barlow Condensed 800 uppercase for headings and the Pkt column. Competition switch is a two-segment control (1.5px ink border, 6px radius); section tabs are underline tabs. Match rows in Flashscore form: home over away, score per line, winner bold.
+
+STORY: Open league → read the whole table, find your team in red → scroll to Spielplan, flip rounds → tap a played game for its Spielbericht → download Tabelle & Spielplan as PDF.
+
+FIRST VIEWPORT: Phone 390: red 4px rule; wordmark "Matchcenter" + search field "Team oder Spieler" (owner, 2026-10-31: "ja mach ein suchleiste wenn das die offene decisions war"); segmented HLA Challenge West | Landesliga OÖ; H1 league name (condensed uppercase 30px) with phase, season and "Stand" line; sticky tabs Tabelle / Spielplan / Torschützen; table # | Team (full name, wraps to max two lines) | Sp | S-U-N | Tore | +/− | Pkt, all 8 rows in view, own team tinted. Desktop: table ~2/3 left, current round schedule right column, same tokens.
+
+FORM: Category standard (canon), chosen by the owner after three rejected rounds; layout sketch .impeccable/mocks/decision/names-a.html (row variant A). Signature move: the own team carried in red across table, schedule, reports and scorer lists (pending report states stay neutral, never red), plus a round flipper that steps through the whole season. seed:f40ddc759b89d806
+
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance

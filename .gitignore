@@ -16,3 +16,7 @@ test-results
 data/import-cache/
 .vercel
 output/
+.impeccable/questions/
+.impeccable/hook.cache.json
+.impeccable/review/
+.DS_Store

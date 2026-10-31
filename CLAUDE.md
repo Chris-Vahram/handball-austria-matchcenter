@@ -24,6 +24,7 @@ Next.js, React, TypeScript, Tailwind CSS, Zod, Vitest, Playwright (ADR-001). Com
 - **Project-specific privacy rules (binding, status: partially-approved as of 2026-06-05)**:
   - Adult player-level stats OK only from allowlisted public match reports, fields limited to: display name, shirt number, team, goals, 7m summary, card counts, 2-min penalties.
   - U18 player-level publication: **disabled**, do not enable without a new documented/approved privacy decision.
+  - **v3 exception (ADR-005, owner decision 2026-10-31):** in adult competitions v3 shows player names of all teams as nuLiga publishes them; youth competitions stay off. Allowlist: ADR-004 "2026/27" section.
   - Never include contacts, phone numbers, emails, referee data, source-person IDs, or player portrait links.
 
 ## Data strategy (ADR-002, ADR-004 — do not change without explicit request)
