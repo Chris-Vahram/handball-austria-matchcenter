@@ -15,7 +15,7 @@
       "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingStatistics?displayType=playerYellowCards&championship=O%C3%96HV+26%2F27&group=218721",
       "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingStatistics?displayType=playerRedCards&championship=O%C3%96HV+26%2F27&group=218721"
     ],
-    "importedAt": "2026-10-31T21:53:08.270Z"
+    "importedAt": "2026-10-31T22:27:00.049Z"
   },
   "standings": [
     {
@@ -2413,7 +2413,7 @@
         "rank": 34,
         "name": "Weinmann, Lorenz",
         "club": "Sportunion Wels Handball",
-        "team": "HC Eferding",
+        "team": "HSC Wels",
         "value": 3,
         "games": 3
       },

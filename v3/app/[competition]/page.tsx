@@ -8,6 +8,9 @@ import { currentRound, roundsOf } from "@/lib/rounds";
 
 type Props = { params: Promise<{ competition: string }>; searchParams: Promise<{ runde?: string }> };
 
+// Re-render hourly so the "veraltet" marker ages with the snapshot.
+export const revalidate = 3600;
+
 export function generateStaticParams() {
   return COMPETITION_IDS.map((competition) => ({ competition }));
 }
@@ -37,7 +40,7 @@ export default async function LigaPage({ params, searchParams }: Props) {
           <>
             <section className="panel" id="tabelle" aria-labelledby="h-tabelle">
               <h2 className="section-title sr-only" id="h-tabelle">Tabelle</h2>
-              <Standings rows={data.standings} showcase={c.showcaseTeam} />
+              <Standings rows={data.standings} showcase={c.showcaseTeam} matches={data.matches} />
               <p className="legend">Tabelle nach Punktestand, wie auf nuLiga. Nach Saisonende entscheidet der direkte Vergleich.</p>
             </section>
             <section className="panel" id="spielplan" aria-labelledby="h-spielplan">

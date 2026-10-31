@@ -144,3 +144,32 @@ describe("rounds", () => {
     expect(out.map((m) => m.round)).toEqual([1, 2, 3, 3]);
   });
 });
+
+describe("hardening", () => {
+  it("rejects a report whose lineup lost a row", async () => {
+    const html = (await fixture("report-93135.html")).replace(/(<td>9<\/td>[\s\S]*?)<\/tr>/, "$1");
+    expect(() => parseReport(html, "93135")).toThrow(/lineup goals/);
+  });
+
+  it("rejects an empty schedule and a missing statistics table", async () => {
+    const schedule = await fixture("schedule.html");
+    const headerOnly = schedule.replace(/(<table class="result-set"[\s\S]*?<\/tr>)[\s\S]*?<\/table>/, "$1</table>");
+    expect(() => parseSchedule(headerOnly)).toThrow(/no matches/);
+    expect(() => parseStats("<html><body>Keine Daten</body></html>")).toThrow(/not found/);
+  });
+
+  it("refuses redirects", async () => {
+    const { createFetcher } = await import("./fetcher");
+    const get = createFetcher({ cacheDir: await mkdtemp(path.join(tmpdir(), "v3-redir-")), now: () => 0, sleep: async () => {},
+      transport: async () => { throw new Error("Redirect refused (302)"); } });
+    await expect(get(sourceUrls.groupPage("hla-challenge-west"))).rejects.toThrow(/3 attempts/);
+  });
+
+  it("does not resolve ambiguous names by iteration order", async () => {
+    const r = parseReport(await fixture("report-93135.html"), "93135");
+    const clone = structuredClone(r);
+    clone.home.players.push({ ...r.away.players[0] }); // STRAUCH, Tore now in both teams
+    const teamOf = teamResolver([r, clone]);
+    expect(teamOf({ name: "STRAUCH, Tore", club: "Irgendwo" }, [])).toBe("Irgendwo");
+  });
+});

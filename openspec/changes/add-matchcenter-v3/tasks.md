@@ -47,8 +47,8 @@
 
 ## 8. Suche (search, owner request 2026-10-31)
 
-- [x] 8.1 Implement the search index (teams from standings, players from stats + report lineups, diacritic-insensitive) and verify unit tests from the spec scenarios
-- [x] 8.2 Add the header search field (GET form) and `/suche` results page and verify e2e at 390 px (no horizontal scroll) for "traun", "strauch" and an empty result
+- [x] 8.1 Implement the team search (standings of all competitions, diacritic-insensitive; no person search per ADR-005) and verify unit tests from the spec scenarios
+- [x] 8.2 Add the header search field (GET form) and `/suche` results page and verify e2e at 390 px (no horizontal scroll) for "traun", repeated `q`, and "strauch" (no person hits)
 
 ## Workflow follow-up
 

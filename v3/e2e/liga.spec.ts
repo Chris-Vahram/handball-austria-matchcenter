@@ -60,3 +60,20 @@ test.describe("Liga-Seite", () => {
     expect(res?.status()).toBe(404);
   });
 });
+
+test("tabs stay pinned while scrolling to the schedule", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/hla-challenge-west");
+  await page.locator("#spielplan").scrollIntoViewIfNeeded();
+  await page.mouse.wheel(0, 600);
+  const top = await page.locator(".tabs-wrap").evaluate((el) => el.getBoundingClientRect().top);
+  expect(top).toBe(0);
+});
+
+test("desktop shows the form column, phone hides it", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/hla-challenge-west");
+  await expect(page.locator("tbody tr").first().locator("td.form")).toBeVisible();
+  await page.setViewportSize({ width: 390, height: 844 });
+  await expect(page.locator("tbody tr").first().locator("td.form")).toBeHidden();
+});

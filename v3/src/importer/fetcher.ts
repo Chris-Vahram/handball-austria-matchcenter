@@ -13,7 +13,9 @@ export interface FetcherDeps {
 }
 
 const httpTransport: Transport = async (url) => {
-  const res = await fetch(url, { headers: { "Accept-Language": "de-AT,de;q=0.9", "User-Agent": "matchcenter-v3-operator-import" } });
+  // Redirects are refused: the allowlist only vouches for the requested URL.
+  const res = await fetch(url, { redirect: "manual", headers: { "Accept-Language": "de-AT,de;q=0.9", "User-Agent": "matchcenter-v3-operator-import" } });
+  if (res.status >= 300 && res.status < 400) throw new Error(`Redirect refused (${res.status}) for ${url}`);
   if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
   return res.text();
 };

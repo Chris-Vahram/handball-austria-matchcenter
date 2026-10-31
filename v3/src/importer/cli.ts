@@ -1,4 +1,4 @@
-import { writeFile } from "node:fs/promises";
+import { rename, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { COMPETITION_IDS, type CompetitionId } from "./config";
 import { createFetcher, defaultDeps } from "./fetcher";
@@ -20,7 +20,9 @@ async function main() {
     try {
       const dataset = await importCompetition(id, get);
       const file = path.join(root, "src/data/snapshots", `${id}.json`);
-      await writeFile(file, JSON.stringify(dataset, null, 2) + "\n");
+      // Atomic replace: a failed write never leaves a half-written snapshot.
+      await writeFile(`${file}.tmp`, JSON.stringify(dataset, null, 2) + "\n");
+      await rename(`${file}.tmp`, file);
       console.log(`${id}: ${dataset.standings.length} teams, ${dataset.matches.length} matches, ${Object.keys(dataset.reports).length} reports → ${path.relative(root, file)}`);
     } catch (error) {
       // Last validated snapshot stays untouched.

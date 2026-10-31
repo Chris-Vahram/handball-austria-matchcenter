@@ -27,3 +27,14 @@ describe("liga data", () => {
     expect([formatDiff(63), formatDiff(-21), formatDiff(0)]).toEqual(["+63", "−21", "0"]);
   });
 });
+
+describe("form", async () => {
+  const { lastFive } = await import("./form");
+  it("returns the last five results oldest first", () => {
+    const hla = getDataset("hla-challenge-west")!;
+    const traun = lastFive(hla.matches, "SK Konstant Traun / Edelweiss");
+    expect(traun).toHaveLength(5);
+    expect(traun.at(-1)).toBe("N"); // 35:37 in Bregenz, 31.10.2026
+    expect(lastFive(hla.matches, "HSC Wels").every((r) => r === "S")).toBe(true);
+  });
+});

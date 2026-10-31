@@ -15,6 +15,9 @@ const LISTS: { kind: StatKind; tab: string; value: string }[] = [
 
 type Props = { params: Promise<{ competition: string }>; searchParams: Promise<{ liste?: string; team?: string }> };
 
+// Re-render hourly so the "veraltet" marker ages with the snapshot.
+export const revalidate = 3600;
+
 export function generateStaticParams() {
   return COMPETITION_IDS.filter((id) => COMPETITIONS[id].category === "adult").map((competition) => ({ competition }));
 }

@@ -10,6 +10,9 @@ import { roundsOf } from "@/lib/rounds";
 
 type Props = { params: Promise<{ competition: string }> };
 
+// Re-render hourly so the "veraltet" marker ages with the snapshot.
+export const revalidate = 3600;
+
 export function generateStaticParams() {
   return COMPETITION_IDS.map((competition) => ({ competition }));
 }
@@ -52,17 +55,17 @@ export default async function PrintPage({ params }: Props) {
                 <td>{i === 0 ? round : ""}</td>
                 <td>{formatShortDate(m.date)}</td>
                 <td>{m.time ?? ""}</td>
-                <td>{m.number}</td>
+                <td>{m.number}{m.note === "verlegt" ? " (verl.)" : ""}</td>
                 <td>{m.home}</td>
                 <td>{m.away}</td>
-                <td className="res">{m.score ? `${m.score.home}:${m.score.away}` : ""}</td>
+                <td className="res">{m.score ? `${m.score.home}:${m.score.away}${m.reportApproved === false ? "*" : ""}` : ""}</td>
               </tr>
             ))}
           </tbody>
         ))}
       </table>
       <footer className="print-foot">
-        Quelle: nuLiga ({c.fullName}) · Stand {stand} · Unabhängiger Prototyp, kein Angebot von ÖHB oder nuLiga.
+        * Spielbericht noch nicht genehmigt · verl. = verlegt. Quelle: nuLiga ({c.fullName}) · Stand {stand} · Unabhängiger Prototyp, kein Angebot von ÖHB oder nuLiga.
       </footer>
     </div>
   );

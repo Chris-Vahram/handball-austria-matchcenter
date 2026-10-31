@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Lets users find a team or a player across the configured competitions from any page, without knowing which competition or list they appear in.
+Lets users find a team across the configured competitions from any page, without knowing which competition or list they appear in.
 
 ## ADDED Requirements
 
@@ -20,12 +20,19 @@ The search SHALL match full official team names of all configured competitions, 
 - **WHEN** the user searches "traun"
 - **THEN** "SK Konstant Traun / Edelweiss" (HLA Challenge West) and "Sportunion EDELWEISS Linz / SK Traun" (Landesliga OÖ) are listed with their competition
 
-### Requirement: Player results
-The search SHALL match player names from adult-competition statistics and report lineups, ignoring case and diacritics, showing the team and competition and linking to the team-filtered scorer list. Only fields allowed by ADR-005 MUST appear.
+### Requirement: No person search
+The search MUST NOT match players or any other person, because ADR-005 rules out search by person. Enabling player search requires a new owner decision recorded in ADR-005 first.
 
-#### Scenario: Player by surname
+#### Scenario: Player surname
 - **WHEN** the user searches "strauch"
-- **THEN** "STRAUCH, Tore" is listed with "SK Konstant Traun / Edelweiss" and HLA Challenge West
+- **THEN** no player is listed and the page states that no team was found
+
+### Requirement: Repeated query parameters
+A request with several `q` parameters SHALL use the first one and MUST NOT fail.
+
+#### Scenario: Two q parameters
+- **WHEN** the user opens `/suche?q=traun&q=linz`
+- **THEN** the results for "traun" are shown
 
 ### Requirement: Minimum query and empty result
 Queries shorter than 2 characters SHALL show a hint instead of results; a query without hits MUST say so.

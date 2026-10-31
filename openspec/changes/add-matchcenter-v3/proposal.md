@@ -32,7 +32,7 @@ Data-source limitations:
 - `match-report`: the public Spielbericht view, restricted by the privacy rules.
 - `player-statistics`: per-competition player rankings derived from nuLiga statistics pages.
 - `table-schedule-print`: our own PDF/print export of Tabelle and Spielplan.
-- `search`: header search for teams and players across the configured competitions (owner request 2026-10-31).
+- `search`: header search for teams across the configured competitions (owner request 2026-10-31; no person search per ADR-005).
 
 ### Modified Capabilities
 - None. `openspec/specs/` is empty; earlier changes are not archived yet.

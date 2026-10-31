@@ -52,6 +52,6 @@ function MatchRow({ id, m, showcase }: { id: string; m: Match; showcase: string 
     </>
   );
   return m.reportId
-    ? <Link className="match" href={`/${id}/spiel/${m.reportId}`} aria-label={`Spielbericht ${m.home} gegen ${m.away}`}>{body}</Link>
+    ? <Link className="match" href={`/${id}/spiel/${m.reportId}`}>{body}</Link>
     : <div className="match">{body}</div>;
 }

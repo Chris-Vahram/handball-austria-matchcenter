@@ -9,8 +9,12 @@ import { parseReport, parseSchedule, parseStandings, parseStats } from "./parse"
  * the player's own lineup first, else the team most players of that Verein played for.
  */
 export function teamResolver(reports: Report[]) {
-  const byPlayer = new Map<string, string>();
-  for (const r of reports) for (const t of [r.home, r.away]) for (const p of t.players) byPlayer.set(p.name, t.name);
+  const teamsOf = new Map<string, Set<string>>();
+  for (const r of reports) for (const t of [r.home, r.away]) for (const p of t.players) {
+    teamsOf.set(p.name, (teamsOf.get(p.name) ?? new Set()).add(t.name));
+  }
+  // Same name in two teams = ambiguous; those players resolve via their Verein instead.
+  const byPlayer = new Map([...teamsOf].filter(([, s]) => s.size === 1).map(([n, s]) => [n, [...s][0]]));
   return (row: { name: string; club: string }, rows?: { name: string; club: string }[]) => {
     const direct = byPlayer.get(row.name);
     if (direct) return direct;

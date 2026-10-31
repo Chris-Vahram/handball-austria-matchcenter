@@ -9,6 +9,9 @@ import { formatDay } from "@/lib/format";
 
 type Props = { params: Promise<{ competition: string; meeting: string }> };
 
+// Re-render hourly so the "veraltet" marker ages with the snapshot.
+export const revalidate = 3600;
+
 export function generateStaticParams() {
   return COMPETITION_IDS.flatMap((competition) =>
     Object.keys(getDataset(competition)?.reports ?? {}).map((meeting) => ({ competition, meeting })));
@@ -28,8 +31,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return x ? { title: `${x.report.home.name} – ${x.report.away.name}` } : {};
 }
 
-const Card = ({ color, label }: { color: string; label: string }) => (
-  <svg width="10" height="14" viewBox="0 0 10 14" role="img" aria-label={label}><rect width="10" height="14" rx="1.5" fill={color} /></svg>
+const Card = ({ color, edge, label }: { color: string; edge: string; label: string }) => (
+  <svg width="11" height="15" viewBox="0 0 11 15" role="img" aria-label={label}><rect x=".5" y=".5" width="10" height="14" rx="1.5" fill={color} stroke={edge} /></svg>
 );
 
 function Lineup({ team, side, showcase }: { team: ReportTeam; side: string; showcase: string }) {
@@ -58,9 +61,9 @@ function Lineup({ team, side, showcase }: { team: ReportTeam; side: string; show
               <th scope="row" className="nm">{p.name}</th>
               <td className={p.goals ? "g" : "z"}>{p.goals || "–"}</td>
               <td className={p.sevenMAttempts ? undefined : "z"}>{p.sevenMAttempts ? `${p.sevenMGoals}/${p.sevenMAttempts}` : "–"}</td>
-              <td>{p.yellow ? <Card color="#f2c200" label="Gelbe Karte" /> : ""}</td>
+              <td>{p.yellow ? <Card color="#f2c200" edge="#6b5600" label="Gelbe Karte" /> : ""}</td>
               <td>{p.twoMin || ""}</td>
-              <td>{p.disqualified ? <Card color="#c8102e" label="Disqualifikation" /> : ""}</td>
+              <td>{p.disqualified ? <Card color="#c8102e" edge="#7a0a1c" label="Disqualifikation" /> : ""}</td>
             </tr>
           ))}
         </tbody>
@@ -87,9 +90,10 @@ export default async function ReportPage({ params }: Props) {
 
   return (
     <>
-      <Header id={x.competition} importedAt={data.source.importedAt} tab="spiel" />
+      <Header id={x.competition} importedAt={data.source.importedAt} tab="spiel" subpage />
       <main className="page report">
-        <section className="panel scoreboard" aria-label="Spielinformation">
+        <section className="panel scoreboard" aria-labelledby="h-match">
+          <h1 className="sr-only" id="h-match">Spielbericht {r.home.name} gegen {r.away.name}, Spiel Nr. {r.number}</h1>
           <Link className="back" href={`/${x.competition}?runde=${match.round}#spielplan`}><Chevron d={LEFT} size={16} />Runde {match.round}</Link>
           <div className="teams">
             <p className={`${homeWin ? "win " : ""}${r.home.name === showcase ? "me" : ""}`}>{r.home.name}</p>

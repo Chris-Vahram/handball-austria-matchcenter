@@ -41,7 +41,9 @@ export function parseStandings(html: string): StandingRow[] {
   const col = headerIndex(table);
   const [rank, team, played, won, drawn, lost, goals, diff, points] =
     ["Rang", "Mannschaft", "Begegnungen", "S", "U", "N", "Tore", "+/-", "Punkte"].map(col);
-  return table.querySelectorAll("tr").filter((tr) => tr.querySelectorAll("td").length > points).map((tr) => {
+  const rows = table.querySelectorAll("tr").filter((tr) => tr.querySelectorAll("td").length > points);
+  if (rows.length < 2) throw new Error("Standings table has fewer than 2 teams");
+  return rows.map((tr) => {
     const cells = tr.querySelectorAll("td").map((td) => text(td));
     const g = pair(cells[goals].replace(/\s/g, ""));
     if (!g) throw new Error(`Bad goals cell: ${cells[goals]}`);
@@ -91,6 +93,7 @@ export function parseSchedule(html: string): RawMatch[] {
       note: rowAlts.some((a) => a.startsWith("verlegt")) ? "verlegt" : rowAlts.includes("Heimrecht getauscht") ? "Heimrecht getauscht" : null
     });
   }
+  if (!out.length) throw new Error("Schedule table has no matches");
   return out;
 }
 
@@ -139,6 +142,10 @@ export function parseReport(html: string, id: string): Report {
   const result = /^(\d+:\d+)(?:\s*\((\d+:\d+)\))?/.exec(after("Ergebnis"));
   const score = result ? pair(result[1]) : null;
   if (!score) throw new Error(`Report ${id}: no result`);
+  for (const [team, goals] of [[teams[0], score.home], [teams[1], score.away]] as const) {
+    const sum = team.players.reduce((s, p) => s + p.goals, 0);
+    if (sum !== goals) throw new Error(`Report ${id}: ${team.name} lineup goals ${sum} ≠ score ${goals} (malformed lineup?)`);
+  }
   const dateCell = after("Datum");
   return {
     id,
@@ -157,7 +164,7 @@ export function parseReport(html: string, id: string): Report {
 /** Player ranking from groupMeetingStatistics. Portrait links and person IDs are dropped. */
 export function parseStats(html: string): Omit<StatRow, "team">[] {
   const table = resultTables(html)[0];
-  if (!table) return [];
+  if (!table) throw new Error("Statistics table not found");
   const col = headerIndex(table);
   const [rank, name, club, games] = ["Rang", "Spieler", "Verein", "Spiele"].map(col);
   const value = 3; // the kind-specific value column (Tore, 7m-Tore, Zeitstrafen, Karten) follows "Verein"
