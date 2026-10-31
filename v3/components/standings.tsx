@@ -18,7 +18,7 @@ export function Standings({ rows, showcase, matches }: { rows: StandingRow[]; sh
           <th scope="col">Tore</th>
           <th scope="col"><abbr title="Tordifferenz">+/−</abbr></th>
           <th scope="col" className="pts"><abbr title="Punkte">Pkt</abbr></th>
-          {matches && <th scope="col" className="form">Form</th>}
+          {matches && <th scope="col" className="form"><abbr title="Letzte 5 Spiele, neuestes rechts">Form</abbr></th>}
         </tr>
       </thead>
       <tbody>

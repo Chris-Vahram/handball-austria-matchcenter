@@ -41,7 +41,7 @@ export default async function LigaPage({ params, searchParams }: Props) {
             <section className="panel" id="tabelle" aria-labelledby="h-tabelle">
               <h2 className="section-title sr-only" id="h-tabelle">Tabelle</h2>
               <Standings rows={data.standings} showcase={c.showcaseTeam} matches={data.matches} />
-              <p className="legend">Tabelle nach Punktestand, wie auf nuLiga. Nach Saisonende entscheidet der direkte Vergleich.</p>
+              <p className="legend">Tabelle nach Punktestand, wie auf nuLiga. Nach Saisonende entscheidet der direkte Vergleich.<span className="form-hint"> Form: letzte 5 Spiele, neuestes rechts (S Sieg, U Unentschieden, N Niederlage).</span></p>
             </section>
             <section className="panel" id="spielplan" aria-labelledby="h-spielplan">
               <h2 className="section-title" id="h-spielplan">Spielplan</h2>

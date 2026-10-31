@@ -103,8 +103,8 @@ a.match:hover { background: #fafafa; }
   .standings .tm { font-size: 15px; }
   .standings td { height: 48px; }
   .standings .sp { width: 44px; }
-  .standings .sun { width: 72px; }
-  .standings .goals { width: 84px; }
+  .standings .sun { width: 64px; }
+  .standings .goals { width: 76px; }
   .standings .diff { width: 56px; }
   .foot { grid-template-columns: 1fr auto; align-items: center; }
   .foot .btn { order: 2; }
@@ -231,10 +231,12 @@ a.match:hover { background: #fafafa; }
 /* Form column (desktop only; the phone table keeps all required columns without scrolling) */
 .standings .form { display: none; }
 @media (min-width: 900px) {
-  .standings .form { display: table-cell; width: 132px; padding-right: 12px; text-align: right; }
-  .standings .form i { display: inline-grid; place-items: center; width: 20px; height: 20px; margin-left: 3px; border-radius: 3px; font-style: normal; font-size: 11px; font-weight: 700; }
+  .standings .form { display: table-cell; width: 112px; padding-right: 12px; text-align: right; white-space: nowrap; }
+  .standings .form i { display: inline-grid; place-items: center; width: 18px; height: 18px; margin-left: 2px; border-radius: 3px; font-style: normal; font-size: 11px; font-weight: 700; }
   .standings .form .f-S { background: var(--ink); color: #fff; }
   .standings .form .f-U { background: #c9ccd1; color: var(--ink); }
   .standings .form .f-N { background: var(--w); color: var(--mute); box-shadow: inset 0 0 0 1px #a3a8af; }
   .standings .pts { padding-right: 8px; }
 }
+.legend .form-hint { display: none; }
+@media (min-width: 900px) { .legend .form-hint { display: inline; } }
