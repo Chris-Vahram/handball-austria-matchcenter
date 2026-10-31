@@ -41,7 +41,7 @@
 ## 7. Integration and finish
 
 - [x] 7.1 Run `npm test`, `npm run lint`, `npm run typecheck`, `npm run build`, `npm run test:e2e`, `npm audit --omit=dev` in `v3/` and verify all pass
-- [ ] 7.2 Run the impeccable detector and finish review on desktop and mobile captures, apply its fixes, and verify the reviewer's ship verdict
+- [x] 7.2 Run the impeccable detector and finish review on desktop and mobile captures, apply its fixes, and verify the reviewer's ship verdict
 - [x] 7.3 Generate DESIGN.md + `.impeccable/design.json` via the documenter and verify both exist with tokens
 
 

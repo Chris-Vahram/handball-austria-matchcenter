@@ -220,13 +220,16 @@ Mostly square, with small and purposeful corners: 4px on status tags, 6px on con
 - **Active:** ink text with an inset 3px Austrian Red underline. There is no pill or background.
 
 ### Inputs / Fields
-- **Select:** 1px light-grey border, 6px corners, white fill, 15px text, 9px 8px padding, with a 13px mute label inline to its left.
+- **Select:** 1px light-grey border, 6px corners, white fill, 16px text, 44px minimum height. Below 600px the label sits above a full-width select and the button sits underneath, so long official team names are never cut; from 600px label, select and button share one row.
+- **Search field (header bar, every page):** field-grey fill, 1px light-grey border, 6px corners, 44px height, a drawn magnifier inside on the left, placeholder "Team suchen". It turns white with an ink border on focus. It is a plain GET form to /suche and searches teams only (ADR-005).
 - **Focus:** the global red outline.
+- **Touch targets:** every control (switch, tabs, list switch, search, filter, back links) is at least 44px tall.
 
 ### Standings Table (signature)
 - A real table: # | Team | Sp | S-U-N | Tore | +/− | Pkt. Rank is bold, the team is left-aligned 600, numbers sit right, and Sp and S-U-N are in mute. Pkt uses the Figure style.
 - **Own team:** the whole row gets the blush tint and the name turns Deep Red Ink at 800.
 - A 12px mute legend sits below the table. The scorer ranking and report roster follow the same row grammar.
+- **Form column (desktop ≥900px only):** the last five results as 18px squares, oldest to newest left to right: S is filled ink, U is light grey, N is white with a grey outline. Never red, which belongs to the own team. A legend sentence explains the reading direction. On the phone the column is hidden, so all required columns still fit without horizontal scrolling.
 
 ### Match Row
 - Flashscore form: time on the left spanning both lines, home team over away team, one score per line on the right, and the winner in bold. A meta line (number · venue · note) runs underneath.
