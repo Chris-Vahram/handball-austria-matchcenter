@@ -37,7 +37,7 @@ a { color: inherit; text-underline-offset: 3px; }
 .switch a { font-size: 14px; font-weight: 600; min-height: 44px; display: grid; place-items: center; padding: 0 8px; text-align: center; text-decoration: none; white-space: nowrap; }
 .switch a[aria-current="page"] { background: var(--ink); color: #fff; }
 .title { padding: 4px var(--gutter) 12px; }
-.title .h1 { font-family: var(--font-display); font-weight: 800; font-size: 30px; line-height: 1; text-transform: uppercase; margin: 0; }
+.title .h1 { color: var(--ink); margin: 0; font-family: var(--font-display); font-weight: 800; font-size: 30px; line-height: 1; text-transform: uppercase; }
 .title p { font-size: 14px; color: var(--mute); margin: 6px 0 0; }
 .stale { color: var(--red-ink); font-weight: 600; }
 .tabs-wrap { background: var(--w); position: sticky; top: 0; z-index: 2; }
@@ -162,7 +162,9 @@ a.match:hover { background: #fafafa; }
 .lists a { min-height: 44px; display: grid; place-items: center; font-size: 14px; font-weight: 600; padding: 0 2px; text-decoration: none; }
 .lists a + a { border-left: 1px solid var(--line); }
 .lists a[aria-current="page"] { background: var(--ink); color: #fff; }
-.filter { display: flex; gap: 8px; align-items: center; padding: 0 var(--gutter) 12px; }
+.filter { display: grid; grid-template-columns: 1fr; gap: 6px; padding: 0 var(--gutter) 12px; }
+.filter button { justify-self: start; }
+@media (min-width: 600px) { .filter { grid-template-columns: auto 1fr auto; align-items: center; gap: 8px; } }
 .filter label { font-size: 13px; color: var(--mute); }
 .filter select { flex: 1; min-width: 0; min-height: 44px; font: inherit; font-size: 16px; padding: 0 8px; border: 1px solid #c9ccd1; border-radius: 6px; background: var(--w); color: var(--ink); }
 .filter button { min-height: 44px; font: inherit; font-size: 15px; font-weight: 600; padding: 0 14px; border: 1.5px solid var(--ink); border-radius: 6px; background: var(--ink); color: #fff; cursor: pointer; }
