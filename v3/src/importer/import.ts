@@ -1,7 +1,7 @@
 import { datasetSchema, type Dataset, type Report } from "../domain/schema";
 import { assignRounds } from "../lib/rounds";
 import { COMPETITIONS, STAT_KINDS, sourceUrls, type CompetitionId, type StatKind } from "./config";
-import { STAT_VALUE_HEADER, parseGroupStats, parseReport, parseSchedule, parseStandings, parseStats } from "./parse";
+import { STAT_VALUE_HEADER, parseGroupStats, parseReport, parseSchedule, parseStandings, parseStats, parseVenue } from "./parse";
 
 /**
  * nuLiga statistics name a player's Verein ("SK-Handball Traun"), the table names the
@@ -59,5 +59,12 @@ export async function importCompetition(id: CompetitionId, get: (url: string) =>
   urls.push(groupStatsUrl);
   const groupStats = parseGroupStats(await get(groupStatsUrl));
 
-  return datasetSchema.parse({ competitionId: id, source: { urls, importedAt: now.toISOString() }, standings, matches, reports, stats, groupStats });
+  const venues: Dataset["venues"] = {};
+  for (const venueId of [...new Set(matches.map((m) => m.venueId).filter((v): v is string => v !== null))].sort()) {
+    const url = sourceUrls.venue(id, venueId);
+    urls.push(url);
+    venues[venueId] = parseVenue(await get(url), venueId);
+  }
+
+  return datasetSchema.parse({ competitionId: id, source: { urls, importedAt: now.toISOString() }, standings, matches, reports, stats, groupStats, venues });
 }

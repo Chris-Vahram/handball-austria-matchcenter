@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
+import { RememberButton } from "@ui/client/my-teams";
 import { MatchRow } from "@ui/schedule";
-import { Footer, Header } from "@ui/shell";
+import { Footer, SubHeader } from "@ui/shell";
 import { COMPETITIONS, COMPETITION_IDS, getDataset, isCompetitionId } from "@/data";
+import { mapsUrl, resinRule, teamKey, venueOf } from "@/lib/dashboard";
 import { lastFive } from "@/lib/form";
 import { formatDay, formatDiff } from "@/lib/format";
 import { homeAway, nextMatch, teamBySlug, teamMatches, teamPlayers, teamSlug } from "@/lib/teams";
@@ -42,14 +45,19 @@ export default async function TeamPage({ params }: Props) {
   const form = lastFive(data.matches, team);
   const { home, away } = homeAway(data, team);
   const next = nextMatch(data, team);
+  const nextVenue = next ? venueOf(data, next) : null;
+  const resin = resinRule(nextVenue && nextVenue.id ? data.venues[nextVenue.id]?.resin ?? null : null);
   const matches = teamMatches(data, team);
+  const played = matches.filter((m) => m.score).reverse();
+  const upcoming = matches.filter((m) => !m.score);
   const stats = data.groupStats?.teams.find((t) => t.name === team) ?? null;
   const players = c.category === "adult" ? teamPlayers(data, team) : [];
   const per = (n: number) => (stats && stats.games ? (n / stats.games).toFixed(1).replace(".", ",") : "–");
+  const result = (own: number, other: number) => (own > other ? "S" : own < other ? "N" : "U");
 
   return (
     <>
-      <Header id={x.competition} importedAt={data.source.importedAt} tab="spiel" subpage />
+      <SubHeader id={x.competition} importedAt={data.source.importedAt} crumb="Team" />
       <main className="page team">
         <section className="panel team-head" aria-labelledby="h-team">
           <h1 id="h-team" className={team === c.showcaseTeam ? "me" : undefined}>{team}</h1>
@@ -64,34 +72,65 @@ export default async function TeamPage({ params }: Props) {
             <div><dt>Heim</dt><dd>{home.won}-{home.drawn}-{home.lost}</dd></div>
             <div><dt>Auswärts</dt><dd>{away.won}-{away.drawn}-{away.lost}</dd></div>
           </dl>
+          <div className="team-actions">
+            <RememberButton teamKey={teamKey(x.competition, team)} team={team} />
+            <a className="btn" href={`/${x.competition}/team/${slug}/kalender.ics`} download={`${slug}.ics`}>Spiele in Kalender</a>
+          </div>
         </section>
 
         {next && (
-          <section className="panel next" aria-labelledby="h-next">
-            <h2 className="section-title" id="h-next">Nächstes Spiel</h2>
-            <p className="next-when">{formatDay(next.date)}{next.time && `, ${next.time}`}{next.venue && ` · ${next.venue}`}</p>
-            <p className="next-vs">
+          <section className="next-card big" aria-labelledby="h-next">
+            <h2 className="nc-label" id="h-next">Nächstes Spiel</h2>
+            <p className="nc-when">{formatDay(next.date)}{next.time && `, ${next.time}`}</p>
+            <p className="nc-vs">
               <span className={next.home === team ? "self" : undefined}>{next.home}</span>
               <span className="vs" aria-hidden="true">–</span>
               <span className="sr-only"> gegen </span>
               <span className={next.away === team ? "self" : undefined}>{next.away}</span>
             </p>
-            <p className="next-meta">Spiel Nr. {next.number} · Runde {next.round} · {next.home === team ? "Heimspiel" : "Auswärtsspiel"}</p>
+            {nextVenue && (
+              <p className="nc-venue">
+                {nextVenue.id ? <Link href={`/halle/${nextVenue.id}`}>{nextVenue.name}</Link> : nextVenue.name}
+                {nextVenue.address.length > 0 && <> · {nextVenue.address.join(", ")} · <a href={mapsUrl(nextVenue.address, nextVenue.name)} target="_blank" rel="noopener noreferrer">Route</a></>}
+              </p>
+            )}
+            <p className="nc-meta">
+              Spiel Nr. {next.number} · Runde {next.round} · {next.home === team ? "Heimspiel" : "Auswärtsspiel"}
+              {resin && <> · Harz: {resin.rule}{resin.note && ` (${resin.note})`}</>}
+            </p>
           </section>
         )}
 
         <div className="team-cols">
-          <section className="panel" aria-labelledby="h-games">
-            <h2 className="section-title" id="h-games">Spiele</h2>
-            {matches.map((m) => <MatchRow key={m.number} id={x.competition} m={m} showcase="" showDate />)}
-          </section>
+          <div className="col">
+            <section className="panel" aria-labelledby="h-results">
+              <h2 className="section-title" id="h-results">Ergebnisse <small>{played.length} Spiele</small></h2>
+              {played.length === 0 && <p className="empty">Noch keine Spiele gespielt.</p>}
+              {played.map((m) => {
+                const own = m.home === team ? m.score!.home : m.score!.away;
+                const other = m.home === team ? m.score!.away : m.score!.home;
+                const r = result(own, other);
+                return (
+                  <div key={m.number} className="result-row">
+                    <span className={`chip f-${r}`} title={RESULT[r]}><span aria-hidden="true">{r}</span><span className="sr-only">{RESULT[r]}</span></span>
+                    <MatchRow id={x.competition} m={m} data={data} showcase="" showDate />
+                  </div>
+                );
+              })}
+            </section>
+            <section className="panel" aria-labelledby="h-upcoming">
+              <h2 className="section-title" id="h-upcoming">Kommende Spiele <small>{upcoming.length}</small></h2>
+              {upcoming.length === 0 && <p className="empty">Keine weiteren Spiele in dieser Phase.</p>}
+              {upcoming.map((m) => <MatchRow key={m.number} id={x.competition} m={m} data={data} showcase="" showDate />)}
+            </section>
+          </div>
 
-          <div>
+          <div className="col">
             {stats && (
               <section className="panel" aria-labelledby="h-tstats">
                 <h2 className="section-title" id="h-tstats">Teamstatistik</h2>
                 <dl className="totals tstats">
-                  <div><dt>Tore/Spiel</dt><dd>{per(stats.goals)}</dd></div>
+                  <div><dt>Tore/Sp.</dt><dd>{per(stats.goals)}</dd></div>
                   <div><dt><abbr title="7-Meter Tore/Versuche">7m</abbr></dt><dd>{stats.sevenMGoals}/{stats.sevenMAttempts}</dd></div>
                   <div><dt><abbr title="Zeitstrafen pro Spiel">2-Min/Sp.</abbr></dt><dd>{per(stats.twoMin)}</dd></div>
                   <div><dt>Gelb</dt><dd>{stats.yellow}</dd></div>
@@ -103,7 +142,7 @@ export default async function TeamPage({ params }: Props) {
             )}
 
             {players.length > 0 && (
-              <section className="panel" aria-labelledby="h-players">
+              <section className="panel" aria-labelledby="h-players" id="h-players-section">
                 <h2 className="section-title" id="h-players">Spieler</h2>
                 <table className="roster squad">
                   <caption className="sr-only">Spielerstatistik {team}</caption>
@@ -130,7 +169,7 @@ export default async function TeamPage({ params }: Props) {
                     ))}
                   </tbody>
                 </table>
-                <p className="legend">Aus den nuLiga-Ranglisten; Spieler ohne Eintrag in einer Liste fehlen.</p>
+                <p className="legend">7m = Tore/Versuche · 2′ = Zeitstrafen · G = Gelbe Karten · R = Rote Karten. Aus den nuLiga-Ranglisten; wer in keiner Liste steht, fehlt.</p>
               </section>
             )}
           </div>

@@ -1,5 +1,5 @@
 import { parse, type HTMLElement } from "node-html-parser";
-import type { Match, Report, ReportTeam, StandingRow, StatRow, TeamStats } from "../domain/schema";
+import type { Match, Report, ReportTeam, StandingRow, StatRow, TeamStats, TimelineEvent, Venue } from "../domain/schema";
 
 /*
  * Privacy by construction (ADR-005): every parser copies only whitelisted fields.
@@ -82,6 +82,7 @@ export function parseSchedule(html: string): RawMatch[] {
       date,
       time,
       venue: tds[venueCol].querySelector("span[title]")?.getAttribute("title") ?? null,
+      venueId: /location=(\d+)/.exec(tds[venueCol].querySelector("a")?.getAttribute("href") ?? "")?.[1] ?? null,
       home: text(tds[homeCol]),
       away: text(tds[awayCol]),
       // Any non-score text (e.g. referee initials "BÖSC./SZÜC.") is discarded: no result.
@@ -147,6 +148,7 @@ export function parseReport(html: string, id: string): Report {
     if (sum !== goals) throw new Error(`Report ${id}: ${team.name} lineup goals ${sum} ≠ score ${goals} (malformed lineup?)`);
   }
   const dateCell = after("Datum");
+  const timeline = parseTimeline(rows);
   return {
     id,
     number: int(after("Spielnummer")),
@@ -157,8 +159,27 @@ export function parseReport(html: string, id: string): Report {
     score,
     halftime: result?.[2] ? pair(result[2]) : null,
     home: teams[0],
-    away: teams[1]
+    away: teams[1],
+    timeline
   };
+}
+
+const EVENT: Record<string, TimelineEvent["type"]> = {
+  "Tor": "Tor", "7m mit Tor": "7m-Tor", "7m ohne Tor": "7m vergeben", "Verwarnung": "Verwarnung",
+  "2 Minuten": "2 Minuten", "ohne Bericht": "Disqualifikation", "mit Bericht": "Disqualifikation mit Bericht"
+};
+
+/**
+ * "Spielverlauf" rows: Team | Zeit | Stand | Ereignis | Person (ADR-005 amendment 2026-11-01).
+ * Persons without a numeric shirt are team officials: their name is dropped.
+ */
+function parseTimeline(rows: string[][]): TimelineEvent[] {
+  return rows.filter((r) => r.length >= 5 && (r[0] === "Heim" || r[0] === "Gast") && /^\d{1,2}:\d{2}$/.test(r[1])).flatMap((r) => {
+    const type = EVENT[r[3]];
+    if (!type) return [];
+    const person = /^(\d{1,3}) (.+)$/.exec(r[4]);
+    return [{ minute: r[1], side: r[0] === "Heim" ? "home" as const : "away" as const, score: pair(r[2].replace(/\s/g, "")), type, shirt: person?.[1] ?? null, name: person?.[2] ?? null }];
+  });
 }
 
 /** The value column of each nuLiga ranking, by exact header (column order differs per list). */
@@ -209,4 +230,23 @@ export function parseGroupStats(html: string): { group: TeamStats; teams: TeamSt
   const group = blocks.find((b) => b.name === "Gruppenstatistik");
   if (!group) throw new Error("Group statistics block not found");
   return { group, teams: blocks.filter((b) => b !== group) };
+}
+
+/** courtInfo: venue name, address and resin rule only. The court schedule (other competitions, referee initials) is never read. */
+export function parseVenue(html: string, id: string): Venue {
+  const root = parse(html);
+  const name = text(root.querySelector("h1")).replace(/\s*Hallenspielplan\s*$/, "").replace(/\s*\([^)]*\)\s*$/, "").trim();
+  if (!name) throw new Error(`Venue ${id}: name not found`);
+  const section = (title: string) => {
+    const h2 = root.querySelectorAll("h2").find((h) => text(h) === title);
+    const p = h2?.nextElementSibling;
+    return p && p.tagName === "P" ? p : null;
+  };
+  const addressP = section("Hallenadresse");
+  // Whitelist: street line(s) and the postcode line. Phone numbers, e-mail scripts and links that
+  // some halls publish below the address are contacts and never kept (CLAUDE.md privacy rules).
+  const lines = addressP ? addressP.innerHTML.split(/<br\s*\/?>/i).map((part) => clean(parse(part).text)).filter(Boolean) : [];
+  const postcode = lines.findIndex((l) => /^\d{4} \S/.test(l));
+  const address = postcode > 0 ? lines.slice(Math.max(0, postcode - 1), postcode + 1) : [];
+  return { id, name, address, resin: section("Haftmittelverwendung") ? text(section("Haftmittelverwendung")) || null : null };
 }

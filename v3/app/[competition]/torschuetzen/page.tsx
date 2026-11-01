@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { AutoSubmitSelect } from "@ui/client/auto-submit";
 import { Footer, Header } from "@ui/shell";
+import { ThinData } from "@ui/thin-data";
 import { COMPETITIONS, COMPETITION_IDS, getDataset, isCompetitionId } from "@/data";
 import type { StatKind } from "@/importer/config";
 
@@ -48,7 +50,7 @@ export default async function StatsPage({ params, searchParams }: Props) {
 
   return (
     <>
-      <Header id={competition} importedAt={data?.source.importedAt ?? null} tab="torschuetzen" />
+      <Header id={competition} importedAt={data?.source.importedAt ?? null} tab="ranglisten" />
       <main className="page stats">
         <section className="panel" aria-labelledby="h-stats">
           <h2 className="section-title" id="h-stats">{list.value}</h2>
@@ -57,14 +59,15 @@ export default async function StatsPage({ params, searchParams }: Props) {
               <Link key={l.kind} href={href(l.kind)} aria-current={l.kind === list.kind ? "page" : undefined}>{l.tab}</Link>
             ))}
           </nav>
+          {data?.groupStats && <ThinData played={data.groupStats.group.games} scheduled={data.groupStats.group.scheduled} />}
           <form className="filter" method="get" action={`/${competition}/torschuetzen`}>
             <input type="hidden" name="liste" value={list.kind} />
             <label htmlFor="team">Team</label>
-            <select id="team" name="team" defaultValue={team}>
+            <AutoSubmitSelect id="team" name="team" defaultValue={team}>
               <option value="">Alle Teams</option>
               {teams.map((name) => <option key={name} value={name}>{name}</option>)}
-            </select>
-            <button type="submit">Anzeigen</button>
+            </AutoSubmitSelect>
+            <noscript><button type="submit">Anzeigen</button></noscript>
           </form>
           {rows.length === 0 ? (
             <p className="empty">{all.length ? "Für dieses Team gibt es in dieser Liste keine Einträge." : "Noch keine Einträge."}</p>

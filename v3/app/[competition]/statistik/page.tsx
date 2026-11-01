@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Footer, Header } from "@ui/shell";
+import { ThinData } from "@ui/thin-data";
 import { COMPETITIONS, COMPETITION_IDS, getDataset, isCompetitionId } from "@/data";
 import type { TeamStats } from "@/domain/schema";
 import { teamSlug } from "@/lib/teams";
@@ -44,6 +45,7 @@ export default async function StatsOverview({ params }: Props) {
           <>
             <section className="panel" aria-labelledby="h-group">
               <h2 className="section-title" id="h-group">Liga gesamt <small>{g.games} von {g.scheduled} Spielen</small></h2>
+              <ThinData played={g.games} scheduled={g.scheduled} />
               <dl className="totals tstats">
                 <div><dt>Tore/Spiel</dt><dd>{per(g.goals, g)}</dd></div>
                 <div><dt>7m-Quote</dt><dd>{rate(g)}</dd></div>
@@ -63,10 +65,10 @@ export default async function StatsOverview({ params }: Props) {
                 <thead>
                   <tr>
                     <th scope="col" className="nm">Team</th>
-                    <th scope="col" className="lead"><abbr title="Tore pro Spiel">Tore</abbr></th>
-                    <th scope="col"><abbr title="7-Meter-Trefferquote">7m</abbr></th>
-                    <th scope="col"><abbr title="Zeitstrafen pro Spiel">2′</abbr></th>
-                    <th scope="col" className="last"><abbr title="Zuschauer pro Spiel">Zusch.</abbr></th>
+                    <th scope="col" className="lead">Tore/Sp.</th>
+                    <th scope="col"><abbr title="7-Meter-Trefferquote">7m-Quote</abbr></th>
+                    <th scope="col"><abbr title="Zeitstrafen pro Spiel">2-Min/Sp.</abbr></th>
+                    <th scope="col" className="last"><abbr title="Zuschauer pro Spiel">Zuschauer/Sp.</abbr></th>
                   </tr>
                 </thead>
                 <tbody>
