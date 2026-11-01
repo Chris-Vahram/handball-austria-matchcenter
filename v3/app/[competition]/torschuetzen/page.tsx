@@ -15,7 +15,7 @@ const perGame = (n: number | null) => (n === null ? "–" : n.toFixed(2).replace
 const LISTS: { kind: StatKind; tab: string; value: string }[] = [
   { kind: "tore", tab: "Tore", value: "Tore" },
   { kind: "7m", tab: "7m", value: "7m-Tore" },
-  { kind: "zeitstrafen", tab: "2-Min", value: "Zeitstrafen" },
+  { kind: "zeitstrafen", tab: "2′", value: "Zeitstrafen" },
   { kind: "gelb", tab: "Gelb", value: "Gelbe Karten" },
   { kind: "rot", tab: "Rot", value: "Rote Karten" }
 ];
@@ -78,7 +78,7 @@ export default async function StatsPage({ params, searchParams }: Props) {
               <thead>
                 <tr>
                   <th scope="col" className="rk"><abbr title="Rang">#</abbr></th>
-                  <th scope="col" className="nm">Spieler · Team</th>
+                  <th scope="col" className="nm">{team ? "Spieler" : "Spieler · Team"}</th>
                   <th scope="col">{list.kind === "7m" ? <abbr title="7m-Versuche">Vers.</abbr> : <abbr title="Spiele">Sp</abbr>}</th>
                   {byGame && <th scope="col"><abbr title={`${list.value} gesamt`}>Ges.</abbr></th>}
                   <th scope="col" className="val">{byGame ? <abbr title={`${list.value} pro Spiel (Sortierung wie nuLiga)`}>∅/Sp.</abbr> : list.tab}</th>
@@ -88,7 +88,7 @@ export default async function StatsPage({ params, searchParams }: Props) {
                 {rows.map((r) => (
                   <tr key={`${r.rank}-${r.name}-${r.club}`} className={!team && r.team === c.showcaseTeam ? "me" : undefined}>
                     <td className="rk">{r.rank}</td>
-                    <th scope="row" className="nm">{displayName(r.name)}<small>{r.team}</small></th>
+                    <th scope="row" className="nm">{displayName(r.name)}{!team && <small>{r.team}</small>}</th>
                     <td className="sp">{(list.kind === "7m" ? r.attempts : r.games) ?? "–"}</td>
                     {byGame && <td className="sp">{r.value}</td>}
                     <td className="val">{byGame ? perGame(r.perGame) : r.value}</td>

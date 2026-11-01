@@ -24,4 +24,4 @@
 
 ## 4. Finish
 
-- [ ] 4.1 Full checks (unit, e2e, lint, typecheck, build, audit), detector, finish review to ship, DESIGN.md + design.json update
+- [x] 4.1 Full checks (unit, e2e, lint, typecheck, build, audit), detector, finish review to ship, DESIGN.md + design.json update

@@ -134,9 +134,9 @@ export default async function TeamPage({ params }: Props) {
                 <dl className="totals tstats">
                   <div><dt>Tore/Sp.</dt><dd>{per(stats.goals)}</dd></div>
                   <div><dt><abbr title="7-Meter Tore/Versuche">7m</abbr></dt><dd>{stats.sevenMGoals}/{stats.sevenMAttempts}</dd></div>
-                  <div><dt><abbr title="Zeitstrafen pro Spiel">2-Min/Sp.</abbr></dt><dd>{per(stats.twoMin)}</dd></div>
-                  <div><dt>Gelb</dt><dd>{stats.yellow}</dd></div>
-                  <div><dt>Rot</dt><dd>{stats.red}</dd></div>
+                  <div><dt><abbr title="Zeitstrafen pro Spiel">2′/Sp.</abbr></dt><dd>{per(stats.twoMin)}</dd></div>
+                  <div><dt><abbr title="Gelbe Karten">G</abbr></dt><dd>{stats.yellow}</dd></div>
+                  <div><dt><abbr title="Rote Karten / Disqualifikationen">R</abbr></dt><dd>{stats.red}</dd></div>
                   {stats.spectators !== null && <div><dt>Zuschauer/Sp.</dt><dd>{per(stats.spectators).replace(/,\d$/, "")}</dd></div>}
                 </dl>
                 <p className="legend">nuLiga-Mannschaftsstatistik, {stats.games} von {stats.scheduled} Spielen. Karten inkl. Mannschaftsoffizielle, daher kann die Summe über der Spielerliste liegen.</p>

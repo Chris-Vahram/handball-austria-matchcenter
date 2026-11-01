@@ -9,8 +9,9 @@ test.describe("Ranglisten", () => {
     await expect(rows.first()).toContainText("Arndt, Arvid");
     await page.selectOption("#team", "SK Konstant Traun / Edelweiss");
     await expect(page).toHaveURL(/team=SK/);
-    const teams = await rows.locator("small").allInnerTexts();
-    expect(new Set(teams)).toEqual(new Set(["SK Konstant Traun / Edelweiss"]));
+    await expect(rows.first()).toContainText("Halilovic, Maid");
+    await expect(rows.locator("small")).toHaveCount(0); // team name is not repeated under every player when filtered
+    await expect(page.locator("#team")).toHaveValue("SK Konstant Traun / Edelweiss");
     expect(await page.content()).not.toContain("person=");
   });
 
