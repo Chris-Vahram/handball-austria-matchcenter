@@ -41,6 +41,7 @@ Next.js, React, TypeScript, Tailwind CSS, Zod, Vitest, Playwright (ADR-001). Com
 `openspec/` is set up (`specs/`, `changes/`, `decisions/` for ADRs, `docs/` for FSD/SDD/risk/handoff docs). 6 changes (`bootstrap-pilot-spec`, `expand-oehb-competitions-and-reports`, `sales-demo-readiness`, `finalize-nuliga-sales-prototype`, `sales-preview-polish`, `unify-edelweiss-traun-club-context`) are fully implemented and committed but not yet archived — Chris approved archiving these (2026-06-11), see `continuations/sales-outreach-next-steps-2026-06-11.md`.
 
 ## Current status / what's left
+- **v3 (2026-11-01, archived change `2026-11-01-add-matchcenter-v3`):** mobile-first sports-site matchcenter in `v3/` (port 3030) with real nuLiga 26/27 data for HLA Challenge West + OÖ Landesliga: Tabelle, Spielplan, Spielbericht, Ranglisten, Statistik, team pages, search (teams + players), print/PDF. Data update: `cd v3 && npm run import -- all`, review snapshot diff, commit. Design record: `DESIGN.md`, contract `.impeccable/surfaces/v3-app-liga.md`.
 - Sales prototype is feature-complete and deployed to a Vercel preview (`/pitch`, `/demo` routes). See `openspec/docs/sales-demo-handoff.md` for live URLs and outreach template (contains real contact info — keep local, don't post publicly).
 - Outreach: email to ÖHB sent (2026-06-11), awaiting response — no further outreach action without Chris.
 - Public-launch checklist remains intentionally open (placeholders, legal/privacy review, public domain) — do not treat as a coding TODO without Chris explicitly asking.
