@@ -13,9 +13,10 @@
       "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingStatistics?displayType=playerSevenMeterGoals&championship=O%C3%96HV+26%2F27&group=218721",
       "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingStatistics?displayType=playerSuspensions&championship=O%C3%96HV+26%2F27&group=218721",
       "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingStatistics?displayType=playerYellowCards&championship=O%C3%96HV+26%2F27&group=218721",
-      "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingStatistics?displayType=playerRedCards&championship=O%C3%96HV+26%2F27&group=218721"
+      "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingStatistics?displayType=playerRedCards&championship=O%C3%96HV+26%2F27&group=218721",
+      "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingStatistics?displayType=groupAndTeams&championship=O%C3%96HV+26%2F27&group=218721"
     ],
-    "importedAt": "2026-10-31T22:27:00.049Z"
+    "importedAt": "2026-11-01T16:37:05.548Z"
   },
   "standings": [
     {
@@ -2151,7 +2152,9 @@
         "club": "Sportunion EDELWEISS Linz",
         "team": "Sportunion EDELWEISS Linz / SK Traun",
         "value": 22,
-        "games": 2
+        "games": 2,
+        "attempts": null,
+        "perGame": 11
       },
       {
         "rank": 2,
@@ -2159,7 +2162,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HC Eferding",
         "value": 20,
-        "games": 3
+        "games": 3,
+        "attempts": null,
+        "perGame": 6.67
       },
       {
         "rank": 3,
@@ -2167,7 +2172,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
         "value": 18,
-        "games": 2
+        "games": 2,
+        "attempts": null,
+        "perGame": 9
       },
       {
         "rank": 4,
@@ -2175,7 +2182,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HC Eferding",
         "value": 18,
-        "games": 3
+        "games": 3,
+        "attempts": null,
+        "perGame": 6
       },
       {
         "rank": 5,
@@ -2183,7 +2192,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HC Eferding",
         "value": 16,
-        "games": 3
+        "games": 3,
+        "attempts": null,
+        "perGame": 5.33
       },
       {
         "rank": 6,
@@ -2191,7 +2202,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HC Eferding",
         "value": 14,
-        "games": 2
+        "games": 2,
+        "attempts": null,
+        "perGame": 7
       },
       {
         "rank": 7,
@@ -2199,7 +2212,9 @@
         "club": "Sportunion EDELWEISS Linz",
         "team": "Sportunion EDELWEISS Linz / SK Traun",
         "value": 12,
-        "games": 2
+        "games": 2,
+        "attempts": null,
+        "perGame": 6
       },
       {
         "rank": 8,
@@ -2207,7 +2222,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
         "value": 12,
-        "games": 2
+        "games": 2,
+        "attempts": null,
+        "perGame": 6
       },
       {
         "rank": 9,
@@ -2215,7 +2232,9 @@
         "club": "HC LINZ AG",
         "team": "ASKÖ HC Urfahr",
         "value": 12,
-        "games": 2
+        "games": 2,
+        "attempts": null,
+        "perGame": 6
       },
       {
         "rank": 10,
@@ -2223,7 +2242,9 @@
         "club": "Sportunion EDELWEISS Linz",
         "team": "Sportunion EDELWEISS Linz / SK Traun",
         "value": 12,
-        "games": 2
+        "games": 2,
+        "attempts": null,
+        "perGame": 6
       },
       {
         "rank": 11,
@@ -2231,7 +2252,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HC Eferding",
         "value": 12,
-        "games": 3
+        "games": 3,
+        "attempts": null,
+        "perGame": 4
       },
       {
         "rank": 12,
@@ -2239,7 +2262,9 @@
         "club": "HC LINZ AG",
         "team": "ASKÖ HC Urfahr",
         "value": 11,
-        "games": 2
+        "games": 2,
+        "attempts": null,
+        "perGame": 5.5
       },
       {
         "rank": 13,
@@ -2247,7 +2272,9 @@
         "club": "HC LINZ AG",
         "team": "ASKÖ HC Urfahr",
         "value": 11,
-        "games": 2
+        "games": 2,
+        "attempts": null,
+        "perGame": 5.5
       },
       {
         "rank": 14,
@@ -2255,7 +2282,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
         "value": 10,
-        "games": 2
+        "games": 2,
+        "attempts": null,
+        "perGame": 5
       },
       {
         "rank": 15,
@@ -2263,7 +2292,9 @@
         "club": "HC LINZ AG",
         "team": "ASKÖ HC Urfahr",
         "value": 10,
-        "games": 2
+        "games": 2,
+        "attempts": null,
+        "perGame": 5
       },
       {
         "rank": 16,
@@ -2271,7 +2302,9 @@
         "club": "Sportunion EDELWEISS Linz",
         "team": "Sportunion EDELWEISS Linz / SK Traun",
         "value": 10,
-        "games": 2
+        "games": 2,
+        "attempts": null,
+        "perGame": 5
       },
       {
         "rank": 17,
@@ -2279,7 +2312,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
         "value": 8,
-        "games": 1
+        "games": 1,
+        "attempts": null,
+        "perGame": 8
       },
       {
         "rank": 18,
@@ -2287,7 +2322,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
         "value": 8,
-        "games": 2
+        "games": 2,
+        "attempts": null,
+        "perGame": 4
       },
       {
         "rank": 19,
@@ -2295,7 +2332,9 @@
         "club": "HC LINZ AG",
         "team": "ASKÖ HC Urfahr",
         "value": 7,
-        "games": 1
+        "games": 1,
+        "attempts": null,
+        "perGame": 7
       },
       {
         "rank": 20,
@@ -2303,7 +2342,9 @@
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat",
         "value": 7,
-        "games": 1
+        "games": 1,
+        "attempts": null,
+        "perGame": 7
       },
       {
         "rank": 21,
@@ -2311,7 +2352,9 @@
         "club": "Sportunion EDELWEISS Linz",
         "team": "Sportunion EDELWEISS Linz / SK Traun",
         "value": 6,
-        "games": 2
+        "games": 2,
+        "attempts": null,
+        "perGame": 3
       },
       {
         "rank": 22,
@@ -2319,7 +2362,9 @@
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat",
         "value": 5,
-        "games": 1
+        "games": 1,
+        "attempts": null,
+        "perGame": 5
       },
       {
         "rank": 23,
@@ -2327,7 +2372,9 @@
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat",
         "value": 5,
-        "games": 1
+        "games": 1,
+        "attempts": null,
+        "perGame": 5
       },
       {
         "rank": 24,
@@ -2335,7 +2382,9 @@
         "club": "Sportunion EDELWEISS Linz",
         "team": "Sportunion EDELWEISS Linz / SK Traun",
         "value": 5,
-        "games": 2
+        "games": 2,
+        "attempts": null,
+        "perGame": 2.5
       },
       {
         "rank": 25,
@@ -2343,7 +2392,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
         "value": 4,
-        "games": 1
+        "games": 1,
+        "attempts": null,
+        "perGame": 4
       },
       {
         "rank": 26,
@@ -2351,7 +2402,9 @@
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat",
         "value": 4,
-        "games": 1
+        "games": 1,
+        "attempts": null,
+        "perGame": 4
       },
       {
         "rank": 27,
@@ -2359,7 +2412,9 @@
         "club": "HC LINZ AG",
         "team": "ASKÖ HC Urfahr",
         "value": 4,
-        "games": 2
+        "games": 2,
+        "attempts": null,
+        "perGame": 2
       },
       {
         "rank": 28,
@@ -2367,7 +2422,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HC Eferding",
         "value": 4,
-        "games": 3
+        "games": 3,
+        "attempts": null,
+        "perGame": 1.33
       },
       {
         "rank": 29,
@@ -2375,7 +2432,9 @@
         "club": "Sportunion EDELWEISS Linz",
         "team": "Sportunion EDELWEISS Linz / SK Traun",
         "value": 3,
-        "games": 1
+        "games": 1,
+        "attempts": null,
+        "perGame": 3
       },
       {
         "rank": 30,
@@ -2383,7 +2442,9 @@
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat",
         "value": 3,
-        "games": 1
+        "games": 1,
+        "attempts": null,
+        "perGame": 3
       },
       {
         "rank": 31,
@@ -2391,7 +2452,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HC Eferding",
         "value": 3,
-        "games": 2
+        "games": 2,
+        "attempts": null,
+        "perGame": 1.5
       },
       {
         "rank": 32,
@@ -2399,7 +2462,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
         "value": 3,
-        "games": 2
+        "games": 2,
+        "attempts": null,
+        "perGame": 1.5
       },
       {
         "rank": 33,
@@ -2407,7 +2472,9 @@
         "club": "Sportunion EDELWEISS Linz",
         "team": "Sportunion EDELWEISS Linz / SK Traun",
         "value": 3,
-        "games": 2
+        "games": 2,
+        "attempts": null,
+        "perGame": 1.5
       },
       {
         "rank": 34,
@@ -2415,7 +2482,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
         "value": 3,
-        "games": 3
+        "games": 3,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 35,
@@ -2423,7 +2492,9 @@
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat",
         "value": 2,
-        "games": 1
+        "games": 1,
+        "attempts": null,
+        "perGame": 2
       },
       {
         "rank": 36,
@@ -2431,7 +2502,9 @@
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat",
         "value": 2,
-        "games": 1
+        "games": 1,
+        "attempts": null,
+        "perGame": 2
       },
       {
         "rank": 37,
@@ -2439,7 +2512,9 @@
         "club": "HC LINZ AG",
         "team": "ASKÖ HC Urfahr",
         "value": 2,
-        "games": 2
+        "games": 2,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 38,
@@ -2447,7 +2522,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
         "value": 2,
-        "games": 2
+        "games": 2,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 39,
@@ -2455,7 +2532,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HC Eferding",
         "value": 1,
-        "games": 1
+        "games": 1,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 40,
@@ -2463,7 +2542,9 @@
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat",
         "value": 1,
-        "games": 1
+        "games": 1,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 41,
@@ -2471,7 +2552,9 @@
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat",
         "value": 1,
-        "games": 1
+        "games": 1,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 42,
@@ -2479,7 +2562,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
         "value": 1,
-        "games": 2
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
       },
       {
         "rank": 43,
@@ -2487,7 +2572,9 @@
         "club": "Sportunion EDELWEISS Linz",
         "team": "Sportunion EDELWEISS Linz / SK Traun",
         "value": 1,
-        "games": 2
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
       },
       {
         "rank": 44,
@@ -2495,7 +2582,9 @@
         "club": "Sportunion EDELWEISS Linz",
         "team": "Sportunion EDELWEISS Linz / SK Traun",
         "value": 1,
-        "games": 2
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
       }
     ],
     "7m": [
@@ -2505,7 +2594,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
         "value": 8,
-        "games": 0
+        "games": null,
+        "attempts": 8,
+        "perGame": 4
       },
       {
         "rank": 2,
@@ -2513,7 +2604,9 @@
         "club": "Sportunion EDELWEISS Linz",
         "team": "Sportunion EDELWEISS Linz / SK Traun",
         "value": 7,
-        "games": 0
+        "games": null,
+        "attempts": 9,
+        "perGame": 3.5
       },
       {
         "rank": 3,
@@ -2521,7 +2614,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HC Eferding",
         "value": 5,
-        "games": 0
+        "games": null,
+        "attempts": 5,
+        "perGame": 2.5
       },
       {
         "rank": 4,
@@ -2529,7 +2624,9 @@
         "club": "HC LINZ AG",
         "team": "ASKÖ HC Urfahr",
         "value": 3,
-        "games": 0
+        "games": null,
+        "attempts": 4,
+        "perGame": 1.5
       },
       {
         "rank": 5,
@@ -2537,7 +2634,9 @@
         "club": "HC LINZ AG",
         "team": "ASKÖ HC Urfahr",
         "value": 3,
-        "games": 0
+        "games": null,
+        "attempts": 6,
+        "perGame": 1.5
       },
       {
         "rank": 6,
@@ -2545,7 +2644,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HC Eferding",
         "value": 2,
-        "games": 0
+        "games": null,
+        "attempts": 4,
+        "perGame": 0.67
       },
       {
         "rank": 7,
@@ -2553,7 +2654,9 @@
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat",
         "value": 1,
-        "games": 0
+        "games": null,
+        "attempts": 1,
+        "perGame": 1
       },
       {
         "rank": 8,
@@ -2561,7 +2664,9 @@
         "club": "Sportunion EDELWEISS Linz",
         "team": "Sportunion EDELWEISS Linz / SK Traun",
         "value": 1,
-        "games": 0
+        "games": null,
+        "attempts": 1,
+        "perGame": 0.5
       },
       {
         "rank": 9,
@@ -2569,7 +2674,9 @@
         "club": "HC LINZ AG",
         "team": "ASKÖ HC Urfahr",
         "value": 1,
-        "games": 0
+        "games": null,
+        "attempts": 2,
+        "perGame": 0.5
       },
       {
         "rank": 10,
@@ -2577,7 +2684,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HC Eferding",
         "value": 1,
-        "games": 0
+        "games": null,
+        "attempts": 2,
+        "perGame": 0.33
       }
     ],
     "zeitstrafen": [
@@ -2586,208 +2695,260 @@
         "name": "BACHMANN, Maximilian",
         "club": "HC LINZ AG",
         "team": "ASKÖ HC Urfahr",
-        "value": 0,
-        "games": 2
+        "value": 5,
+        "games": 2,
+        "attempts": null,
+        "perGame": 2.5
       },
       {
         "rank": 2,
         "name": "HERZOG, Luca",
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
-        "value": 0,
-        "games": 2
+        "value": 4,
+        "games": 2,
+        "attempts": null,
+        "perGame": 2
       },
       {
         "rank": 3,
         "name": "Eid, Hussain",
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
-        "value": 0,
-        "games": 1
+        "value": 2,
+        "games": 1,
+        "attempts": null,
+        "perGame": 2
       },
       {
         "rank": 4,
         "name": "Ben Abid, Maher",
         "club": "Sportunion Wels Handball",
         "team": "HC Eferding",
-        "value": 0,
-        "games": 3
+        "value": 5,
+        "games": 3,
+        "attempts": null,
+        "perGame": 1.66667
       },
       {
         "rank": 5,
         "name": "WIESINGER, Johannes",
         "club": "Sportunion Wels Handball",
         "team": "HC Eferding",
-        "value": 0,
-        "games": 3
+        "value": 4,
+        "games": 3,
+        "attempts": null,
+        "perGame": 1.33333
       },
       {
         "rank": 6,
         "name": "Bosnjak, Gabriel",
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
-        "value": 0,
-        "games": 2
+        "value": 2,
+        "games": 2,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 7,
         "name": "FINK, Robert",
         "club": "HC LINZ AG",
         "team": "ASKÖ HC Urfahr",
-        "value": 0,
-        "games": 2
+        "value": 2,
+        "games": 2,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 8,
         "name": "HRNCIC, Armin",
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
-        "value": 0,
-        "games": 2
+        "value": 2,
+        "games": 2,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 9,
         "name": "OBE, Anasemi Bliss",
         "club": "Sportunion EDELWEISS Linz",
         "team": "Sportunion EDELWEISS Linz / SK Traun",
-        "value": 0,
-        "games": 2
+        "value": 2,
+        "games": 2,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 10,
         "name": "STALTNER, Jonas",
         "club": "HC LINZ AG",
         "team": "ASKÖ HC Urfahr",
-        "value": 0,
-        "games": 2
+        "value": 2,
+        "games": 2,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 11,
         "name": "BALIC, Edin",
         "club": "Sportunion EDELWEISS Linz",
         "team": "Sportunion EDELWEISS Linz / SK Traun",
-        "value": 0,
-        "games": 1
+        "value": 1,
+        "games": 1,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 12,
         "name": "BALIC, Kenan",
         "club": "Sportunion EDELWEISS Linz",
         "team": "Sportunion EDELWEISS Linz / SK Traun",
-        "value": 0,
-        "games": 1
+        "value": 1,
+        "games": 1,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 13,
         "name": "HINTERREITER, Moritz",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat",
-        "value": 0,
-        "games": 1
+        "value": 1,
+        "games": 1,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 14,
         "name": "LETIC, Milos",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat",
-        "value": 0,
-        "games": 1
+        "value": 1,
+        "games": 1,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 15,
         "name": "VIKTOR, Ivo",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat",
-        "value": 0,
-        "games": 1
+        "value": 1,
+        "games": 1,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 16,
         "name": "ANDEXLINGER, Roman",
         "club": "Sportunion Wels Handball",
         "team": "HC Eferding",
-        "value": 0,
-        "games": 3
+        "value": 2,
+        "games": 3,
+        "attempts": null,
+        "perGame": 0.66667
       },
       {
         "rank": 17,
         "name": "GHENT, Leon-Pawel",
         "club": "Sportunion EDELWEISS Linz",
         "team": "Sportunion EDELWEISS Linz / SK Traun",
-        "value": 0,
-        "games": 2
+        "value": 1,
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
       },
       {
         "rank": 18,
         "name": "HINTERHÖLZL, Stefan",
         "club": "Sportunion Wels Handball",
         "team": "HC Eferding",
-        "value": 0,
-        "games": 2
+        "value": 1,
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
       },
       {
         "rank": 19,
         "name": "KOLB, Jonathan Navin",
         "club": "HC LINZ AG",
         "team": "ASKÖ HC Urfahr",
-        "value": 0,
-        "games": 2
+        "value": 1,
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
       },
       {
         "rank": 20,
         "name": "Mertens, Florian",
         "club": "HC LINZ AG",
         "team": "ASKÖ HC Urfahr",
-        "value": 0,
-        "games": 2
+        "value": 1,
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
       },
       {
         "rank": 21,
         "name": "NADAREVIC, Eldar",
         "club": "Sportunion EDELWEISS Linz",
         "team": "Sportunion EDELWEISS Linz / SK Traun",
-        "value": 0,
-        "games": 2
+        "value": 1,
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
       },
       {
         "rank": 22,
         "name": "PETRISIC, David",
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
-        "value": 0,
-        "games": 2
+        "value": 1,
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
       },
       {
         "rank": 23,
         "name": "VAHRAM, Chris Martin",
         "club": "Sportunion EDELWEISS Linz",
         "team": "Sportunion EDELWEISS Linz / SK Traun",
-        "value": 0,
-        "games": 2
+        "value": 1,
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
       },
       {
         "rank": 24,
         "name": "Vogel, David",
         "club": "Sportunion EDELWEISS Linz",
         "team": "Sportunion EDELWEISS Linz / SK Traun",
-        "value": 0,
-        "games": 2
+        "value": 1,
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
       },
       {
         "rank": 25,
         "name": "WÖß, Florian",
         "club": "Sportunion EDELWEISS Linz",
         "team": "Sportunion EDELWEISS Linz / SK Traun",
-        "value": 0,
-        "games": 2
+        "value": 1,
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
       },
       {
         "rank": 26,
         "name": "ZINNER, Markus",
         "club": "HC LINZ AG",
         "team": "ASKÖ HC Urfahr",
-        "value": 0,
-        "games": 2
+        "value": 1,
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
       }
     ],
     "gelb": [
@@ -2796,8 +2957,10 @@
         "name": "Eid, Hussain",
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
-        "value": 0,
-        "games": 1
+        "value": 1,
+        "games": 1,
+        "attempts": null,
+        "perGame": 1
       }
     ],
     "rot": [
@@ -2806,40 +2969,144 @@
         "name": "BACHMANN, Maximilian",
         "club": "HC LINZ AG",
         "team": "ASKÖ HC Urfahr",
-        "value": 0,
-        "games": 2
+        "value": 1,
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
       },
       {
         "rank": 2,
         "name": "HERZOG, Luca",
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
-        "value": 0,
-        "games": 2
+        "value": 1,
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
       },
       {
         "rank": 3,
         "name": "WÖẞ, Albrecht",
         "club": "Sportunion EDELWEISS Linz",
         "team": "Sportunion EDELWEISS Linz / SK Traun",
-        "value": 0,
-        "games": 2
+        "value": 1,
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
       },
       {
         "rank": 4,
         "name": "Ben Abid, Maher",
         "club": "Sportunion Wels Handball",
         "team": "HC Eferding",
-        "value": 0,
-        "games": 3
+        "value": 1,
+        "games": 3,
+        "attempts": null,
+        "perGame": 0.33333
       },
       {
         "rank": 5,
         "name": "WIESINGER, Johannes",
         "club": "Sportunion Wels Handball",
         "team": "HC Eferding",
-        "value": 0,
-        "games": 3
+        "value": 1,
+        "games": 3,
+        "attempts": null,
+        "perGame": 0.33333
+      }
+    ]
+  },
+  "groupStats": {
+    "group": {
+      "name": "Gruppenstatistik",
+      "games": 5,
+      "scheduled": 40,
+      "goals": 319,
+      "sevenMAttempts": 42,
+      "sevenMGoals": 32,
+      "twoMin": 47,
+      "yellow": 1,
+      "red": 5,
+      "spectators": null,
+      "homeWins": 3,
+      "awayWins": 2,
+      "draws": 0
+    },
+    "teams": [
+      {
+        "name": "ASKÖ HC Urfahr",
+        "games": 2,
+        "scheduled": 16,
+        "goals": 57,
+        "sevenMAttempts": 12,
+        "sevenMGoals": 7,
+        "twoMin": 12,
+        "yellow": 0,
+        "red": 1,
+        "spectators": null,
+        "homeWins": 1,
+        "awayWins": 0,
+        "draws": 0
+      },
+      {
+        "name": "HC Eferding",
+        "games": 3,
+        "scheduled": 16,
+        "goals": 91,
+        "sevenMAttempts": 11,
+        "sevenMGoals": 8,
+        "twoMin": 12,
+        "yellow": 0,
+        "red": 2,
+        "spectators": null,
+        "homeWins": 0,
+        "awayWins": 1,
+        "draws": 0
+      },
+      {
+        "name": "HSC Wels",
+        "games": 2,
+        "scheduled": 16,
+        "goals": 66,
+        "sevenMAttempts": 8,
+        "sevenMGoals": 8,
+        "twoMin": 11,
+        "yellow": 1,
+        "red": 1,
+        "spectators": null,
+        "homeWins": 1,
+        "awayWins": 0,
+        "draws": 0
+      },
+      {
+        "name": "SG HC LINZ AG/Neue Heimat",
+        "games": 1,
+        "scheduled": 16,
+        "goals": 30,
+        "sevenMAttempts": 1,
+        "sevenMGoals": 1,
+        "twoMin": 3,
+        "yellow": 0,
+        "red": 0,
+        "spectators": null,
+        "homeWins": 0,
+        "awayWins": 0,
+        "draws": 0
+      },
+      {
+        "name": "Sportunion EDELWEISS Linz / SK Traun",
+        "games": 2,
+        "scheduled": 16,
+        "goals": 75,
+        "sevenMAttempts": 10,
+        "sevenMGoals": 8,
+        "twoMin": 9,
+        "yellow": 0,
+        "red": 1,
+        "spectators": null,
+        "homeWins": 1,
+        "awayWins": 1,
+        "draws": 0
       }
     ]
   }

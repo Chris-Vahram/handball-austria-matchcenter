@@ -49,6 +49,13 @@ The page SHALL show the whole season's Spielplan grouped by Runde, opening on th
 - **WHEN** the user steps forward from Runde 6
 - **THEN** Runde 7 is shown
 
+### Requirement: Today marker
+Matches on the current day (Europe/Vienna) SHALL be marked "Heute" in red in the schedule; red is otherwise reserved for the showcase team and navigation state.
+
+#### Scenario: Match day
+- **WHEN** the schedule shows a round with a match dated today
+- **THEN** that day's heading reads "Heute" in red
+
 ### Requirement: Link to report
 A played match with an imported report SHALL link to its Spielbericht; a report not yet approved by nuLiga MUST be labeled "noch nicht genehmigt".
 

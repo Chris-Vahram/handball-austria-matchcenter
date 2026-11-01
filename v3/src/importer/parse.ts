@@ -1,5 +1,5 @@
 import { parse, type HTMLElement } from "node-html-parser";
-import type { Match, Report, ReportTeam, StandingRow, StatRow } from "../domain/schema";
+import type { Match, Report, ReportTeam, StandingRow, StatRow, TeamStats } from "../domain/schema";
 
 /*
  * Privacy by construction (ADR-005): every parser copies only whitelisted fields.
@@ -161,15 +161,52 @@ export function parseReport(html: string, id: string): Report {
   };
 }
 
+/** The value column of each nuLiga ranking, by exact header (column order differs per list). */
+export const STAT_VALUE_HEADER = { tore: "Tore", "7m": "7m-Tore", zeitstrafen: "Zeitstrafen", gelb: "Gelbe Karten", rot: "Rote Karten" } as const;
+
 /** Player ranking from groupMeetingStatistics. Portrait links and person IDs are dropped. */
-export function parseStats(html: string): Omit<StatRow, "team">[] {
+export function parseStats(html: string, valueHeader: string): Omit<StatRow, "team">[] {
   const table = resultTables(html)[0];
   if (!table) throw new Error("Statistics table not found");
-  const col = headerIndex(table);
-  const [rank, name, club, games] = ["Rang", "Spieler", "Verein", "Spiele"].map(col);
-  const value = 3; // the kind-specific value column (Tore, 7m-Tore, Zeitstrafen, Karten) follows "Verein"
-  return table.querySelectorAll("tr").filter((tr) => tr.querySelectorAll("td").length > games).map((tr) => {
+  const headers = table.querySelectorAll("th").map((th) => text(th));
+  const exact = (h: string) => headers.indexOf(h);
+  const [rank, name, club, value] = ["Rang", "Spieler", "Verein", valueHeader].map(exact);
+  if ([rank, name, club, value].some((i) => i < 0)) throw new Error(`Statistics columns missing (need ${valueHeader}) in [${headers.join(", ")}]`);
+  const games = exact("Spiele"); // the 7m list has no games column
+  const attempts = exact("7m-Versuche");
+  const perGame = exact("∅ pro Spiel");
+  const last = Math.max(rank, name, club, value, games, attempts);
+  let previous = 0;
+  return table.querySelectorAll("tr").filter((tr) => tr.querySelectorAll("td").length > last).map((tr) => {
     const c = tr.querySelectorAll("td").map((td) => text(td));
-    return { rank: int(c[rank].replace(".", "")), name: c[name], club: c[club], value: int(c[value]), games: int(c[games]) };
+    previous = int(c[rank].replace(".", "")) || previous; // tied ranks may be left blank
+    return {
+      rank: previous, name: c[name], club: c[club], value: int(c[value]),
+      games: games >= 0 ? int(c[games]) : null,
+      attempts: attempts >= 0 ? int(c[attempts]) : null,
+      perGame: perGame >= 0 && /^\d+(,\d+)?$/.test(c[perGame]) ? Number(c[perGame].replace(",", ".")) : null
+    };
   });
+}
+
+/** "Gruppen- und Mannschaftsstatistik": one table per block, first the group, then each team. Aggregates only. */
+export function parseGroupStats(html: string): { group: TeamStats; teams: TeamStats[] } {
+  const blocks = resultTables(html).map((table) => {
+    const head = /^(.+?) \((\d+)\/(\d+) Spiele\)$/.exec(text(table.querySelector("th")));
+    if (!head) return null;
+    const rows = new Map(table.querySelectorAll("tr").map((tr) => tr.querySelectorAll("td").map((td) => text(td))).filter((c) => c.length >= 2).map((c) => [c[0], c[1]]));
+    const all = table.querySelectorAll("td").map((td) => text(td)).join(" ");
+    const split = /(\d+) Heimsieg\(e\) \/ (\d+) Auswärtssieg\(e\) \/ (\d+) Unentschieden/.exec(all);
+    const n = (label: string) => int((rows.get(label) ?? "").replace(/\s/g, ""));
+    return {
+      name: head[1].trim(), games: Number(head[2]), scheduled: Number(head[3]),
+      goals: n("Tore"), sevenMAttempts: n("7m-Versuche"), sevenMGoals: n("7m-Tore"),
+      twoMin: n("Zeitstrafen gesamt"), yellow: n("Gelbe Karten"), red: n("Rote Karten"),
+      spectators: rows.has("Zuschauer") ? n("Zuschauer") : null,
+      homeWins: split ? Number(split[1]) : 0, awayWins: split ? Number(split[2]) : 0, draws: split ? Number(split[3]) : 0
+    };
+  }).filter((b): b is TeamStats => b !== null);
+  const group = blocks.find((b) => b.name === "Gruppenstatistik");
+  if (!group) throw new Error("Group statistics block not found");
+  return { group, teams: blocks.filter((b) => b !== group) };
 }

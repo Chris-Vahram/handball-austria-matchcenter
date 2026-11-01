@@ -54,7 +54,8 @@ export const sourceUrls = {
   groupPage: (id: CompetitionId) => `${BASE}/groupPage?${query(id)}`,
   schedule: (id: CompetitionId) => `${BASE}/groupPage?displayTyp=vorrunde&displayDetail=meetings&${query(id)}`,
   report: (id: CompetitionId, meeting: string) => `${BASE}/groupMeetingReport?meeting=${meeting}&${query(id)}`,
-  stats: (id: CompetitionId, kind: StatKind) => `${BASE}/groupMeetingStatistics?displayType=${STAT_KINDS[kind]}&${query(id)}`
+  stats: (id: CompetitionId, kind: StatKind) => `${BASE}/groupMeetingStatistics?displayType=${STAT_KINDS[kind]}&${query(id)}`,
+  groupStats: (id: CompetitionId) => `${BASE}/groupMeetingStatistics?displayType=groupAndTeams&${query(id)}`
 };
 
 /** ADR-004 (2026/27 section): only configured groups and their listed subpages. */
@@ -75,7 +76,8 @@ export function isAllowedSourceUrl(raw: string): boolean {
     case "groupMeetingReport":
       return keys === "championship,group,meeting" && /^\d+$/.test(p.get("meeting") ?? "");
     case "groupMeetingStatistics":
-      return keys === "championship,displayType,group" && Object.values(STAT_KINDS).includes(p.get("displayType") as never);
+      return keys === "championship,displayType,group" &&
+        (p.get("displayType") === "groupAndTeams" || Object.values(STAT_KINDS).includes(p.get("displayType") as never));
     default:
       return false;
   }

@@ -5,6 +5,7 @@ import { Schedule } from "@ui/schedule";
 import { Standings } from "@ui/standings";
 import { COMPETITIONS, COMPETITION_IDS, getDataset, isCompetitionId } from "@/data";
 import { currentRound, roundsOf } from "@/lib/rounds";
+import { teamSlug } from "@/lib/teams";
 
 type Props = { params: Promise<{ competition: string }>; searchParams: Promise<{ runde?: string }> };
 
@@ -40,8 +41,8 @@ export default async function LigaPage({ params, searchParams }: Props) {
           <>
             <section className="panel" id="tabelle" aria-labelledby="h-tabelle">
               <h2 className="section-title sr-only" id="h-tabelle">Tabelle</h2>
-              <Standings rows={data.standings} showcase={c.showcaseTeam} matches={data.matches} />
-              <p className="legend">Tabelle nach Punktestand, wie auf nuLiga. Nach Saisonende entscheidet der direkte Vergleich.<span className="form-hint"> Form: letzte 5 Spiele, neuestes rechts (S Sieg, U Unentschieden, N Niederlage).</span></p>
+              <Standings rows={data.standings} showcase={c.showcaseTeam} matches={data.matches} teamHref={(team) => `/${competition}/team/${teamSlug(team)}`} />
+              <p className="legend">Teamname öffnet Spiele, Form und Spieler. Tabelle nach Punktestand, wie auf nuLiga. Nach Saisonende entscheidet der direkte Vergleich.<span className="form-hint"> Form: letzte 5 Spiele, neuestes rechts (S Sieg, U Unentschieden, N Niederlage).</span></p>
             </section>
             <section className="panel" id="spielplan" aria-labelledby="h-spielplan">
               <h2 className="section-title" id="h-spielplan">Spielplan</h2>

@@ -32,5 +32,13 @@ only. Allowlisted sources are defined in ADR-004.
 ## Consequences
 
 - Names of minors playing in adult competitions may appear, exactly as on the
-  public nuLiga pages. Mitigation: no extra fields, no profiles, no search by
-  person, removal on request by deleting the player from the snapshot.
+  public nuLiga pages. Mitigation: no extra fields, no person profiles, removal
+  on request by deleting the player from the snapshot.
+
+## Amendment 2026-10-31: player search
+
+Owner decision (Chris, 2026-10-31): "ja die suche kann auch spieler finden
+ benutze als quelle handball stats". The v3 search may match player names,
+ using only the nuLiga player rankings ("Statistiken und Ranglisten") of adult
+ competitions as source. Hits show name, team and competition and link to the
+ team page; no person profile pages are created.

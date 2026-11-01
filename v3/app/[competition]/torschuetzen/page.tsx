@@ -5,6 +5,10 @@ import { Footer, Header } from "@ui/shell";
 import { COMPETITIONS, COMPETITION_IDS, getDataset, isCompetitionId } from "@/data";
 import type { StatKind } from "@/importer/config";
 
+/** nuLiga ranks suspensions and cards by the per-game value, so that value leads those lists. */
+const PER_GAME: StatKind[] = ["zeitstrafen", "gelb", "rot"];
+const perGame = (n: number | null) => (n === null ? "–" : n.toFixed(2).replace(".", ","));
+
 const LISTS: { kind: StatKind; tab: string; value: string }[] = [
   { kind: "tore", tab: "Tore", value: "Tore" },
   { kind: "7m", tab: "7m", value: "7m-Tore" },
@@ -24,7 +28,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { competition } = await params;
-  return isCompetitionId(competition) ? { title: `${COMPETITIONS[competition].name} – Torschützen` } : {};
+  return isCompetitionId(competition) ? { title: `${COMPETITIONS[competition].name} – Ranglisten` } : {};
 }
 
 export default async function StatsPage({ params, searchParams }: Props) {
@@ -39,6 +43,7 @@ export default async function StatsPage({ params, searchParams }: Props) {
   const teams = (data?.standings ?? []).map((s) => s.team);
   const team = teamParam && teams.includes(teamParam) ? teamParam : "";
   const rows = team ? all.filter((r) => r.team === team) : all;
+  const byGame = PER_GAME.includes(list.kind);
   const href = (kind: StatKind) => `/${competition}/torschuetzen?liste=${kind}${team ? `&team=${encodeURIComponent(team)}` : ""}`;
 
   return (
@@ -70,8 +75,9 @@ export default async function StatsPage({ params, searchParams }: Props) {
                 <tr>
                   <th scope="col" className="rk"><abbr title="Rang">#</abbr></th>
                   <th scope="col" className="nm">Spieler · Team</th>
-                  <th scope="col"><abbr title="Spiele">Sp</abbr></th>
-                  <th scope="col" className="val">{list.tab}</th>
+                  <th scope="col">{list.kind === "7m" ? <abbr title="7m-Versuche">Vers.</abbr> : <abbr title="Spiele">Sp</abbr>}</th>
+                  {byGame && <th scope="col"><abbr title={`${list.value} gesamt`}>Ges.</abbr></th>}
+                  <th scope="col" className="val">{byGame ? <abbr title={`${list.value} pro Spiel (Sortierung wie nuLiga)`}>∅/Sp.</abbr> : list.tab}</th>
                 </tr>
               </thead>
               <tbody>
@@ -79,14 +85,15 @@ export default async function StatsPage({ params, searchParams }: Props) {
                   <tr key={`${r.rank}-${r.name}-${r.club}`} className={!team && r.team === c.showcaseTeam ? "me" : undefined}>
                     <td className="rk">{r.rank}</td>
                     <th scope="row" className="nm">{r.name}<small>{r.team}</small></th>
-                    <td className="sp">{r.games}</td>
-                    <td className="val">{r.value}</td>
+                    <td className="sp">{(list.kind === "7m" ? r.attempts : r.games) ?? "–"}</td>
+                    {byGame && <td className="sp">{r.value}</td>}
+                    <td className="val">{byGame ? perGame(r.perGame) : r.value}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           )}
-          <p className="legend">Rangliste wie auf nuLiga. Team aus den Spielberichten zugeordnet.</p>
+          <p className="legend">Rangliste wie auf nuLiga{byGame ? ", sortiert nach Wert pro Spiel" : ""}. Team aus den Spielberichten zugeordnet.</p>
         </section>
       </main>
       <Footer id={competition} importedAt={data?.source.importedAt ?? null} />

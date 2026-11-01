@@ -50,6 +50,16 @@
 - [x] 8.1 Implement the team search (standings of all competitions, diacritic-insensitive; no person search per ADR-005) and verify unit tests from the spec scenarios
 - [x] 8.2 Add the header search field (GET form) and `/suche` results page and verify e2e at 390 px (no horizontal scroll) for "traun", repeated `q`, and "strauch" (no person hits)
 
+## 9. Ausbau (owner request 2026-10-31)
+
+- [x] 9.1 Fix ranking values read from a fixed column (Zeitstrafen/Gelb/Rot showed 0) by reading the named value column; verify regression tests for all five lists
+- [x] 9.2 Allow and parse the group/team statistics page (ADR-004 addendum) and verify fixture tests (23/56 Spiele, 1351 Tore, 17/6/0)
+- [x] 9.3 Build team pages (header, next match, form, home/away, fixtures, team stats, player table; links from table and search) and verify e2e for Traun at 390 px
+- [x] 9.4 Build the Statistik view (group totals + team comparison) and verify e2e at 390 px
+- [x] 9.5 Player search from the rankings (ADR-005 updated with owner decision) and verify unit + e2e for "strauch"
+- [x] 9.6 Add the red "Heute" marker and the one-row desktop header bar and verify e2e/visual at 390 and 1440
+- [ ] 9.7 Run full checks, finish review and update DESIGN.md + design.json
+
 ## Workflow follow-up
 
 - Archive the change after Chris reviews the v3 preview.

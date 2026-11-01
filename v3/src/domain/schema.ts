@@ -63,7 +63,25 @@ export const statRowSchema = z.object({
   club: z.string().min(1),
   team: z.string().min(1),
   value: count,
-  games: count
+  games: count.nullable(),
+  attempts: count.nullable(),
+  perGame: z.number().min(0).nullable()
+}).strict();
+
+export const teamStatsSchema = z.object({
+  name: z.string().min(1),
+  games: count,
+  scheduled: count,
+  goals: count,
+  sevenMAttempts: count,
+  sevenMGoals: count,
+  twoMin: count,
+  yellow: count,
+  red: count,
+  spectators: count.nullable(),
+  homeWins: count,
+  awayWins: count,
+  draws: count
 }).strict();
 
 export const datasetSchema = z.object({
@@ -72,7 +90,8 @@ export const datasetSchema = z.object({
   standings: z.array(standingRowSchema).min(2),
   matches: z.array(matchSchema),
   reports: z.record(z.string(), reportSchema),
-  stats: z.record(z.string(), z.array(statRowSchema))
+  stats: z.record(z.string(), z.array(statRowSchema)),
+  groupStats: z.object({ group: teamStatsSchema, teams: z.array(teamStatsSchema) }).strict().nullable()
 }).strict();
 
 export type StandingRow = z.infer<typeof standingRowSchema>;
@@ -81,3 +100,4 @@ export type Report = z.infer<typeof reportSchema>;
 export type ReportTeam = z.infer<typeof reportTeamSchema>;
 export type StatRow = z.infer<typeof statRowSchema>;
 export type Dataset = z.infer<typeof datasetSchema>;
+export type TeamStats = z.infer<typeof teamStatsSchema>;

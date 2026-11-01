@@ -4,7 +4,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { isAllowedSourceUrl, sourceUrls } from "./config";
 import { createFetcher } from "./fetcher";
-import { parseReport, parseSchedule, parseStandings, parseStats } from "./parse";
+import { parseGroupStats, parseReport, parseSchedule, parseStandings, parseStats } from "./parse";
 import { assignRounds, currentRound } from "../lib/rounds";
 import { teamResolver } from "./import";
 
@@ -113,8 +113,8 @@ describe("parsers on 31.10.2026 fixtures", () => {
   });
 
   it("reads the scorer list without person IDs", async () => {
-    const rows = parseStats(await fixture("stats-goals.html"));
-    expect(rows[0]).toEqual({ rank: 1, name: "ARNDT, Arvid", club: "Sparkasse Schwaz Handball Tirol", value: 42, games: 5 });
+    const rows = parseStats(await fixture("stats-goals.html"), "Tore");
+    expect(rows[0]).toEqual({ rank: 1, name: "ARNDT, Arvid", club: "Sparkasse Schwaz Handball Tirol", value: 42, games: 5, attempts: null, perGame: 8.4 });
     expect(rows.every((r) => r.rank >= 1)).toBe(true);
     expect(JSON.stringify(rows)).not.toContain("person=");
   });
@@ -123,7 +123,7 @@ describe("parsers on 31.10.2026 fixtures", () => {
 describe("stat team resolution", () => {
   it("maps nuLiga Verein to the table team via report lineups", async () => {
     const r = parseReport(await fixture("report-93135.html"), "93135");
-    const rows = parseStats(await fixture("stats-goals.html"));
+    const rows = parseStats(await fixture("stats-goals.html"), "Tore");
     const teamOf = teamResolver([r]);
     expect(teamOf(rows.find((x) => x.name === "STRAUCH, Tore")!, rows)).toBe("SK Konstant Traun / Edelweiss");
     const traunNotInReport = rows.find((x) => x.club === "SK-Handball Traun" && !r.away.players.some((p) => p.name === x.name));
@@ -145,6 +145,37 @@ describe("rounds", () => {
   });
 });
 
+describe("all five rankings read their own value column", () => {
+  it.each([
+    ["stats-suspensions.html", "Zeitstrafen", { name: "DILYS, Devanas", value: 2, games: 1, perGame: 2 }],
+    ["stats-yellow.html", "Gelbe Karten", {}],
+    ["stats-red.html", "Rote Karten", {}],
+    ["stats-7m.html", "7m-Tore", { name: "PIRINGER, Jannik", value: 20, games: null }]
+  ] as const)("%s", async (file, header, first) => {
+    const rows = parseStats(await fixture(file), header);
+    expect(rows.length).toBeGreaterThan(0);
+    expect(rows.every((r) => r.value >= 1 && r.rank >= 1)).toBe(true); // regression: values were all 0
+    expect(rows[0]).toMatchObject(first);
+  });
+
+  it("7m keeps attempts", async () => {
+    const rows = parseStats(await fixture("stats-7m.html"), "7m-Tore");
+    expect(rows.every((r) => r.attempts !== null && r.attempts >= r.value)).toBe(true);
+  });
+});
+
+describe("group and team statistics", () => {
+  it("reads group totals and one block per team", async () => {
+    const { group, teams } = parseGroupStats(await fixture("group-stats.html"));
+    expect(group).toMatchObject({ games: 23, scheduled: 56, goals: 1351, sevenMAttempts: 219, sevenMGoals: 158, twoMin: 200, yellow: 12, red: 12, spectators: 1836, homeWins: 17, awayWins: 6, draws: 0 });
+    expect(teams).toHaveLength(8);
+    expect(teams.find((t) => t.name === "Bregenz Handball FT")).toMatchObject({ games: 6, goals: 180, spectators: 621, homeWins: 2, awayWins: 1 });
+  });
+  it("is allowlisted", () => {
+    expect(isAllowedSourceUrl(sourceUrls.groupStats("hla-challenge-west"))).toBe(true);
+  });
+});
+
 describe("hardening", () => {
   it("rejects a report whose lineup lost a row", async () => {
     const html = (await fixture("report-93135.html")).replace(/(<td>9<\/td>[\s\S]*?)<\/tr>/, "$1");
@@ -155,7 +186,7 @@ describe("hardening", () => {
     const schedule = await fixture("schedule.html");
     const headerOnly = schedule.replace(/(<table class="result-set"[\s\S]*?<\/tr>)[\s\S]*?<\/table>/, "$1</table>");
     expect(() => parseSchedule(headerOnly)).toThrow(/no matches/);
-    expect(() => parseStats("<html><body>Keine Daten</body></html>")).toThrow(/not found/);
+    expect(() => parseStats("<html><body>Keine Daten</body></html>", "Tore")).toThrow(/not found/);
   });
 
   it("refuses redirects", async () => {

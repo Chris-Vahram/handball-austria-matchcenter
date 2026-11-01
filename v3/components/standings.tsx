@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Match, StandingRow } from "@/domain/schema";
 import { lastFive } from "@/lib/form";
 import { formatDiff } from "@/lib/format";
@@ -5,7 +6,7 @@ import { formatDiff } from "@/lib/format";
 const RESULT = { S: "Sieg", U: "Unentschieden", N: "Niederlage" } as const;
 
 /** `matches` adds the desktop-only form column (last five results). */
-export function Standings({ rows, showcase, matches }: { rows: StandingRow[]; showcase: string; matches?: Match[] }) {
+export function Standings({ rows, showcase, matches, teamHref }: { rows: StandingRow[]; showcase: string; matches?: Match[]; teamHref?: (team: string) => string }) {
   return (
     <table className="standings">
       <caption className="sr-only">Tabelle</caption>
@@ -27,7 +28,7 @@ export function Standings({ rows, showcase, matches }: { rows: StandingRow[]; sh
           return (
             <tr key={r.team} className={me ? "me" : undefined}>
               <td className="rk">{r.rank}</td>
-              <th scope="row" className="tm">{r.team}{me && <span className="sr-only"> (Showcase-Team)</span>}</th>
+              <th scope="row" className="tm">{teamHref ? <Link href={teamHref(r.team)}>{r.team}</Link> : r.team}{me && <span className="sr-only"> (Showcase-Team)</span>}</th>
               <td className="sp">{r.played}</td>
               <td className="sun">{r.won}-{r.drawn}-{r.lost}</td>
               <td className="goals">{r.goalsFor}:{r.goalsAgainst}</td>

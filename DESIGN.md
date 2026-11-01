@@ -221,7 +221,7 @@ Mostly square, with small and purposeful corners: 4px on status tags, 6px on con
 
 ### Inputs / Fields
 - **Select:** 1px light-grey border, 6px corners, white fill, 16px text, 44px minimum height. Below 600px the label sits above a full-width select and the button sits underneath, so long official team names are never cut; from 600px label, select and button share one row.
-- **Search field (header bar, every page):** field-grey fill, 1px light-grey border, 6px corners, 44px height, a drawn magnifier inside on the left, placeholder "Team suchen". It turns white with an ink border on focus. It is a plain GET form to /suche and searches teams only (ADR-005).
+- **Search field (header bar, every page):** field-grey fill, 1px light-grey border, 6px corners, 44px height, a drawn magnifier inside on the left, placeholder "Team oder Spieler". It turns white with an ink border on focus. It is a plain GET form to /suche; teams come from the standings, players from the nuLiga rankings (ADR-005 amendment).
 - **Focus:** the global red outline.
 - **Touch targets:** every control (switch, tabs, list switch, search, filter, back links) is at least 44px tall.
 
@@ -231,12 +231,32 @@ Mostly square, with small and purposeful corners: 4px on status tags, 6px on con
 - A 12px mute legend sits below the table. The scorer ranking and report roster follow the same row grammar.
 - **Form column (desktop ≥900px only):** the last five results as 18px squares, oldest to newest left to right: S is filled ink, U is light grey, N is white with a grey outline. Never red, which belongs to the own team. A legend sentence explains the reading direction. On the phone the column is hidden, so all required columns still fit without horizontal scrolling.
 
+### Header Bar
+- Phone: wordmark and search share the first row, the two-segment competition switch spans the second.
+- Desktop (≥900px): one row, wordmark | switch (max 420px) | search (max 280px), 64px tall. The competition title and the sticky tab bar (Tabelle, Spielplan, Torschützen, Statistik) follow below.
+
 ### Match Row
 - Flashscore form: time on the left spanning both lines, home team over away team, one score per line on the right, and the winner in bold. A meta line (number · venue · note) runs underneath.
 - Played games link to the report, with a near-white hover. Unplayed games show "angesetzt" in mute where the score would be.
 
 ### Round Flipper (signature)
 - Two 44px circular field-grey buttons with chevrons around a centered "Runde N" with its date span. When there is no previous or next round, the button stays in place at 35% opacity.
+
+### Team Page
+- Head panel: the full official team name as condensed uppercase h1 (Deep Red Ink only for the showcase team), a rank line ("7. Platz · 6 Punkte · 3-0-3 · 170:191 (−21)"), then Form chips, Heim and Auswärts records as label-over-value facts.
+- "Nächstes Spiel" panel: day and time in mute, the pairing in 17px with the team itself in 800, meta line with number, Runde and Heim-/Auswärtsspiel.
+- Fixtures reuse the Match Row with the date stacked above the time; on the team page no row is red, because every row is the team's own.
+- Team statistics use a 3-column label-over-value grid (per-game values, Zuschauer/Sp.); the player table follows the roster grammar (Tore, 7m Tore/Versuche, 2′, G, R). Team card totals include officials, which the legend says.
+- Desktop: fixtures left, statistics and players right, both 1fr.
+
+### Statistik
+- League totals as a label-over-value grid (3 columns on the phone, 5 on desktop), then a team comparison table (Team with games as subline, Tore/Sp in the condensed figure style as the lead, 7m-Quote, 2′/Sp, Zuschauer/Sp in mute) that fits 390px with a 12px inset; the showcase team row gets the blush tint.
+
+### Ranglisten
+- Five lists behind a segmented switch (Tore, 7m, 2-Min, Gelb, Rot). Suspension and card lists lead with the per-game value nuLiga sorts by (∅/Sp. in the figure style) next to games and total; 7m shows attempts instead of games.
+
+### Today Marker
+- A schedule day heading for the current Vienna date reads "**Heute** · Sonntag, 1. November" in Deep Red Ink, bold, sentence case. This is the only "live" red; there is no live score.
 
 ### Scoreboard
 - Centered: home name right-aligned, the condensed score in the middle with the half-time score beneath it in 12px mute, away name left-aligned. Winner at 800, own team in Deep Red Ink. Below it are the facts line and a status tag. A pending report gets a dashed border and stays neutral.

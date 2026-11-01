@@ -31,9 +31,10 @@
       "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingStatistics?displayType=playerSevenMeterGoals&championship=%C3%96HB+26%2F27&group=218583",
       "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingStatistics?displayType=playerSuspensions&championship=%C3%96HB+26%2F27&group=218583",
       "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingStatistics?displayType=playerYellowCards&championship=%C3%96HB+26%2F27&group=218583",
-      "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingStatistics?displayType=playerRedCards&championship=%C3%96HB+26%2F27&group=218583"
+      "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingStatistics?displayType=playerRedCards&championship=%C3%96HB+26%2F27&group=218583",
+      "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingStatistics?displayType=groupAndTeams&championship=%C3%96HB+26%2F27&group=218583"
     ],
-    "importedAt": "2026-10-31T22:26:59.972Z"
+    "importedAt": "2026-11-01T16:37:05.432Z"
   },
   "standings": [
     {
@@ -8529,7 +8530,9 @@
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
         "value": 42,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 8.4
       },
       {
         "rank": 2,
@@ -8537,7 +8540,9 @@
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
         "value": 41,
-        "games": 6
+        "games": 6,
+        "attempts": null,
+        "perGame": 6.83
       },
       {
         "rank": 3,
@@ -8545,7 +8550,9 @@
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
         "value": 39,
-        "games": 6
+        "games": 6,
+        "attempts": null,
+        "perGame": 6.5
       },
       {
         "rank": 4,
@@ -8553,7 +8560,9 @@
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
         "value": 35,
-        "games": 6
+        "games": 6,
+        "attempts": null,
+        "perGame": 5.83
       },
       {
         "rank": 5,
@@ -8561,7 +8570,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
         "value": 34,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 6.8
       },
       {
         "rank": 6,
@@ -8569,7 +8580,9 @@
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
         "value": 34,
-        "games": 6
+        "games": 6,
+        "attempts": null,
+        "perGame": 5.67
       },
       {
         "rank": 7,
@@ -8577,7 +8590,9 @@
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
         "value": 34,
-        "games": 6
+        "games": 6,
+        "attempts": null,
+        "perGame": 5.67
       },
       {
         "rank": 8,
@@ -8585,7 +8600,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
         "value": 31,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 6.2
       },
       {
         "rank": 9,
@@ -8593,7 +8610,9 @@
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
         "value": 30,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 6
       },
       {
         "rank": 10,
@@ -8601,7 +8620,9 @@
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
         "value": 30,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 6
       },
       {
         "rank": 11,
@@ -8609,7 +8630,9 @@
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
         "value": 30,
-        "games": 6
+        "games": 6,
+        "attempts": null,
+        "perGame": 5
       },
       {
         "rank": 12,
@@ -8617,7 +8640,9 @@
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
         "value": 29,
-        "games": 4
+        "games": 4,
+        "attempts": null,
+        "perGame": 7.25
       },
       {
         "rank": 13,
@@ -8625,7 +8650,9 @@
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
         "value": 28,
-        "games": 4
+        "games": 4,
+        "attempts": null,
+        "perGame": 7
       },
       {
         "rank": 14,
@@ -8633,7 +8660,9 @@
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
         "value": 27,
-        "games": 6
+        "games": 6,
+        "attempts": null,
+        "perGame": 4.5
       },
       {
         "rank": 15,
@@ -8641,7 +8670,9 @@
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
         "value": 24,
-        "games": 6
+        "games": 6,
+        "attempts": null,
+        "perGame": 4
       },
       {
         "rank": 16,
@@ -8649,7 +8680,9 @@
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
         "value": 22,
-        "games": 6
+        "games": 6,
+        "attempts": null,
+        "perGame": 3.67
       },
       {
         "rank": 17,
@@ -8657,7 +8690,9 @@
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
         "value": 21,
-        "games": 3
+        "games": 3,
+        "attempts": null,
+        "perGame": 7
       },
       {
         "rank": 18,
@@ -8665,7 +8700,9 @@
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
         "value": 21,
-        "games": 4
+        "games": 4,
+        "attempts": null,
+        "perGame": 5.25
       },
       {
         "rank": 19,
@@ -8673,7 +8710,9 @@
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
         "value": 21,
-        "games": 4
+        "games": 4,
+        "attempts": null,
+        "perGame": 5.25
       },
       {
         "rank": 20,
@@ -8681,7 +8720,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
         "value": 21,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 4.2
       },
       {
         "rank": 21,
@@ -8689,7 +8730,9 @@
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
         "value": 21,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 4.2
       },
       {
         "rank": 22,
@@ -8697,7 +8740,9 @@
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
         "value": 18,
-        "games": 4
+        "games": 4,
+        "attempts": null,
+        "perGame": 4.5
       },
       {
         "rank": 23,
@@ -8705,7 +8750,9 @@
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
         "value": 18,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 3.6
       },
       {
         "rank": 24,
@@ -8713,7 +8760,9 @@
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
         "value": 17,
-        "games": 3
+        "games": 3,
+        "attempts": null,
+        "perGame": 5.67
       },
       {
         "rank": 25,
@@ -8721,7 +8770,9 @@
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
         "value": 17,
-        "games": 3
+        "games": 3,
+        "attempts": null,
+        "perGame": 5.67
       },
       {
         "rank": 26,
@@ -8729,7 +8780,9 @@
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
         "value": 17,
-        "games": 3
+        "games": 3,
+        "attempts": null,
+        "perGame": 5.67
       },
       {
         "rank": 27,
@@ -8737,7 +8790,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
         "value": 17,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 3.4
       },
       {
         "rank": 28,
@@ -8745,7 +8800,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
         "value": 17,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 3.4
       },
       {
         "rank": 29,
@@ -8753,7 +8810,9 @@
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
         "value": 16,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 3.2
       },
       {
         "rank": 30,
@@ -8761,7 +8820,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
         "value": 16,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 3.2
       },
       {
         "rank": 31,
@@ -8769,7 +8830,9 @@
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
         "value": 16,
-        "games": 6
+        "games": 6,
+        "attempts": null,
+        "perGame": 2.67
       },
       {
         "rank": 32,
@@ -8777,7 +8840,9 @@
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
         "value": 15,
-        "games": 6
+        "games": 6,
+        "attempts": null,
+        "perGame": 2.5
       },
       {
         "rank": 33,
@@ -8785,7 +8850,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
         "value": 14,
-        "games": 3
+        "games": 3,
+        "attempts": null,
+        "perGame": 4.67
       },
       {
         "rank": 34,
@@ -8793,7 +8860,9 @@
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
         "value": 14,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 2.8
       },
       {
         "rank": 35,
@@ -8801,7 +8870,9 @@
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
         "value": 14,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 2.8
       },
       {
         "rank": 36,
@@ -8809,7 +8880,9 @@
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
         "value": 14,
-        "games": 6
+        "games": 6,
+        "attempts": null,
+        "perGame": 2.33
       },
       {
         "rank": 37,
@@ -8817,7 +8890,9 @@
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
         "value": 13,
-        "games": 4
+        "games": 4,
+        "attempts": null,
+        "perGame": 3.25
       },
       {
         "rank": 38,
@@ -8825,7 +8900,9 @@
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
         "value": 13,
-        "games": 4
+        "games": 4,
+        "attempts": null,
+        "perGame": 3.25
       },
       {
         "rank": 39,
@@ -8833,7 +8910,9 @@
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
         "value": 13,
-        "games": 4
+        "games": 4,
+        "attempts": null,
+        "perGame": 3.25
       },
       {
         "rank": 40,
@@ -8841,7 +8920,9 @@
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
         "value": 13,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 2.6
       },
       {
         "rank": 41,
@@ -8849,7 +8930,9 @@
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
         "value": 13,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 2.6
       },
       {
         "rank": 42,
@@ -8857,7 +8940,9 @@
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
         "value": 13,
-        "games": 6
+        "games": 6,
+        "attempts": null,
+        "perGame": 2.17
       },
       {
         "rank": 43,
@@ -8865,7 +8950,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
         "value": 12,
-        "games": 4
+        "games": 4,
+        "attempts": null,
+        "perGame": 3
       },
       {
         "rank": 44,
@@ -8873,7 +8960,9 @@
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
         "value": 12,
-        "games": 4
+        "games": 4,
+        "attempts": null,
+        "perGame": 3
       },
       {
         "rank": 45,
@@ -8881,7 +8970,9 @@
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
         "value": 12,
-        "games": 4
+        "games": 4,
+        "attempts": null,
+        "perGame": 3
       },
       {
         "rank": 46,
@@ -8889,7 +8980,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
         "value": 12,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 2.4
       },
       {
         "rank": 47,
@@ -8897,7 +8990,9 @@
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
         "value": 12,
-        "games": 6
+        "games": 6,
+        "attempts": null,
+        "perGame": 2
       },
       {
         "rank": 48,
@@ -8905,7 +9000,9 @@
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
         "value": 11,
-        "games": 3
+        "games": 3,
+        "attempts": null,
+        "perGame": 3.67
       },
       {
         "rank": 49,
@@ -8913,7 +9010,9 @@
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
         "value": 11,
-        "games": 4
+        "games": 4,
+        "attempts": null,
+        "perGame": 2.75
       },
       {
         "rank": 50,
@@ -8921,7 +9020,9 @@
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
         "value": 11,
-        "games": 4
+        "games": 4,
+        "attempts": null,
+        "perGame": 2.75
       },
       {
         "rank": 51,
@@ -8929,7 +9030,9 @@
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
         "value": 11,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 2.2
       },
       {
         "rank": 52,
@@ -8937,7 +9040,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
         "value": 11,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 2.2
       },
       {
         "rank": 53,
@@ -8945,7 +9050,9 @@
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
         "value": 10,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 2
       },
       {
         "rank": 54,
@@ -8953,7 +9060,9 @@
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
         "value": 10,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 2
       },
       {
         "rank": 55,
@@ -8961,7 +9070,9 @@
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
         "value": 10,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 2
       },
       {
         "rank": 56,
@@ -8969,7 +9080,9 @@
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
         "value": 10,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 2
       },
       {
         "rank": 57,
@@ -8977,7 +9090,9 @@
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
         "value": 10,
-        "games": 6
+        "games": 6,
+        "attempts": null,
+        "perGame": 1.67
       },
       {
         "rank": 58,
@@ -8985,7 +9100,9 @@
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
         "value": 9,
-        "games": 1
+        "games": 1,
+        "attempts": null,
+        "perGame": 9
       },
       {
         "rank": 59,
@@ -8993,7 +9110,9 @@
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
         "value": 9,
-        "games": 4
+        "games": 4,
+        "attempts": null,
+        "perGame": 2.25
       },
       {
         "rank": 60,
@@ -9001,7 +9120,9 @@
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
         "value": 9,
-        "games": 4
+        "games": 4,
+        "attempts": null,
+        "perGame": 2.25
       },
       {
         "rank": 61,
@@ -9009,7 +9130,9 @@
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
         "value": 9,
-        "games": 4
+        "games": 4,
+        "attempts": null,
+        "perGame": 2.25
       },
       {
         "rank": 62,
@@ -9017,7 +9140,9 @@
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
         "value": 9,
-        "games": 6
+        "games": 6,
+        "attempts": null,
+        "perGame": 1.5
       },
       {
         "rank": 63,
@@ -9025,7 +9150,9 @@
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
         "value": 9,
-        "games": 6
+        "games": 6,
+        "attempts": null,
+        "perGame": 1.5
       },
       {
         "rank": 64,
@@ -9033,7 +9160,9 @@
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
         "value": 8,
-        "games": 1
+        "games": 1,
+        "attempts": null,
+        "perGame": 8
       },
       {
         "rank": 65,
@@ -9041,7 +9170,9 @@
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
         "value": 8,
-        "games": 4
+        "games": 4,
+        "attempts": null,
+        "perGame": 2
       },
       {
         "rank": 66,
@@ -9049,7 +9180,9 @@
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
         "value": 8,
-        "games": 4
+        "games": 4,
+        "attempts": null,
+        "perGame": 2
       },
       {
         "rank": 67,
@@ -9057,7 +9190,9 @@
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
         "value": 8,
-        "games": 6
+        "games": 6,
+        "attempts": null,
+        "perGame": 1.33
       },
       {
         "rank": 68,
@@ -9065,7 +9200,9 @@
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
         "value": 7,
-        "games": 1
+        "games": 1,
+        "attempts": null,
+        "perGame": 7
       },
       {
         "rank": 69,
@@ -9073,7 +9210,9 @@
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
         "value": 7,
-        "games": 2
+        "games": 2,
+        "attempts": null,
+        "perGame": 3.5
       },
       {
         "rank": 70,
@@ -9081,7 +9220,9 @@
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
         "value": 7,
-        "games": 2
+        "games": 2,
+        "attempts": null,
+        "perGame": 3.5
       },
       {
         "rank": 71,
@@ -9089,7 +9230,9 @@
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
         "value": 7,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 1.4
       },
       {
         "rank": 72,
@@ -9097,7 +9240,9 @@
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
         "value": 6,
-        "games": 1
+        "games": 1,
+        "attempts": null,
+        "perGame": 6
       },
       {
         "rank": 73,
@@ -9105,7 +9250,9 @@
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
         "value": 6,
-        "games": 2
+        "games": 2,
+        "attempts": null,
+        "perGame": 3
       },
       {
         "rank": 74,
@@ -9113,7 +9260,9 @@
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
         "value": 6,
-        "games": 4
+        "games": 4,
+        "attempts": null,
+        "perGame": 1.5
       },
       {
         "rank": 75,
@@ -9121,7 +9270,9 @@
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
         "value": 6,
-        "games": 4
+        "games": 4,
+        "attempts": null,
+        "perGame": 1.5
       },
       {
         "rank": 76,
@@ -9129,7 +9280,9 @@
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
         "value": 6,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 1.2
       },
       {
         "rank": 77,
@@ -9137,7 +9290,9 @@
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
         "value": 6,
-        "games": 6
+        "games": 6,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 78,
@@ -9145,7 +9300,9 @@
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
         "value": 6,
-        "games": 6
+        "games": 6,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 79,
@@ -9153,7 +9310,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
         "value": 5,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 80,
@@ -9161,7 +9320,9 @@
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
         "value": 5,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 81,
@@ -9169,7 +9330,9 @@
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
         "value": 5,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 82,
@@ -9177,7 +9340,9 @@
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
         "value": 5,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 83,
@@ -9185,7 +9350,9 @@
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
         "value": 5,
-        "games": 6
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.83
       },
       {
         "rank": 84,
@@ -9193,7 +9360,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
         "value": 4,
-        "games": 4
+        "games": 4,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 85,
@@ -9201,7 +9370,9 @@
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
         "value": 4,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.8
       },
       {
         "rank": 86,
@@ -9209,7 +9380,9 @@
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
         "value": 4,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.8
       },
       {
         "rank": 87,
@@ -9217,7 +9390,9 @@
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
         "value": 3,
-        "games": 2
+        "games": 2,
+        "attempts": null,
+        "perGame": 1.5
       },
       {
         "rank": 88,
@@ -9225,7 +9400,9 @@
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
         "value": 3,
-        "games": 3
+        "games": 3,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 89,
@@ -9233,7 +9410,9 @@
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
         "value": 3,
-        "games": 4
+        "games": 4,
+        "attempts": null,
+        "perGame": 0.75
       },
       {
         "rank": 90,
@@ -9241,7 +9420,9 @@
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
         "value": 3,
-        "games": 4
+        "games": 4,
+        "attempts": null,
+        "perGame": 0.75
       },
       {
         "rank": 91,
@@ -9249,7 +9430,9 @@
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
         "value": 3,
-        "games": 4
+        "games": 4,
+        "attempts": null,
+        "perGame": 0.75
       },
       {
         "rank": 92,
@@ -9257,7 +9440,9 @@
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
         "value": 3,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.6
       },
       {
         "rank": 93,
@@ -9265,7 +9450,9 @@
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
         "value": 3,
-        "games": 5
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.6
       },
       {
         "rank": 94,
@@ -9273,7 +9460,9 @@
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
         "value": 3,
-        "games": 6
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.5
       },
       {
         "rank": 95,
@@ -9281,7 +9470,9 @@
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
         "value": 2,
-        "games": 1
+        "games": 1,
+        "attempts": null,
+        "perGame": 2
       },
       {
         "rank": 96,
@@ -9289,7 +9480,9 @@
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
         "value": 2,
-        "games": 1
+        "games": 1,
+        "attempts": null,
+        "perGame": 2
       },
       {
         "rank": 97,
@@ -9297,7 +9490,9 @@
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
         "value": 2,
-        "games": 1
+        "games": 1,
+        "attempts": null,
+        "perGame": 2
       },
       {
         "rank": 98,
@@ -9305,7 +9500,9 @@
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
         "value": 2,
-        "games": 2
+        "games": 2,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 99,
@@ -9313,7 +9510,9 @@
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
         "value": 2,
-        "games": 3
+        "games": 3,
+        "attempts": null,
+        "perGame": 0.67
       },
       {
         "rank": 100,
@@ -9321,7 +9520,9 @@
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
         "value": 2,
-        "games": 3
+        "games": 3,
+        "attempts": null,
+        "perGame": 0.67
       }
     ],
     "7m": [
@@ -9331,7 +9532,9 @@
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
         "value": 20,
-        "games": 0
+        "games": null,
+        "attempts": 25,
+        "perGame": 3.33
       },
       {
         "rank": 2,
@@ -9339,7 +9542,9 @@
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
         "value": 14,
-        "games": 0
+        "games": null,
+        "attempts": 20,
+        "perGame": 2.33
       },
       {
         "rank": 3,
@@ -9347,7 +9552,9 @@
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
         "value": 12,
-        "games": 0
+        "games": null,
+        "attempts": 17,
+        "perGame": 3
       },
       {
         "rank": 4,
@@ -9355,7 +9562,9 @@
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
         "value": 11,
-        "games": 0
+        "games": null,
+        "attempts": 13,
+        "perGame": 2.2
       },
       {
         "rank": 5,
@@ -9363,7 +9572,9 @@
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
         "value": 11,
-        "games": 0
+        "games": null,
+        "attempts": 14,
+        "perGame": 2.75
       },
       {
         "rank": 6,
@@ -9371,7 +9582,9 @@
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
         "value": 11,
-        "games": 0
+        "games": null,
+        "attempts": 14,
+        "perGame": 2.2
       },
       {
         "rank": 7,
@@ -9379,7 +9592,9 @@
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
         "value": 11,
-        "games": 0
+        "games": null,
+        "attempts": 18,
+        "perGame": 1.83
       },
       {
         "rank": 8,
@@ -9387,7 +9602,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
         "value": 10,
-        "games": 0
+        "games": null,
+        "attempts": 11,
+        "perGame": 2
       },
       {
         "rank": 9,
@@ -9395,7 +9612,9 @@
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
         "value": 10,
-        "games": 0
+        "games": null,
+        "attempts": 13,
+        "perGame": 2
       },
       {
         "rank": 10,
@@ -9403,7 +9622,9 @@
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
         "value": 7,
-        "games": 0
+        "games": null,
+        "attempts": 7,
+        "perGame": 1.4
       },
       {
         "rank": 11,
@@ -9411,7 +9632,9 @@
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
         "value": 6,
-        "games": 0
+        "games": null,
+        "attempts": 7,
+        "perGame": 1.5
       },
       {
         "rank": 12,
@@ -9419,7 +9642,9 @@
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
         "value": 5,
-        "games": 0
+        "games": null,
+        "attempts": 9,
+        "perGame": 1.67
       },
       {
         "rank": 13,
@@ -9427,7 +9652,9 @@
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
         "value": 4,
-        "games": 0
+        "games": null,
+        "attempts": 5,
+        "perGame": 1
       },
       {
         "rank": 14,
@@ -9435,7 +9662,9 @@
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
         "value": 4,
-        "games": 0
+        "games": null,
+        "attempts": 5,
+        "perGame": 0.67
       },
       {
         "rank": 15,
@@ -9443,7 +9672,9 @@
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
         "value": 3,
-        "games": 0
+        "games": null,
+        "attempts": 4,
+        "perGame": 0.6
       },
       {
         "rank": 16,
@@ -9451,7 +9682,9 @@
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
         "value": 3,
-        "games": 0
+        "games": null,
+        "attempts": 6,
+        "perGame": 0.75
       },
       {
         "rank": 17,
@@ -9459,7 +9692,9 @@
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
         "value": 2,
-        "games": 0
+        "games": null,
+        "attempts": 2,
+        "perGame": 0.5
       },
       {
         "rank": 18,
@@ -9467,7 +9702,9 @@
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
         "value": 2,
-        "games": 0
+        "games": null,
+        "attempts": 2,
+        "perGame": 0.4
       },
       {
         "rank": 19,
@@ -9475,7 +9712,9 @@
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
         "value": 2,
-        "games": 0
+        "games": null,
+        "attempts": 3,
+        "perGame": 2
       },
       {
         "rank": 20,
@@ -9483,7 +9722,9 @@
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
         "value": 2,
-        "games": 0
+        "games": null,
+        "attempts": 3,
+        "perGame": 1
       },
       {
         "rank": 21,
@@ -9491,7 +9732,9 @@
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
         "value": 1,
-        "games": 0
+        "games": null,
+        "attempts": 1,
+        "perGame": 1
       },
       {
         "rank": 22,
@@ -9499,7 +9742,9 @@
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
         "value": 1,
-        "games": 0
+        "games": null,
+        "attempts": 1,
+        "perGame": 0.25
       },
       {
         "rank": 23,
@@ -9507,7 +9752,9 @@
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
         "value": 1,
-        "games": 0
+        "games": null,
+        "attempts": 1,
+        "perGame": 0.25
       },
       {
         "rank": 24,
@@ -9515,7 +9762,9 @@
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
         "value": 1,
-        "games": 0
+        "games": null,
+        "attempts": 1,
+        "perGame": 0.25
       },
       {
         "rank": 25,
@@ -9523,7 +9772,9 @@
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
         "value": 1,
-        "games": 0
+        "games": null,
+        "attempts": 2,
+        "perGame": 1
       },
       {
         "rank": 26,
@@ -9531,7 +9782,9 @@
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
         "value": 1,
-        "games": 0
+        "games": null,
+        "attempts": 2,
+        "perGame": 0.33
       },
       {
         "rank": 27,
@@ -9539,7 +9792,9 @@
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
         "value": 1,
-        "games": 0
+        "games": null,
+        "attempts": 3,
+        "perGame": 0.33
       },
       {
         "rank": 28,
@@ -9547,7 +9802,9 @@
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
         "value": 1,
-        "games": 0
+        "games": null,
+        "attempts": 3,
+        "perGame": 0.2
       }
     ],
     "zeitstrafen": [
@@ -9556,600 +9813,750 @@
         "name": "DILYS, Devanas",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
-        "value": 0,
-        "games": 1
+        "value": 2,
+        "games": 1,
+        "attempts": null,
+        "perGame": 2
       },
       {
         "rank": 2,
         "name": "LÜRZER, Robin",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
-        "value": 0,
-        "games": 1
+        "value": 2,
+        "games": 1,
+        "attempts": null,
+        "perGame": 2
       },
       {
         "rank": 3,
         "name": "AUFHAUSER, Sebastian",
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
-        "value": 0,
-        "games": 4
+        "value": 6,
+        "games": 4,
+        "attempts": null,
+        "perGame": 1.5
       },
       {
         "rank": 4,
         "name": "Safranko, Matko",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
-        "value": 0,
-        "games": 4
+        "value": 6,
+        "games": 4,
+        "attempts": null,
+        "perGame": 1.5
       },
       {
         "rank": 5,
         "name": "JURIC, Antonio",
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
-        "value": 0,
-        "games": 5
+        "value": 7,
+        "games": 5,
+        "attempts": null,
+        "perGame": 1.4
       },
       {
         "rank": 6,
         "name": "VONMETZ, Dominik",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
-        "value": 0,
-        "games": 5
+        "value": 6,
+        "games": 5,
+        "attempts": null,
+        "perGame": 1.2
       },
       {
         "rank": 7,
         "name": "OPPERMANN, Manuel",
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
-        "value": 0,
-        "games": 6
+        "value": 7,
+        "games": 6,
+        "attempts": null,
+        "perGame": 1.16667
       },
       {
         "rank": 8,
         "name": "HALILOVIC, Maid",
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
-        "value": 0,
-        "games": 6
+        "value": 6,
+        "games": 6,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 9,
         "name": "STRAUCH, Tore",
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
-        "value": 0,
-        "games": 5
+        "value": 5,
+        "games": 5,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 10,
         "name": "Wögerer, Maximilian",
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
-        "value": 0,
-        "games": 5
+        "value": 5,
+        "games": 5,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 11,
         "name": "HÄMMERLE, Matthias",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
-        "value": 0,
-        "games": 4
+        "value": 4,
+        "games": 4,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 12,
         "name": "KURZ, Florian",
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
-        "value": 0,
-        "games": 4
+        "value": 4,
+        "games": 4,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 13,
         "name": "MAILER, Xaver",
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
-        "value": 0,
-        "games": 4
+        "value": 4,
+        "games": 4,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 14,
         "name": "WINDHAGER, Raphael",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
-        "value": 0,
-        "games": 4
+        "value": 4,
+        "games": 4,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 15,
         "name": "MAILER, Viktor",
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
-        "value": 0,
-        "games": 3
+        "value": 3,
+        "games": 3,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 16,
         "name": "Spiekermann, David",
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
-        "value": 0,
-        "games": 3
+        "value": 3,
+        "games": 3,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 17,
         "name": "LETIC, Milos",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
-        "value": 0,
-        "games": 1
+        "value": 1,
+        "games": 1,
+        "attempts": null,
+        "perGame": 1
       },
       {
         "rank": 18,
         "name": "GVERIC, Mate",
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
-        "value": 0,
-        "games": 6
+        "value": 5,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.83333
       },
       {
         "rank": 19,
         "name": "Barba, Mateo Ignacio",
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
-        "value": 0,
-        "games": 5
+        "value": 4,
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.8
       },
       {
         "rank": 20,
         "name": "HRNCIC, Armin",
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
-        "value": 0,
-        "games": 5
+        "value": 4,
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.8
       },
       {
         "rank": 21,
         "name": "Lazic, Vuk",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
-        "value": 0,
-        "games": 5
+        "value": 4,
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.8
       },
       {
         "rank": 22,
         "name": "ARNOLD, Simon",
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
-        "value": 0,
-        "games": 4
+        "value": 3,
+        "games": 4,
+        "attempts": null,
+        "perGame": 0.75
       },
       {
         "rank": 23,
         "name": "Bosnjak, Gabriel",
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
-        "value": 0,
-        "games": 4
+        "value": 3,
+        "games": 4,
+        "attempts": null,
+        "perGame": 0.75
       },
       {
         "rank": 24,
         "name": "HINTERREITER, Moritz",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
-        "value": 0,
-        "games": 4
+        "value": 3,
+        "games": 4,
+        "attempts": null,
+        "perGame": 0.75
       },
       {
         "rank": 25,
         "name": "KÖSTER, Wenzel",
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
-        "value": 0,
-        "games": 4
+        "value": 3,
+        "games": 4,
+        "attempts": null,
+        "perGame": 0.75
       },
       {
         "rank": 26,
         "name": "Fink, Paul",
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
-        "value": 0,
-        "games": 6
+        "value": 4,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.66667
       },
       {
         "rank": 27,
         "name": "Geller, Theodor",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
-        "value": 0,
-        "games": 6
+        "value": 4,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.66667
       },
       {
         "rank": 28,
         "name": "Löschl, Jakob",
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
-        "value": 0,
-        "games": 6
+        "value": 4,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.66667
       },
       {
         "rank": 29,
         "name": "PIRINGER, Jannik",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
-        "value": 0,
-        "games": 6
+        "value": 4,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.66667
       },
       {
         "rank": 30,
         "name": "VIKTOR, Ivo",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
-        "value": 0,
-        "games": 6
+        "value": 4,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.66667
       },
       {
         "rank": 31,
         "name": "HEMMES, Julius",
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
-        "value": 0,
-        "games": 3
+        "value": 2,
+        "games": 3,
+        "attempts": null,
+        "perGame": 0.66667
       },
       {
         "rank": 32,
         "name": "ARNDT, Arvid",
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
-        "value": 0,
-        "games": 5
+        "value": 3,
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.6
       },
       {
         "rank": 33,
         "name": "DOBRIC, Marko",
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
-        "value": 0,
-        "games": 5
+        "value": 3,
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.6
       },
       {
         "rank": 34,
         "name": "MAREK, David",
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
-        "value": 0,
-        "games": 5
+        "value": 3,
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.6
       },
       {
         "rank": 35,
         "name": "Oljaca, Stevan",
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
-        "value": 0,
-        "games": 5
+        "value": 3,
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.6
       },
       {
         "rank": 36,
         "name": "SCHNEIDER, Florian",
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
-        "value": 0,
-        "games": 5
+        "value": 3,
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.6
       },
       {
         "rank": 37,
         "name": "HOLI, Dominik",
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
-        "value": 0,
-        "games": 6
+        "value": 3,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.5
       },
       {
         "rank": 38,
         "name": "LINDENHOFER, Philipp",
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
-        "value": 0,
-        "games": 6
+        "value": 3,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.5
       },
       {
         "rank": 39,
         "name": "REICHLE, Moritz",
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
-        "value": 0,
-        "games": 6
+        "value": 3,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.5
       },
       {
         "rank": 40,
         "name": "Eid, Hussain",
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
-        "value": 0,
-        "games": 4
+        "value": 2,
+        "games": 4,
+        "attempts": null,
+        "perGame": 0.5
       },
       {
         "rank": 41,
         "name": "HAGEDORN, Christoph",
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
-        "value": 0,
-        "games": 4
+        "value": 2,
+        "games": 4,
+        "attempts": null,
+        "perGame": 0.5
       },
       {
         "rank": 42,
         "name": "MAGER, Elias",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
-        "value": 0,
-        "games": 2
+        "value": 1,
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
       },
       {
         "rank": 43,
         "name": "Brunner, Julian",
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
-        "value": 0,
-        "games": 5
+        "value": 2,
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.4
       },
       {
         "rank": 44,
         "name": "Hakli, Noyan",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
-        "value": 0,
-        "games": 5
+        "value": 2,
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.4
       },
       {
         "rank": 45,
         "name": "Lang, Noah Karlheinz",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
-        "value": 0,
-        "games": 5
+        "value": 2,
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.4
       },
       {
         "rank": 46,
         "name": "LORENZ, Fabian",
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
-        "value": 0,
-        "games": 5
+        "value": 2,
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.4
       },
       {
         "rank": 47,
         "name": "Schweighofer, Leo",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
-        "value": 0,
-        "games": 5
+        "value": 2,
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.4
       },
       {
         "rank": 48,
         "name": "Vukojevic, Mateo",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
-        "value": 0,
-        "games": 5
+        "value": 2,
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.4
       },
       {
         "rank": 49,
         "name": "Kneidinger, David",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
-        "value": 0,
-        "games": 6
+        "value": 2,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.33333
       },
       {
         "rank": 50,
         "name": "KRAWITZ, Joshua",
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
-        "value": 0,
-        "games": 6
+        "value": 2,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.33333
       },
       {
         "rank": 51,
         "name": "MARINKOVIC, Julian",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
-        "value": 0,
-        "games": 6
+        "value": 2,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.33333
       },
       {
         "rank": 52,
         "name": "NIEDERMÜLLER, Philipp",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
-        "value": 0,
-        "games": 6
+        "value": 2,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.33333
       },
       {
         "rank": 53,
         "name": "OPPERMANN, Dominik",
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
-        "value": 0,
-        "games": 6
+        "value": 2,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.33333
       },
       {
         "rank": 54,
         "name": "SINZ, Georg",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
-        "value": 0,
-        "games": 3
+        "value": 1,
+        "games": 3,
+        "attempts": null,
+        "perGame": 0.33333
       },
       {
         "rank": 55,
         "name": "DURIC, Milanko",
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
-        "value": 0,
-        "games": 4
+        "value": 1,
+        "games": 4,
+        "attempts": null,
+        "perGame": 0.25
       },
       {
         "rank": 56,
         "name": "Eder, Jonathan",
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
-        "value": 0,
-        "games": 4
+        "value": 1,
+        "games": 4,
+        "attempts": null,
+        "perGame": 0.25
       },
       {
         "rank": 57,
         "name": "NANA AGYAPONG, Bryan",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
-        "value": 0,
-        "games": 4
+        "value": 1,
+        "games": 4,
+        "attempts": null,
+        "perGame": 0.25
       },
       {
         "rank": 58,
         "name": "NANA AGYAPONG, Marques",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
-        "value": 0,
-        "games": 4
+        "value": 1,
+        "games": 4,
+        "attempts": null,
+        "perGame": 0.25
       },
       {
         "rank": 59,
         "name": "NOWOPOLSKI, Jakub",
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
-        "value": 0,
-        "games": 4
+        "value": 1,
+        "games": 4,
+        "attempts": null,
+        "perGame": 0.25
       },
       {
         "rank": 60,
         "name": "OBE, Anasemi Bliss",
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
-        "value": 0,
-        "games": 4
+        "value": 1,
+        "games": 4,
+        "attempts": null,
+        "perGame": 0.25
       },
       {
         "rank": 61,
         "name": "Schmidt, Joshua",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
-        "value": 0,
-        "games": 4
+        "value": 1,
+        "games": 4,
+        "attempts": null,
+        "perGame": 0.25
       },
       {
         "rank": 62,
         "name": "STATTHALER, Lukas",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
-        "value": 0,
-        "games": 4
+        "value": 1,
+        "games": 4,
+        "attempts": null,
+        "perGame": 0.25
       },
       {
         "rank": 63,
         "name": "Djordjevic, Marko",
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
-        "value": 0,
-        "games": 5
+        "value": 1,
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.2
       },
       {
         "rank": 64,
         "name": "DUDLAK, Michael Justin",
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
-        "value": 0,
-        "games": 5
+        "value": 1,
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.2
       },
       {
         "rank": 65,
         "name": "Emeka, Lewis",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
-        "value": 0,
-        "games": 5
+        "value": 1,
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.2
       },
       {
         "rank": 66,
         "name": "GEORGIOU, Kyriakos",
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
-        "value": 0,
-        "games": 5
+        "value": 1,
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.2
       },
       {
         "rank": 67,
         "name": "Kaufmann, Luis",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
-        "value": 0,
-        "games": 5
+        "value": 1,
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.2
       },
       {
         "rank": 68,
         "name": "PAVLOVIC, Patrik",
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
-        "value": 0,
-        "games": 5
+        "value": 1,
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.2
       },
       {
         "rank": 69,
         "name": "RÖTHIG, Daniel",
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
-        "value": 0,
-        "games": 5
+        "value": 1,
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.2
       },
       {
         "rank": 70,
         "name": "STACHELBERGER, Nick",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
-        "value": 0,
-        "games": 5
+        "value": 1,
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.2
       },
       {
         "rank": 71,
         "name": "TABAKOVIC, Benjamin",
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
-        "value": 0,
-        "games": 5
+        "value": 1,
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.2
       },
       {
         "rank": 72,
         "name": "Uzicanin, Anton",
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
-        "value": 0,
-        "games": 5
+        "value": 1,
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.2
       },
       {
         "rank": 73,
         "name": "Barba, Francisco",
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
-        "value": 0,
-        "games": 6
+        "value": 1,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.16667
       },
       {
         "rank": 74,
         "name": "LÜRZER, Jannik",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
-        "value": 0,
-        "games": 6
+        "value": 1,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.16667
       },
       {
         "rank": 75,
         "name": "Maier, Daniel",
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
-        "value": 0,
-        "games": 6
+        "value": 1,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.16667
       }
     ],
     "gelb": [
@@ -10158,32 +10565,40 @@
         "name": "HRNCIC, Armin",
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
-        "value": 0,
-        "games": 5
+        "value": 1,
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.2
       },
       {
         "rank": 2,
         "name": "Schweighofer, Leo",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
-        "value": 0,
-        "games": 5
+        "value": 1,
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.2
       },
       {
         "rank": 3,
         "name": "Wögerer, Maximilian",
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
-        "value": 0,
-        "games": 5
+        "value": 1,
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.2
       },
       {
         "rank": 4,
         "name": "PIRINGER, Jannik",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
-        "value": 0,
-        "games": 6
+        "value": 1,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.16667
       }
     ],
     "rot": [
@@ -10192,96 +10607,259 @@
         "name": "AUFHAUSER, Sebastian",
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
-        "value": 0,
-        "games": 4
+        "value": 1,
+        "games": 4,
+        "attempts": null,
+        "perGame": 0.25
       },
       {
         "rank": 2,
         "name": "HÄMMERLE, Matthias",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
-        "value": 0,
-        "games": 4
+        "value": 1,
+        "games": 4,
+        "attempts": null,
+        "perGame": 0.25
       },
       {
         "rank": 3,
         "name": "Safranko, Matko",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
-        "value": 0,
-        "games": 4
+        "value": 1,
+        "games": 4,
+        "attempts": null,
+        "perGame": 0.25
       },
       {
         "rank": 4,
         "name": "WINDHAGER, Raphael",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
-        "value": 0,
-        "games": 4
+        "value": 1,
+        "games": 4,
+        "attempts": null,
+        "perGame": 0.25
       },
       {
         "rank": 5,
         "name": "HRNCIC, Armin",
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
-        "value": 0,
-        "games": 5
+        "value": 1,
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.2
       },
       {
         "rank": 6,
         "name": "Oljaca, Stevan",
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
-        "value": 0,
-        "games": 5
+        "value": 1,
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.2
       },
       {
         "rank": 7,
         "name": "PAVLOVIC, Patrik",
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
-        "value": 0,
-        "games": 5
+        "value": 1,
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.2
       },
       {
         "rank": 8,
         "name": "Wögerer, Maximilian",
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
-        "value": 0,
-        "games": 5
+        "value": 1,
+        "games": 5,
+        "attempts": null,
+        "perGame": 0.2
       },
       {
         "rank": 9,
         "name": "Geller, Theodor",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
-        "value": 0,
-        "games": 6
+        "value": 1,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.16667
       },
       {
         "rank": 10,
         "name": "LINDENHOFER, Philipp",
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
-        "value": 0,
-        "games": 6
+        "value": 1,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.16667
       },
       {
         "rank": 11,
         "name": "OPPERMANN, Manuel",
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
-        "value": 0,
-        "games": 6
+        "value": 1,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.16667
       },
       {
         "rank": 12,
         "name": "PIRINGER, Jannik",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
-        "value": 0,
-        "games": 6
+        "value": 1,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.16667
+      }
+    ]
+  },
+  "groupStats": {
+    "group": {
+      "name": "Gruppenstatistik",
+      "games": 23,
+      "scheduled": 56,
+      "goals": 1351,
+      "sevenMAttempts": 219,
+      "sevenMGoals": 158,
+      "twoMin": 200,
+      "yellow": 12,
+      "red": 12,
+      "spectators": 1836,
+      "homeWins": 17,
+      "awayWins": 6,
+      "draws": 0
+    },
+    "teams": [
+      {
+        "name": "Alpla HC Hard FT",
+        "games": 6,
+        "scheduled": 14,
+        "goals": 165,
+        "sevenMAttempts": 29,
+        "sevenMGoals": 23,
+        "twoMin": 27,
+        "yellow": 2,
+        "red": 3,
+        "spectators": 470,
+        "homeWins": 2,
+        "awayWins": 1,
+        "draws": 0
+      },
+      {
+        "name": "Bregenz Handball FT",
+        "games": 6,
+        "scheduled": 14,
+        "goals": 180,
+        "sevenMAttempts": 36,
+        "sevenMGoals": 22,
+        "twoMin": 20,
+        "yellow": 2,
+        "red": 1,
+        "spectators": 621,
+        "homeWins": 2,
+        "awayWins": 1,
+        "draws": 0
+      },
+      {
+        "name": "HSC Wels",
+        "games": 5,
+        "scheduled": 14,
+        "goals": 197,
+        "sevenMAttempts": 13,
+        "sevenMGoals": 12,
+        "twoMin": 28,
+        "yellow": 2,
+        "red": 3,
+        "spectators": 778,
+        "homeWins": 4,
+        "awayWins": 1,
+        "draws": 0
+      },
+      {
+        "name": "SG HC LINZ AG/Neue Heimat FT",
+        "games": 6,
+        "scheduled": 14,
+        "goals": 181,
+        "sevenMAttempts": 21,
+        "sevenMGoals": 15,
+        "twoMin": 21,
+        "yellow": 0,
+        "red": 1,
+        "spectators": 472,
+        "homeWins": 2,
+        "awayWins": 1,
+        "draws": 0
+      },
+      {
+        "name": "SK Konstant Traun / Edelweiss",
+        "games": 6,
+        "scheduled": 14,
+        "goals": 170,
+        "sevenMAttempts": 26,
+        "sevenMGoals": 18,
+        "twoMin": 29,
+        "yellow": 2,
+        "red": 2,
+        "spectators": 359,
+        "homeWins": 2,
+        "awayWins": 1,
+        "draws": 0
+      },
+      {
+        "name": "SMC Innsbruck Handball Tirol",
+        "games": 5,
+        "scheduled": 14,
+        "goals": 145,
+        "sevenMAttempts": 18,
+        "sevenMGoals": 12,
+        "twoMin": 21,
+        "yellow": 1,
+        "red": 1,
+        "spectators": 282,
+        "homeWins": 3,
+        "awayWins": 0,
+        "draws": 0
+      },
+      {
+        "name": "Sparkasse Schwaz Handball Tirol FT",
+        "games": 6,
+        "scheduled": 14,
+        "goals": 155,
+        "sevenMAttempts": 34,
+        "sevenMGoals": 24,
+        "twoMin": 27,
+        "yellow": 0,
+        "red": 0,
+        "spectators": 301,
+        "homeWins": 0,
+        "awayWins": 0,
+        "draws": 0
+      },
+      {
+        "name": "UHC Salzburg",
+        "games": 6,
+        "scheduled": 14,
+        "goals": 158,
+        "sevenMAttempts": 42,
+        "sevenMGoals": 32,
+        "twoMin": 27,
+        "yellow": 3,
+        "red": 1,
+        "spectators": 389,
+        "homeWins": 2,
+        "awayWins": 1,
+        "draws": 0
       }
     ]
   }

@@ -82,8 +82,9 @@ and `group` parameters only):
 - Spielplan (Gesamt): `groupPage?displayTyp=vorrunde&displayDetail=meetings&championship=…&group=…`
 - Match reports: `groupMeetingReport?meeting=<id>&championship=…&group=…`
 - Player statistics: `groupMeetingStatistics?displayType=<playerGoals|playerSevenMeterGoals|playerSuspensions|playerYellowCards|playerRedCards>&championship=…&group=…`
+- Group and team statistics (added 2026-10-31, aggregate team data only): `groupMeetingStatistics?displayType=groupAndTeams&championship=…&group=…`
 
-Not allowed: `nuDokument` PDFs, contact/officials pages ("Spielleiter und
+Not allowed: `nuDokument` PDFs, `teamPortrait` (publishes team officials with phone numbers; team pages are derived from the schedule instead), contact/officials pages ("Spielleiter und
 Schiedsrichter-Einteiler", "Kontaktadressen, Hallen …"), `playerPortrait`,
 and any other group. Player-level data from these pages is governed by
 ADR-005.

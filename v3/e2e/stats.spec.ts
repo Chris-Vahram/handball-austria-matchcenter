@@ -24,3 +24,11 @@ test.describe("Torschützen", () => {
     await expect(page).toHaveURL(/liste=zeitstrafen&team=SK/);
   });
 });
+
+test("per-game lists lead with the value nuLiga sorts by", async ({ page }) => {
+  await page.goto("/hla-challenge-west/torschuetzen?liste=zeitstrafen");
+  await expect(page.locator("table.ranking thead")).toContainText("Ges.");
+  const first = page.locator("table.ranking tbody tr").first();
+  await expect(first).toContainText("DILYS, Devanas");
+  await expect(first.locator("td.val")).toHaveText("2,00");
+});

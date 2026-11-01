@@ -38,3 +38,11 @@ describe("form", async () => {
     expect(lastFive(hla.matches, "HSC Wels").every((r) => r === "S")).toBe(true);
   });
 });
+
+describe("today", async () => {
+  const { todayInVienna } = await import("./format");
+  it("uses the Vienna calendar day", () => {
+    expect(todayInVienna(new Date("2026-10-31T23:30:00Z"))).toBe("2026-11-01"); // 00:30 in Vienna
+    expect(todayInVienna(new Date("2026-10-31T10:00:00Z"))).toBe("2026-10-31");
+  });
+});

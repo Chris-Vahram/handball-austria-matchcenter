@@ -7,7 +7,7 @@ Imports the public 2026/27 nuLiga pages of the configured competitions into vali
 ## ADDED Requirements
 
 ### Requirement: Allowlisted sources only
-The importer SHALL fetch only configured nuLiga URLs on host `oehb-handball.liga.nu`: the group page and Spielplan (Gesamt) of group 218583 (ÖHB 26/27) and group 218721 (OÖHV 26/27), match report pages of those groups, and their player statistics pages. Any other URL MUST be rejected before a request is made.
+The importer SHALL fetch only configured nuLiga URLs on host `oehb-handball.liga.nu`: the group page and Spielplan (Gesamt) of group 218583 (ÖHB 26/27) and group 218721 (OÖHV 26/27), match report pages of those groups, their player statistics pages and their group/team statistics page (`displayType=groupAndTeams`). Any other URL MUST be rejected before a request is made.
 
 #### Scenario: Unconfigured group rejected
 - **WHEN** an import is requested for a groupPage URL with a group not in the allowlist
@@ -27,6 +27,13 @@ Fetching SHALL happen only through the operator CLI, never while serving a page.
 #### Scenario: Bounded retries
 - **WHEN** a request fails three times in a row
 - **THEN** the import of that source stops and the last validated output stays in place
+
+### Requirement: Ranking values by column name
+Each player ranking SHALL be read by its own value column header (Tore, 7m-Tore, Zeitstrafen, Gelbe Karten, Rote Karten), because nuLiga orders the columns differently per list.
+
+#### Scenario: Suspensions list
+- **WHEN** the suspensions ranking lists DILYS, Devanas with 2 Zeitstrafen in 1 game
+- **THEN** the normalized row has value 2 and games 1, not 0
 
 ### Requirement: Validated normalized output
 Imported data SHALL be validated against the domain schema before it is written. Invalid data MUST NOT replace the last valid output.

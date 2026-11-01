@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Lets users find a team across the configured competitions from any page, without knowing which competition or list they appear in.
+Lets users find a team or player across the configured competitions from any page, without knowing which competition or list they appear in.
 
 ## ADDED Requirements
 
@@ -14,18 +14,18 @@ Every app page SHALL show a search field in the header that submits to a results
 - **THEN** the results page for "Traun" opens
 
 ### Requirement: Team results
-The search SHALL match full official team names of all configured competitions, ignoring case and diacritics, and link each hit to that competition's Liga page.
+The search SHALL match full official team names of all configured competitions, ignoring case and diacritics, and link each hit to the team page.
 
 #### Scenario: Team in two competitions
 - **WHEN** the user searches "traun"
 - **THEN** "SK Konstant Traun / Edelweiss" (HLA Challenge West) and "Sportunion EDELWEISS Linz / SK Traun" (Landesliga OÖ) are listed with their competition
 
-### Requirement: No person search
-The search MUST NOT match players or any other person, because ADR-005 rules out search by person. Enabling player search requires a new owner decision recorded in ADR-005 first.
+### Requirement: Player results
+The search SHALL match player names from the nuLiga player rankings (handball statistics) of adult competitions, ignoring case and diacritics, showing team and competition and linking to the team page. Only ADR-005 fields MUST appear.
 
-#### Scenario: Player surname
+#### Scenario: Player by surname
 - **WHEN** the user searches "strauch"
-- **THEN** no player is listed and the page states that no team was found
+- **THEN** "STRAUCH, Tore" is listed with "SK Konstant Traun / Edelweiss" and HLA Challenge West
 
 ### Requirement: Repeated query parameters
 A request with several `q` parameters SHALL use the first one and MUST NOT fail.

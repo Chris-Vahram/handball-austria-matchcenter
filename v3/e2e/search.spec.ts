@@ -5,7 +5,7 @@ test.describe("Suche", () => {
 
   test("finds Traun teams from the header", async ({ page }) => {
     await page.goto("/hla-challenge-west");
-    await page.getByRole("searchbox", { name: "Team suchen" }).fill("traun");
+    await page.getByRole("searchbox", { name: "Team oder Spieler suchen" }).fill("traun");
     await page.keyboard.press("Enter");
     await expect(page).toHaveURL(/\/suche\?q=traun/);
     const hits = page.locator(".hits");
@@ -21,8 +21,17 @@ test.describe("Suche", () => {
     await expect(page.locator(".hits")).toContainText("SK Konstant Traun / Edelweiss");
   });
 
-  test("states when nothing is found and does not search persons", async ({ page }) => {
+  test("finds a player and opens the team page", async ({ page }) => {
     await page.goto("/suche?q=strauch");
-    await expect(page.getByText("Kein Team gefunden für „strauch“.")).toBeVisible();
+    const link = page.getByRole("link", { name: /STRAUCH, Tore/ });
+    await expect(link).toContainText("SK Konstant Traun / Edelweiss");
+    await link.click();
+    await expect(page.locator("#h-team")).toHaveText("SK Konstant Traun / Edelweiss");
+    await expect(page.locator("table.squad")).toContainText("STRAUCH, Tore");
+  });
+
+  test("states when nothing is found", async ({ page }) => {
+    await page.goto("/suche?q=xyzq");
+    await expect(page.getByText("Nichts gefunden für „xyzq“.")).toBeVisible();
   });
 });

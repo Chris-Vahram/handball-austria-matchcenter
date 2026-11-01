@@ -1,7 +1,7 @@
 import { datasetSchema, type Dataset, type Report } from "../domain/schema";
 import { assignRounds } from "../lib/rounds";
 import { COMPETITIONS, STAT_KINDS, sourceUrls, type CompetitionId, type StatKind } from "./config";
-import { parseReport, parseSchedule, parseStandings, parseStats } from "./parse";
+import { STAT_VALUE_HEADER, parseGroupStats, parseReport, parseSchedule, parseStandings, parseStats } from "./parse";
 
 /**
  * nuLiga statistics name a player's Verein ("SK-Handball Traun"), the table names the
@@ -47,7 +47,7 @@ export async function importCompetition(id: CompetitionId, get: (url: string) =>
     for (const kind of Object.keys(STAT_KINDS) as StatKind[]) {
       const url = sourceUrls.stats(id, kind);
       urls.push(url);
-      const rows = parseStats(await get(url));
+      const rows = parseStats(await get(url), STAT_VALUE_HEADER[kind]);
       stats[kind] = rows.map((row) => ({ ...row, team: teamOf(row, rows) }));
     }
   } else {
@@ -55,5 +55,9 @@ export async function importCompetition(id: CompetitionId, get: (url: string) =>
     for (const r of Object.values(reports)) { r.home.players = []; r.away.players = []; }
   }
 
-  return datasetSchema.parse({ competitionId: id, source: { urls, importedAt: now.toISOString() }, standings, matches, reports, stats });
+  const groupStatsUrl = sourceUrls.groupStats(id);
+  urls.push(groupStatsUrl);
+  const groupStats = parseGroupStats(await get(groupStatsUrl));
+
+  return datasetSchema.parse({ competitionId: id, source: { urls, importedAt: now.toISOString() }, standings, matches, reports, stats, groupStats });
 }

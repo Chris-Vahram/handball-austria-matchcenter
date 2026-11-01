@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Match } from "@/domain/schema";
-import { formatDay, formatShortDate } from "@/lib/format";
+import { formatDay, formatShortDate, formatWeekdayDate, todayInVienna } from "@/lib/format";
 import { roundsOf } from "@/lib/rounds";
 import { Chevron, LEFT, RIGHT } from "./chevron";
 
@@ -10,6 +10,7 @@ export function Schedule({ id, matches, round, showcase }: { id: string; matches
   const prev = rounds.filter((r) => r < round).at(-1);
   const next = rounds.find((r) => r > round);
   const days = [...new Set(inRound.map((m) => m.date))];
+  const today = todayInVienna();
   const span = days.length ? `${formatShortDate(days[0]).slice(0, 6)} – ${formatShortDate(days.at(-1)!)}` : "";
 
   return (
@@ -21,7 +22,7 @@ export function Schedule({ id, matches, round, showcase }: { id: string; matches
       </div>
       {days.map((day) => (
         <div key={day}>
-          <h3 className="day">{formatDay(day)}</h3>
+          <h3 className={day === today ? "day today" : "day"}>{day === today ? <><span>Heute</span> · </> : null}{formatDay(day)}</h3>
           {inRound.filter((m) => m.date === day).map((m) => <MatchRow key={m.number} id={id} m={m} showcase={showcase} />)}
         </div>
       ))}
@@ -29,7 +30,8 @@ export function Schedule({ id, matches, round, showcase }: { id: string; matches
   );
 }
 
-function MatchRow({ id, m, showcase }: { id: string; m: Match; showcase: string }) {
+/** One match in Flashscore form. `showDate` puts the date into the time column (team fixture lists). */
+export function MatchRow({ id, m, showcase, showDate = false }: { id: string; m: Match; showcase: string; showDate?: boolean }) {
   const homeWin = m.score && m.score.home > m.score.away;
   const awayWin = m.score && m.score.away > m.score.home;
   const cls = (team: string, win: boolean | null) => [team === showcase ? "me" : "", win ? "win" : ""].join(" ").trim() || undefined;
@@ -40,7 +42,7 @@ function MatchRow({ id, m, showcase }: { id: string; m: Match; showcase: string 
   ].filter(Boolean).join(" · ");
   const body = (
     <>
-      <time dateTime={`${m.date}${m.time ? `T${m.time}` : ""}`}>{m.time ?? "–"}</time>
+      <time dateTime={`${m.date}${m.time ? `T${m.time}` : ""}`}>{showDate ? <>{formatWeekdayDate(m.date)}<br /></> : null}{m.time ?? "–"}</time>
       <span className={`t ${cls(m.home, homeWin) ?? ""}`}>{m.home}</span>
       {m.score ? <span className={`s ${homeWin ? "win" : ""}`}>{m.score.home}</span> : <span className="open">angesetzt</span>}
       <span className={`t ${cls(m.away, awayWin) ?? ""}`}>{m.away}</span>
