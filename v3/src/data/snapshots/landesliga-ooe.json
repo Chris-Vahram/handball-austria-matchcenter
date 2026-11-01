@@ -1,0 +1,3113 @@
+{
+  "competitionId": "landesliga-ooe",
+  "source": {
+    "urls": [
+      "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupPage?championship=O%C3%96HV+26%2F27&group=218721",
+      "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupPage?displayTyp=vorrunde&displayDetail=meetings&championship=O%C3%96HV+26%2F27&group=218721",
+      "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingReport?meeting=93331&championship=O%C3%96HV+26%2F27&group=218721",
+      "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingReport?meeting=93319&championship=O%C3%96HV+26%2F27&group=218721",
+      "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingReport?meeting=93325&championship=O%C3%96HV+26%2F27&group=218721",
+      "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingReport?meeting=93320&championship=O%C3%96HV+26%2F27&group=218721",
+      "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingReport?meeting=93309&championship=O%C3%96HV+26%2F27&group=218721",
+      "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingStatistics?displayType=playerGoals&championship=O%C3%96HV+26%2F27&group=218721",
+      "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingStatistics?displayType=playerSevenMeterGoals&championship=O%C3%96HV+26%2F27&group=218721",
+      "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingStatistics?displayType=playerSuspensions&championship=O%C3%96HV+26%2F27&group=218721",
+      "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingStatistics?displayType=playerYellowCards&championship=O%C3%96HV+26%2F27&group=218721",
+      "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingStatistics?displayType=playerRedCards&championship=O%C3%96HV+26%2F27&group=218721",
+      "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingStatistics?displayType=groupAndTeams&championship=O%C3%96HV+26%2F27&group=218721"
+    ],
+    "importedAt": "2026-11-01T16:37:05.548Z"
+  },
+  "standings": [
+    {
+      "rank": 1,
+      "team": "Sportunion EDELWEISS Linz / SK Traun",
+      "played": 2,
+      "won": 2,
+      "drawn": 0,
+      "lost": 0,
+      "goalsFor": 75,
+      "goalsAgainst": 62,
+      "goalDiff": 13,
+      "points": 4
+    },
+    {
+      "rank": 2,
+      "team": "HSC Wels",
+      "played": 2,
+      "won": 1,
+      "drawn": 0,
+      "lost": 1,
+      "goalsFor": 66,
+      "goalsAgainst": 68,
+      "goalDiff": -2,
+      "points": 2
+    },
+    {
+      "rank": 3,
+      "team": "HC Eferding",
+      "played": 3,
+      "won": 1,
+      "drawn": 0,
+      "lost": 2,
+      "goalsFor": 91,
+      "goalsAgainst": 94,
+      "goalDiff": -3,
+      "points": 2
+    },
+    {
+      "rank": 4,
+      "team": "ASKÖ HC Urfahr",
+      "played": 2,
+      "won": 1,
+      "drawn": 0,
+      "lost": 1,
+      "goalsFor": 57,
+      "goalsAgainst": 60,
+      "goalDiff": -3,
+      "points": 2
+    },
+    {
+      "rank": 5,
+      "team": "SG HC LINZ AG/Neue Heimat",
+      "played": 1,
+      "won": 0,
+      "drawn": 0,
+      "lost": 1,
+      "goalsFor": 30,
+      "goalsAgainst": 35,
+      "goalDiff": -5,
+      "points": 0
+    }
+  ],
+  "matches": [
+    {
+      "number": 1,
+      "round": 1,
+      "date": "2026-10-02",
+      "time": "20:15",
+      "venue": "BSH Eferding",
+      "home": "HC Eferding",
+      "away": "Sportunion EDELWEISS Linz / SK Traun",
+      "status": "played",
+      "score": {
+        "home": 28,
+        "away": 34
+      },
+      "halftime": {
+        "home": 13,
+        "away": 18
+      },
+      "reportId": "93331",
+      "reportApproved": true,
+      "note": null
+    },
+    {
+      "number": 2,
+      "round": 1,
+      "date": "2026-10-03",
+      "time": "19:00",
+      "venue": "SH Pernau, Wels - Sterner Arena",
+      "home": "HSC Wels",
+      "away": "ASKÖ HC Urfahr",
+      "status": "played",
+      "score": {
+        "home": 32,
+        "away": 27
+      },
+      "halftime": {
+        "home": 14,
+        "away": 11
+      },
+      "reportId": "93319",
+      "reportApproved": true,
+      "note": null
+    },
+    {
+      "number": 3,
+      "round": 2,
+      "date": "2026-10-17",
+      "time": "17:30",
+      "venue": "SMS Kleinmünchen, Linz",
+      "home": "SG HC LINZ AG/Neue Heimat",
+      "away": "HC Eferding",
+      "status": "played",
+      "score": {
+        "home": 30,
+        "away": 35
+      },
+      "halftime": {
+        "home": 15,
+        "away": 18
+      },
+      "reportId": "93325",
+      "reportApproved": true,
+      "note": null
+    },
+    {
+      "number": 4,
+      "round": 2,
+      "date": "2026-10-17",
+      "time": "18:00",
+      "venue": "SH Hüttnerschule, Linz",
+      "home": "Sportunion EDELWEISS Linz / SK Traun",
+      "away": "HSC Wels",
+      "status": "played",
+      "score": {
+        "home": 41,
+        "away": 34
+      },
+      "halftime": {
+        "home": 18,
+        "away": 18
+      },
+      "reportId": "93320",
+      "reportApproved": true,
+      "note": null
+    },
+    {
+      "number": 40,
+      "round": 20,
+      "date": "2026-10-24",
+      "time": "18:30",
+      "venue": "SH Harbach, Linz",
+      "home": "ASKÖ HC Urfahr",
+      "away": "HC Eferding",
+      "status": "played",
+      "score": {
+        "home": 30,
+        "away": 28
+      },
+      "halftime": {
+        "home": 15,
+        "away": 10
+      },
+      "reportId": "93309",
+      "reportApproved": true,
+      "note": null
+    },
+    {
+      "number": 6,
+      "round": 3,
+      "date": "2026-11-06",
+      "time": "20:15",
+      "venue": "BSH Eferding",
+      "home": "HC Eferding",
+      "away": "HSC Wels",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 5,
+      "round": 3,
+      "date": "2026-11-07",
+      "time": "17:00",
+      "venue": "SMS Kleinmünchen, Linz",
+      "home": "SG HC LINZ AG/Neue Heimat",
+      "away": "ASKÖ HC Urfahr",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 8,
+      "round": 4,
+      "date": "2026-11-21",
+      "time": "19:00",
+      "venue": "SH Harbach, Linz",
+      "home": "ASKÖ HC Urfahr",
+      "away": "Sportunion EDELWEISS Linz / SK Traun",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 7,
+      "round": 4,
+      "date": "2026-11-22",
+      "time": "19:00",
+      "venue": "SH Pernau, Wels - Sterner Arena",
+      "home": "HSC Wels",
+      "away": "SG HC LINZ AG/Neue Heimat",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 16,
+      "round": 8,
+      "date": "2026-11-29",
+      "time": "19:00",
+      "venue": "SH Pernau, Wels - Sterner Arena",
+      "home": "HSC Wels",
+      "away": "HC Eferding",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 9,
+      "round": 5,
+      "date": "2026-12-01",
+      "time": "20:15",
+      "venue": "SH Hüttnerschule, Linz",
+      "home": "Sportunion EDELWEISS Linz / SK Traun",
+      "away": "SG HC LINZ AG/Neue Heimat",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 10,
+      "round": 5,
+      "date": "2026-12-04",
+      "time": "20:15",
+      "venue": "BSH Eferding",
+      "home": "HC Eferding",
+      "away": "ASKÖ HC Urfahr",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 12,
+      "round": 6,
+      "date": "2026-12-12",
+      "time": "19:00",
+      "venue": "SH Harbach, Linz",
+      "home": "ASKÖ HC Urfahr",
+      "away": "HSC Wels",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 11,
+      "round": 6,
+      "date": "2026-12-20",
+      "time": "18:00",
+      "venue": "SH Hüttnerschule, Linz",
+      "home": "Sportunion EDELWEISS Linz / SK Traun",
+      "away": "HC Eferding",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 13,
+      "round": 7,
+      "date": "2027-01-15",
+      "time": "20:15",
+      "venue": "BSH Eferding",
+      "home": "HC Eferding",
+      "away": "SG HC LINZ AG/Neue Heimat",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 14,
+      "round": 7,
+      "date": "2027-01-17",
+      "time": "19:00",
+      "venue": "SH Pernau, Wels - Sterner Arena",
+      "home": "HSC Wels",
+      "away": "Sportunion EDELWEISS Linz / SK Traun",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 15,
+      "round": 8,
+      "date": "2027-01-23",
+      "time": "19:00",
+      "venue": "SH Harbach, Linz",
+      "home": "ASKÖ HC Urfahr",
+      "away": "SG HC LINZ AG/Neue Heimat",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 18,
+      "round": 9,
+      "date": "2027-01-29",
+      "time": "20:15",
+      "venue": "SMS Kleinmünchen, Linz",
+      "home": "Sportunion EDELWEISS Linz / SK Traun",
+      "away": "ASKÖ HC Urfahr",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 17,
+      "round": 9,
+      "date": "2027-01-30",
+      "time": "18:30",
+      "venue": "SMS Kleinmünchen, Linz",
+      "home": "SG HC LINZ AG/Neue Heimat",
+      "away": "HSC Wels",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 20,
+      "round": 10,
+      "date": "2027-02-06",
+      "time": "19:00",
+      "venue": "SH Harbach, Linz",
+      "home": "ASKÖ HC Urfahr",
+      "away": "HC Eferding",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 19,
+      "round": 10,
+      "date": "2027-02-07",
+      "time": "17:30",
+      "venue": "SMS Kleinmünchen, Linz",
+      "home": "SG HC LINZ AG/Neue Heimat",
+      "away": "Sportunion EDELWEISS Linz / SK Traun",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 21,
+      "round": 11,
+      "date": "2027-02-12",
+      "time": "20:15",
+      "venue": "BSH Eferding",
+      "home": "HC Eferding",
+      "away": "Sportunion EDELWEISS Linz / SK Traun",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 22,
+      "round": 11,
+      "date": "2027-02-14",
+      "time": "19:00",
+      "venue": "SH Pernau, Wels - Sterner Arena",
+      "home": "HSC Wels",
+      "away": "ASKÖ HC Urfahr",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 23,
+      "round": 12,
+      "date": "2027-02-27",
+      "time": "18:30",
+      "venue": "SMS Kleinmünchen, Linz",
+      "home": "SG HC LINZ AG/Neue Heimat",
+      "away": "HC Eferding",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 24,
+      "round": 12,
+      "date": "2027-02-27",
+      "time": "18:30",
+      "venue": "SH Hüttnerschule, Linz",
+      "home": "Sportunion EDELWEISS Linz / SK Traun",
+      "away": "HSC Wels",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 26,
+      "round": 13,
+      "date": "2027-03-05",
+      "time": "20:15",
+      "venue": "BSH Eferding",
+      "home": "HC Eferding",
+      "away": "HSC Wels",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 25,
+      "round": 13,
+      "date": "2027-03-07",
+      "time": "17:00",
+      "venue": "SMS Kleinmünchen, Linz",
+      "home": "SG HC LINZ AG/Neue Heimat",
+      "away": "ASKÖ HC Urfahr",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 28,
+      "round": 14,
+      "date": "2027-03-13",
+      "time": "19:00",
+      "venue": "SH Harbach, Linz",
+      "home": "ASKÖ HC Urfahr",
+      "away": "Sportunion EDELWEISS Linz / SK Traun",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 27,
+      "round": 14,
+      "date": "2027-03-14",
+      "time": "18:00",
+      "venue": "SH Pernau, Wels - Sterner Arena",
+      "home": "HSC Wels",
+      "away": "SG HC LINZ AG/Neue Heimat",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 29,
+      "round": 15,
+      "date": "2027-03-19",
+      "time": "20:15",
+      "venue": "SMS Kleinmünchen, Linz",
+      "home": "Sportunion EDELWEISS Linz / SK Traun",
+      "away": "SG HC LINZ AG/Neue Heimat",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 30,
+      "round": 15,
+      "date": "2027-03-19",
+      "time": "20:15",
+      "venue": "BSH Eferding",
+      "home": "HC Eferding",
+      "away": "ASKÖ HC Urfahr",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 31,
+      "round": 16,
+      "date": "2027-04-06",
+      "time": "20:15",
+      "venue": "SH Hüttnerschule, Linz",
+      "home": "Sportunion EDELWEISS Linz / SK Traun",
+      "away": "HC Eferding",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 32,
+      "round": 16,
+      "date": "2027-04-10",
+      "time": "19:00",
+      "venue": "SH Harbach, Linz",
+      "home": "ASKÖ HC Urfahr",
+      "away": "HSC Wels",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 33,
+      "round": 17,
+      "date": "2027-04-23",
+      "time": "20:15",
+      "venue": "BSH Eferding",
+      "home": "HC Eferding",
+      "away": "SG HC LINZ AG/Neue Heimat",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 34,
+      "round": 17,
+      "date": "2027-04-25",
+      "time": "19:00",
+      "venue": "SH Pernau, Wels - Sterner Arena",
+      "home": "HSC Wels",
+      "away": "Sportunion EDELWEISS Linz / SK Traun",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 38,
+      "round": 19,
+      "date": "2027-04-27",
+      "time": "20:15",
+      "venue": "SH Hüttnerschule, Linz",
+      "home": "Sportunion EDELWEISS Linz / SK Traun",
+      "away": "ASKÖ HC Urfahr",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 35,
+      "round": 18,
+      "date": "2027-05-08",
+      "time": "19:00",
+      "venue": "SH Harbach, Linz",
+      "home": "ASKÖ HC Urfahr",
+      "away": "SG HC LINZ AG/Neue Heimat",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 36,
+      "round": 18,
+      "date": "2027-05-09",
+      "time": "19:00",
+      "venue": "SH Pernau, Wels - Sterner Arena",
+      "home": "HSC Wels",
+      "away": "HC Eferding",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 37,
+      "round": 19,
+      "date": "2027-05-22",
+      "time": "17:00",
+      "venue": "SMS Kleinmünchen, Linz",
+      "home": "SG HC LINZ AG/Neue Heimat",
+      "away": "HSC Wels",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    },
+    {
+      "number": 39,
+      "round": 20,
+      "date": "2027-06-05",
+      "time": "17:00",
+      "venue": "SMS Kleinmünchen, Linz",
+      "home": "SG HC LINZ AG/Neue Heimat",
+      "away": "Sportunion EDELWEISS Linz / SK Traun",
+      "status": "scheduled",
+      "score": null,
+      "halftime": null,
+      "reportId": null,
+      "reportApproved": null,
+      "note": null
+    }
+  ],
+  "reports": {
+    "93309": {
+      "id": "93309",
+      "number": 40,
+      "date": "2026-10-24",
+      "time": "18:30",
+      "venue": "SH Harbach, Linz",
+      "approved": true,
+      "score": {
+        "home": 30,
+        "away": 28
+      },
+      "halftime": {
+        "home": 15,
+        "away": 10
+      },
+      "home": {
+        "name": "ASKÖ HC Urfahr",
+        "players": [
+          {
+            "shirt": "1",
+            "name": "WAGNER, Fabian",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "7",
+            "name": "KOLB, Jonathan Navin",
+            "goals": 5,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "9",
+            "name": "STALTNER, Jonas",
+            "goals": 8,
+            "sevenMGoals": 2,
+            "sevenMAttempts": 2,
+            "yellow": 0,
+            "twoMin": 2,
+            "disqualified": false
+          },
+          {
+            "shirt": "11",
+            "name": "PETZOLD, Paul",
+            "goals": 6,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "12",
+            "name": "EDELBAUER, Andreas",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "15",
+            "name": "Mertens, Florian",
+            "goals": 2,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 1,
+            "yellow": 0,
+            "twoMin": 1,
+            "disqualified": false
+          },
+          {
+            "shirt": "22",
+            "name": "ZINNER, Markus",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 1,
+            "disqualified": false
+          },
+          {
+            "shirt": "24",
+            "name": "FINK, Robert",
+            "goals": 1,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 2,
+            "disqualified": false
+          },
+          {
+            "shirt": "25",
+            "name": "FLOßMANN, Tarek",
+            "goals": 7,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "27",
+            "name": "WEGLEHNER, Kurt",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "33",
+            "name": "BACHMANN, Maximilian",
+            "goals": 1,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 2,
+            "disqualified": false
+          },
+          {
+            "shirt": "81",
+            "name": "KARL, Christoph",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          }
+        ],
+        "totals": {
+          "sevenMAttempts": 3,
+          "sevenMGoals": 2,
+          "twoMin": 8,
+          "yellow": 0,
+          "timeouts": 3,
+          "disqualifications": 0
+        }
+      },
+      "away": {
+        "name": "HC Eferding",
+        "players": [
+          {
+            "shirt": "1",
+            "name": "Obermühlner, Kevin",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "2",
+            "name": "WIESINGER, Johannes",
+            "goals": 6,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "3",
+            "name": "ROITHMAIR, Christoph",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "7",
+            "name": "LEHNER, Florian",
+            "goals": 6,
+            "sevenMGoals": 2,
+            "sevenMAttempts": 2,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "9",
+            "name": "HINTERHÖLZL, Stefan",
+            "goals": 1,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 1,
+            "disqualified": false
+          },
+          {
+            "shirt": "10",
+            "name": "Weinmann, Lorenz",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "14",
+            "name": "HÖLZL, Paul",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "22",
+            "name": "Ben Abid, Maher",
+            "goals": 8,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 1,
+            "yellow": 0,
+            "twoMin": 2,
+            "disqualified": false
+          },
+          {
+            "shirt": "25",
+            "name": "Hötzel, Moritz",
+            "goals": 1,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "73",
+            "name": "ANDEXLINGER, Roman",
+            "goals": 6,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 1,
+            "disqualified": false
+          },
+          {
+            "shirt": "90",
+            "name": "Sarnecki, Dominik",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          }
+        ],
+        "totals": {
+          "sevenMAttempts": 3,
+          "sevenMGoals": 2,
+          "twoMin": 4,
+          "yellow": 0,
+          "timeouts": 2,
+          "disqualifications": 0
+        }
+      }
+    },
+    "93319": {
+      "id": "93319",
+      "number": 2,
+      "date": "2026-10-03",
+      "time": "19:00",
+      "venue": "SH Pernau, Wels - Sterner Arena",
+      "approved": true,
+      "score": {
+        "home": 32,
+        "away": 27
+      },
+      "halftime": {
+        "home": 14,
+        "away": 11
+      },
+      "home": {
+        "name": "HSC Wels",
+        "players": [
+          {
+            "shirt": "5",
+            "name": "PETRISIC, Matteo",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "6",
+            "name": "Weinmann, Lorenz",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "8",
+            "name": "MEIRINGER, David",
+            "goals": 7,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "10",
+            "name": "Eid, Ali Mohamed Abdelwahad",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "12",
+            "name": "Mair, Tobias",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "14",
+            "name": "Kukla, Andreas Jr.",
+            "goals": 4,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "18",
+            "name": "PETRISIC, David",
+            "goals": 6,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 1,
+            "disqualified": false
+          },
+          {
+            "shirt": "28",
+            "name": "Eid, Hussain",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 1,
+            "twoMin": 2,
+            "disqualified": false
+          },
+          {
+            "shirt": "32",
+            "name": "Bosnjak, Gabriel",
+            "goals": 8,
+            "sevenMGoals": 4,
+            "sevenMAttempts": 4,
+            "yellow": 0,
+            "twoMin": 1,
+            "disqualified": false
+          },
+          {
+            "shirt": "35",
+            "name": "HERZOG, Luca",
+            "goals": 3,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 3,
+            "disqualified": true
+          },
+          {
+            "shirt": "72",
+            "name": "DUDLAK, Michael Justin",
+            "goals": 2,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "99",
+            "name": "HRNCIC, Armin",
+            "goals": 2,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 1,
+            "disqualified": false
+          }
+        ],
+        "totals": {
+          "sevenMAttempts": 4,
+          "sevenMGoals": 4,
+          "twoMin": 8,
+          "yellow": 1,
+          "timeouts": 2,
+          "disqualifications": 1
+        }
+      },
+      "away": {
+        "name": "ASKÖ HC Urfahr",
+        "players": [
+          {
+            "shirt": "1",
+            "name": "WAGNER, Fabian",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "7",
+            "name": "KOLB, Jonathan Navin",
+            "goals": 6,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 1,
+            "disqualified": false
+          },
+          {
+            "shirt": "9",
+            "name": "STALTNER, Jonas",
+            "goals": 3,
+            "sevenMGoals": 1,
+            "sevenMAttempts": 2,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "11",
+            "name": "PETZOLD, Paul",
+            "goals": 6,
+            "sevenMGoals": 1,
+            "sevenMAttempts": 2,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "12",
+            "name": "EDELBAUER, Andreas",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "15",
+            "name": "Mertens, Florian",
+            "goals": 8,
+            "sevenMGoals": 3,
+            "sevenMAttempts": 5,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "22",
+            "name": "ZINNER, Markus",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "24",
+            "name": "FINK, Robert",
+            "goals": 3,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "33",
+            "name": "BACHMANN, Maximilian",
+            "goals": 1,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 3,
+            "disqualified": true
+          },
+          {
+            "shirt": "81",
+            "name": "KARL, Christoph",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "99",
+            "name": "Padineantu, David Nicolae",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          }
+        ],
+        "totals": {
+          "sevenMAttempts": 9,
+          "sevenMGoals": 5,
+          "twoMin": 4,
+          "yellow": 0,
+          "timeouts": 1,
+          "disqualifications": 1
+        }
+      }
+    },
+    "93320": {
+      "id": "93320",
+      "number": 4,
+      "date": "2026-10-17",
+      "time": "18:00",
+      "venue": "SH Hüttnerschule, Linz",
+      "approved": true,
+      "score": {
+        "home": 41,
+        "away": 34
+      },
+      "halftime": {
+        "home": 18,
+        "away": 18
+      },
+      "home": {
+        "name": "Sportunion EDELWEISS Linz / SK Traun",
+        "players": [
+          {
+            "shirt": "1",
+            "name": "HOLOM, Radu",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "2",
+            "name": "SOLLMANN, Moritz",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "3",
+            "name": "MILISIC, Stefan",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "5",
+            "name": "OBE, Anasemi Bliss",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "6",
+            "name": "SCHILDE, Tim",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "9",
+            "name": "NADAREVIC, Eldar",
+            "goals": 3,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "10",
+            "name": "DURIC, Milanko",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "11",
+            "name": "VAHRAM, Chris Martin",
+            "goals": 4,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "13",
+            "name": "WÖß, Florian",
+            "goals": 8,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 1,
+            "disqualified": false
+          },
+          {
+            "shirt": "15",
+            "name": "MÜHLEDER, Michael",
+            "goals": 1,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "16",
+            "name": "REIGL, Julian",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "17",
+            "name": "GHENT, Leon-Pawel",
+            "goals": 10,
+            "sevenMGoals": 4,
+            "sevenMAttempts": 4,
+            "yellow": 0,
+            "twoMin": 1,
+            "disqualified": false
+          },
+          {
+            "shirt": "23",
+            "name": "WÖẞ, Albrecht",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "27",
+            "name": "Vogel, David",
+            "goals": 8,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 1,
+            "disqualified": false
+          },
+          {
+            "shirt": "92",
+            "name": "BOGENSPERGER, Patrick",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "99",
+            "name": "GOLUBOVIC, Dejan",
+            "goals": 7,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          }
+        ],
+        "totals": {
+          "sevenMAttempts": 4,
+          "sevenMGoals": 4,
+          "twoMin": 3,
+          "yellow": 0,
+          "timeouts": 2,
+          "disqualifications": 0
+        }
+      },
+      "away": {
+        "name": "HSC Wels",
+        "players": [
+          {
+            "shirt": "5",
+            "name": "PETRISIC, Matteo",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "7",
+            "name": "BRUNMAYR, Lukas",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "12",
+            "name": "Mair, Tobias",
+            "goals": 1,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "13",
+            "name": "MEIRINGER, David",
+            "goals": 3,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "18",
+            "name": "PETRISIC, David",
+            "goals": 6,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "28",
+            "name": "GEORGIOU, Kyriakos",
+            "goals": 8,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "32",
+            "name": "Bosnjak, Gabriel",
+            "goals": 10,
+            "sevenMGoals": 4,
+            "sevenMAttempts": 4,
+            "yellow": 0,
+            "twoMin": 1,
+            "disqualified": false
+          },
+          {
+            "shirt": "35",
+            "name": "HERZOG, Luca",
+            "goals": 5,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 1,
+            "disqualified": false
+          },
+          {
+            "shirt": "72",
+            "name": "DUDLAK, Michael Justin",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "99",
+            "name": "HRNCIC, Armin",
+            "goals": 1,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 1,
+            "disqualified": false
+          }
+        ],
+        "totals": {
+          "sevenMAttempts": 4,
+          "sevenMGoals": 4,
+          "twoMin": 3,
+          "yellow": 0,
+          "timeouts": 2,
+          "disqualifications": 0
+        }
+      }
+    },
+    "93325": {
+      "id": "93325",
+      "number": 3,
+      "date": "2026-10-17",
+      "time": "17:30",
+      "venue": "SMS Kleinmünchen, Linz",
+      "approved": true,
+      "score": {
+        "home": 30,
+        "away": 35
+      },
+      "halftime": {
+        "home": 15,
+        "away": 18
+      },
+      "home": {
+        "name": "SG HC LINZ AG/Neue Heimat",
+        "players": [
+          {
+            "shirt": "1",
+            "name": "WIMMER, Walter",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "2",
+            "name": "DONNABAUER, Moritz",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "5",
+            "name": "STACHELBERGER, Nick",
+            "goals": 4,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "13",
+            "name": "HINTERREITER, Moritz",
+            "goals": 5,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 1,
+            "disqualified": false
+          },
+          {
+            "shirt": "22",
+            "name": "KENT, Jakob Alexander",
+            "goals": 3,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "24",
+            "name": "COUFAL, Jan",
+            "goals": 5,
+            "sevenMGoals": 1,
+            "sevenMAttempts": 1,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "33",
+            "name": "SINZINGER, Yanik",
+            "goals": 1,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "34",
+            "name": "GRÜNBERGER, Yannick",
+            "goals": 2,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "39",
+            "name": "Schinagl, Levin",
+            "goals": 1,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "49",
+            "name": "VIKTOR, Ivo",
+            "goals": 7,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 1,
+            "disqualified": false
+          },
+          {
+            "shirt": "67",
+            "name": "LETIC, Milos",
+            "goals": 2,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 1,
+            "disqualified": false
+          },
+          {
+            "shirt": "95",
+            "name": "REISINGER, Paul",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          }
+        ],
+        "totals": {
+          "sevenMAttempts": 1,
+          "sevenMGoals": 1,
+          "twoMin": 3,
+          "yellow": 0,
+          "timeouts": 2,
+          "disqualifications": 0
+        }
+      },
+      "away": {
+        "name": "HC Eferding",
+        "players": [
+          {
+            "shirt": "1",
+            "name": "Obermühlner, Kevin",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "2",
+            "name": "WIESINGER, Johannes",
+            "goals": 6,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 1,
+            "disqualified": false
+          },
+          {
+            "shirt": "3",
+            "name": "ROITHMAIR, Christoph",
+            "goals": 9,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "10",
+            "name": "Weinmann, Lorenz",
+            "goals": 2,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "14",
+            "name": "HÖLZL, Paul",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "22",
+            "name": "Ben Abid, Maher",
+            "goals": 6,
+            "sevenMGoals": 2,
+            "sevenMAttempts": 3,
+            "yellow": 0,
+            "twoMin": 3,
+            "disqualified": true
+          },
+          {
+            "shirt": "25",
+            "name": "Hötzel, Moritz",
+            "goals": 2,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "73",
+            "name": "ANDEXLINGER, Roman",
+            "goals": 10,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 1,
+            "disqualified": false
+          },
+          {
+            "shirt": "90",
+            "name": "Sarnecki, Dominik",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          }
+        ],
+        "totals": {
+          "sevenMAttempts": 3,
+          "sevenMGoals": 2,
+          "twoMin": 5,
+          "yellow": 0,
+          "timeouts": 2,
+          "disqualifications": 1
+        }
+      }
+    },
+    "93331": {
+      "id": "93331",
+      "number": 1,
+      "date": "2026-10-02",
+      "time": "20:15",
+      "venue": "BSH Eferding",
+      "approved": true,
+      "score": {
+        "home": 28,
+        "away": 34
+      },
+      "halftime": {
+        "home": 13,
+        "away": 18
+      },
+      "home": {
+        "name": "HC Eferding",
+        "players": [
+          {
+            "shirt": "1",
+            "name": "Obermühlner, Kevin",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "2",
+            "name": "WIESINGER, Johannes",
+            "goals": 6,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 3,
+            "disqualified": true
+          },
+          {
+            "shirt": "3",
+            "name": "ROITHMAIR, Christoph",
+            "goals": 3,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "7",
+            "name": "LEHNER, Florian",
+            "goals": 8,
+            "sevenMGoals": 3,
+            "sevenMAttempts": 3,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "9",
+            "name": "HINTERHÖLZL, Stefan",
+            "goals": 2,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "10",
+            "name": "Weinmann, Lorenz",
+            "goals": 1,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "14",
+            "name": "HÖLZL, Paul",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "22",
+            "name": "Ben Abid, Maher",
+            "goals": 2,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "25",
+            "name": "Hötzel, Moritz",
+            "goals": 1,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "69",
+            "name": "ANDEXLINGER, Stephan",
+            "goals": 1,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "73",
+            "name": "ANDEXLINGER, Roman",
+            "goals": 4,
+            "sevenMGoals": 1,
+            "sevenMAttempts": 2,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "90",
+            "name": "Sarnecki, Dominik",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "99",
+            "name": "Rohr, Stefan",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          }
+        ],
+        "totals": {
+          "sevenMAttempts": 5,
+          "sevenMGoals": 4,
+          "twoMin": 3,
+          "yellow": 0,
+          "timeouts": 3,
+          "disqualifications": 1
+        }
+      },
+      "away": {
+        "name": "Sportunion EDELWEISS Linz / SK Traun",
+        "players": [
+          {
+            "shirt": "1",
+            "name": "CVITKUSIC, Bruno",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "2",
+            "name": "SOLLMANN, Moritz",
+            "goals": 1,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "4",
+            "name": "GOLUBOVIC, Dejan",
+            "goals": 5,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "5",
+            "name": "OBE, Anasemi Bliss",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 2,
+            "disqualified": false
+          },
+          {
+            "shirt": "6",
+            "name": "SCHILDE, Tim",
+            "goals": 3,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "9",
+            "name": "NADAREVIC, Eldar",
+            "goals": 3,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 1,
+            "disqualified": false
+          },
+          {
+            "shirt": "11",
+            "name": "VAHRAM, Chris Martin",
+            "goals": 1,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 1,
+            "disqualified": false
+          },
+          {
+            "shirt": "13",
+            "name": "WÖß, Florian",
+            "goals": 4,
+            "sevenMGoals": 1,
+            "sevenMAttempts": 1,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "15",
+            "name": "MÜHLEDER, Michael",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "16",
+            "name": "REIGL, Julian",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "17",
+            "name": "GHENT, Leon-Pawel",
+            "goals": 12,
+            "sevenMGoals": 3,
+            "sevenMAttempts": 5,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "20",
+            "name": "BALIC, Edin",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 1,
+            "disqualified": false
+          },
+          {
+            "shirt": "23",
+            "name": "WÖẞ, Albrecht",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": true
+          },
+          {
+            "shirt": "27",
+            "name": "Vogel, David",
+            "goals": 2,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "34",
+            "name": "BALIC, Kenan",
+            "goals": 3,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 1,
+            "disqualified": false
+          },
+          {
+            "shirt": "92",
+            "name": "BOGENSPERGER, Patrick",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          }
+        ],
+        "totals": {
+          "sevenMAttempts": 6,
+          "sevenMGoals": 4,
+          "twoMin": 6,
+          "yellow": 0,
+          "timeouts": 1,
+          "disqualifications": 1
+        }
+      }
+    }
+  },
+  "stats": {
+    "tore": [
+      {
+        "rank": 1,
+        "name": "GHENT, Leon-Pawel",
+        "club": "Sportunion EDELWEISS Linz",
+        "team": "Sportunion EDELWEISS Linz / SK Traun",
+        "value": 22,
+        "games": 2,
+        "attempts": null,
+        "perGame": 11
+      },
+      {
+        "rank": 2,
+        "name": "ANDEXLINGER, Roman",
+        "club": "Sportunion Wels Handball",
+        "team": "HC Eferding",
+        "value": 20,
+        "games": 3,
+        "attempts": null,
+        "perGame": 6.67
+      },
+      {
+        "rank": 3,
+        "name": "Bosnjak, Gabriel",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 18,
+        "games": 2,
+        "attempts": null,
+        "perGame": 9
+      },
+      {
+        "rank": 4,
+        "name": "WIESINGER, Johannes",
+        "club": "Sportunion Wels Handball",
+        "team": "HC Eferding",
+        "value": 18,
+        "games": 3,
+        "attempts": null,
+        "perGame": 6
+      },
+      {
+        "rank": 5,
+        "name": "Ben Abid, Maher",
+        "club": "Sportunion Wels Handball",
+        "team": "HC Eferding",
+        "value": 16,
+        "games": 3,
+        "attempts": null,
+        "perGame": 5.33
+      },
+      {
+        "rank": 6,
+        "name": "LEHNER, Florian",
+        "club": "Sportunion Wels Handball",
+        "team": "HC Eferding",
+        "value": 14,
+        "games": 2,
+        "attempts": null,
+        "perGame": 7
+      },
+      {
+        "rank": 7,
+        "name": "GOLUBOVIC, Dejan",
+        "club": "Sportunion EDELWEISS Linz",
+        "team": "Sportunion EDELWEISS Linz / SK Traun",
+        "value": 12,
+        "games": 2,
+        "attempts": null,
+        "perGame": 6
+      },
+      {
+        "rank": 8,
+        "name": "PETRISIC, David",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 12,
+        "games": 2,
+        "attempts": null,
+        "perGame": 6
+      },
+      {
+        "rank": 9,
+        "name": "PETZOLD, Paul",
+        "club": "HC LINZ AG",
+        "team": "ASKÖ HC Urfahr",
+        "value": 12,
+        "games": 2,
+        "attempts": null,
+        "perGame": 6
+      },
+      {
+        "rank": 10,
+        "name": "WÖß, Florian",
+        "club": "Sportunion EDELWEISS Linz",
+        "team": "Sportunion EDELWEISS Linz / SK Traun",
+        "value": 12,
+        "games": 2,
+        "attempts": null,
+        "perGame": 6
+      },
+      {
+        "rank": 11,
+        "name": "ROITHMAIR, Christoph",
+        "club": "Sportunion Wels Handball",
+        "team": "HC Eferding",
+        "value": 12,
+        "games": 3,
+        "attempts": null,
+        "perGame": 4
+      },
+      {
+        "rank": 12,
+        "name": "KOLB, Jonathan Navin",
+        "club": "HC LINZ AG",
+        "team": "ASKÖ HC Urfahr",
+        "value": 11,
+        "games": 2,
+        "attempts": null,
+        "perGame": 5.5
+      },
+      {
+        "rank": 13,
+        "name": "STALTNER, Jonas",
+        "club": "HC LINZ AG",
+        "team": "ASKÖ HC Urfahr",
+        "value": 11,
+        "games": 2,
+        "attempts": null,
+        "perGame": 5.5
+      },
+      {
+        "rank": 14,
+        "name": "MEIRINGER, David",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 10,
+        "games": 2,
+        "attempts": null,
+        "perGame": 5
+      },
+      {
+        "rank": 15,
+        "name": "Mertens, Florian",
+        "club": "HC LINZ AG",
+        "team": "ASKÖ HC Urfahr",
+        "value": 10,
+        "games": 2,
+        "attempts": null,
+        "perGame": 5
+      },
+      {
+        "rank": 16,
+        "name": "Vogel, David",
+        "club": "Sportunion EDELWEISS Linz",
+        "team": "Sportunion EDELWEISS Linz / SK Traun",
+        "value": 10,
+        "games": 2,
+        "attempts": null,
+        "perGame": 5
+      },
+      {
+        "rank": 17,
+        "name": "GEORGIOU, Kyriakos",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 8,
+        "games": 1,
+        "attempts": null,
+        "perGame": 8
+      },
+      {
+        "rank": 18,
+        "name": "HERZOG, Luca",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 8,
+        "games": 2,
+        "attempts": null,
+        "perGame": 4
+      },
+      {
+        "rank": 19,
+        "name": "FLOßMANN, Tarek",
+        "club": "HC LINZ AG",
+        "team": "ASKÖ HC Urfahr",
+        "value": 7,
+        "games": 1,
+        "attempts": null,
+        "perGame": 7
+      },
+      {
+        "rank": 20,
+        "name": "VIKTOR, Ivo",
+        "club": "HC LINZ AG",
+        "team": "SG HC LINZ AG/Neue Heimat",
+        "value": 7,
+        "games": 1,
+        "attempts": null,
+        "perGame": 7
+      },
+      {
+        "rank": 21,
+        "name": "NADAREVIC, Eldar",
+        "club": "Sportunion EDELWEISS Linz",
+        "team": "Sportunion EDELWEISS Linz / SK Traun",
+        "value": 6,
+        "games": 2,
+        "attempts": null,
+        "perGame": 3
+      },
+      {
+        "rank": 22,
+        "name": "COUFAL, Jan",
+        "club": "HC LINZ AG",
+        "team": "SG HC LINZ AG/Neue Heimat",
+        "value": 5,
+        "games": 1,
+        "attempts": null,
+        "perGame": 5
+      },
+      {
+        "rank": 23,
+        "name": "HINTERREITER, Moritz",
+        "club": "HC LINZ AG",
+        "team": "SG HC LINZ AG/Neue Heimat",
+        "value": 5,
+        "games": 1,
+        "attempts": null,
+        "perGame": 5
+      },
+      {
+        "rank": 24,
+        "name": "VAHRAM, Chris Martin",
+        "club": "Sportunion EDELWEISS Linz",
+        "team": "Sportunion EDELWEISS Linz / SK Traun",
+        "value": 5,
+        "games": 2,
+        "attempts": null,
+        "perGame": 2.5
+      },
+      {
+        "rank": 25,
+        "name": "Kukla, Andreas Jr.",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 4,
+        "games": 1,
+        "attempts": null,
+        "perGame": 4
+      },
+      {
+        "rank": 26,
+        "name": "STACHELBERGER, Nick",
+        "club": "HC LINZ AG",
+        "team": "SG HC LINZ AG/Neue Heimat",
+        "value": 4,
+        "games": 1,
+        "attempts": null,
+        "perGame": 4
+      },
+      {
+        "rank": 27,
+        "name": "FINK, Robert",
+        "club": "HC LINZ AG",
+        "team": "ASKÖ HC Urfahr",
+        "value": 4,
+        "games": 2,
+        "attempts": null,
+        "perGame": 2
+      },
+      {
+        "rank": 28,
+        "name": "Hötzel, Moritz",
+        "club": "Sportunion Wels Handball",
+        "team": "HC Eferding",
+        "value": 4,
+        "games": 3,
+        "attempts": null,
+        "perGame": 1.33
+      },
+      {
+        "rank": 29,
+        "name": "BALIC, Kenan",
+        "club": "Sportunion EDELWEISS Linz",
+        "team": "Sportunion EDELWEISS Linz / SK Traun",
+        "value": 3,
+        "games": 1,
+        "attempts": null,
+        "perGame": 3
+      },
+      {
+        "rank": 30,
+        "name": "KENT, Jakob Alexander",
+        "club": "HC LINZ AG",
+        "team": "SG HC LINZ AG/Neue Heimat",
+        "value": 3,
+        "games": 1,
+        "attempts": null,
+        "perGame": 3
+      },
+      {
+        "rank": 31,
+        "name": "HINTERHÖLZL, Stefan",
+        "club": "Sportunion Wels Handball",
+        "team": "HC Eferding",
+        "value": 3,
+        "games": 2,
+        "attempts": null,
+        "perGame": 1.5
+      },
+      {
+        "rank": 32,
+        "name": "HRNCIC, Armin",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 3,
+        "games": 2,
+        "attempts": null,
+        "perGame": 1.5
+      },
+      {
+        "rank": 33,
+        "name": "SCHILDE, Tim",
+        "club": "Sportunion EDELWEISS Linz",
+        "team": "Sportunion EDELWEISS Linz / SK Traun",
+        "value": 3,
+        "games": 2,
+        "attempts": null,
+        "perGame": 1.5
+      },
+      {
+        "rank": 34,
+        "name": "Weinmann, Lorenz",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 3,
+        "games": 3,
+        "attempts": null,
+        "perGame": 1
+      },
+      {
+        "rank": 35,
+        "name": "GRÜNBERGER, Yannick",
+        "club": "HC LINZ AG",
+        "team": "SG HC LINZ AG/Neue Heimat",
+        "value": 2,
+        "games": 1,
+        "attempts": null,
+        "perGame": 2
+      },
+      {
+        "rank": 36,
+        "name": "LETIC, Milos",
+        "club": "HC LINZ AG",
+        "team": "SG HC LINZ AG/Neue Heimat",
+        "value": 2,
+        "games": 1,
+        "attempts": null,
+        "perGame": 2
+      },
+      {
+        "rank": 37,
+        "name": "BACHMANN, Maximilian",
+        "club": "HC LINZ AG",
+        "team": "ASKÖ HC Urfahr",
+        "value": 2,
+        "games": 2,
+        "attempts": null,
+        "perGame": 1
+      },
+      {
+        "rank": 38,
+        "name": "DUDLAK, Michael Justin",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 2,
+        "games": 2,
+        "attempts": null,
+        "perGame": 1
+      },
+      {
+        "rank": 39,
+        "name": "ANDEXLINGER, Stephan",
+        "club": "Sportunion Wels Handball",
+        "team": "HC Eferding",
+        "value": 1,
+        "games": 1,
+        "attempts": null,
+        "perGame": 1
+      },
+      {
+        "rank": 40,
+        "name": "Schinagl, Levin",
+        "club": "HC LINZ AG",
+        "team": "SG HC LINZ AG/Neue Heimat",
+        "value": 1,
+        "games": 1,
+        "attempts": null,
+        "perGame": 1
+      },
+      {
+        "rank": 41,
+        "name": "SINZINGER, Yanik",
+        "club": "HC LINZ AG",
+        "team": "SG HC LINZ AG/Neue Heimat",
+        "value": 1,
+        "games": 1,
+        "attempts": null,
+        "perGame": 1
+      },
+      {
+        "rank": 42,
+        "name": "Mair, Tobias",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 1,
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
+      },
+      {
+        "rank": 43,
+        "name": "MÜHLEDER, Michael",
+        "club": "Sportunion EDELWEISS Linz",
+        "team": "Sportunion EDELWEISS Linz / SK Traun",
+        "value": 1,
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
+      },
+      {
+        "rank": 44,
+        "name": "SOLLMANN, Moritz",
+        "club": "Sportunion EDELWEISS Linz",
+        "team": "Sportunion EDELWEISS Linz / SK Traun",
+        "value": 1,
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
+      }
+    ],
+    "7m": [
+      {
+        "rank": 1,
+        "name": "Bosnjak, Gabriel",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 8,
+        "games": null,
+        "attempts": 8,
+        "perGame": 4
+      },
+      {
+        "rank": 2,
+        "name": "GHENT, Leon-Pawel",
+        "club": "Sportunion EDELWEISS Linz",
+        "team": "Sportunion EDELWEISS Linz / SK Traun",
+        "value": 7,
+        "games": null,
+        "attempts": 9,
+        "perGame": 3.5
+      },
+      {
+        "rank": 3,
+        "name": "LEHNER, Florian",
+        "club": "Sportunion Wels Handball",
+        "team": "HC Eferding",
+        "value": 5,
+        "games": null,
+        "attempts": 5,
+        "perGame": 2.5
+      },
+      {
+        "rank": 4,
+        "name": "STALTNER, Jonas",
+        "club": "HC LINZ AG",
+        "team": "ASKÖ HC Urfahr",
+        "value": 3,
+        "games": null,
+        "attempts": 4,
+        "perGame": 1.5
+      },
+      {
+        "rank": 5,
+        "name": "Mertens, Florian",
+        "club": "HC LINZ AG",
+        "team": "ASKÖ HC Urfahr",
+        "value": 3,
+        "games": null,
+        "attempts": 6,
+        "perGame": 1.5
+      },
+      {
+        "rank": 6,
+        "name": "Ben Abid, Maher",
+        "club": "Sportunion Wels Handball",
+        "team": "HC Eferding",
+        "value": 2,
+        "games": null,
+        "attempts": 4,
+        "perGame": 0.67
+      },
+      {
+        "rank": 7,
+        "name": "COUFAL, Jan",
+        "club": "HC LINZ AG",
+        "team": "SG HC LINZ AG/Neue Heimat",
+        "value": 1,
+        "games": null,
+        "attempts": 1,
+        "perGame": 1
+      },
+      {
+        "rank": 8,
+        "name": "WÖß, Florian",
+        "club": "Sportunion EDELWEISS Linz",
+        "team": "Sportunion EDELWEISS Linz / SK Traun",
+        "value": 1,
+        "games": null,
+        "attempts": 1,
+        "perGame": 0.5
+      },
+      {
+        "rank": 9,
+        "name": "PETZOLD, Paul",
+        "club": "HC LINZ AG",
+        "team": "ASKÖ HC Urfahr",
+        "value": 1,
+        "games": null,
+        "attempts": 2,
+        "perGame": 0.5
+      },
+      {
+        "rank": 10,
+        "name": "ANDEXLINGER, Roman",
+        "club": "Sportunion Wels Handball",
+        "team": "HC Eferding",
+        "value": 1,
+        "games": null,
+        "attempts": 2,
+        "perGame": 0.33
+      }
+    ],
+    "zeitstrafen": [
+      {
+        "rank": 1,
+        "name": "BACHMANN, Maximilian",
+        "club": "HC LINZ AG",
+        "team": "ASKÖ HC Urfahr",
+        "value": 5,
+        "games": 2,
+        "attempts": null,
+        "perGame": 2.5
+      },
+      {
+        "rank": 2,
+        "name": "HERZOG, Luca",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 4,
+        "games": 2,
+        "attempts": null,
+        "perGame": 2
+      },
+      {
+        "rank": 3,
+        "name": "Eid, Hussain",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 2,
+        "games": 1,
+        "attempts": null,
+        "perGame": 2
+      },
+      {
+        "rank": 4,
+        "name": "Ben Abid, Maher",
+        "club": "Sportunion Wels Handball",
+        "team": "HC Eferding",
+        "value": 5,
+        "games": 3,
+        "attempts": null,
+        "perGame": 1.66667
+      },
+      {
+        "rank": 5,
+        "name": "WIESINGER, Johannes",
+        "club": "Sportunion Wels Handball",
+        "team": "HC Eferding",
+        "value": 4,
+        "games": 3,
+        "attempts": null,
+        "perGame": 1.33333
+      },
+      {
+        "rank": 6,
+        "name": "Bosnjak, Gabriel",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 2,
+        "games": 2,
+        "attempts": null,
+        "perGame": 1
+      },
+      {
+        "rank": 7,
+        "name": "FINK, Robert",
+        "club": "HC LINZ AG",
+        "team": "ASKÖ HC Urfahr",
+        "value": 2,
+        "games": 2,
+        "attempts": null,
+        "perGame": 1
+      },
+      {
+        "rank": 8,
+        "name": "HRNCIC, Armin",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 2,
+        "games": 2,
+        "attempts": null,
+        "perGame": 1
+      },
+      {
+        "rank": 9,
+        "name": "OBE, Anasemi Bliss",
+        "club": "Sportunion EDELWEISS Linz",
+        "team": "Sportunion EDELWEISS Linz / SK Traun",
+        "value": 2,
+        "games": 2,
+        "attempts": null,
+        "perGame": 1
+      },
+      {
+        "rank": 10,
+        "name": "STALTNER, Jonas",
+        "club": "HC LINZ AG",
+        "team": "ASKÖ HC Urfahr",
+        "value": 2,
+        "games": 2,
+        "attempts": null,
+        "perGame": 1
+      },
+      {
+        "rank": 11,
+        "name": "BALIC, Edin",
+        "club": "Sportunion EDELWEISS Linz",
+        "team": "Sportunion EDELWEISS Linz / SK Traun",
+        "value": 1,
+        "games": 1,
+        "attempts": null,
+        "perGame": 1
+      },
+      {
+        "rank": 12,
+        "name": "BALIC, Kenan",
+        "club": "Sportunion EDELWEISS Linz",
+        "team": "Sportunion EDELWEISS Linz / SK Traun",
+        "value": 1,
+        "games": 1,
+        "attempts": null,
+        "perGame": 1
+      },
+      {
+        "rank": 13,
+        "name": "HINTERREITER, Moritz",
+        "club": "HC LINZ AG",
+        "team": "SG HC LINZ AG/Neue Heimat",
+        "value": 1,
+        "games": 1,
+        "attempts": null,
+        "perGame": 1
+      },
+      {
+        "rank": 14,
+        "name": "LETIC, Milos",
+        "club": "HC LINZ AG",
+        "team": "SG HC LINZ AG/Neue Heimat",
+        "value": 1,
+        "games": 1,
+        "attempts": null,
+        "perGame": 1
+      },
+      {
+        "rank": 15,
+        "name": "VIKTOR, Ivo",
+        "club": "HC LINZ AG",
+        "team": "SG HC LINZ AG/Neue Heimat",
+        "value": 1,
+        "games": 1,
+        "attempts": null,
+        "perGame": 1
+      },
+      {
+        "rank": 16,
+        "name": "ANDEXLINGER, Roman",
+        "club": "Sportunion Wels Handball",
+        "team": "HC Eferding",
+        "value": 2,
+        "games": 3,
+        "attempts": null,
+        "perGame": 0.66667
+      },
+      {
+        "rank": 17,
+        "name": "GHENT, Leon-Pawel",
+        "club": "Sportunion EDELWEISS Linz",
+        "team": "Sportunion EDELWEISS Linz / SK Traun",
+        "value": 1,
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
+      },
+      {
+        "rank": 18,
+        "name": "HINTERHÖLZL, Stefan",
+        "club": "Sportunion Wels Handball",
+        "team": "HC Eferding",
+        "value": 1,
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
+      },
+      {
+        "rank": 19,
+        "name": "KOLB, Jonathan Navin",
+        "club": "HC LINZ AG",
+        "team": "ASKÖ HC Urfahr",
+        "value": 1,
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
+      },
+      {
+        "rank": 20,
+        "name": "Mertens, Florian",
+        "club": "HC LINZ AG",
+        "team": "ASKÖ HC Urfahr",
+        "value": 1,
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
+      },
+      {
+        "rank": 21,
+        "name": "NADAREVIC, Eldar",
+        "club": "Sportunion EDELWEISS Linz",
+        "team": "Sportunion EDELWEISS Linz / SK Traun",
+        "value": 1,
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
+      },
+      {
+        "rank": 22,
+        "name": "PETRISIC, David",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 1,
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
+      },
+      {
+        "rank": 23,
+        "name": "VAHRAM, Chris Martin",
+        "club": "Sportunion EDELWEISS Linz",
+        "team": "Sportunion EDELWEISS Linz / SK Traun",
+        "value": 1,
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
+      },
+      {
+        "rank": 24,
+        "name": "Vogel, David",
+        "club": "Sportunion EDELWEISS Linz",
+        "team": "Sportunion EDELWEISS Linz / SK Traun",
+        "value": 1,
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
+      },
+      {
+        "rank": 25,
+        "name": "WÖß, Florian",
+        "club": "Sportunion EDELWEISS Linz",
+        "team": "Sportunion EDELWEISS Linz / SK Traun",
+        "value": 1,
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
+      },
+      {
+        "rank": 26,
+        "name": "ZINNER, Markus",
+        "club": "HC LINZ AG",
+        "team": "ASKÖ HC Urfahr",
+        "value": 1,
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
+      }
+    ],
+    "gelb": [
+      {
+        "rank": 1,
+        "name": "Eid, Hussain",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 1,
+        "games": 1,
+        "attempts": null,
+        "perGame": 1
+      }
+    ],
+    "rot": [
+      {
+        "rank": 1,
+        "name": "BACHMANN, Maximilian",
+        "club": "HC LINZ AG",
+        "team": "ASKÖ HC Urfahr",
+        "value": 1,
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
+      },
+      {
+        "rank": 2,
+        "name": "HERZOG, Luca",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 1,
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
+      },
+      {
+        "rank": 3,
+        "name": "WÖẞ, Albrecht",
+        "club": "Sportunion EDELWEISS Linz",
+        "team": "Sportunion EDELWEISS Linz / SK Traun",
+        "value": 1,
+        "games": 2,
+        "attempts": null,
+        "perGame": 0.5
+      },
+      {
+        "rank": 4,
+        "name": "Ben Abid, Maher",
+        "club": "Sportunion Wels Handball",
+        "team": "HC Eferding",
+        "value": 1,
+        "games": 3,
+        "attempts": null,
+        "perGame": 0.33333
+      },
+      {
+        "rank": 5,
+        "name": "WIESINGER, Johannes",
+        "club": "Sportunion Wels Handball",
+        "team": "HC Eferding",
+        "value": 1,
+        "games": 3,
+        "attempts": null,
+        "perGame": 0.33333
+      }
+    ]
+  },
+  "groupStats": {
+    "group": {
+      "name": "Gruppenstatistik",
+      "games": 5,
+      "scheduled": 40,
+      "goals": 319,
+      "sevenMAttempts": 42,
+      "sevenMGoals": 32,
+      "twoMin": 47,
+      "yellow": 1,
+      "red": 5,
+      "spectators": null,
+      "homeWins": 3,
+      "awayWins": 2,
+      "draws": 0
+    },
+    "teams": [
+      {
+        "name": "ASKÖ HC Urfahr",
+        "games": 2,
+        "scheduled": 16,
+        "goals": 57,
+        "sevenMAttempts": 12,
+        "sevenMGoals": 7,
+        "twoMin": 12,
+        "yellow": 0,
+        "red": 1,
+        "spectators": null,
+        "homeWins": 1,
+        "awayWins": 0,
+        "draws": 0
+      },
+      {
+        "name": "HC Eferding",
+        "games": 3,
+        "scheduled": 16,
+        "goals": 91,
+        "sevenMAttempts": 11,
+        "sevenMGoals": 8,
+        "twoMin": 12,
+        "yellow": 0,
+        "red": 2,
+        "spectators": null,
+        "homeWins": 0,
+        "awayWins": 1,
+        "draws": 0
+      },
+      {
+        "name": "HSC Wels",
+        "games": 2,
+        "scheduled": 16,
+        "goals": 66,
+        "sevenMAttempts": 8,
+        "sevenMGoals": 8,
+        "twoMin": 11,
+        "yellow": 1,
+        "red": 1,
+        "spectators": null,
+        "homeWins": 1,
+        "awayWins": 0,
+        "draws": 0
+      },
+      {
+        "name": "SG HC LINZ AG/Neue Heimat",
+        "games": 1,
+        "scheduled": 16,
+        "goals": 30,
+        "sevenMAttempts": 1,
+        "sevenMGoals": 1,
+        "twoMin": 3,
+        "yellow": 0,
+        "red": 0,
+        "spectators": null,
+        "homeWins": 0,
+        "awayWins": 0,
+        "draws": 0
+      },
+      {
+        "name": "Sportunion EDELWEISS Linz / SK Traun",
+        "games": 2,
+        "scheduled": 16,
+        "goals": 75,
+        "sevenMAttempts": 10,
+        "sevenMGoals": 8,
+        "twoMin": 9,
+        "yellow": 0,
+        "red": 1,
+        "spectators": null,
+        "homeWins": 1,
+        "awayWins": 1,
+        "draws": 0
+      }
+    ]
+  }
+}

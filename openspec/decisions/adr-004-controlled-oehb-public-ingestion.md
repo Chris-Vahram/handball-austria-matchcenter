@@ -63,3 +63,28 @@ operator can disable imports without changing the frontend adapter contract.
 OEHB competition pages contain useful sports records and can also contain
 excluded personal fields. Separate fetching, normalization, validation, and
 publication decisions reduce source traffic and prevent accidental exposure.
+
+## 2026/27 nuLiga Allowlist (v3, change `add-matchcenter-v3`, 2026-10-31)
+
+The v3 operator importer (`v3/src/importer/`) may fetch these public nuLiga
+pages on `oehb-handball.liga.nu`, under the same limits as above (operator CLI
+only, 24h cache, ≥1500 ms between requests, max 2 retries, no login, no
+crawling of unconfigured URLs). The root `src/importer/` allowlist is unchanged.
+
+| Competition | Group page |
+| --- | --- |
+| MEHRLEBEN HLA CHALLENGE West Hauptrunde 26/27 | `https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupPage?championship=%C3%96HB+26%2F27&group=218583` |
+| OÖHV Landesliga Männer, LLM-Grunddurchgang 26/27 | `https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupPage?championship=O%C3%96HV+26%2F27&group=218721` |
+
+Per configured group, these subpages are also allowed (same `championship`
+and `group` parameters only):
+
+- Spielplan (Gesamt): `groupPage?displayTyp=vorrunde&displayDetail=meetings&championship=…&group=…`
+- Match reports: `groupMeetingReport?meeting=<id>&championship=…&group=…`
+- Player statistics: `groupMeetingStatistics?displayType=<playerGoals|playerSevenMeterGoals|playerSuspensions|playerYellowCards|playerRedCards>&championship=…&group=…`
+- Group and team statistics (added 2026-10-31, aggregate team data only): `groupMeetingStatistics?displayType=groupAndTeams&championship=…&group=…`
+
+Not allowed: `nuDokument` PDFs, `teamPortrait` (publishes team officials with phone numbers; team pages are derived from the schedule instead), contact/officials pages ("Spielleiter und
+Schiedsrichter-Einteiler", "Kontaktadressen, Hallen …"), `playerPortrait`,
+and any other group. Player-level data from these pages is governed by
+ADR-005.
