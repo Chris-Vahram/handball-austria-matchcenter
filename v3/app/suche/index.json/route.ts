@@ -1,4 +1,5 @@
 import { COMPETITIONS, COMPETITION_IDS, getDataset } from "@/data";
+import { displayName } from "@/lib/format";
 import { normalize } from "@/lib/search";
 import { teamSlug } from "@/lib/teams";
 
@@ -19,7 +20,7 @@ export function GET() {
       const k = `${id}|${r.team}|${r.name}`;
       if (seen.has(k)) continue;
       seen.add(k);
-      entries.push({ label: r.name, sub: `${r.team} · ${c.name}`, href: `/${id}/team/${teamSlug(r.team)}#h-players`, kind: "Spieler", key: normalize(r.name) });
+      entries.push({ label: displayName(r.name), sub: `${r.team} · ${c.name}`, href: `/${id}/team/${teamSlug(r.team)}#h-players`, kind: "Spieler", key: normalize(r.name) });
     }
   }
   return Response.json(entries);

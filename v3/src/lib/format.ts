@@ -18,3 +18,13 @@ export const formatStand = (isoDateTime: string) =>
 
 /** Typographic minus for negative numbers, explicit plus for positive goal difference. */
 export const formatDiff = (n: number) => (n > 0 ? `+${n}` : n < 0 ? `−${Math.abs(n)}` : "0");
+
+/**
+ * nuLiga mixes "KRITZINGER, Maurice" and "Pitter, Noah". Display all-caps surnames in title case so a
+ * list reads evenly; mixed-case surnames (e.g. "McDonald") stay as published. Data is not changed.
+ */
+export const displayName = (name: string) =>
+  name.replace(/^[^,]+/, (surname) =>
+    surname === surname.toUpperCase() && /\p{Lu}{2}/u.test(surname)
+      ? surname.toLowerCase().replace(/(^|[\s\-'])(\p{L})/gu, (_, sep: string, ch: string) => sep + ch.toUpperCase())
+      : surname);

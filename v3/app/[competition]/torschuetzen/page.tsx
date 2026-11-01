@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AutoSubmitSelect } from "@ui/client/auto-submit";
+import { displayName } from "@/lib/format";
 import { Footer, Header } from "@ui/shell";
 import { ThinData } from "@ui/thin-data";
 import { COMPETITIONS, COMPETITION_IDS, getDataset, isCompetitionId } from "@/data";
@@ -53,7 +54,7 @@ export default async function StatsPage({ params, searchParams }: Props) {
       <Header id={competition} importedAt={data?.source.importedAt ?? null} tab="ranglisten" />
       <main className="page stats">
         <section className="panel" aria-labelledby="h-stats">
-          <h2 className="section-title" id="h-stats">{list.value}</h2>
+          <h2 className="sr-only" id="h-stats">{list.value}</h2>
           <nav className="lists" aria-label="Rangliste">
             {LISTS.map((l) => (
               <Link key={l.kind} href={href(l.kind)} aria-current={l.kind === list.kind ? "page" : undefined}>{l.tab}</Link>
@@ -87,7 +88,7 @@ export default async function StatsPage({ params, searchParams }: Props) {
                 {rows.map((r) => (
                   <tr key={`${r.rank}-${r.name}-${r.club}`} className={!team && r.team === c.showcaseTeam ? "me" : undefined}>
                     <td className="rk">{r.rank}</td>
-                    <th scope="row" className="nm">{r.name}<small>{r.team}</small></th>
+                    <th scope="row" className="nm">{displayName(r.name)}<small>{r.team}</small></th>
                     <td className="sp">{(list.kind === "7m" ? r.attempts : r.games) ?? "–"}</td>
                     {byGame && <td className="sp">{r.value}</td>}
                     <td className="val">{byGame ? perGame(r.perGame) : r.value}</td>

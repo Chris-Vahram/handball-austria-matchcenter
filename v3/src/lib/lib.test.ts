@@ -46,3 +46,14 @@ describe("today", async () => {
     expect(todayInVienna(new Date("2026-10-31T10:00:00Z"))).toBe("2026-10-31");
   });
 });
+
+describe("displayName", async () => {
+  const { displayName } = await import("./format");
+  it("title-cases all-caps surnames only", () => {
+    expect(displayName("KRITZINGER, Maurice")).toBe("Kritzinger, Maurice");
+    expect(displayName("NANA AGYAPONG, Marques")).toBe("Nana Agyapong, Marques");
+    expect(displayName("CIOBANU, Narcis-Ionut")).toBe("Ciobanu, Narcis-Ionut");
+    expect(displayName("Pitter, Noah")).toBe("Pitter, Noah");
+    expect(displayName("McDONALD, Al")).toBe("McDONALD, Al");
+  });
+});

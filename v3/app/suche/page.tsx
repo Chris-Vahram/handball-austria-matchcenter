@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { TopBar } from "@ui/shell";
 import { COMPETITIONS, COMPETITION_IDS, getDataset } from "@/data";
-import { formatStand } from "@/lib/format";
+import { displayName, formatStand } from "@/lib/format";
 import { MIN_QUERY, search } from "@/lib/search";
 import { teamSlug } from "@/lib/teams";
 
@@ -42,7 +42,7 @@ export default async function SearchPage({ searchParams }: Props) {
               <ul className="hits">
                 {players.map((p) => (
                   <li key={`${p.competitionId}|${p.team}|${p.name}`}>
-                    <Link href={`/${p.competitionId}/team/${teamSlug(p.team)}#h-players`}>{p.name}<small>{p.team} · {COMPETITIONS[p.competitionId].name}</small></Link>
+                    <Link href={`/${p.competitionId}/team/${teamSlug(p.team)}#h-players`}>{displayName(p.name)}<small>{p.team} · {COMPETITIONS[p.competitionId].name}</small></Link>
                   </li>
                 ))}
               </ul>

@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { RememberButton } from "@ui/client/my-teams";
-import { MatchRow } from "@ui/schedule";
+import { FixtureRow, PendingNote } from "@ui/schedule";
 import { Footer, SubHeader } from "@ui/shell";
 import { COMPETITIONS, COMPETITION_IDS, getDataset, isCompetitionId } from "@/data";
 import { mapsUrl, resinRule, teamKey, venueOf } from "@/lib/dashboard";
 import { lastFive } from "@/lib/form";
-import { formatDay, formatDiff } from "@/lib/format";
+import { displayName, formatDay, formatDiff } from "@/lib/format";
 import { homeAway, nextMatch, teamBySlug, teamMatches, teamPlayers, teamSlug } from "@/lib/teams";
 
 type Props = { params: Promise<{ competition: string; slug: string }> };
@@ -49,7 +49,8 @@ export default async function TeamPage({ params }: Props) {
   const resin = resinRule(nextVenue && nextVenue.id ? data.venues[nextVenue.id]?.resin ?? null : null);
   const matches = teamMatches(data, team);
   const played = matches.filter((m) => m.score).reverse();
-  const upcoming = matches.filter((m) => !m.score);
+  // The next match is the dark card; the list continues after it.
+  const later = matches.filter((m) => !m.score && m.number !== next?.number);
   const stats = data.groupStats?.teams.find((t) => t.name === team) ?? null;
   const players = c.category === "adult" ? teamPlayers(data, team) : [];
   const per = (n: number) => (stats && stats.games ? (n / stats.games).toFixed(1).replace(".", ",") : "–");
@@ -80,23 +81,17 @@ export default async function TeamPage({ params }: Props) {
 
         {next && (
           <section className="next-card big" aria-labelledby="h-next">
-            <h2 className="nc-label" id="h-next">Nächstes Spiel</h2>
-            <p className="nc-when">{formatDay(next.date)}{next.time && `, ${next.time}`}</p>
-            <p className="nc-vs">
-              <span className={next.home === team ? "self" : undefined}>{next.home}</span>
-              <span className="vs" aria-hidden="true">–</span>
-              <span className="sr-only"> gegen </span>
-              <span className={next.away === team ? "self" : undefined}>{next.away}</span>
-            </p>
+            <h2 className="nc-when" id="h-next">Nächstes Spiel · {formatDay(next.date)}{next.time && `, ${next.time}`}</h2>
+            <p className="nc-vs">{next.home === team ? "Heim gegen" : "Auswärts bei"} <strong>{next.home === team ? next.away : next.home}</strong></p>
             {nextVenue && (
               <p className="nc-venue">
                 {nextVenue.id ? <Link href={`/halle/${nextVenue.id}`}>{nextVenue.name}</Link> : nextVenue.name}
-                {nextVenue.address.length > 0 && <> · {nextVenue.address.join(", ")} · <a href={mapsUrl(nextVenue.address, nextVenue.name)} target="_blank" rel="noopener noreferrer">Route</a></>}
+                {nextVenue.address.length > 0 && <><br />{nextVenue.address.join(", ")}</>}
               </p>
             )}
             <p className="nc-meta">
-              Spiel Nr. {next.number} · Runde {next.round} · {next.home === team ? "Heimspiel" : "Auswärtsspiel"}
-              {resin && <> · Harz: {resin.rule}{resin.note && ` (${resin.note})`}</>}
+              {nextVenue && nextVenue.address.length > 0 && <a className="nc-route" href={mapsUrl(nextVenue.address, nextVenue.name)} target="_blank" rel="noopener noreferrer">Route planen</a>}
+              <span>Runde {next.round}{resin && <> · Harz {resin.rule}</>}</span>
             </p>
           </section>
         )}
@@ -113,15 +108,22 @@ export default async function TeamPage({ params }: Props) {
                 return (
                   <div key={m.number} className="result-row">
                     <span className={`chip f-${r}`} title={RESULT[r]}><span aria-hidden="true">{r}</span><span className="sr-only">{RESULT[r]}</span></span>
-                    <MatchRow id={x.competition} m={m} data={data} showcase="" showDate />
+                    <FixtureRow id={x.competition} m={m} data={data} team={team} />
                   </div>
                 );
               })}
+              <PendingNote matches={played} />
             </section>
             <section className="panel" aria-labelledby="h-upcoming">
-              <h2 className="section-title" id="h-upcoming">Kommende Spiele <small>{upcoming.length}</small></h2>
-              {upcoming.length === 0 && <p className="empty">Keine weiteren Spiele in dieser Phase.</p>}
-              {upcoming.map((m) => <MatchRow key={m.number} id={x.competition} m={m} data={data} showcase="" showDate />)}
+              <h2 className="section-title" id="h-upcoming">Danach <small>{later.length} weitere Spiele</small></h2>
+              {later.length === 0 && <p className="empty">Keine weiteren Spiele in dieser Phase.</p>}
+              {later.slice(0, 3).map((m) => <FixtureRow key={m.number} id={x.competition} m={m} data={data} team={team} />)}
+              {later.length > 3 && (
+                <details className="more-games">
+                  <summary>Alle {later.length} Spiele anzeigen</summary>
+                  {later.slice(3).map((m) => <FixtureRow key={m.number} id={x.competition} m={m} data={data} team={team} />)}
+                </details>
+              )}
             </section>
           </div>
 
@@ -151,25 +153,25 @@ export default async function TeamPage({ params }: Props) {
                       <th scope="col" className="nm">Spieler</th>
                       <th scope="col">Tore</th>
                       <th scope="col"><abbr title="7-Meter Tore/Versuche">7m</abbr></th>
-                      <th scope="col"><abbr title="Zeitstrafen">2′</abbr></th>
+                      <th scope="col"><abbr title="Zeitstrafen (2 Minuten)">2′</abbr></th>
                       <th scope="col"><abbr title="Gelbe Karten">G</abbr></th>
-                      <th scope="col"><abbr title="Rote Karten">R</abbr></th>
+                      <th scope="col"><abbr title="Rote Karten / Disqualifikationen">R</abbr></th>
                     </tr>
                   </thead>
                   <tbody>
                     {players.map((p) => (
                       <tr key={p.name}>
-                        <th scope="row" className="nm">{p.name}</th>
-                        <td className={p.goals ? "g" : "z"}>{p.goals || "–"}</td>
-                        <td className={p.sevenMAttempts ? undefined : "z"}>{p.sevenMAttempts ? `${p.sevenMGoals}/${p.sevenMAttempts}` : "–"}</td>
-                        <td className={p.twoMin ? undefined : "z"}>{p.twoMin || "–"}</td>
-                        <td className={p.yellow ? undefined : "z"}>{p.yellow || "–"}</td>
-                        <td className={p.red ? undefined : "z"}>{p.red || "–"}</td>
+                        <th scope="row" className="nm">{displayName(p.name)}</th>
+                        <td className="g">{p.goals || ""}</td>
+                        <td>{p.sevenMAttempts ? `${p.sevenMGoals}/${p.sevenMAttempts}` : ""}</td>
+                        <td>{p.twoMin || ""}</td>
+                        <td>{p.yellow || ""}</td>
+                        <td>{p.red || ""}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
-                <p className="legend">7m = Tore/Versuche · 2′ = Zeitstrafen · G = Gelbe Karten · R = Rote Karten. Aus den nuLiga-Ranglisten; wer in keiner Liste steht, fehlt.</p>
+                <p className="legend">7m = Tore/Versuche · 2′ = Zeitstrafen · G = Gelbe Karte · R = Rote Karte / Disqualifikation. Aus den nuLiga-Ranglisten; wer in keiner Liste steht, fehlt.</p>
               </section>
             )}
           </div>

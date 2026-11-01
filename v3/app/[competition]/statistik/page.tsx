@@ -65,20 +65,20 @@ export default async function StatsOverview({ params }: Props) {
                 <thead>
                   <tr>
                     <th scope="col" className="nm">Team</th>
-                    <th scope="col" className="lead">Tore/Sp.</th>
-                    <th scope="col"><abbr title="7-Meter-Trefferquote">7m-Quote</abbr></th>
-                    <th scope="col"><abbr title="Zeitstrafen pro Spiel">2-Min/Sp.</abbr></th>
-                    <th scope="col" className="last"><abbr title="Zuschauer pro Spiel">Zuschauer/Sp.</abbr></th>
+                    <th scope="col" className="lead"><abbr title="Tore pro Spiel">Tore/Sp.</abbr></th>
+                    <th scope="col"><abbr title="7-Meter-Trefferquote">7m %</abbr></th>
+                    <th scope="col"><abbr title="Zeitstrafen pro Spiel">2′/Sp.</abbr></th>
+                    <th scope="col" className="last wide"><abbr title="Zuschauer pro Spiel">Zusch./Sp.</abbr></th>
                   </tr>
                 </thead>
                 <tbody>
                   {teams.map((t) => (
                     <tr key={t.name} className={t.name === c.showcaseTeam ? "me" : undefined}>
-                      <th scope="row" className="nm"><Link href={`/${competition}/team/${teamSlug(t.name)}`}>{t.name}</Link><small>{t.games} Spiele</small></th>
+                      <th scope="row" className="nm"><Link href={`/${competition}/team/${teamSlug(t.name)}`}>{t.name}</Link><small>{t.games} Spiele<span className="narrow">{t.spectators !== null && <> · {per(t.spectators, t).replace(/,\d$/, "")} Zuschauer/Sp.</>}</span></small></th>
                       <td className="lead">{per(t.goals, t)}</td>
                       <td>{rate(t)}</td>
                       <td>{per(t.twoMin, t)}</td>
-                      <td className="last">{t.spectators !== null ? per(t.spectators, t).replace(/,\d$/, "") : "–"}</td>
+                      <td className="last wide">{t.spectators !== null ? per(t.spectators, t).replace(/,\d$/, "") : "–"}</td>
                     </tr>
                   ))}
                 </tbody>

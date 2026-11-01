@@ -23,18 +23,18 @@ test.describe("Suche", () => {
 
   test("finds a player and opens the team page", async ({ page }) => {
     await page.goto("/suche?q=strauch");
-    const link = page.getByRole("link", { name: /STRAUCH, Tore/ });
+    const link = page.getByRole("link", { name: /Strauch, Tore/ });
     await expect(link).toContainText("SK Konstant Traun / Edelweiss");
     await link.click();
     await expect(page.locator("#h-team")).toHaveText("SK Konstant Traun / Edelweiss");
-    await expect(page.locator("table.squad")).toContainText("STRAUCH, Tore");
+    await expect(page.locator("table.squad")).toContainText("Strauch, Tore");
   });
 
   test("suggests players while typing and opens the team page", async ({ page }) => {
     await page.goto("/hla-challenge-west");
     const box = page.getByRole("combobox", { name: "Team oder Spieler suchen" });
     await box.fill("hali");
-    const option = page.getByRole("option", { name: /HALILOVIC, Maid/ });
+    const option = page.getByRole("option", { name: /Halilovic, Maid/ });
     await expect(option).toBeVisible();
     await box.press("ArrowDown");
     await box.press("Enter");

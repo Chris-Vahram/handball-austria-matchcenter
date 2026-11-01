@@ -11,12 +11,15 @@ test.describe("Teamseite", () => {
     await expect(page.locator(".crumb")).toContainText("HLA Challenge West");
     await expect(page.locator(".next-card")).toContainText("SMC Innsbruck Handball Tirol");
     await expect(page.locator(".next-card")).toContainText("Am Nordsaum 160, 4050 Traun");
-    await expect(page.locator(".next-card").getByRole("link", { name: "Route" })).toHaveAttribute("href", /google\.com\/maps/);
+    await expect(page.locator(".next-card").getByRole("link", { name: "Route planen" })).toHaveAttribute("href", /google\.com\/maps/);
     await expect(page.locator(".result-row")).toHaveCount(6);
     await expect(page.locator(".result-row").first()).toContainText("Bregenz Handball FT");
     await expect(page.locator(".result-row").first().locator(".chip")).toContainText("N");
-    await expect(page.locator("section[aria-labelledby=h-upcoming] .match")).toHaveCount(8);
-    await expect(page.locator("table.squad tbody tr").first()).toContainText("HALILOVIC, Maid");
+    await expect(page.locator("section[aria-labelledby=h-upcoming] .fixture")).toHaveCount(7);
+    await expect(page.locator("section[aria-labelledby=h-upcoming] .fixture:visible")).toHaveCount(3);
+    await page.getByText("Alle 7 Spiele anzeigen").click();
+    await expect(page.locator("section[aria-labelledby=h-upcoming] .fixture:visible")).toHaveCount(7);
+    await expect(page.locator("table.squad tbody tr").first()).toContainText("Halilovic, Maid");
     expect(await page.locator("body").innerText()).not.toMatch(/Mannschaftsverantwortlich|Mobil|\+43|@/);
   });
 

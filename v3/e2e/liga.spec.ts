@@ -85,7 +85,7 @@ test.describe("Spielplan", () => {
     await expect(m23.locator(".stretch")).toHaveAttribute("href", "/hla-challenge-west/spiel/93135");
     await expect(m23.locator(".stretch svg")).toBeVisible();
     await expect(m23.getByRole("link", { name: "Schendlingerhalle" })).toHaveAttribute("href", /\/halle\/\d+/);
-    await expect(page.getByText("Bericht noch nicht genehmigt").first()).toBeVisible();
+    await expect(page.locator(".footnote")).toHaveText("* Spielbericht noch nicht genehmigt");
     await expect(page.locator("body")).not.toContainText("SRAA");
   });
 });

@@ -10,7 +10,7 @@ test.describe("Spielbericht", () => {
     await expect(page.locator(".scoreboard").getByRole("link", { name: "Schendlingerhalle" })).toBeVisible();
     await expect(page.getByText("Spielbericht noch nicht genehmigt")).toBeVisible();
     await expect(page.locator("table.roster")).toHaveCount(2);
-    await expect(page.locator(".lineup-legend")).toContainText("D = Disqualifikation");
+    await expect(page.locator(".lineup-legend")).toContainText("R = Rote Karte / Disqualifikation");
     const body = await page.locator("body").innerText();
     expect(body).not.toMatch(/SR A|SR B|Zeitn\.|Sek\.|Lizenznr|OFFIZIELL|SCHIRI/);
     const { scroll, client } = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
@@ -24,7 +24,7 @@ test.describe("Spielbericht", () => {
     await page.locator(".timeline summary").click();
     await expect(first).toContainText("02:12");
     await expect(first).toContainText("0:1");
-    await expect(first).toContainText("15 HALILOVIC, Maid");
+    await expect(first).toContainText("15 Halilovic, Maid");
     await expect(page.locator(".timeline h3")).toHaveText(["1. Halbzeit", "2. Halbzeit"]);
   });
 

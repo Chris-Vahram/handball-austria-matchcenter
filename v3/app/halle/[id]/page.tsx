@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Footer, TopBar } from "@ui/shell";
+import { Chevron, RIGHT } from "@ui/chevron";
 import { COMPETITIONS } from "@/data";
 import { allVenues, mapsUrl, resinRule } from "@/lib/dashboard";
 import { formatDay } from "@/lib/format";
@@ -48,10 +49,13 @@ export default async function VenuePage({ params }: Props) {
           <ul className="comp-list">
             {upcoming.slice(0, 12).map(({ competitionId, match: m }) => (
               <li key={`${competitionId}-${m.number}`}>
-                <div className="vg">
-                  <strong>{m.home} – {m.away}</strong>
-                  <small>{formatDay(m.date)}{m.time && `, ${m.time}`} · {COMPETITIONS[competitionId].name} · Nr. {m.number}</small>
-                </div>
+                <Link href={`/${competitionId}/spielplan?runde=${m.round}`}>
+                  <span>
+                    <strong>{m.home} – {m.away}</strong>
+                    <small>{formatDay(m.date)}{m.time && `, ${m.time}`} · {COMPETITIONS[competitionId].name}, Runde {m.round}</small>
+                  </span>
+                  <Chevron d={RIGHT} size={16} />
+                </Link>
               </li>
             ))}
           </ul>

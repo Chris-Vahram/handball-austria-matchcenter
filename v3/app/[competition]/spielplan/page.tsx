@@ -31,7 +31,7 @@ export default async function SchedulePage({ params, searchParams }: Props) {
       <Header id={competition} importedAt={data?.source.importedAt ?? null} tab="spielplan" />
       <main className="page schedule-page">
         <section className="panel" id="spielplan" aria-labelledby="h-spielplan">
-          <h2 className="section-title" id="h-spielplan">Spielplan <small>{rounds.length} Runden</small></h2>
+          <h2 className="sr-only" id="h-spielplan">Spielplan, {rounds.length} Runden</h2>
           {!data ? <p className="empty">Für {c.fullName} wurden noch keine Daten importiert.</p> : (
             <>
               <RoundPicker id={competition} data={data} round={round} />

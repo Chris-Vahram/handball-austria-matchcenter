@@ -85,14 +85,16 @@ export function MyTeams({ cards, groups }: { cards: TeamCard[]; groups: { compet
               </header>
               {c.next && (
                 <div className="next-card">
-                  <p className="nc-label">Nächstes Spiel</p>
-                  <p className="nc-when">{day(c.next.date)}{c.next.time && `, ${c.next.time}`}</p>
-                  <p className="nc-vs">{c.next.home ? "gegen" : "bei"} <strong>{c.next.opponent}</strong> · {c.next.home ? "Heimspiel" : "Auswärts"}</p>
+                  <h3 className="nc-when">Nächstes Spiel · {day(c.next.date)}{c.next.time && `, ${c.next.time}`}</h3>
+                  <p className="nc-vs">{c.next.home ? "Heim gegen" : "Auswärts bei"} <strong>{c.next.opponent}</strong></p>
                   {c.next.venue && (
                     <p className="nc-venue">
                       {c.next.venue.id ? <Link href={`/halle/${c.next.venue.id}`}>{c.next.venue.name}</Link> : c.next.venue.name}
-                      {c.next.venue.address.length > 0 && <> · {c.next.venue.address.join(", ")} · <a href={maps(c.next.venue.name, c.next.venue.address)} target="_blank" rel="noopener noreferrer">Route</a></>}
+                      {c.next.venue.address.length > 0 && <><br />{c.next.venue.address.join(", ")}</>}
                     </p>
+                  )}
+                  {c.next.venue && c.next.venue.address.length > 0 && (
+                    <p className="nc-meta"><a className="nc-route" href={maps(c.next.venue.name, c.next.venue.address)} target="_blank" rel="noopener noreferrer">Route planen</a></p>
                   )}
                 </div>
               )}

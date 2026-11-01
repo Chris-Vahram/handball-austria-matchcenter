@@ -6,7 +6,7 @@ import { Footer, SubHeader } from "@ui/shell";
 import { COMPETITIONS, COMPETITION_IDS, getDataset, isCompetitionId } from "@/data";
 import type { ReportTeam, TimelineEvent } from "@/domain/schema";
 import { mapsUrl } from "@/lib/dashboard";
-import { formatDay } from "@/lib/format";
+import { displayName, formatDay } from "@/lib/format";
 
 type Props = { params: Promise<{ competition: string; meeting: string }> };
 
@@ -50,30 +50,30 @@ function Lineup({ team, side, showcase }: { team: ReportTeam; side: string; show
             <th scope="col" className="nm">Spieler</th>
             <th scope="col">Tore</th>
             <th scope="col"><abbr title="7-Meter Tore/Versuche">7m</abbr></th>
+            <th scope="col"><abbr title="Zeitstrafen (2 Minuten)">2′</abbr></th>
             <th scope="col"><abbr title="Gelbe Karte">G</abbr></th>
-            <th scope="col"><abbr title="2-Minuten-Strafen">2′</abbr></th>
-            <th scope="col"><abbr title="Disqualifikation">D</abbr></th>
+            <th scope="col"><abbr title="Rote Karte / Disqualifikation">R</abbr></th>
           </tr>
         </thead>
         <tbody>
           {team.players.map((p) => (
             <tr key={p.shirt + p.name}>
               <td className="nr">{p.shirt}</td>
-              <th scope="row" className="nm">{p.name}</th>
-              <td className={p.goals ? "g" : "z"}>{p.goals || "–"}</td>
-              <td className={p.sevenMAttempts ? undefined : "z"}>{p.sevenMAttempts ? `${p.sevenMGoals}/${p.sevenMAttempts}` : "–"}</td>
-              <td>{p.yellow ? <Card color="#f2c200" edge="#6b5600" label="Gelbe Karte" /> : ""}</td>
+              <th scope="row" className="nm">{displayName(p.name)}</th>
+              <td className="g">{p.goals || ""}</td>
+              <td>{p.sevenMAttempts ? `${p.sevenMGoals}/${p.sevenMAttempts}` : ""}</td>
               <td>{p.twoMin || ""}</td>
-              <td>{p.disqualified ? <Card color="#c8102e" edge="#7a0a1c" label="Disqualifikation" /> : ""}</td>
+              <td>{p.yellow ? <Card color="#f2c200" edge="#6b5600" label="Gelbe Karte" /> : ""}</td>
+              <td>{p.disqualified ? <Card color="#c8102e" edge="#7a0a1c" label="Rote Karte / Disqualifikation" /> : ""}</td>
             </tr>
           ))}
         </tbody>
       </table>
       <dl className="totals">
         <div><dt><abbr title="7-Meter Tore/Versuche">7m</abbr></dt><dd>{team.totals.sevenMGoals}/{team.totals.sevenMAttempts}</dd></div>
-        <div><dt><abbr title="2-Minuten-Strafen">2-Min</abbr></dt><dd>{team.totals.twoMin}</dd></div>
-        <div><dt><abbr title="Gelbe Karten">Gelb</abbr></dt><dd>{team.totals.yellow}</dd></div>
-        <div><dt><abbr title="Disqualifikationen">Disq.</abbr></dt><dd>{team.totals.disqualifications}</dd></div>
+        <div><dt><abbr title="Zeitstrafen (2 Minuten)">2′</abbr></dt><dd>{team.totals.twoMin}</dd></div>
+        <div><dt><abbr title="Gelbe Karten">G</abbr></dt><dd>{team.totals.yellow}</dd></div>
+        <div><dt><abbr title="Rote Karten / Disqualifikationen">R</abbr></dt><dd>{team.totals.disqualifications}</dd></div>
         <div><dt>Timeouts</dt><dd>{team.totals.timeouts}</dd></div>
       </dl>
     </section>
@@ -92,7 +92,7 @@ function Timeline({ events, home, away }: { events: TimelineEvent[]; home: strin
     { title: "2. Halbzeit", list: events.filter((e) => e.minute >= "30:00") }
   ].filter((h) => h.list.length);
   const row = (e: TimelineEvent, i: number) => {
-    const who = e.shirt ? `${e.shirt} ${e.name ?? ""}`.trim() : "Mannschaftsoffizieller";
+    const who = e.shirt ? `${e.shirt} ${displayName(e.name ?? "")}`.trim() : "Mannschaftsoffizieller";
     const goal = e.type === "Tor" || e.type === "7m-Tor";
     const ev = <><span className="tl-type">{ICON[e.type]}</span> {who}<span className="sr-only"> ({e.side === "home" ? home : away})</span></>;
     return (
@@ -157,7 +157,7 @@ export default async function ReportPage({ params }: Props) {
           <Lineup team={r.home} side="Heim" showcase={showcase} />
           <Lineup team={r.away} side="Gast" showcase={showcase} />
         </div>
-        <p className="legend lineup-legend">Tore · 7m = Tore/Versuche · G = Gelbe Karte · 2′ = Zeitstrafen · D = Disqualifikation</p>
+        <p className="legend lineup-legend">7m = Tore/Versuche · 2′ = Zeitstrafen · G = Gelbe Karte · R = Rote Karte / Disqualifikation · Summen inkl. Mannschaftsoffizielle</p>
         {r.timeline.length > 0 && <Timeline events={r.timeline} home={r.home.name} away={r.away.name} />}
       </main>
       <Footer id={x.competition} importedAt={data.source.importedAt} />

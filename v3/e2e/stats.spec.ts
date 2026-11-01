@@ -6,7 +6,7 @@ test.describe("Ranglisten", () => {
     await page.goto("/hla-challenge-west/torschuetzen");
     await expect(page.locator(".tabs [aria-current=page]")).toHaveText("Ranglisten");
     const rows = page.locator("table.ranking tbody tr");
-    await expect(rows.first()).toContainText("ARNDT, Arvid");
+    await expect(rows.first()).toContainText("Arndt, Arvid");
     await page.selectOption("#team", "SK Konstant Traun / Edelweiss");
     await expect(page).toHaveURL(/team=SK/);
     const teams = await rows.locator("small").allInnerTexts();
@@ -17,7 +17,7 @@ test.describe("Ranglisten", () => {
   test("per-game lists lead with nuLiga's sort key", async ({ page }) => {
     await page.goto("/hla-challenge-west/torschuetzen?liste=zeitstrafen");
     const first = page.locator("table.ranking tbody tr").first();
-    await expect(first).toContainText("DILYS, Devanas");
+    await expect(first).toContainText("Dilys, Devanas");
     await expect(first.locator("td.val")).toHaveText("2,00");
   });
 
