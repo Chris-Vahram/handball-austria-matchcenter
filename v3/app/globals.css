@@ -42,7 +42,7 @@ a { color: inherit; text-underline-offset: 3px; }
 .title p { font-size: 14px; color: var(--mute); margin: 6px 0 0; }
 .stale { color: var(--red-ink); font-weight: 600; }
 .tabs-wrap { background: var(--w); position: sticky; top: 0; z-index: 2; }
-.tabs { display: flex; gap: 22px; padding: 0; margin: 0 auto; max-width: calc(1200px - 2 * var(--gutter)); border-bottom: 1px solid var(--line); }
+.tabs { display: flex; gap: 18px; padding: 0; margin: 0 auto; max-width: calc(1200px - 2 * var(--gutter)); border-bottom: 1px solid var(--line); }
 @media (max-width: 1247px) { .tabs { margin: 0 var(--gutter); } }
 .tabs a { font-size: 15px; font-weight: 600; color: var(--mute); min-height: 44px; display: inline-flex; align-items: center; text-decoration: none; }
 .tabs a[aria-current="page"], .tabs a.on { color: var(--ink); box-shadow: inset 0 -3px var(--red); }
@@ -167,7 +167,7 @@ a.match:hover { background: #fafafa; }
 .filter button { justify-self: start; }
 @media (min-width: 600px) { .filter { grid-template-columns: auto 1fr auto; align-items: center; gap: 8px; } }
 .filter label { font-size: 13px; color: var(--mute); }
-.filter select { flex: 1; min-width: 0; min-height: 44px; font: inherit; font-size: 16px; padding: 0 8px; border: 1px solid #c9ccd1; border-radius: 6px; background: var(--w); color: var(--ink); }
+.filter select { min-width: 0; min-height: 44px; font: inherit; font-size: 16px; padding: 0 8px; border: 1px solid #c9ccd1; border-radius: 6px; background: var(--w); color: var(--ink); }
 .filter button { min-height: 44px; font: inherit; font-size: 15px; font-weight: 600; padding: 0 14px; border: 1.5px solid var(--ink); border-radius: 6px; background: var(--ink); color: #fff; cursor: pointer; }
 .ranking { width: 100%; border-collapse: collapse; }
 .ranking thead th { font-size: 12px; font-weight: 600; color: var(--mute); padding: 6px 2px; text-align: right; }
@@ -270,8 +270,6 @@ a.match:hover { background: #fafafa; }
 .squad td:nth-child(n+4) { width: 30px; }
 .squad td:last-child, .squad thead th:last-child { padding-right: 12px; }
 .squad .nm { padding-left: 12px; }
-.standings .tm a { text-decoration: none; }
-.standings .tm a:hover { text-decoration: underline; }
 @media (min-width: 900px) {
   .team { padding: 16px var(--gutter) 0; }
   .team .panel { border-radius: 8px; overflow: hidden; }
@@ -289,7 +287,6 @@ a.match:hover { background: #fafafa; }
 .compare .val { width: 60px; }
 .compare .nm a { text-decoration: none; }
 .compare .nm a:hover { text-decoration: underline; }
-.tabs { gap: 18px; }
 @media (min-width: 900px) {
   .stats-overview { padding: 16px var(--gutter) 0; max-width: 860px; display: grid; gap: 16px; }
   .stats-overview .panel { border-radius: 8px; overflow: hidden; }

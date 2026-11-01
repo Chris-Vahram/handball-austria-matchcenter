@@ -58,7 +58,7 @@
 - [x] 9.4 Build the Statistik view (group totals + team comparison) and verify e2e at 390 px
 - [x] 9.5 Player search from the rankings (ADR-005 updated with owner decision) and verify unit + e2e for "strauch"
 - [x] 9.6 Add the red "Heute" marker and the one-row desktop header bar and verify e2e/visual at 390 and 1440
-- [ ] 9.7 Run full checks, finish review and update DESIGN.md + design.json
+- [x] 9.7 Run full checks, finish review and update DESIGN.md + design.json
 
 ## Workflow follow-up
 
