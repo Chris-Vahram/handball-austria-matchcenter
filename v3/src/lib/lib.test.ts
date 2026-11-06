@@ -1,15 +1,26 @@
 import { describe, expect, it } from "vitest";
 import { getDataset, isStale, STALE_AFTER_MS } from "../data";
 import { formatDiff } from "./format";
-import { currentRound, roundsOf } from "./rounds";
+import { currentRound, isOverdue, roundsOf } from "./rounds";
 
 describe("liga data", () => {
   const hla = getDataset("hla-challenge-west")!;
 
-  it("current round is the first with an unplayed match", () => {
-    const first = Math.min(...hla.matches.filter((m) => m.status === "scheduled").map((m) => m.round));
-    expect(currentRound(hla.matches)).toBe(first);
+  it("current round is the round of the next dated match", () => {
+    expect(currentRound(hla.matches, "2026-11-06")).toBe(7);
+    const preseason = hla.matches.map((m) => ({ ...m, status: "scheduled" as const, score: null }));
+    expect(currentRound(preseason, "2026-08-01")).toBe(1);
     expect(roundsOf(hla.matches)).toHaveLength(14);
+  });
+
+  it("an overdue or postponed match does not hold back the current round", () => {
+    // Runde 6 game left without a result, another Runde 6 game moved to February.
+    const r6 = hla.matches.filter((m) => m.round === 6);
+    const matches = hla.matches.map((m) =>
+      m.number === r6[0].number ? { ...m, status: "scheduled" as const, score: null } :
+      m.number === r6[1].number ? { ...m, status: "scheduled" as const, score: null, date: "2027-02-20" } : m);
+    expect(isOverdue(matches.find((m) => m.number === r6[0].number)!, "2026-11-06")).toBe(true);
+    expect(currentRound(matches, "2026-11-06")).toBe(7);
   });
 
   it("falls back to the last round when all matches are played", () => {

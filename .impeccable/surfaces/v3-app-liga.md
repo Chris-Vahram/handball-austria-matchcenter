@@ -25,3 +25,8 @@ FIRST VIEWPORT: Phone 390: red 4px rule; wordmark "Matchcenter" + search field "
 FORM: Category standard (canon), chosen by the owner after three rejected rounds; layout sketch .impeccable/mocks/decision/names-a.html (row variant A). Signature move: the own team carried in red across table, schedule, reports and scorer lists (pending report states stay neutral, never red), plus a round flipper that steps through the whole season. seed:f40ddc759b89d806
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+
+## Amendment 2026-11-06 (streamline-v3)
+
+Owner: "die app sollte später ein kompletter nuliga handball österreich ersatz sein … eine übersicht … über das team und bewerb was man halt favoritisiert hat"; red marks "Nur Favoriten"; tabs "Zusammenlegen, 3 Tabs". FIRST VIEWPORT now: no competition switch; "Verband › Bewerb" line + ★ beside the H1; tabs Tabelle / Spielplan / Statistik. The signature "own team in red" is the visitor's favorites. Home is a favorites overview (or "Finde dein Team" without favorites).
+

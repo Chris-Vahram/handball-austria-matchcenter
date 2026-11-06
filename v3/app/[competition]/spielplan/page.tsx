@@ -35,12 +35,12 @@ export default async function SchedulePage({ params, searchParams }: Props) {
           {!data ? <p className="empty">Für {c.fullName} wurden noch keine Daten importiert.</p> : (
             <>
               <RoundPicker id={competition} data={data} round={round} />
-              <div aria-live="polite"><RoundMatches id={competition} data={data} round={round} showcase={c.showcaseTeam} /></div>
+              <div aria-live="polite"><RoundMatches id={competition} data={data} round={round} /></div>
             </>
           )}
         </section>
       </main>
-      <Footer id={competition} importedAt={data?.source.importedAt ?? null} />
+      <Footer id={competition} importedAt={data?.source.importedAt ?? null} pdf />
     </>
   );
 }

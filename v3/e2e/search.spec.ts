@@ -41,6 +41,21 @@ test.describe("Suche", () => {
     await expect(page).toHaveURL(/\/team\/sk-konstant-traun-edelweiss/);
   });
 
+  test("suggests a Bewerb first; a bare click (no mousedown) opens it", async ({ page }) => {
+    await page.goto("/");
+    const box = page.locator(".entry").getByRole("combobox");
+    await box.fill("landes");
+    const option = page.getByRole("option").first();
+    await expect(option).toContainText("Landesliga OÖ");
+    await option.dispatchEvent("click");
+    await expect(page).toHaveURL(/\/landesliga-ooe$/);
+  });
+
+  test("finds a team by its Verein name", async ({ page }) => {
+    await page.goto("/suche?q=SK-Handball%20Traun");
+    await expect(page.locator(".hits")).toContainText("SK Konstant Traun / Edelweiss");
+  });
+
   test("states when nothing is found", async ({ page }) => {
     await page.goto("/suche?q=xyzq");
     await expect(page.getByText("Nichts gefunden für „xyzq“.")).toBeVisible();

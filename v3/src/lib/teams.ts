@@ -1,4 +1,5 @@
 import type { Dataset, Match } from "../domain/schema";
+import { isUpcoming } from "./rounds";
 import { normalize } from "./search";
 
 export const teamSlug = (team: string) => normalize(team).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
@@ -13,8 +14,8 @@ export function teamMatches(data: Dataset, team: string): Match[] {
   return data.matches.filter((m) => m.home === team || m.away === team).sort(byTime);
 }
 
-export function nextMatch(data: Dataset, team: string): Match | null {
-  return teamMatches(data, team).find((m) => m.status === "scheduled") ?? null;
+export function nextMatch(data: Dataset, team: string, today?: string): Match | null {
+  return teamMatches(data, team).find((m) => isUpcoming(m, today)) ?? null;
 }
 
 type Record = { won: number; drawn: number; lost: number };

@@ -16,7 +16,18 @@ describe("search", () => {
   it("ignores case and diacritics, needs two characters", () => {
     expect(normalize("JÄGER")).toBe("jager");
     expect(search("hsc wels").teams.map((h) => h.team)).toContain("HSC Wels");
-    expect(search("t")).toEqual({ teams: [], players: [] });
-    expect(search("xyzq")).toEqual({ teams: [], players: [] });
+    expect(search("t")).toEqual({ competitions: [], teams: [], players: [] });
+    expect(search("xyzq")).toEqual({ competitions: [], teams: [], players: [] });
+  });
+
+  it("finds Bewerbe by name and Verband", () => {
+    expect(search("landes").competitions).toEqual([{ competitionId: "landesliga-ooe" }]);
+    expect(search("handballbund").competitions).toEqual([{ competitionId: "hla-challenge-west" }]);
+  });
+
+  it("finds a team by its official Verein name, hyphen or not", () => {
+    for (const q of ["SK-Handball Traun", "sk handball traun"]) {
+      expect(search(q).teams).toContainEqual({ team: "SK Konstant Traun / Edelweiss", competitionId: "hla-challenge-west" });
+    }
   });
 });

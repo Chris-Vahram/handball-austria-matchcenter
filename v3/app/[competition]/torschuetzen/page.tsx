@@ -1,9 +1,10 @@
+import { teamKey } from "@/lib/favorites";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AutoSubmitSelect } from "@ui/client/auto-submit";
 import { displayName } from "@/lib/format";
-import { Footer, Header } from "@ui/shell";
+import { Footer, SubHeader } from "@ui/shell";
 import { ThinData } from "@ui/thin-data";
 import { COMPETITIONS, COMPETITION_IDS, getDataset, isCompetitionId } from "@/data";
 import type { StatKind } from "@/importer/config";
@@ -26,7 +27,7 @@ type Props = { params: Promise<{ competition: string }>; searchParams: Promise<{
 export const revalidate = 3600;
 
 export function generateStaticParams() {
-  return COMPETITION_IDS.filter((id) => COMPETITIONS[id].category === "adult").map((competition) => ({ competition }));
+  return COMPETITION_IDS.map((competition) => ({ competition }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -36,8 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function StatsPage({ params, searchParams }: Props) {
   const { competition } = await params;
-  // ADR-005: no player statistics for youth competitions.
-  if (!isCompetitionId(competition) || COMPETITIONS[competition].category !== "adult") notFound();
+  if (!isCompetitionId(competition)) notFound();
   const c = COMPETITIONS[competition];
   const data = getDataset(competition);
   const { liste, team: teamParam } = await searchParams;
@@ -51,7 +51,7 @@ export default async function StatsPage({ params, searchParams }: Props) {
 
   return (
     <>
-      <Header id={competition} importedAt={data?.source.importedAt ?? null} tab="ranglisten" />
+      <SubHeader id={competition} importedAt={data?.source.importedAt ?? null} crumb="Alle Ranglisten" />
       <main className="page stats">
         <section className="panel" aria-labelledby="h-stats">
           <h2 className="sr-only" id="h-stats">{list.value}</h2>
@@ -86,7 +86,7 @@ export default async function StatsPage({ params, searchParams }: Props) {
               </thead>
               <tbody>
                 {rows.map((r) => (
-                  <tr key={`${r.rank}-${r.name}-${r.club}`} className={!team && r.team === c.showcaseTeam ? "me" : undefined}>
+                  <tr key={`${r.rank}-${r.name}-${r.club}`} data-team={!team && r.team ? teamKey(competition, r.team) : undefined}>
                     <td className="rk">{r.rank}</td>
                     <th scope="row" className="nm">{displayName(r.name)}{!team && <small>{r.team}</small>}</th>
                     <td className="sp">{(list.kind === "7m" ? r.attempts : r.games) ?? "–"}</td>

@@ -42,7 +42,7 @@ export default async function PrintPage({ params }: Props) {
         <p>{c.phase} {c.season} · Tabelle und Spielplan · Stand {stand}</p>
       </header>
       <h2>Tabelle</h2>
-      <Standings rows={data.standings} showcase={c.showcaseTeam} />
+      <Standings rows={data.standings} />
       <h2>Spielplan</h2>
       <table className="print-schedule">
         <thead>
@@ -51,7 +51,7 @@ export default async function PrintPage({ params }: Props) {
         {roundsOf(byTime).map((round) => (
           <tbody key={round}>
             {byTime.filter((m) => m.round === round).map((m, i) => (
-              <tr key={m.number} className={m.home === c.showcaseTeam || m.away === c.showcaseTeam ? "me" : undefined}>
+              <tr key={m.number}>
                 <td>{i === 0 ? round : ""}</td>
                 <td>{formatShortDate(m.date)}</td>
                 <td>{m.time ?? ""}</td>

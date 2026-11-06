@@ -20,4 +20,4 @@
 - [x] 4.2 Rewrite e2e for content-first home, club follow, Verband Explore; refresh screenshots.
 - [x] 4.3 Remove unused `team-dashboard`/`follow-onboarding`/`team-switcher`.
 - [x] 4.4 Run v2 `npm test`, `lint`, `typecheck`, `build`, `test:e2e`; all green.
-- [ ] 4.5 Commit when the owner asks.
+- [x] 4.5 Commit when the owner asks. (committed: see git log)

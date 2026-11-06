@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { hlaGroup } from "./data";
 
 test.describe("Teamseite", () => {
   test.beforeEach(async ({ page }) => { await page.setViewportSize({ width: 390, height: 844 }); });
@@ -40,7 +41,12 @@ test.describe("Statistik", () => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto("/hla-challenge-west/statistik");
     await expect(page.locator(".tabs [aria-current=page]")).toHaveText("Statistik");
-    await expect(page.locator("#h-group")).toContainText("23 von 56 Spielen");
+    await expect(page.locator("main h2").first()).toContainText("Torschützen");
+    await expect(page.locator("section[aria-labelledby=h-top] tbody tr")).toHaveCount(10);
+    await page.getByRole("link", { name: "Alle Ranglisten" }).click();
+    await expect(page).toHaveURL(/\/torschuetzen$/);
+    await page.goBack();
+    await expect(page.locator("#h-group")).toContainText(`${hlaGroup.games} von ${hlaGroup.scheduled} Spielen`);
     await expect(page.locator("table.compare thead")).toContainText("Tore/Sp.");
     await expect(page.locator("table.compare tbody tr")).toHaveCount(8);
     const { scroll, client } = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));

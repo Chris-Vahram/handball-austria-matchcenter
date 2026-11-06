@@ -81,7 +81,7 @@ describe("parsers on 31.10.2026 fixtures", () => {
     const m24 = matches.find((m) => m.number === 24)!;
     expect(m24).toMatchObject({ round: 6, status: "scheduled", score: null, reportId: null });
     expect(JSON.stringify(matches)).not.toMatch(/SRAA|SRBB|SCHIRI/);
-    expect(currentRound(matches)).toBe(6);
+    expect(currentRound(matches, "2026-10-31")).toBe(6);
   });
 
   it("marks unapproved reports and keeps halftime", async () => {

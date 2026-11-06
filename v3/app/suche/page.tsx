@@ -14,7 +14,7 @@ export default async function SearchPage({ searchParams }: Props) {
   const raw = (await searchParams).q;
   const q = (Array.isArray(raw) ? raw[0] ?? "" : raw ?? "").slice(0, 80);
   const tooShort = q.trim().length < MIN_QUERY;
-  const { teams, players } = search(q);
+  const { competitions, teams, players } = search(q);
 
   return (
     <>
@@ -22,8 +22,20 @@ export default async function SearchPage({ searchParams }: Props) {
       <main className="page results">
         <section className="panel" aria-labelledby="h-results">
           <h1 className="section-title" id="h-results">{tooShort ? "Suche" : <>Suche: „{q}“</>}</h1>
-          {tooShort && <p className="empty">Mindestens {MIN_QUERY} Zeichen eingeben, z. B. einen Teamnamen oder Spieler-Nachnamen.</p>}
-          {!tooShort && teams.length === 0 && players.length === 0 && <p className="empty">Nichts gefunden für „{q}“.</p>}
+          {tooShort && <p className="empty">Mindestens {MIN_QUERY} Zeichen eingeben, z. B. einen Bewerb, Team- oder Vereinsnamen oder Spieler-Nachnamen.</p>}
+          {!tooShort && competitions.length === 0 && teams.length === 0 && players.length === 0 && <p className="empty">Nichts gefunden für „{q}“.</p>}
+          {competitions.length > 0 && (
+            <>
+              <h2 className="day">Bewerbe</h2>
+              <ul className="hits">
+                {competitions.map((c) => (
+                  <li key={c.competitionId}>
+                    <Link href={`/${c.competitionId}`}>{COMPETITIONS[c.competitionId].name}<small>{COMPETITIONS[c.competitionId].association}</small></Link>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
           {teams.length > 0 && (
             <>
               <h2 className="day">Teams</h2>

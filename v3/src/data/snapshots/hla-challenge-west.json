@@ -27,6 +27,7 @@
       "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingReport?meeting=93115&championship=%C3%96HB+26%2F27&group=218583",
       "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingReport?meeting=93093&championship=%C3%96HB+26%2F27&group=218583",
       "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingReport?meeting=93135&championship=%C3%96HB+26%2F27&group=218583",
+      "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingReport?meeting=93110&championship=%C3%96HB+26%2F27&group=218583",
       "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingStatistics?displayType=playerGoals&championship=%C3%96HB+26%2F27&group=218583",
       "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingStatistics?displayType=playerSevenMeterGoals&championship=%C3%96HB+26%2F27&group=218583",
       "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingStatistics?displayType=playerSuspensions&championship=%C3%96HB+26%2F27&group=218583",
@@ -43,31 +44,31 @@
       "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/courtInfo?federation=%C3%96HB&roundTyp=0&championship=%C3%96HB+26%2F27&location=19868",
       "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/courtInfo?federation=%C3%96HB&roundTyp=0&championship=%C3%96HB+26%2F27&location=20588"
     ],
-    "importedAt": "2026-11-01T17:50:12.694Z"
+    "importedAt": "2026-11-05T17:17:05.472Z"
   },
   "standings": [
     {
       "rank": 1,
       "team": "HSC Wels",
-      "played": 5,
-      "won": 5,
+      "played": 6,
+      "won": 6,
       "drawn": 0,
       "lost": 0,
-      "goalsFor": 197,
-      "goalsAgainst": 134,
-      "goalDiff": 63,
-      "points": 10
+      "goalsFor": 227,
+      "goalsAgainst": 158,
+      "goalDiff": 69,
+      "points": 12
     },
     {
       "rank": 2,
       "team": "SMC Innsbruck Handball Tirol",
-      "played": 5,
+      "played": 6,
       "won": 3,
       "drawn": 0,
-      "lost": 2,
-      "goalsFor": 145,
-      "goalsAgainst": 123,
-      "goalDiff": 22,
+      "lost": 3,
+      "goalsFor": 169,
+      "goalsAgainst": 153,
+      "goalDiff": 16,
       "points": 6
     },
     {
@@ -603,7 +604,7 @@
         "away": 11
       },
       "reportId": "93115",
-      "reportApproved": false,
+      "reportApproved": true,
       "note": null
     },
     {
@@ -625,7 +626,7 @@
         "away": 13
       },
       "reportId": "93093",
-      "reportApproved": false,
+      "reportApproved": true,
       "note": null
     },
     {
@@ -647,7 +648,7 @@
         "away": 16
       },
       "reportId": "93135",
-      "reportApproved": false,
+      "reportApproved": true,
       "note": null
     },
     {
@@ -659,11 +660,17 @@
       "venueId": "18608",
       "home": "SMC Innsbruck Handball Tirol",
       "away": "HSC Wels",
-      "status": "scheduled",
-      "score": null,
-      "halftime": null,
-      "reportId": null,
-      "reportApproved": null,
+      "status": "played",
+      "score": {
+        "home": 24,
+        "away": 30
+      },
+      "halftime": {
+        "home": 10,
+        "away": 14
+      },
+      "reportId": "93110",
+      "reportApproved": true,
       "note": null
     },
     {
@@ -683,14 +690,14 @@
       "note": null
     },
     {
-      "number": 27,
+      "number": 28,
       "round": 7,
       "date": "2026-11-14",
-      "time": "18:00",
-      "venue": "Sportzentrum Nord Liefering",
-      "venueId": "19868",
-      "home": "UHC Salzburg",
-      "away": "Sparkasse Schwaz Handball Tirol FT",
+      "time": "17:30",
+      "venue": "SH Pernau, Wels - Sterner Arena",
+      "venueId": "18394",
+      "home": "HSC Wels",
+      "away": "Alpla HC Hard FT",
       "status": "scheduled",
       "score": null,
       "halftime": null,
@@ -699,14 +706,14 @@
       "note": null
     },
     {
-      "number": 28,
+      "number": 27,
       "round": 7,
       "date": "2026-11-14",
       "time": "18:00",
-      "venue": "SH Pernau, Wels - Sterner Arena",
-      "venueId": "18394",
-      "home": "HSC Wels",
-      "away": "Alpla HC Hard FT",
+      "venue": "Sportzentrum Nord Liefering",
+      "venueId": "19868",
+      "home": "UHC Salzburg",
+      "away": "Sparkasse Schwaz Handball Tirol FT",
       "status": "scheduled",
       "score": null,
       "halftime": null,
@@ -6325,7 +6332,7 @@
       "date": "2026-10-31",
       "time": "17:00",
       "venue": "Sporthalle Schwaz Ost",
-      "approved": false,
+      "approved": true,
       "score": {
         "home": 28,
         "away": 31
@@ -15910,6 +15917,1078 @@
         }
       ]
     },
+    "93110": {
+      "id": "93110",
+      "number": 24,
+      "date": "2026-11-01",
+      "time": "16:30",
+      "venue": "Sporthalle Hötting-West",
+      "approved": true,
+      "score": {
+        "home": 24,
+        "away": 30
+      },
+      "halftime": {
+        "home": 10,
+        "away": 14
+      },
+      "home": {
+        "name": "SMC Innsbruck Handball Tirol",
+        "players": [
+          {
+            "shirt": "4",
+            "name": "Thill, Dan",
+            "goals": 4,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "6",
+            "name": "Steinlechner, Jonas",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "7",
+            "name": "Saikkonen, Samuel",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "11",
+            "name": "Maier, Henrik",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "12",
+            "name": "NAGL, Sebastian",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "13",
+            "name": "Djordjevic, Marko",
+            "goals": 3,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "14",
+            "name": "Paal, Leo",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "15",
+            "name": "DOBRIC, Marko",
+            "goals": 5,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 1,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "17",
+            "name": "KURZ, Florian",
+            "goals": 3,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 2,
+            "disqualified": false
+          },
+          {
+            "shirt": "23",
+            "name": "STAUDINGER, Mathias",
+            "goals": 2,
+            "sevenMGoals": 1,
+            "sevenMAttempts": 1,
+            "yellow": 0,
+            "twoMin": 1,
+            "disqualified": false
+          },
+          {
+            "shirt": "26",
+            "name": "MALESARDI, Fabio",
+            "goals": 4,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "31",
+            "name": "Wögerer, Maximilian",
+            "goals": 3,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "85",
+            "name": "HEISS, Thomas",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "92",
+            "name": "Oberladstätter, Yannis",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "96",
+            "name": "SABATH, Simon",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 1,
+            "disqualified": false
+          }
+        ],
+        "totals": {
+          "sevenMAttempts": 2,
+          "sevenMGoals": 1,
+          "twoMin": 4,
+          "yellow": 0,
+          "timeouts": 2,
+          "disqualifications": 0
+        }
+      },
+      "away": {
+        "name": "HSC Wels",
+        "players": [
+          {
+            "shirt": "6",
+            "name": "RÖTHIG, Daniel",
+            "goals": 1,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "7",
+            "name": "FALTHANSL-SCHEINECKER, Florian",
+            "goals": 3,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 1,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "8",
+            "name": "LORENZ, Fabian",
+            "goals": 8,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 1,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "9",
+            "name": "JURIC, Antonio",
+            "goals": 4,
+            "sevenMGoals": 1,
+            "sevenMAttempts": 2,
+            "yellow": 0,
+            "twoMin": 1,
+            "disqualified": false
+          },
+          {
+            "shirt": "12",
+            "name": "Mair, Tobias",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "13",
+            "name": "KROPF, Jakob",
+            "goals": 1,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "19",
+            "name": "PALAN, Fabian",
+            "goals": 5,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 1,
+            "disqualified": false
+          },
+          {
+            "shirt": "22",
+            "name": "Oljaca, Stevan",
+            "goals": 1,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 1,
+            "disqualified": false
+          },
+          {
+            "shirt": "23",
+            "name": "MAREK, David",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "28",
+            "name": "GEORGIOU, Kyriakos",
+            "goals": 2,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "32",
+            "name": "Bosnjak, Gabriel",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "33",
+            "name": "Lampe, Lukas",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "45",
+            "name": "PAVLOVIC, Patrik",
+            "goals": 4,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "47",
+            "name": "Eid, Ali Mohamed Abdelwahad",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": false
+          },
+          {
+            "shirt": "72",
+            "name": "DUDLAK, Michael Justin",
+            "goals": 0,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 1,
+            "disqualified": false
+          },
+          {
+            "shirt": "99",
+            "name": "HRNCIC, Armin",
+            "goals": 1,
+            "sevenMGoals": 0,
+            "sevenMAttempts": 0,
+            "yellow": 0,
+            "twoMin": 0,
+            "disqualified": true
+          }
+        ],
+        "totals": {
+          "sevenMAttempts": 4,
+          "sevenMGoals": 1,
+          "twoMin": 4,
+          "yellow": 1,
+          "timeouts": 2,
+          "disqualifications": 1
+        }
+      },
+      "timeline": [
+        {
+          "minute": "01:26",
+          "side": "away",
+          "score": {
+            "home": 0,
+            "away": 1
+          },
+          "type": "Tor",
+          "shirt": "7",
+          "name": "FALTHANSL-SCHEINECKER, Florian"
+        },
+        {
+          "minute": "04:42",
+          "side": "home",
+          "score": {
+            "home": 1,
+            "away": 1
+          },
+          "type": "Tor",
+          "shirt": "17",
+          "name": "KURZ, Florian"
+        },
+        {
+          "minute": "05:45",
+          "side": "home",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "23",
+          "name": "STAUDINGER, Mathias"
+        },
+        {
+          "minute": "05:49",
+          "side": "away",
+          "score": {
+            "home": 1,
+            "away": 1
+          },
+          "type": "7m vergeben",
+          "shirt": "7",
+          "name": "FALTHANSL-SCHEINECKER, Florian"
+        },
+        {
+          "minute": "06:53",
+          "side": "home",
+          "score": {
+            "home": 1,
+            "away": 1
+          },
+          "type": "7m vergeben",
+          "shirt": "15",
+          "name": "DOBRIC, Marko"
+        },
+        {
+          "minute": "08:05",
+          "side": "home",
+          "score": {
+            "home": 2,
+            "away": 1
+          },
+          "type": "Tor",
+          "shirt": "26",
+          "name": "MALESARDI, Fabio"
+        },
+        {
+          "minute": "08:38",
+          "side": "away",
+          "score": {
+            "home": 2,
+            "away": 2
+          },
+          "type": "Tor",
+          "shirt": "19",
+          "name": "PALAN, Fabian"
+        },
+        {
+          "minute": "09:37",
+          "side": "away",
+          "score": {
+            "home": 2,
+            "away": 3
+          },
+          "type": "Tor",
+          "shirt": "8",
+          "name": "LORENZ, Fabian"
+        },
+        {
+          "minute": "13:44",
+          "side": "home",
+          "score": {
+            "home": 3,
+            "away": 3
+          },
+          "type": "Tor",
+          "shirt": "15",
+          "name": "DOBRIC, Marko"
+        },
+        {
+          "minute": "14:14",
+          "side": "away",
+          "score": {
+            "home": 3,
+            "away": 4
+          },
+          "type": "Tor",
+          "shirt": "7",
+          "name": "FALTHANSL-SCHEINECKER, Florian"
+        },
+        {
+          "minute": "14:23",
+          "side": "home",
+          "score": {
+            "home": 4,
+            "away": 4
+          },
+          "type": "Tor",
+          "shirt": "23",
+          "name": "STAUDINGER, Mathias"
+        },
+        {
+          "minute": "14:39",
+          "side": "away",
+          "score": {
+            "home": 4,
+            "away": 5
+          },
+          "type": "Tor",
+          "shirt": "9",
+          "name": "JURIC, Antonio"
+        },
+        {
+          "minute": "15:58",
+          "side": "away",
+          "score": {
+            "home": 4,
+            "away": 6
+          },
+          "type": "Tor",
+          "shirt": "7",
+          "name": "FALTHANSL-SCHEINECKER, Florian"
+        },
+        {
+          "minute": "16:46",
+          "side": "away",
+          "score": {
+            "home": 4,
+            "away": 7
+          },
+          "type": "Tor",
+          "shirt": "99",
+          "name": "HRNCIC, Armin"
+        },
+        {
+          "minute": "17:11",
+          "side": "home",
+          "score": {
+            "home": 5,
+            "away": 7
+          },
+          "type": "Tor",
+          "shirt": "4",
+          "name": "Thill, Dan"
+        },
+        {
+          "minute": "17:23",
+          "side": "away",
+          "score": {
+            "home": 5,
+            "away": 8
+          },
+          "type": "Tor",
+          "shirt": "8",
+          "name": "LORENZ, Fabian"
+        },
+        {
+          "minute": "18:09",
+          "side": "away",
+          "score": null,
+          "type": "Disqualifikation",
+          "shirt": "99",
+          "name": "HRNCIC, Armin"
+        },
+        {
+          "minute": "18:26",
+          "side": "home",
+          "score": {
+            "home": 6,
+            "away": 8
+          },
+          "type": "Tor",
+          "shirt": "4",
+          "name": "Thill, Dan"
+        },
+        {
+          "minute": "19:09",
+          "side": "away",
+          "score": {
+            "home": 6,
+            "away": 9
+          },
+          "type": "Tor",
+          "shirt": "8",
+          "name": "LORENZ, Fabian"
+        },
+        {
+          "minute": "19:35",
+          "side": "home",
+          "score": {
+            "home": 7,
+            "away": 9
+          },
+          "type": "Tor",
+          "shirt": "17",
+          "name": "KURZ, Florian"
+        },
+        {
+          "minute": "21:04",
+          "side": "home",
+          "score": {
+            "home": 8,
+            "away": 9
+          },
+          "type": "Tor",
+          "shirt": "31",
+          "name": "Wögerer, Maximilian"
+        },
+        {
+          "minute": "22:40",
+          "side": "away",
+          "score": {
+            "home": 8,
+            "away": 10
+          },
+          "type": "Tor",
+          "shirt": "13",
+          "name": "KROPF, Jakob"
+        },
+        {
+          "minute": "23:28",
+          "side": "home",
+          "score": {
+            "home": 9,
+            "away": 10
+          },
+          "type": "Tor",
+          "shirt": "31",
+          "name": "Wögerer, Maximilian"
+        },
+        {
+          "minute": "23:40",
+          "side": "away",
+          "score": {
+            "home": 9,
+            "away": 11
+          },
+          "type": "Tor",
+          "shirt": "9",
+          "name": "JURIC, Antonio"
+        },
+        {
+          "minute": "25:16",
+          "side": "home",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "17",
+          "name": "KURZ, Florian"
+        },
+        {
+          "minute": "25:16",
+          "side": "away",
+          "score": {
+            "home": 9,
+            "away": 11
+          },
+          "type": "7m vergeben",
+          "shirt": "8",
+          "name": "LORENZ, Fabian"
+        },
+        {
+          "minute": "25:18",
+          "side": "away",
+          "score": {
+            "home": 9,
+            "away": 12
+          },
+          "type": "Tor",
+          "shirt": "8",
+          "name": "LORENZ, Fabian"
+        },
+        {
+          "minute": "27:10",
+          "side": "home",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "96",
+          "name": "SABATH, Simon"
+        },
+        {
+          "minute": "27:23",
+          "side": "away",
+          "score": {
+            "home": 9,
+            "away": 13
+          },
+          "type": "Tor",
+          "shirt": "19",
+          "name": "PALAN, Fabian"
+        },
+        {
+          "minute": "28:58",
+          "side": "away",
+          "score": {
+            "home": 9,
+            "away": 14
+          },
+          "type": "Tor",
+          "shirt": "19",
+          "name": "PALAN, Fabian"
+        },
+        {
+          "minute": "29:27",
+          "side": "home",
+          "score": {
+            "home": 10,
+            "away": 14
+          },
+          "type": "Tor",
+          "shirt": "13",
+          "name": "Djordjevic, Marko"
+        },
+        {
+          "minute": "30:39",
+          "side": "home",
+          "score": {
+            "home": 11,
+            "away": 14
+          },
+          "type": "Tor",
+          "shirt": "15",
+          "name": "DOBRIC, Marko"
+        },
+        {
+          "minute": "30:52",
+          "side": "away",
+          "score": {
+            "home": 11,
+            "away": 15
+          },
+          "type": "Tor",
+          "shirt": "8",
+          "name": "LORENZ, Fabian"
+        },
+        {
+          "minute": "31:36",
+          "side": "away",
+          "score": {
+            "home": 11,
+            "away": 16
+          },
+          "type": "Tor",
+          "shirt": "19",
+          "name": "PALAN, Fabian"
+        },
+        {
+          "minute": "33:34",
+          "side": "away",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "22",
+          "name": "Oljaca, Stevan"
+        },
+        {
+          "minute": "34:24",
+          "side": "home",
+          "score": {
+            "home": 12,
+            "away": 16
+          },
+          "type": "Tor",
+          "shirt": "13",
+          "name": "Djordjevic, Marko"
+        },
+        {
+          "minute": "35:04",
+          "side": "away",
+          "score": {
+            "home": 12,
+            "away": 17
+          },
+          "type": "Tor",
+          "shirt": "8",
+          "name": "LORENZ, Fabian"
+        },
+        {
+          "minute": "35:12",
+          "side": "home",
+          "score": {
+            "home": 13,
+            "away": 17
+          },
+          "type": "Tor",
+          "shirt": "26",
+          "name": "MALESARDI, Fabio"
+        },
+        {
+          "minute": "36:18",
+          "side": "away",
+          "score": {
+            "home": 13,
+            "away": 18
+          },
+          "type": "Tor",
+          "shirt": "8",
+          "name": "LORENZ, Fabian"
+        },
+        {
+          "minute": "37:05",
+          "side": "home",
+          "score": {
+            "home": 14,
+            "away": 18
+          },
+          "type": "Tor",
+          "shirt": "15",
+          "name": "DOBRIC, Marko"
+        },
+        {
+          "minute": "37:52",
+          "side": "away",
+          "score": {
+            "home": 14,
+            "away": 19
+          },
+          "type": "7m-Tor",
+          "shirt": "9",
+          "name": "JURIC, Antonio"
+        },
+        {
+          "minute": "39:01",
+          "side": "away",
+          "score": {
+            "home": 14,
+            "away": 20
+          },
+          "type": "Tor",
+          "shirt": "19",
+          "name": "PALAN, Fabian"
+        },
+        {
+          "minute": "40:41",
+          "side": "home",
+          "score": {
+            "home": 15,
+            "away": 20
+          },
+          "type": "Tor",
+          "shirt": "17",
+          "name": "KURZ, Florian"
+        },
+        {
+          "minute": "42:07",
+          "side": "home",
+          "score": {
+            "home": 16,
+            "away": 20
+          },
+          "type": "Tor",
+          "shirt": "31",
+          "name": "Wögerer, Maximilian"
+        },
+        {
+          "minute": "43:12",
+          "side": "home",
+          "score": {
+            "home": 17,
+            "away": 20
+          },
+          "type": "Tor",
+          "shirt": "15",
+          "name": "DOBRIC, Marko"
+        },
+        {
+          "minute": "44:27",
+          "side": "away",
+          "score": {
+            "home": 17,
+            "away": 21
+          },
+          "type": "Tor",
+          "shirt": "8",
+          "name": "LORENZ, Fabian"
+        },
+        {
+          "minute": "45:08",
+          "side": "home",
+          "score": {
+            "home": 18,
+            "away": 21
+          },
+          "type": "Tor",
+          "shirt": "26",
+          "name": "MALESARDI, Fabio"
+        },
+        {
+          "minute": "45:10",
+          "side": "away",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "19",
+          "name": "PALAN, Fabian"
+        },
+        {
+          "minute": "45:40",
+          "side": "away",
+          "score": {
+            "home": 18,
+            "away": 22
+          },
+          "type": "Tor",
+          "shirt": "28",
+          "name": "GEORGIOU, Kyriakos"
+        },
+        {
+          "minute": "46:40",
+          "side": "home",
+          "score": {
+            "home": 19,
+            "away": 22
+          },
+          "type": "Tor",
+          "shirt": "26",
+          "name": "MALESARDI, Fabio"
+        },
+        {
+          "minute": "47:15",
+          "side": "away",
+          "score": {
+            "home": 19,
+            "away": 23
+          },
+          "type": "Tor",
+          "shirt": "9",
+          "name": "JURIC, Antonio"
+        },
+        {
+          "minute": "50:05",
+          "side": "away",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "72",
+          "name": "DUDLAK, Michael Justin"
+        },
+        {
+          "minute": "51:24",
+          "side": "home",
+          "score": {
+            "home": 20,
+            "away": 23
+          },
+          "type": "Tor",
+          "shirt": "15",
+          "name": "DOBRIC, Marko"
+        },
+        {
+          "minute": "51:38",
+          "side": "home",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "17",
+          "name": "KURZ, Florian"
+        },
+        {
+          "minute": "51:38",
+          "side": "away",
+          "score": {
+            "home": 20,
+            "away": 23
+          },
+          "type": "7m vergeben",
+          "shirt": "9",
+          "name": "JURIC, Antonio"
+        },
+        {
+          "minute": "52:16",
+          "side": "away",
+          "score": {
+            "home": 20,
+            "away": 24
+          },
+          "type": "Tor",
+          "shirt": "45",
+          "name": "PAVLOVIC, Patrik"
+        },
+        {
+          "minute": "52:43",
+          "side": "home",
+          "score": {
+            "home": 21,
+            "away": 24
+          },
+          "type": "Tor",
+          "shirt": "4",
+          "name": "Thill, Dan"
+        },
+        {
+          "minute": "53:11",
+          "side": "away",
+          "score": {
+            "home": 21,
+            "away": 25
+          },
+          "type": "Tor",
+          "shirt": "45",
+          "name": "PAVLOVIC, Patrik"
+        },
+        {
+          "minute": "55:03",
+          "side": "away",
+          "score": null,
+          "type": "Verwarnung",
+          "shirt": null,
+          "name": null
+        },
+        {
+          "minute": "55:25",
+          "side": "away",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "9",
+          "name": "JURIC, Antonio"
+        },
+        {
+          "minute": "55:29",
+          "side": "home",
+          "score": {
+            "home": 22,
+            "away": 25
+          },
+          "type": "7m-Tor",
+          "shirt": "23",
+          "name": "STAUDINGER, Mathias"
+        },
+        {
+          "minute": "56:05",
+          "side": "away",
+          "score": {
+            "home": 22,
+            "away": 26
+          },
+          "type": "Tor",
+          "shirt": "28",
+          "name": "GEORGIOU, Kyriakos"
+        },
+        {
+          "minute": "56:49",
+          "side": "away",
+          "score": {
+            "home": 22,
+            "away": 27
+          },
+          "type": "Tor",
+          "shirt": "45",
+          "name": "PAVLOVIC, Patrik"
+        },
+        {
+          "minute": "57:23",
+          "side": "home",
+          "score": {
+            "home": 23,
+            "away": 27
+          },
+          "type": "Tor",
+          "shirt": "4",
+          "name": "Thill, Dan"
+        },
+        {
+          "minute": "58:09",
+          "side": "away",
+          "score": {
+            "home": 23,
+            "away": 28
+          },
+          "type": "Tor",
+          "shirt": "6",
+          "name": "RÖTHIG, Daniel"
+        },
+        {
+          "minute": "58:38",
+          "side": "home",
+          "score": {
+            "home": 24,
+            "away": 28
+          },
+          "type": "Tor",
+          "shirt": "13",
+          "name": "Djordjevic, Marko"
+        },
+        {
+          "minute": "58:59",
+          "side": "away",
+          "score": {
+            "home": 24,
+            "away": 29
+          },
+          "type": "Tor",
+          "shirt": "22",
+          "name": "Oljaca, Stevan"
+        },
+        {
+          "minute": "59:55",
+          "side": "away",
+          "score": {
+            "home": 24,
+            "away": 30
+          },
+          "type": "Tor",
+          "shirt": "45",
+          "name": "PAVLOVIC, Patrik"
+        }
+      ]
+    },
     "93111": {
       "id": "93111",
       "number": 6,
@@ -18978,7 +20057,7 @@
       "date": "2026-10-31",
       "time": "16:15",
       "venue": "Sporthalle am See Hard",
-      "approved": false,
+      "approved": true,
       "score": {
         "home": 35,
         "away": 33
@@ -23442,7 +24521,7 @@
       "date": "2026-10-31",
       "time": "18:00",
       "venue": "Schendlingerhalle",
-      "approved": false,
+      "approved": true,
       "score": {
         "home": 37,
         "away": 35
@@ -25971,6 +27050,16 @@
       },
       {
         "rank": 2,
+        "name": "LORENZ, Fabian",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 42,
+        "games": 6,
+        "attempts": null,
+        "perGame": 7
+      },
+      {
+        "rank": 3,
         "name": "PIRINGER, Jannik",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
@@ -25980,7 +27069,7 @@
         "perGame": 6.83
       },
       {
-        "rank": 3,
+        "rank": 4,
         "name": "Kneidinger, David",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
@@ -25990,7 +27079,7 @@
         "perGame": 6.5
       },
       {
-        "rank": 4,
+        "rank": 5,
         "name": "HALILOVIC, Maid",
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
@@ -26000,17 +27089,17 @@
         "perGame": 5.83
       },
       {
-        "rank": 5,
-        "name": "LORENZ, Fabian",
+        "rank": 6,
+        "name": "JURIC, Antonio",
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
-        "value": 34,
-        "games": 5,
+        "value": 35,
+        "games": 6,
         "attempts": null,
-        "perGame": 6.8
+        "perGame": 5.83
       },
       {
-        "rank": 6,
+        "rank": 7,
         "name": "Barba, Francisco",
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
@@ -26020,7 +27109,7 @@
         "perGame": 5.67
       },
       {
-        "rank": 7,
+        "rank": 8,
         "name": "GVERIC, Mate",
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
@@ -26028,16 +27117,6 @@
         "games": 6,
         "attempts": null,
         "perGame": 5.67
-      },
-      {
-        "rank": 8,
-        "name": "JURIC, Antonio",
-        "club": "Sportunion Wels Handball",
-        "team": "HSC Wels",
-        "value": 31,
-        "games": 5,
-        "attempts": null,
-        "perGame": 6.2
       },
       {
         "rank": 9,
@@ -26101,6 +27180,16 @@
       },
       {
         "rank": 15,
+        "name": "FALTHANSL-SCHEINECKER, Florian",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 24,
+        "games": 6,
+        "attempts": null,
+        "perGame": 4
+      },
+      {
+        "rank": 16,
         "name": "VIKTOR, Ivo",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
@@ -26110,7 +27199,7 @@
         "perGame": 4
       },
       {
-        "rank": 16,
+        "rank": 17,
         "name": "KRAWITZ, Joshua",
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
@@ -26120,7 +27209,7 @@
         "perGame": 3.67
       },
       {
-        "rank": 17,
+        "rank": 18,
         "name": "Spiekermann, David",
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
@@ -26130,7 +27219,7 @@
         "perGame": 7
       },
       {
-        "rank": 18,
+        "rank": 19,
         "name": "HÄMMERLE, Matthias",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
@@ -26140,7 +27229,7 @@
         "perGame": 5.25
       },
       {
-        "rank": 19,
+        "rank": 20,
         "name": "Schmidt, Joshua",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
@@ -26148,16 +27237,6 @@
         "games": 4,
         "attempts": null,
         "perGame": 5.25
-      },
-      {
-        "rank": 20,
-        "name": "FALTHANSL-SCHEINECKER, Florian",
-        "club": "Sportunion Wels Handball",
-        "team": "HSC Wels",
-        "value": 21,
-        "games": 5,
-        "attempts": null,
-        "perGame": 4.2
       },
       {
         "rank": 21,
@@ -26171,6 +27250,26 @@
       },
       {
         "rank": 22,
+        "name": "DOBRIC, Marko",
+        "club": "HIT (SMC Innsbruck Handball Tirol)",
+        "team": "SMC Innsbruck Handball Tirol",
+        "value": 21,
+        "games": 6,
+        "attempts": null,
+        "perGame": 3.5
+      },
+      {
+        "rank": 23,
+        "name": "PALAN, Fabian",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 19,
+        "games": 4,
+        "attempts": null,
+        "perGame": 4.75
+      },
+      {
+        "rank": 24,
         "name": "ARNOLD, Simon",
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
@@ -26180,7 +27279,7 @@
         "perGame": 4.5
       },
       {
-        "rank": 23,
+        "rank": 25,
         "name": "Poostchi, Samuel",
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
@@ -26190,7 +27289,27 @@
         "perGame": 3.6
       },
       {
-        "rank": 24,
+        "rank": 26,
+        "name": "GEORGIOU, Kyriakos",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 18,
+        "games": 6,
+        "attempts": null,
+        "perGame": 3
+      },
+      {
+        "rank": 27,
+        "name": "RÖTHIG, Daniel",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 18,
+        "games": 6,
+        "attempts": null,
+        "perGame": 3
+      },
+      {
+        "rank": 28,
         "name": "CIRIT, Janberk",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
@@ -26200,7 +27319,7 @@
         "perGame": 5.67
       },
       {
-        "rank": 25,
+        "rank": 29,
         "name": "SEEWALD, David",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
@@ -26210,7 +27329,7 @@
         "perGame": 5.67
       },
       {
-        "rank": 26,
+        "rank": 30,
         "name": "SINZ, Georg",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
@@ -26220,28 +27339,28 @@
         "perGame": 5.67
       },
       {
-        "rank": 27,
+        "rank": 31,
+        "name": "Djordjevic, Marko",
+        "club": "HIT (SMC Innsbruck Handball Tirol)",
+        "team": "SMC Innsbruck Handball Tirol",
+        "value": 17,
+        "games": 6,
+        "attempts": null,
+        "perGame": 2.83
+      },
+      {
+        "rank": 32,
         "name": "DUDLAK, Michael Justin",
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
         "value": 17,
-        "games": 5,
+        "games": 6,
         "attempts": null,
-        "perGame": 3.4
+        "perGame": 2.83
       },
       {
-        "rank": 28,
-        "name": "RÖTHIG, Daniel",
-        "club": "Sportunion Wels Handball",
-        "team": "HSC Wels",
-        "value": 17,
-        "games": 5,
-        "attempts": null,
-        "perGame": 3.4
-      },
-      {
-        "rank": 29,
-        "name": "DOBRIC, Marko",
+        "rank": 33,
+        "name": "KURZ, Florian",
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
         "value": 16,
@@ -26250,17 +27369,7 @@
         "perGame": 3.2
       },
       {
-        "rank": 30,
-        "name": "GEORGIOU, Kyriakos",
-        "club": "Sportunion Wels Handball",
-        "team": "HSC Wels",
-        "value": 16,
-        "games": 5,
-        "attempts": null,
-        "perGame": 3.2
-      },
-      {
-        "rank": 31,
+        "rank": 34,
         "name": "OPPERMANN, Dominik",
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
@@ -26270,7 +27379,17 @@
         "perGame": 2.67
       },
       {
-        "rank": 32,
+        "rank": 35,
+        "name": "PAVLOVIC, Patrik",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 16,
+        "games": 6,
+        "attempts": null,
+        "perGame": 2.67
+      },
+      {
+        "rank": 36,
         "name": "LINDENHOFER, Philipp",
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
@@ -26280,27 +27399,17 @@
         "perGame": 2.5
       },
       {
-        "rank": 33,
-        "name": "PALAN, Fabian",
-        "club": "Sportunion Wels Handball",
-        "team": "HSC Wels",
-        "value": 14,
-        "games": 3,
-        "attempts": null,
-        "perGame": 4.67
-      },
-      {
-        "rank": 34,
-        "name": "Djordjevic, Marko",
+        "rank": 37,
+        "name": "STAUDINGER, Mathias",
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
-        "value": 14,
-        "games": 5,
+        "value": 15,
+        "games": 6,
         "attempts": null,
-        "perGame": 2.8
+        "perGame": 2.5
       },
       {
-        "rank": 35,
+        "rank": 38,
         "name": "STACHELBERGER, Nick",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
@@ -26310,7 +27419,7 @@
         "perGame": 2.8
       },
       {
-        "rank": 36,
+        "rank": 39,
         "name": "OPPERMANN, Manuel",
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
@@ -26320,17 +27429,7 @@
         "perGame": 2.33
       },
       {
-        "rank": 37,
-        "name": "KURZ, Florian",
-        "club": "HIT (SMC Innsbruck Handball Tirol)",
-        "team": "SMC Innsbruck Handball Tirol",
-        "value": 13,
-        "games": 4,
-        "attempts": null,
-        "perGame": 3.25
-      },
-      {
-        "rank": 38,
+        "rank": 40,
         "name": "NANA AGYAPONG, Bryan",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
@@ -26340,7 +27439,7 @@
         "perGame": 3.25
       },
       {
-        "rank": 39,
+        "rank": 41,
         "name": "WINDHAGER, Raphael",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
@@ -26350,7 +27449,7 @@
         "perGame": 3.25
       },
       {
-        "rank": 40,
+        "rank": 42,
         "name": "Lang, Noah Karlheinz",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
@@ -26360,17 +27459,7 @@
         "perGame": 2.6
       },
       {
-        "rank": 41,
-        "name": "STAUDINGER, Mathias",
-        "club": "HIT (SMC Innsbruck Handball Tirol)",
-        "team": "SMC Innsbruck Handball Tirol",
-        "value": 13,
-        "games": 5,
-        "attempts": null,
-        "perGame": 2.6
-      },
-      {
-        "rank": 42,
+        "rank": 43,
         "name": "Fink, Paul",
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
@@ -26378,16 +27467,6 @@
         "games": 6,
         "attempts": null,
         "perGame": 2.17
-      },
-      {
-        "rank": 43,
-        "name": "Bosnjak, Gabriel",
-        "club": "Sportunion Wels Handball",
-        "team": "HSC Wels",
-        "value": 12,
-        "games": 4,
-        "attempts": null,
-        "perGame": 3
       },
       {
         "rank": 44,
@@ -26401,19 +27480,19 @@
       },
       {
         "rank": 45,
-        "name": "Saikkonen, Samuel",
-        "club": "HIT (SMC Innsbruck Handball Tirol)",
-        "team": "SMC Innsbruck Handball Tirol",
+        "name": "Bosnjak, Gabriel",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
         "value": 12,
-        "games": 4,
+        "games": 5,
         "attempts": null,
-        "perGame": 3
+        "perGame": 2.4
       },
       {
         "rank": 46,
-        "name": "PAVLOVIC, Patrik",
-        "club": "Sportunion Wels Handball",
-        "team": "HSC Wels",
+        "name": "Saikkonen, Samuel",
+        "club": "HIT (SMC Innsbruck Handball Tirol)",
+        "team": "SMC Innsbruck Handball Tirol",
         "value": 12,
         "games": 5,
         "attempts": null,
@@ -26431,6 +27510,16 @@
       },
       {
         "rank": 48,
+        "name": "Oljaca, Stevan",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 12,
+        "games": 6,
+        "attempts": null,
+        "perGame": 2
+      },
+      {
+        "rank": 49,
         "name": "Ott, Tizian",
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
@@ -26440,7 +27529,7 @@
         "perGame": 3.67
       },
       {
-        "rank": 49,
+        "rank": 50,
         "name": "GOLUBOVIC, Dejan",
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
@@ -26450,7 +27539,7 @@
         "perGame": 2.75
       },
       {
-        "rank": 50,
+        "rank": 51,
         "name": "STATTHALER, Lukas",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
@@ -26460,20 +27549,10 @@
         "perGame": 2.75
       },
       {
-        "rank": 51,
+        "rank": 52,
         "name": "Hakli, Noyan",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
-        "value": 11,
-        "games": 5,
-        "attempts": null,
-        "perGame": 2.2
-      },
-      {
-        "rank": 52,
-        "name": "Oljaca, Stevan",
-        "club": "Sportunion Wels Handball",
-        "team": "HSC Wels",
         "value": 11,
         "games": 5,
         "attempts": null,
@@ -26671,6 +27750,26 @@
       },
       {
         "rank": 72,
+        "name": "MALESARDI, Fabio",
+        "club": "HIT (SMC Innsbruck Handball Tirol)",
+        "team": "SMC Innsbruck Handball Tirol",
+        "value": 7,
+        "games": 5,
+        "attempts": null,
+        "perGame": 1.4
+      },
+      {
+        "rank": 73,
+        "name": "Wögerer, Maximilian",
+        "club": "HIT (SMC Innsbruck Handball Tirol)",
+        "team": "SMC Innsbruck Handball Tirol",
+        "value": 7,
+        "games": 6,
+        "attempts": null,
+        "perGame": 1.17
+      },
+      {
+        "rank": 74,
         "name": "COPONY, Aurelio",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
@@ -26680,7 +27779,7 @@
         "perGame": 6
       },
       {
-        "rank": 73,
+        "rank": 75,
         "name": "MAGER, Elias",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
@@ -26690,7 +27789,7 @@
         "perGame": 3
       },
       {
-        "rank": 74,
+        "rank": 76,
         "name": "Eder, Jonathan",
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
@@ -26700,7 +27799,7 @@
         "perGame": 1.5
       },
       {
-        "rank": 75,
+        "rank": 77,
         "name": "MAILER, Xaver",
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
@@ -26710,7 +27809,7 @@
         "perGame": 1.5
       },
       {
-        "rank": 76,
+        "rank": 78,
         "name": "IVANOV, Mark",
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
@@ -26720,7 +27819,7 @@
         "perGame": 1.2
       },
       {
-        "rank": 77,
+        "rank": 79,
         "name": "Ledermair, Dominic",
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
@@ -26730,7 +27829,7 @@
         "perGame": 1
       },
       {
-        "rank": 78,
+        "rank": 80,
         "name": "NIEDERMÜLLER, Philipp",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
@@ -26740,17 +27839,7 @@
         "perGame": 1
       },
       {
-        "rank": 79,
-        "name": "MAREK, David",
-        "club": "Sportunion Wels Handball",
-        "team": "HSC Wels",
-        "value": 5,
-        "games": 5,
-        "attempts": null,
-        "perGame": 1
-      },
-      {
-        "rank": 80,
+        "rank": 81,
         "name": "Pitter, Noah",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
@@ -26760,7 +27849,7 @@
         "perGame": 1
       },
       {
-        "rank": 81,
+        "rank": 82,
         "name": "VONMETZ, Dominik",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
@@ -26770,7 +27859,7 @@
         "perGame": 1
       },
       {
-        "rank": 82,
+        "rank": 83,
         "name": "Vukojevic, Mateo",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
@@ -26780,7 +27869,7 @@
         "perGame": 1
       },
       {
-        "rank": 83,
+        "rank": 84,
         "name": "Löschl, Jakob",
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
@@ -26790,7 +27879,27 @@
         "perGame": 0.83
       },
       {
-        "rank": 84,
+        "rank": 85,
+        "name": "MAREK, David",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 5,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.83
+      },
+      {
+        "rank": 86,
+        "name": "Thill, Dan",
+        "club": "HIT (SMC Innsbruck Handball Tirol)",
+        "team": "SMC Innsbruck Handball Tirol",
+        "value": 4,
+        "games": 2,
+        "attempts": null,
+        "perGame": 2
+      },
+      {
+        "rank": 87,
         "name": "Eid, Hussain",
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
@@ -26800,7 +27909,7 @@
         "perGame": 1
       },
       {
-        "rank": 85,
+        "rank": 88,
         "name": "SCHNEIDER, Florian",
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
@@ -26810,17 +27919,7 @@
         "perGame": 0.8
       },
       {
-        "rank": 86,
-        "name": "Wögerer, Maximilian",
-        "club": "HIT (SMC Innsbruck Handball Tirol)",
-        "team": "SMC Innsbruck Handball Tirol",
-        "value": 4,
-        "games": 5,
-        "attempts": null,
-        "perGame": 0.8
-      },
-      {
-        "rank": 87,
+        "rank": 89,
         "name": "Doknic, Petar",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
@@ -26830,7 +27929,7 @@
         "perGame": 1.5
       },
       {
-        "rank": 88,
+        "rank": 90,
         "name": "COUFAL, Jan",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
@@ -26840,7 +27939,7 @@
         "perGame": 1
       },
       {
-        "rank": 89,
+        "rank": 91,
         "name": "Bildstein, Jan",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
@@ -26850,7 +27949,7 @@
         "perGame": 0.75
       },
       {
-        "rank": 90,
+        "rank": 92,
         "name": "DENNHARDT, Milan",
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
@@ -26860,17 +27959,7 @@
         "perGame": 0.75
       },
       {
-        "rank": 91,
-        "name": "MALESARDI, Fabio",
-        "club": "HIT (SMC Innsbruck Handball Tirol)",
-        "team": "SMC Innsbruck Handball Tirol",
-        "value": 3,
-        "games": 4,
-        "attempts": null,
-        "perGame": 0.75
-      },
-      {
-        "rank": 92,
+        "rank": 93,
         "name": "Barba, Mateo Ignacio",
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
@@ -26880,7 +27969,7 @@
         "perGame": 0.6
       },
       {
-        "rank": 93,
+        "rank": 94,
         "name": "Wisser, Niklas",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
@@ -26890,7 +27979,7 @@
         "perGame": 0.6
       },
       {
-        "rank": 94,
+        "rank": 95,
         "name": "CIOBANU, Narcis-Ionut",
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
@@ -26900,7 +27989,7 @@
         "perGame": 0.5
       },
       {
-        "rank": 95,
+        "rank": 96,
         "name": "DILYS, Devanas",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
@@ -26910,7 +27999,7 @@
         "perGame": 2
       },
       {
-        "rank": 96,
+        "rank": 97,
         "name": "FRÜHSTÜCK, Lukas",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
@@ -26920,7 +28009,7 @@
         "perGame": 2
       },
       {
-        "rank": 97,
+        "rank": 98,
         "name": "LÜRZER, Robin",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
@@ -26930,7 +28019,7 @@
         "perGame": 2
       },
       {
-        "rank": 98,
+        "rank": 99,
         "name": "Stadelmann, Nils",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
@@ -26940,20 +28029,10 @@
         "perGame": 1
       },
       {
-        "rank": 99,
+        "rank": 100,
         "name": "HEMMES, Julius",
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
-        "value": 2,
-        "games": 3,
-        "attempts": null,
-        "perGame": 0.67
-      },
-      {
-        "rank": 100,
-        "name": "Safar, Noa",
-        "club": "Bregenz Handball",
-        "team": "Bregenz Handball FT",
         "value": 2,
         "games": 3,
         "attempts": null,
@@ -27038,8 +28117,8 @@
         "team": "HSC Wels",
         "value": 10,
         "games": null,
-        "attempts": 11,
-        "perGame": 2
+        "attempts": 12,
+        "perGame": 1.67
       },
       {
         "rank": 9,
@@ -27069,7 +28148,7 @@
         "value": 6,
         "games": null,
         "attempts": 7,
-        "perGame": 1.5
+        "perGame": 1.2
       },
       {
         "rank": 12,
@@ -27106,10 +28185,10 @@
         "name": "STAUDINGER, Mathias",
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
-        "value": 3,
+        "value": 4,
         "games": null,
-        "attempts": 4,
-        "perGame": 0.6
+        "attempts": 5,
+        "perGame": 0.67
       },
       {
         "rank": 16,
@@ -27129,20 +28208,10 @@
         "value": 2,
         "games": null,
         "attempts": 2,
-        "perGame": 0.5
-      },
-      {
-        "rank": 18,
-        "name": "LORENZ, Fabian",
-        "club": "Sportunion Wels Handball",
-        "team": "HSC Wels",
-        "value": 2,
-        "games": null,
-        "attempts": 2,
         "perGame": 0.4
       },
       {
-        "rank": 19,
+        "rank": 18,
         "name": "DILYS, Devanas",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
@@ -27152,7 +28221,7 @@
         "perGame": 2
       },
       {
-        "rank": 20,
+        "rank": 19,
         "name": "MAGER, Elias",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
@@ -27160,6 +28229,16 @@
         "games": null,
         "attempts": 3,
         "perGame": 1
+      },
+      {
+        "rank": 20,
+        "name": "LORENZ, Fabian",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 2,
+        "games": null,
+        "attempts": 3,
+        "perGame": 0.33
       },
       {
         "rank": 21,
@@ -27223,6 +28302,16 @@
       },
       {
         "rank": 27,
+        "name": "JURIC, Antonio",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 1,
+        "games": null,
+        "attempts": 2,
+        "perGame": 0.17
+      },
+      {
+        "rank": 28,
         "name": "Ott, Tizian",
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
@@ -27232,7 +28321,7 @@
         "perGame": 0.33
       },
       {
-        "rank": 28,
+        "rank": 29,
         "name": "Schweighofer, Leo",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
@@ -27288,13 +28377,23 @@
         "name": "JURIC, Antonio",
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
-        "value": 7,
-        "games": 5,
+        "value": 8,
+        "games": 6,
         "attempts": null,
-        "perGame": 1.4
+        "perGame": 1.33333
       },
       {
         "rank": 6,
+        "name": "KURZ, Florian",
+        "club": "HIT (SMC Innsbruck Handball Tirol)",
+        "team": "SMC Innsbruck Handball Tirol",
+        "value": 6,
+        "games": 5,
+        "attempts": null,
+        "perGame": 1.2
+      },
+      {
+        "rank": 7,
         "name": "VONMETZ, Dominik",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
@@ -27304,7 +28403,7 @@
         "perGame": 1.2
       },
       {
-        "rank": 7,
+        "rank": 8,
         "name": "OPPERMANN, Manuel",
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
@@ -27314,7 +28413,7 @@
         "perGame": 1.16667
       },
       {
-        "rank": 8,
+        "rank": 9,
         "name": "HALILOVIC, Maid",
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
@@ -27324,20 +28423,10 @@
         "perGame": 1
       },
       {
-        "rank": 9,
+        "rank": 10,
         "name": "STRAUCH, Tore",
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
-        "value": 5,
-        "games": 5,
-        "attempts": null,
-        "perGame": 1
-      },
-      {
-        "rank": 10,
-        "name": "Wögerer, Maximilian",
-        "club": "HIT (SMC Innsbruck Handball Tirol)",
-        "team": "SMC Innsbruck Handball Tirol",
         "value": 5,
         "games": 5,
         "attempts": null,
@@ -27355,16 +28444,6 @@
       },
       {
         "rank": 12,
-        "name": "KURZ, Florian",
-        "club": "HIT (SMC Innsbruck Handball Tirol)",
-        "team": "SMC Innsbruck Handball Tirol",
-        "value": 4,
-        "games": 4,
-        "attempts": null,
-        "perGame": 1
-      },
-      {
-        "rank": 13,
         "name": "MAILER, Xaver",
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
@@ -27374,7 +28453,7 @@
         "perGame": 1
       },
       {
-        "rank": 14,
+        "rank": 13,
         "name": "WINDHAGER, Raphael",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
@@ -27384,7 +28463,7 @@
         "perGame": 1
       },
       {
-        "rank": 15,
+        "rank": 14,
         "name": "MAILER, Viktor",
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
@@ -27394,7 +28473,7 @@
         "perGame": 1
       },
       {
-        "rank": 16,
+        "rank": 15,
         "name": "Spiekermann, David",
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
@@ -27404,10 +28483,20 @@
         "perGame": 1
       },
       {
-        "rank": 17,
+        "rank": 16,
         "name": "LETIC, Milos",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
+        "value": 1,
+        "games": 1,
+        "attempts": null,
+        "perGame": 1
+      },
+      {
+        "rank": 17,
+        "name": "SABATH, Simon",
+        "club": "HIT (SMC Innsbruck Handball Tirol)",
+        "team": "SMC Innsbruck Handball Tirol",
         "value": 1,
         "games": 1,
         "attempts": null,
@@ -27425,19 +28514,19 @@
       },
       {
         "rank": 19,
-        "name": "Barba, Mateo Ignacio",
-        "club": "Sparkasse Schwaz Handball Tirol",
-        "team": "Sparkasse Schwaz Handball Tirol FT",
-        "value": 4,
-        "games": 5,
+        "name": "Wögerer, Maximilian",
+        "club": "HIT (SMC Innsbruck Handball Tirol)",
+        "team": "SMC Innsbruck Handball Tirol",
+        "value": 5,
+        "games": 6,
         "attempts": null,
-        "perGame": 0.8
+        "perGame": 0.83333
       },
       {
         "rank": 20,
-        "name": "HRNCIC, Armin",
-        "club": "Sportunion Wels Handball",
-        "team": "HSC Wels",
+        "name": "Barba, Mateo Ignacio",
+        "club": "Sparkasse Schwaz Handball Tirol",
+        "team": "Sparkasse Schwaz Handball Tirol FT",
         "value": 4,
         "games": 5,
         "attempts": null,
@@ -27465,16 +28554,6 @@
       },
       {
         "rank": 23,
-        "name": "Bosnjak, Gabriel",
-        "club": "Sportunion Wels Handball",
-        "team": "HSC Wels",
-        "value": 3,
-        "games": 4,
-        "attempts": null,
-        "perGame": 0.75
-      },
-      {
-        "rank": 24,
         "name": "HINTERREITER, Moritz",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
@@ -27484,7 +28563,7 @@
         "perGame": 0.75
       },
       {
-        "rank": 25,
+        "rank": 24,
         "name": "KÖSTER, Wenzel",
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
@@ -27494,7 +28573,7 @@
         "perGame": 0.75
       },
       {
-        "rank": 26,
+        "rank": 25,
         "name": "Fink, Paul",
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
@@ -27504,10 +28583,20 @@
         "perGame": 0.66667
       },
       {
-        "rank": 27,
+        "rank": 26,
         "name": "Geller, Theodor",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
+        "value": 4,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.66667
+      },
+      {
+        "rank": 27,
+        "name": "HRNCIC, Armin",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
         "value": 4,
         "games": 6,
         "attempts": null,
@@ -27525,6 +28614,16 @@
       },
       {
         "rank": 29,
+        "name": "Oljaca, Stevan",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 4,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.66667
+      },
+      {
+        "rank": 30,
         "name": "PIRINGER, Jannik",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
@@ -27534,7 +28633,7 @@
         "perGame": 0.66667
       },
       {
-        "rank": 30,
+        "rank": 31,
         "name": "VIKTOR, Ivo",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
@@ -27544,7 +28643,7 @@
         "perGame": 0.66667
       },
       {
-        "rank": 31,
+        "rank": 32,
         "name": "HEMMES, Julius",
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
@@ -27554,7 +28653,7 @@
         "perGame": 0.66667
       },
       {
-        "rank": 32,
+        "rank": 33,
         "name": "ARNDT, Arvid",
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
@@ -27564,18 +28663,8 @@
         "perGame": 0.6
       },
       {
-        "rank": 33,
-        "name": "DOBRIC, Marko",
-        "club": "HIT (SMC Innsbruck Handball Tirol)",
-        "team": "SMC Innsbruck Handball Tirol",
-        "value": 3,
-        "games": 5,
-        "attempts": null,
-        "perGame": 0.6
-      },
-      {
         "rank": 34,
-        "name": "MAREK, David",
+        "name": "Bosnjak, Gabriel",
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
         "value": 3,
@@ -27585,16 +28674,6 @@
       },
       {
         "rank": 35,
-        "name": "Oljaca, Stevan",
-        "club": "Sportunion Wels Handball",
-        "team": "HSC Wels",
-        "value": 3,
-        "games": 5,
-        "attempts": null,
-        "perGame": 0.6
-      },
-      {
-        "rank": 36,
         "name": "SCHNEIDER, Florian",
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
@@ -27602,6 +28681,16 @@
         "games": 5,
         "attempts": null,
         "perGame": 0.6
+      },
+      {
+        "rank": 36,
+        "name": "DOBRIC, Marko",
+        "club": "HIT (SMC Innsbruck Handball Tirol)",
+        "team": "SMC Innsbruck Handball Tirol",
+        "value": 3,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.5
       },
       {
         "rank": 37,
@@ -27625,6 +28714,16 @@
       },
       {
         "rank": 39,
+        "name": "MAREK, David",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 3,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.5
+      },
+      {
+        "rank": 40,
         "name": "REICHLE, Moritz",
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
@@ -27634,7 +28733,7 @@
         "perGame": 0.5
       },
       {
-        "rank": 40,
+        "rank": 41,
         "name": "Eid, Hussain",
         "club": "Sportunion Wels Handball",
         "team": "HSC Wels",
@@ -27644,7 +28743,7 @@
         "perGame": 0.5
       },
       {
-        "rank": 41,
+        "rank": 42,
         "name": "HAGEDORN, Christoph",
         "club": "HIT (SMC Innsbruck Handball Tirol)",
         "team": "SMC Innsbruck Handball Tirol",
@@ -27654,7 +28753,7 @@
         "perGame": 0.5
       },
       {
-        "rank": 42,
+        "rank": 43,
         "name": "MAGER, Elias",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
@@ -27664,7 +28763,7 @@
         "perGame": 0.5
       },
       {
-        "rank": 43,
+        "rank": 44,
         "name": "Brunner, Julian",
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
@@ -27674,7 +28773,7 @@
         "perGame": 0.4
       },
       {
-        "rank": 44,
+        "rank": 45,
         "name": "Hakli, Noyan",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
@@ -27684,20 +28783,10 @@
         "perGame": 0.4
       },
       {
-        "rank": 45,
+        "rank": 46,
         "name": "Lang, Noah Karlheinz",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
-        "value": 2,
-        "games": 5,
-        "attempts": null,
-        "perGame": 0.4
-      },
-      {
-        "rank": 46,
-        "name": "LORENZ, Fabian",
-        "club": "Sportunion Wels Handball",
-        "team": "HSC Wels",
         "value": 2,
         "games": 5,
         "attempts": null,
@@ -27725,6 +28814,16 @@
       },
       {
         "rank": 49,
+        "name": "DUDLAK, Michael Justin",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 2,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.33333
+      },
+      {
+        "rank": 50,
         "name": "Kneidinger, David",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
@@ -27734,7 +28833,7 @@
         "perGame": 0.33333
       },
       {
-        "rank": 50,
+        "rank": 51,
         "name": "KRAWITZ, Joshua",
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
@@ -27744,7 +28843,17 @@
         "perGame": 0.33333
       },
       {
-        "rank": 51,
+        "rank": 52,
+        "name": "LORENZ, Fabian",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 2,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.33333
+      },
+      {
+        "rank": 53,
         "name": "MARINKOVIC, Julian",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
@@ -27754,7 +28863,7 @@
         "perGame": 0.33333
       },
       {
-        "rank": 52,
+        "rank": 54,
         "name": "NIEDERMÜLLER, Philipp",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
@@ -27764,7 +28873,7 @@
         "perGame": 0.33333
       },
       {
-        "rank": 53,
+        "rank": 55,
         "name": "OPPERMANN, Dominik",
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
@@ -27774,7 +28883,7 @@
         "perGame": 0.33333
       },
       {
-        "rank": 54,
+        "rank": 56,
         "name": "SINZ, Georg",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
@@ -27784,7 +28893,7 @@
         "perGame": 0.33333
       },
       {
-        "rank": 55,
+        "rank": 57,
         "name": "DURIC, Milanko",
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
@@ -27794,7 +28903,7 @@
         "perGame": 0.25
       },
       {
-        "rank": 56,
+        "rank": 58,
         "name": "Eder, Jonathan",
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
@@ -27804,7 +28913,7 @@
         "perGame": 0.25
       },
       {
-        "rank": 57,
+        "rank": 59,
         "name": "NANA AGYAPONG, Bryan",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
@@ -27814,7 +28923,7 @@
         "perGame": 0.25
       },
       {
-        "rank": 58,
+        "rank": 60,
         "name": "NANA AGYAPONG, Marques",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
@@ -27824,7 +28933,7 @@
         "perGame": 0.25
       },
       {
-        "rank": 59,
+        "rank": 61,
         "name": "NOWOPOLSKI, Jakub",
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
@@ -27834,7 +28943,7 @@
         "perGame": 0.25
       },
       {
-        "rank": 60,
+        "rank": 62,
         "name": "OBE, Anasemi Bliss",
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
@@ -27844,7 +28953,17 @@
         "perGame": 0.25
       },
       {
-        "rank": 61,
+        "rank": 63,
+        "name": "PALAN, Fabian",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 1,
+        "games": 4,
+        "attempts": null,
+        "perGame": 0.25
+      },
+      {
+        "rank": 64,
         "name": "Schmidt, Joshua",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
@@ -27854,7 +28973,7 @@
         "perGame": 0.25
       },
       {
-        "rank": 62,
+        "rank": 65,
         "name": "STATTHALER, Lukas",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
@@ -27864,40 +28983,10 @@
         "perGame": 0.25
       },
       {
-        "rank": 63,
-        "name": "Djordjevic, Marko",
-        "club": "HIT (SMC Innsbruck Handball Tirol)",
-        "team": "SMC Innsbruck Handball Tirol",
-        "value": 1,
-        "games": 5,
-        "attempts": null,
-        "perGame": 0.2
-      },
-      {
-        "rank": 64,
-        "name": "DUDLAK, Michael Justin",
-        "club": "Sportunion Wels Handball",
-        "team": "HSC Wels",
-        "value": 1,
-        "games": 5,
-        "attempts": null,
-        "perGame": 0.2
-      },
-      {
-        "rank": 65,
+        "rank": 66,
         "name": "Emeka, Lewis",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
-        "value": 1,
-        "games": 5,
-        "attempts": null,
-        "perGame": 0.2
-      },
-      {
-        "rank": 66,
-        "name": "GEORGIOU, Kyriakos",
-        "club": "Sportunion Wels Handball",
-        "team": "HSC Wels",
         "value": 1,
         "games": 5,
         "attempts": null,
@@ -27915,26 +29004,6 @@
       },
       {
         "rank": 68,
-        "name": "PAVLOVIC, Patrik",
-        "club": "Sportunion Wels Handball",
-        "team": "HSC Wels",
-        "value": 1,
-        "games": 5,
-        "attempts": null,
-        "perGame": 0.2
-      },
-      {
-        "rank": 69,
-        "name": "RÖTHIG, Daniel",
-        "club": "Sportunion Wels Handball",
-        "team": "HSC Wels",
-        "value": 1,
-        "games": 5,
-        "attempts": null,
-        "perGame": 0.2
-      },
-      {
-        "rank": 70,
         "name": "STACHELBERGER, Nick",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
@@ -27944,7 +29013,7 @@
         "perGame": 0.2
       },
       {
-        "rank": 71,
+        "rank": 69,
         "name": "TABAKOVIC, Benjamin",
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
@@ -27954,7 +29023,7 @@
         "perGame": 0.2
       },
       {
-        "rank": 72,
+        "rank": 70,
         "name": "Uzicanin, Anton",
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
@@ -27964,10 +29033,30 @@
         "perGame": 0.2
       },
       {
-        "rank": 73,
+        "rank": 71,
         "name": "Barba, Francisco",
         "club": "Sparkasse Schwaz Handball Tirol",
         "team": "Sparkasse Schwaz Handball Tirol FT",
+        "value": 1,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.16667
+      },
+      {
+        "rank": 72,
+        "name": "Djordjevic, Marko",
+        "club": "HIT (SMC Innsbruck Handball Tirol)",
+        "team": "SMC Innsbruck Handball Tirol",
+        "value": 1,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.16667
+      },
+      {
+        "rank": 73,
+        "name": "GEORGIOU, Kyriakos",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
         "value": 1,
         "games": 6,
         "attempts": null,
@@ -27992,21 +29081,41 @@
         "games": 6,
         "attempts": null,
         "perGame": 0.16667
+      },
+      {
+        "rank": 76,
+        "name": "PAVLOVIC, Patrik",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 1,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.16667
+      },
+      {
+        "rank": 77,
+        "name": "RÖTHIG, Daniel",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 1,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.16667
+      },
+      {
+        "rank": 78,
+        "name": "STAUDINGER, Mathias",
+        "club": "HIT (SMC Innsbruck Handball Tirol)",
+        "team": "SMC Innsbruck Handball Tirol",
+        "value": 1,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.16667
       }
     ],
     "gelb": [
       {
         "rank": 1,
-        "name": "HRNCIC, Armin",
-        "club": "Sportunion Wels Handball",
-        "team": "HSC Wels",
-        "value": 1,
-        "games": 5,
-        "attempts": null,
-        "perGame": 0.2
-      },
-      {
-        "rank": 2,
         "name": "Schweighofer, Leo",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
@@ -28016,20 +29125,30 @@
         "perGame": 0.2
       },
       {
-        "rank": 3,
-        "name": "Wögerer, Maximilian",
-        "club": "HIT (SMC Innsbruck Handball Tirol)",
-        "team": "SMC Innsbruck Handball Tirol",
+        "rank": 2,
+        "name": "HRNCIC, Armin",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
         "value": 1,
-        "games": 5,
+        "games": 6,
         "attempts": null,
-        "perGame": 0.2
+        "perGame": 0.16667
       },
       {
-        "rank": 4,
+        "rank": 3,
         "name": "PIRINGER, Jannik",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
+        "value": 1,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.16667
+      },
+      {
+        "rank": 4,
+        "name": "Wögerer, Maximilian",
+        "club": "HIT (SMC Innsbruck Handball Tirol)",
+        "team": "SMC Innsbruck Handball Tirol",
         "value": 1,
         "games": 6,
         "attempts": null,
@@ -28039,6 +29158,16 @@
     "rot": [
       {
         "rank": 1,
+        "name": "HRNCIC, Armin",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 2,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.33333
+      },
+      {
+        "rank": 2,
         "name": "AUFHAUSER, Sebastian",
         "club": "Union Handballclub Salzburg",
         "team": "UHC Salzburg",
@@ -28048,7 +29177,7 @@
         "perGame": 0.25
       },
       {
-        "rank": 2,
+        "rank": 3,
         "name": "HÄMMERLE, Matthias",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
@@ -28058,7 +29187,7 @@
         "perGame": 0.25
       },
       {
-        "rank": 3,
+        "rank": 4,
         "name": "Safranko, Matko",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
@@ -28068,7 +29197,7 @@
         "perGame": 0.25
       },
       {
-        "rank": 4,
+        "rank": 5,
         "name": "WINDHAGER, Raphael",
         "club": "HC LINZ AG",
         "team": "SG HC LINZ AG/Neue Heimat FT",
@@ -28078,47 +29207,7 @@
         "perGame": 0.25
       },
       {
-        "rank": 5,
-        "name": "HRNCIC, Armin",
-        "club": "Sportunion Wels Handball",
-        "team": "HSC Wels",
-        "value": 1,
-        "games": 5,
-        "attempts": null,
-        "perGame": 0.2
-      },
-      {
         "rank": 6,
-        "name": "Oljaca, Stevan",
-        "club": "Sportunion Wels Handball",
-        "team": "HSC Wels",
-        "value": 1,
-        "games": 5,
-        "attempts": null,
-        "perGame": 0.2
-      },
-      {
-        "rank": 7,
-        "name": "PAVLOVIC, Patrik",
-        "club": "Sportunion Wels Handball",
-        "team": "HSC Wels",
-        "value": 1,
-        "games": 5,
-        "attempts": null,
-        "perGame": 0.2
-      },
-      {
-        "rank": 8,
-        "name": "Wögerer, Maximilian",
-        "club": "HIT (SMC Innsbruck Handball Tirol)",
-        "team": "SMC Innsbruck Handball Tirol",
-        "value": 1,
-        "games": 5,
-        "attempts": null,
-        "perGame": 0.2
-      },
-      {
-        "rank": 9,
         "name": "Geller, Theodor",
         "club": "Bregenz Handball",
         "team": "Bregenz Handball FT",
@@ -28128,7 +29217,7 @@
         "perGame": 0.16667
       },
       {
-        "rank": 10,
+        "rank": 7,
         "name": "LINDENHOFER, Philipp",
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
@@ -28138,7 +29227,17 @@
         "perGame": 0.16667
       },
       {
-        "rank": 11,
+        "rank": 8,
+        "name": "Oljaca, Stevan",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 1,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.16667
+      },
+      {
+        "rank": 9,
         "name": "OPPERMANN, Manuel",
         "club": "SK-Handball Traun",
         "team": "SK Konstant Traun / Edelweiss",
@@ -28148,10 +29247,30 @@
         "perGame": 0.16667
       },
       {
-        "rank": 12,
+        "rank": 10,
+        "name": "PAVLOVIC, Patrik",
+        "club": "Sportunion Wels Handball",
+        "team": "HSC Wels",
+        "value": 1,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.16667
+      },
+      {
+        "rank": 11,
         "name": "PIRINGER, Jannik",
         "club": "Alpla HC Hard",
         "team": "Alpla HC Hard FT",
+        "value": 1,
+        "games": 6,
+        "attempts": null,
+        "perGame": 0.16667
+      },
+      {
+        "rank": 12,
+        "name": "Wögerer, Maximilian",
+        "club": "HIT (SMC Innsbruck Handball Tirol)",
+        "team": "SMC Innsbruck Handball Tirol",
         "value": 1,
         "games": 6,
         "attempts": null,
@@ -28162,17 +29281,17 @@
   "groupStats": {
     "group": {
       "name": "Gruppenstatistik",
-      "games": 23,
+      "games": 24,
       "scheduled": 56,
-      "goals": 1351,
-      "sevenMAttempts": 219,
-      "sevenMGoals": 158,
-      "twoMin": 200,
-      "yellow": 12,
-      "red": 12,
-      "spectators": 1836,
+      "goals": 1405,
+      "sevenMAttempts": 225,
+      "sevenMGoals": 160,
+      "twoMin": 208,
+      "yellow": 13,
+      "red": 13,
+      "spectators": 2086,
       "homeWins": 17,
-      "awayWins": 6,
+      "awayWins": 7,
       "draws": 0
     },
     "teams": [
@@ -28186,7 +29305,7 @@
         "twoMin": 27,
         "yellow": 2,
         "red": 3,
-        "spectators": 470,
+        "spectators": 670,
         "homeWins": 2,
         "awayWins": 1,
         "draws": 0
@@ -28208,17 +29327,17 @@
       },
       {
         "name": "HSC Wels",
-        "games": 5,
+        "games": 6,
         "scheduled": 14,
-        "goals": 197,
-        "sevenMAttempts": 13,
-        "sevenMGoals": 12,
-        "twoMin": 28,
-        "yellow": 2,
-        "red": 3,
-        "spectators": 778,
+        "goals": 227,
+        "sevenMAttempts": 17,
+        "sevenMGoals": 13,
+        "twoMin": 32,
+        "yellow": 3,
+        "red": 4,
+        "spectators": 828,
         "homeWins": 4,
-        "awayWins": 1,
+        "awayWins": 2,
         "draws": 0
       },
       {
@@ -28253,15 +29372,15 @@
       },
       {
         "name": "SMC Innsbruck Handball Tirol",
-        "games": 5,
+        "games": 6,
         "scheduled": 14,
-        "goals": 145,
-        "sevenMAttempts": 18,
-        "sevenMGoals": 12,
-        "twoMin": 21,
+        "goals": 169,
+        "sevenMAttempts": 20,
+        "sevenMGoals": 13,
+        "twoMin": 25,
         "yellow": 1,
         "red": 1,
-        "spectators": 282,
+        "spectators": 332,
         "homeWins": 3,
         "awayWins": 0,
         "draws": 0
@@ -28291,7 +29410,7 @@
         "twoMin": 27,
         "yellow": 3,
         "red": 1,
-        "spectators": 389,
+        "spectators": 589,
         "homeWins": 2,
         "awayWins": 1,
         "draws": 0

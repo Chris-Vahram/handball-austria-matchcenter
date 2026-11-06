@@ -36,7 +36,7 @@ Independent sales prototype (not an official ÖHB or nuLiga product). Same data,
 - Redesign lives in a new app **v3**, reusing the existing domain/data layer. Root `src/` (version emailed to ÖHB) and `v2/` stay untouched.
 - Data: 2026/27 nuLiga pages added to the importer allowlist; operator CLI only, 24h cache, ≥1500ms delay, max 2 retries, no fetching during request handling (ADR-002/004; allowlist extension needs an ADR update).
 - Privacy (binding): adult-competition player stats only from public match reports, limited to display name, shirt number, team, goals, 7m, cards, 2-min. No referee, Zeitnehmer or Mannschaftsoffizielle data, contacts, birthdates, pass numbers, source-person IDs or portrait links. Traun squad 26/27 is all adult (owner, 2026-10-31).
-- Player names: shown for all teams in all league games, as in the public nuLiga reports (owner decision 2026-10-31). Because opponents may field U18 players in adult competitions and age cannot be detected without birthdates, this supersedes the blanket "U18 player-level off" rule for adult competitions. **Open:** must be recorded as a new privacy decision in the v3 OpenSpec change before any names ship; youth competitions stay off.
+- Player names: shown for all teams in all league games, as in the public nuLiga reports (owner decision 2026-10-31). Because opponents may field U18 players in adult competitions and age cannot be detected without birthdates, this supersedes the blanket "U18 player-level off" rule (ADR-005). Since 2026-11-06 youth competitions are treated like adult ones (ADR-005 amendment).
 - Every page shows data source (nuLiga) and "Stand" date.
 - Out of scope: login/admin, result entry, live scoring, push, analytics, English UI, native app.
 
