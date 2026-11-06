@@ -83,6 +83,7 @@ and `group` parameters only):
 - Match reports: `groupMeetingReport?meeting=<id>&championship=…&group=…`
 - Player statistics: `groupMeetingStatistics?displayType=<playerGoals|playerSevenMeterGoals|playerSuspensions|playerYellowCards|playerRedCards>&championship=…&group=…`
 - Group and team statistics (added 2026-10-31, aggregate team data only): `groupMeetingStatistics?displayType=groupAndTeams&championship=…&group=…`
+- Venue facts (added 2026-11-01, change `improve-v3-usability`): `courtInfo?federation=<ÖHB|OÖHV>&roundTyp=0&championship=…&location=<id>` for venues referenced in the configured schedules. Only name, address and "Haftmittelverwendung" are read; the court schedule on that page (other competitions, referee initials) is never parsed.
 
 Not allowed: `nuDokument` PDFs, `teamPortrait` (publishes team officials with phone numbers; team pages are derived from the schedule instead), contact/officials pages ("Spielleiter und
 Schiedsrichter-Einteiler", "Kontaktadressen, Hallen …"), `playerPortrait`,

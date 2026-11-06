@@ -108,3 +108,23 @@ Do not say:
 - Send one short follow-up.
 - If no response, call OEHB office or nu Datenautomaten imprint phone and ask
   for routing to the correct product/contact person.
+
+## Wave 2 (prepared 2026-11-05, not sent)
+
+Prototype: v3 (`v3/`, real nuLiga 2026/27 data, mobile-first). Chris deploys it
+himself (Vercel project, root directory `v3`) before sending.
+
+- **Primary recipient: nu Datenautomaten GmbH** (operator and developer of
+  nuLiga; only party that can implement a frontend). Contact as published in
+  https://www.nu-gmbh.com/impressum (Geschäftsführung).
+- **CC: ÖHB** (content owner of nuLiga Handball Austria; wave 1 went to the ÖHB
+  office on 2026-06-11).
+- **Not:** the agency credited for the old interaction design in the nuLiga
+  imprint (no decision role).
+- **Leverage:** the request comes from the whole SK Traun team; ask the coach /
+  club or OÖHV to back it.
+- Message points: team request after complaints about the new nuLiga frontend
+  and the reverted old one; prototype as suggestion, not replacement; respect
+  for officials' workflows; ask about a pilot and an official API/export.
+- Draft text: local file `continuations/email-nu-datenautomaten-2026-11-05.md`
+  (gitignored).

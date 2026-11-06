@@ -14,9 +14,14 @@
       "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingStatistics?displayType=playerSuspensions&championship=O%C3%96HV+26%2F27&group=218721",
       "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingStatistics?displayType=playerYellowCards&championship=O%C3%96HV+26%2F27&group=218721",
       "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingStatistics?displayType=playerRedCards&championship=O%C3%96HV+26%2F27&group=218721",
-      "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingStatistics?displayType=groupAndTeams&championship=O%C3%96HV+26%2F27&group=218721"
+      "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/groupMeetingStatistics?displayType=groupAndTeams&championship=O%C3%96HV+26%2F27&group=218721",
+      "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/courtInfo?federation=O%C3%96HV&roundTyp=0&championship=O%C3%96HV+26%2F27&location=18369",
+      "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/courtInfo?federation=O%C3%96HV&roundTyp=0&championship=O%C3%96HV+26%2F27&location=18376",
+      "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/courtInfo?federation=O%C3%96HV&roundTyp=0&championship=O%C3%96HV+26%2F27&location=18386",
+      "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/courtInfo?federation=O%C3%96HV&roundTyp=0&championship=O%C3%96HV+26%2F27&location=18391",
+      "https://oehb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBAT.woa/wa/courtInfo?federation=O%C3%96HV&roundTyp=0&championship=O%C3%96HV+26%2F27&location=18394"
     ],
-    "importedAt": "2026-11-01T16:37:05.548Z"
+    "importedAt": "2026-11-01T17:50:12.827Z"
   },
   "standings": [
     {
@@ -87,6 +92,7 @@
       "date": "2026-10-02",
       "time": "20:15",
       "venue": "BSH Eferding",
+      "venueId": "18386",
       "home": "HC Eferding",
       "away": "Sportunion EDELWEISS Linz / SK Traun",
       "status": "played",
@@ -108,6 +114,7 @@
       "date": "2026-10-03",
       "time": "19:00",
       "venue": "SH Pernau, Wels - Sterner Arena",
+      "venueId": "18394",
       "home": "HSC Wels",
       "away": "ASKÖ HC Urfahr",
       "status": "played",
@@ -129,6 +136,7 @@
       "date": "2026-10-17",
       "time": "17:30",
       "venue": "SMS Kleinmünchen, Linz",
+      "venueId": "18376",
       "home": "SG HC LINZ AG/Neue Heimat",
       "away": "HC Eferding",
       "status": "played",
@@ -150,6 +158,7 @@
       "date": "2026-10-17",
       "time": "18:00",
       "venue": "SH Hüttnerschule, Linz",
+      "venueId": "18391",
       "home": "Sportunion EDELWEISS Linz / SK Traun",
       "away": "HSC Wels",
       "status": "played",
@@ -171,6 +180,7 @@
       "date": "2026-10-24",
       "time": "18:30",
       "venue": "SH Harbach, Linz",
+      "venueId": "18369",
       "home": "ASKÖ HC Urfahr",
       "away": "HC Eferding",
       "status": "played",
@@ -192,6 +202,7 @@
       "date": "2026-11-06",
       "time": "20:15",
       "venue": "BSH Eferding",
+      "venueId": "18386",
       "home": "HC Eferding",
       "away": "HSC Wels",
       "status": "scheduled",
@@ -207,6 +218,7 @@
       "date": "2026-11-07",
       "time": "17:00",
       "venue": "SMS Kleinmünchen, Linz",
+      "venueId": "18376",
       "home": "SG HC LINZ AG/Neue Heimat",
       "away": "ASKÖ HC Urfahr",
       "status": "scheduled",
@@ -222,6 +234,7 @@
       "date": "2026-11-21",
       "time": "19:00",
       "venue": "SH Harbach, Linz",
+      "venueId": "18369",
       "home": "ASKÖ HC Urfahr",
       "away": "Sportunion EDELWEISS Linz / SK Traun",
       "status": "scheduled",
@@ -237,6 +250,7 @@
       "date": "2026-11-22",
       "time": "19:00",
       "venue": "SH Pernau, Wels - Sterner Arena",
+      "venueId": "18394",
       "home": "HSC Wels",
       "away": "SG HC LINZ AG/Neue Heimat",
       "status": "scheduled",
@@ -252,6 +266,7 @@
       "date": "2026-11-29",
       "time": "19:00",
       "venue": "SH Pernau, Wels - Sterner Arena",
+      "venueId": "18394",
       "home": "HSC Wels",
       "away": "HC Eferding",
       "status": "scheduled",
@@ -267,6 +282,7 @@
       "date": "2026-12-01",
       "time": "20:15",
       "venue": "SH Hüttnerschule, Linz",
+      "venueId": "18391",
       "home": "Sportunion EDELWEISS Linz / SK Traun",
       "away": "SG HC LINZ AG/Neue Heimat",
       "status": "scheduled",
@@ -282,6 +298,7 @@
       "date": "2026-12-04",
       "time": "20:15",
       "venue": "BSH Eferding",
+      "venueId": "18386",
       "home": "HC Eferding",
       "away": "ASKÖ HC Urfahr",
       "status": "scheduled",
@@ -297,6 +314,7 @@
       "date": "2026-12-12",
       "time": "19:00",
       "venue": "SH Harbach, Linz",
+      "venueId": "18369",
       "home": "ASKÖ HC Urfahr",
       "away": "HSC Wels",
       "status": "scheduled",
@@ -312,6 +330,7 @@
       "date": "2026-12-20",
       "time": "18:00",
       "venue": "SH Hüttnerschule, Linz",
+      "venueId": "18391",
       "home": "Sportunion EDELWEISS Linz / SK Traun",
       "away": "HC Eferding",
       "status": "scheduled",
@@ -327,6 +346,7 @@
       "date": "2027-01-15",
       "time": "20:15",
       "venue": "BSH Eferding",
+      "venueId": "18386",
       "home": "HC Eferding",
       "away": "SG HC LINZ AG/Neue Heimat",
       "status": "scheduled",
@@ -342,6 +362,7 @@
       "date": "2027-01-17",
       "time": "19:00",
       "venue": "SH Pernau, Wels - Sterner Arena",
+      "venueId": "18394",
       "home": "HSC Wels",
       "away": "Sportunion EDELWEISS Linz / SK Traun",
       "status": "scheduled",
@@ -357,6 +378,7 @@
       "date": "2027-01-23",
       "time": "19:00",
       "venue": "SH Harbach, Linz",
+      "venueId": "18369",
       "home": "ASKÖ HC Urfahr",
       "away": "SG HC LINZ AG/Neue Heimat",
       "status": "scheduled",
@@ -372,6 +394,7 @@
       "date": "2027-01-29",
       "time": "20:15",
       "venue": "SMS Kleinmünchen, Linz",
+      "venueId": "18376",
       "home": "Sportunion EDELWEISS Linz / SK Traun",
       "away": "ASKÖ HC Urfahr",
       "status": "scheduled",
@@ -387,6 +410,7 @@
       "date": "2027-01-30",
       "time": "18:30",
       "venue": "SMS Kleinmünchen, Linz",
+      "venueId": "18376",
       "home": "SG HC LINZ AG/Neue Heimat",
       "away": "HSC Wels",
       "status": "scheduled",
@@ -402,6 +426,7 @@
       "date": "2027-02-06",
       "time": "19:00",
       "venue": "SH Harbach, Linz",
+      "venueId": "18369",
       "home": "ASKÖ HC Urfahr",
       "away": "HC Eferding",
       "status": "scheduled",
@@ -417,6 +442,7 @@
       "date": "2027-02-07",
       "time": "17:30",
       "venue": "SMS Kleinmünchen, Linz",
+      "venueId": "18376",
       "home": "SG HC LINZ AG/Neue Heimat",
       "away": "Sportunion EDELWEISS Linz / SK Traun",
       "status": "scheduled",
@@ -432,6 +458,7 @@
       "date": "2027-02-12",
       "time": "20:15",
       "venue": "BSH Eferding",
+      "venueId": "18386",
       "home": "HC Eferding",
       "away": "Sportunion EDELWEISS Linz / SK Traun",
       "status": "scheduled",
@@ -447,6 +474,7 @@
       "date": "2027-02-14",
       "time": "19:00",
       "venue": "SH Pernau, Wels - Sterner Arena",
+      "venueId": "18394",
       "home": "HSC Wels",
       "away": "ASKÖ HC Urfahr",
       "status": "scheduled",
@@ -462,6 +490,7 @@
       "date": "2027-02-27",
       "time": "18:30",
       "venue": "SMS Kleinmünchen, Linz",
+      "venueId": "18376",
       "home": "SG HC LINZ AG/Neue Heimat",
       "away": "HC Eferding",
       "status": "scheduled",
@@ -477,6 +506,7 @@
       "date": "2027-02-27",
       "time": "18:30",
       "venue": "SH Hüttnerschule, Linz",
+      "venueId": "18391",
       "home": "Sportunion EDELWEISS Linz / SK Traun",
       "away": "HSC Wels",
       "status": "scheduled",
@@ -492,6 +522,7 @@
       "date": "2027-03-05",
       "time": "20:15",
       "venue": "BSH Eferding",
+      "venueId": "18386",
       "home": "HC Eferding",
       "away": "HSC Wels",
       "status": "scheduled",
@@ -507,6 +538,7 @@
       "date": "2027-03-07",
       "time": "17:00",
       "venue": "SMS Kleinmünchen, Linz",
+      "venueId": "18376",
       "home": "SG HC LINZ AG/Neue Heimat",
       "away": "ASKÖ HC Urfahr",
       "status": "scheduled",
@@ -522,6 +554,7 @@
       "date": "2027-03-13",
       "time": "19:00",
       "venue": "SH Harbach, Linz",
+      "venueId": "18369",
       "home": "ASKÖ HC Urfahr",
       "away": "Sportunion EDELWEISS Linz / SK Traun",
       "status": "scheduled",
@@ -537,6 +570,7 @@
       "date": "2027-03-14",
       "time": "18:00",
       "venue": "SH Pernau, Wels - Sterner Arena",
+      "venueId": "18394",
       "home": "HSC Wels",
       "away": "SG HC LINZ AG/Neue Heimat",
       "status": "scheduled",
@@ -552,6 +586,7 @@
       "date": "2027-03-19",
       "time": "20:15",
       "venue": "SMS Kleinmünchen, Linz",
+      "venueId": "18376",
       "home": "Sportunion EDELWEISS Linz / SK Traun",
       "away": "SG HC LINZ AG/Neue Heimat",
       "status": "scheduled",
@@ -567,6 +602,7 @@
       "date": "2027-03-19",
       "time": "20:15",
       "venue": "BSH Eferding",
+      "venueId": "18386",
       "home": "HC Eferding",
       "away": "ASKÖ HC Urfahr",
       "status": "scheduled",
@@ -582,6 +618,7 @@
       "date": "2027-04-06",
       "time": "20:15",
       "venue": "SH Hüttnerschule, Linz",
+      "venueId": "18391",
       "home": "Sportunion EDELWEISS Linz / SK Traun",
       "away": "HC Eferding",
       "status": "scheduled",
@@ -597,6 +634,7 @@
       "date": "2027-04-10",
       "time": "19:00",
       "venue": "SH Harbach, Linz",
+      "venueId": "18369",
       "home": "ASKÖ HC Urfahr",
       "away": "HSC Wels",
       "status": "scheduled",
@@ -612,6 +650,7 @@
       "date": "2027-04-23",
       "time": "20:15",
       "venue": "BSH Eferding",
+      "venueId": "18386",
       "home": "HC Eferding",
       "away": "SG HC LINZ AG/Neue Heimat",
       "status": "scheduled",
@@ -627,6 +666,7 @@
       "date": "2027-04-25",
       "time": "19:00",
       "venue": "SH Pernau, Wels - Sterner Arena",
+      "venueId": "18394",
       "home": "HSC Wels",
       "away": "Sportunion EDELWEISS Linz / SK Traun",
       "status": "scheduled",
@@ -642,6 +682,7 @@
       "date": "2027-04-27",
       "time": "20:15",
       "venue": "SH Hüttnerschule, Linz",
+      "venueId": "18391",
       "home": "Sportunion EDELWEISS Linz / SK Traun",
       "away": "ASKÖ HC Urfahr",
       "status": "scheduled",
@@ -657,6 +698,7 @@
       "date": "2027-05-08",
       "time": "19:00",
       "venue": "SH Harbach, Linz",
+      "venueId": "18369",
       "home": "ASKÖ HC Urfahr",
       "away": "SG HC LINZ AG/Neue Heimat",
       "status": "scheduled",
@@ -672,6 +714,7 @@
       "date": "2027-05-09",
       "time": "19:00",
       "venue": "SH Pernau, Wels - Sterner Arena",
+      "venueId": "18394",
       "home": "HSC Wels",
       "away": "HC Eferding",
       "status": "scheduled",
@@ -687,6 +730,7 @@
       "date": "2027-05-22",
       "time": "17:00",
       "venue": "SMS Kleinmünchen, Linz",
+      "venueId": "18376",
       "home": "SG HC LINZ AG/Neue Heimat",
       "away": "HSC Wels",
       "status": "scheduled",
@@ -702,6 +746,7 @@
       "date": "2027-06-05",
       "time": "17:00",
       "venue": "SMS Kleinmünchen, Linz",
+      "venueId": "18376",
       "home": "SG HC LINZ AG/Neue Heimat",
       "away": "Sportunion EDELWEISS Linz / SK Traun",
       "status": "scheduled",
@@ -983,7 +1028,765 @@
           "timeouts": 2,
           "disqualifications": 0
         }
-      }
+      },
+      "timeline": [
+        {
+          "minute": "01:13",
+          "side": "home",
+          "score": {
+            "home": 1,
+            "away": 0
+          },
+          "type": "Tor",
+          "shirt": "7",
+          "name": "KOLB, Jonathan Navin"
+        },
+        {
+          "minute": "01:32",
+          "side": "away",
+          "score": {
+            "home": 1,
+            "away": 1
+          },
+          "type": "Tor",
+          "shirt": "22",
+          "name": "Ben Abid, Maher"
+        },
+        {
+          "minute": "02:27",
+          "side": "home",
+          "score": {
+            "home": 1,
+            "away": 1
+          },
+          "type": "7m vergeben",
+          "shirt": "15",
+          "name": "Mertens, Florian"
+        },
+        {
+          "minute": "03:49",
+          "side": "away",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "9",
+          "name": "HINTERHÖLZL, Stefan"
+        },
+        {
+          "minute": "06:16",
+          "side": "away",
+          "score": {
+            "home": 1,
+            "away": 2
+          },
+          "type": "Tor",
+          "shirt": "22",
+          "name": "Ben Abid, Maher"
+        },
+        {
+          "minute": "06:27",
+          "side": "home",
+          "score": {
+            "home": 2,
+            "away": 2
+          },
+          "type": "Tor",
+          "shirt": "9",
+          "name": "STALTNER, Jonas"
+        },
+        {
+          "minute": "07:17",
+          "side": "home",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "24",
+          "name": "FINK, Robert"
+        },
+        {
+          "minute": "07:27",
+          "side": "home",
+          "score": {
+            "home": 3,
+            "away": 2
+          },
+          "type": "Tor",
+          "shirt": "11",
+          "name": "PETZOLD, Paul"
+        },
+        {
+          "minute": "09:04",
+          "side": "away",
+          "score": {
+            "home": 3,
+            "away": 3
+          },
+          "type": "Tor",
+          "shirt": "9",
+          "name": "HINTERHÖLZL, Stefan"
+        },
+        {
+          "minute": "10:02",
+          "side": "home",
+          "score": {
+            "home": 4,
+            "away": 3
+          },
+          "type": "Tor",
+          "shirt": "24",
+          "name": "FINK, Robert"
+        },
+        {
+          "minute": "13:17",
+          "side": "home",
+          "score": {
+            "home": 5,
+            "away": 3
+          },
+          "type": "Tor",
+          "shirt": "11",
+          "name": "PETZOLD, Paul"
+        },
+        {
+          "minute": "13:43",
+          "side": "home",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "24",
+          "name": "FINK, Robert"
+        },
+        {
+          "minute": "15:46",
+          "side": "home",
+          "score": {
+            "home": 6,
+            "away": 3
+          },
+          "type": "Tor",
+          "shirt": "11",
+          "name": "PETZOLD, Paul"
+        },
+        {
+          "minute": "16:23",
+          "side": "away",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "73",
+          "name": "ANDEXLINGER, Roman"
+        },
+        {
+          "minute": "17:15",
+          "side": "away",
+          "score": {
+            "home": 6,
+            "away": 4
+          },
+          "type": "Tor",
+          "shirt": "22",
+          "name": "Ben Abid, Maher"
+        },
+        {
+          "minute": "17:30",
+          "side": "home",
+          "score": {
+            "home": 7,
+            "away": 4
+          },
+          "type": "Tor",
+          "shirt": "25",
+          "name": "FLOßMANN, Tarek"
+        },
+        {
+          "minute": "18:03",
+          "side": "away",
+          "score": {
+            "home": 7,
+            "away": 5
+          },
+          "type": "Tor",
+          "shirt": "25",
+          "name": "Hötzel, Moritz"
+        },
+        {
+          "minute": "19:28",
+          "side": "home",
+          "score": {
+            "home": 8,
+            "away": 5
+          },
+          "type": "Tor",
+          "shirt": "9",
+          "name": "STALTNER, Jonas"
+        },
+        {
+          "minute": "21:54",
+          "side": "home",
+          "score": {
+            "home": 9,
+            "away": 5
+          },
+          "type": "Tor",
+          "shirt": "9",
+          "name": "STALTNER, Jonas"
+        },
+        {
+          "minute": "23:04",
+          "side": "home",
+          "score": {
+            "home": 10,
+            "away": 5
+          },
+          "type": "Tor",
+          "shirt": "33",
+          "name": "BACHMANN, Maximilian"
+        },
+        {
+          "minute": "24:11",
+          "side": "home",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "33",
+          "name": "BACHMANN, Maximilian"
+        },
+        {
+          "minute": "24:54",
+          "side": "home",
+          "score": {
+            "home": 11,
+            "away": 5
+          },
+          "type": "Tor",
+          "shirt": "25",
+          "name": "FLOßMANN, Tarek"
+        },
+        {
+          "minute": "25:02",
+          "side": "home",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "22",
+          "name": "ZINNER, Markus"
+        },
+        {
+          "minute": "25:08",
+          "side": "away",
+          "score": {
+            "home": 11,
+            "away": 6
+          },
+          "type": "Tor",
+          "shirt": "22",
+          "name": "Ben Abid, Maher"
+        },
+        {
+          "minute": "25:38",
+          "side": "home",
+          "score": {
+            "home": 12,
+            "away": 6
+          },
+          "type": "Tor",
+          "shirt": "25",
+          "name": "FLOßMANN, Tarek"
+        },
+        {
+          "minute": "25:50",
+          "side": "away",
+          "score": {
+            "home": 12,
+            "away": 7
+          },
+          "type": "Tor",
+          "shirt": "22",
+          "name": "Ben Abid, Maher"
+        },
+        {
+          "minute": "25:50",
+          "side": "home",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "9",
+          "name": "STALTNER, Jonas"
+        },
+        {
+          "minute": "26:19",
+          "side": "home",
+          "score": {
+            "home": 13,
+            "away": 7
+          },
+          "type": "Tor",
+          "shirt": "25",
+          "name": "FLOßMANN, Tarek"
+        },
+        {
+          "minute": "26:30",
+          "side": "away",
+          "score": {
+            "home": 13,
+            "away": 8
+          },
+          "type": "Tor",
+          "shirt": "2",
+          "name": "WIESINGER, Johannes"
+        },
+        {
+          "minute": "26:58",
+          "side": "away",
+          "score": {
+            "home": 13,
+            "away": 9
+          },
+          "type": "Tor",
+          "shirt": "22",
+          "name": "Ben Abid, Maher"
+        },
+        {
+          "minute": "27:31",
+          "side": "home",
+          "score": {
+            "home": 14,
+            "away": 9
+          },
+          "type": "Tor",
+          "shirt": "7",
+          "name": "KOLB, Jonathan Navin"
+        },
+        {
+          "minute": "28:34",
+          "side": "away",
+          "score": {
+            "home": 14,
+            "away": 10
+          },
+          "type": "Tor",
+          "shirt": "73",
+          "name": "ANDEXLINGER, Roman"
+        },
+        {
+          "minute": "29:18",
+          "side": "home",
+          "score": {
+            "home": 15,
+            "away": 10
+          },
+          "type": "Tor",
+          "shirt": "15",
+          "name": "Mertens, Florian"
+        },
+        {
+          "minute": "29:21",
+          "side": "away",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "22",
+          "name": "Ben Abid, Maher"
+        },
+        {
+          "minute": "30:38",
+          "side": "home",
+          "score": {
+            "home": 16,
+            "away": 10
+          },
+          "type": "7m-Tor",
+          "shirt": "9",
+          "name": "STALTNER, Jonas"
+        },
+        {
+          "minute": "31:16",
+          "side": "away",
+          "score": {
+            "home": 16,
+            "away": 11
+          },
+          "type": "Tor",
+          "shirt": "7",
+          "name": "LEHNER, Florian"
+        },
+        {
+          "minute": "31:25",
+          "side": "home",
+          "score": {
+            "home": 17,
+            "away": 11
+          },
+          "type": "Tor",
+          "shirt": "7",
+          "name": "KOLB, Jonathan Navin"
+        },
+        {
+          "minute": "31:58",
+          "side": "away",
+          "score": {
+            "home": 17,
+            "away": 12
+          },
+          "type": "Tor",
+          "shirt": "2",
+          "name": "WIESINGER, Johannes"
+        },
+        {
+          "minute": "32:41",
+          "side": "home",
+          "score": {
+            "home": 18,
+            "away": 12
+          },
+          "type": "Tor",
+          "shirt": "9",
+          "name": "STALTNER, Jonas"
+        },
+        {
+          "minute": "33:10",
+          "side": "away",
+          "score": {
+            "home": 18,
+            "away": 13
+          },
+          "type": "Tor",
+          "shirt": "2",
+          "name": "WIESINGER, Johannes"
+        },
+        {
+          "minute": "33:58",
+          "side": "away",
+          "score": {
+            "home": 18,
+            "away": 14
+          },
+          "type": "Tor",
+          "shirt": "7",
+          "name": "LEHNER, Florian"
+        },
+        {
+          "minute": "35:56",
+          "side": "home",
+          "score": {
+            "home": 19,
+            "away": 14
+          },
+          "type": "Tor",
+          "shirt": "11",
+          "name": "PETZOLD, Paul"
+        },
+        {
+          "minute": "36:08",
+          "side": "away",
+          "score": {
+            "home": 19,
+            "away": 15
+          },
+          "type": "Tor",
+          "shirt": "22",
+          "name": "Ben Abid, Maher"
+        },
+        {
+          "minute": "37:21",
+          "side": "home",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "33",
+          "name": "BACHMANN, Maximilian"
+        },
+        {
+          "minute": "37:31",
+          "side": "away",
+          "score": {
+            "home": 19,
+            "away": 16
+          },
+          "type": "Tor",
+          "shirt": "73",
+          "name": "ANDEXLINGER, Roman"
+        },
+        {
+          "minute": "38:23",
+          "side": "home",
+          "score": {
+            "home": 20,
+            "away": 16
+          },
+          "type": "7m-Tor",
+          "shirt": "9",
+          "name": "STALTNER, Jonas"
+        },
+        {
+          "minute": "39:12",
+          "side": "home",
+          "score": {
+            "home": 21,
+            "away": 16
+          },
+          "type": "Tor",
+          "shirt": "7",
+          "name": "KOLB, Jonathan Navin"
+        },
+        {
+          "minute": "39:22",
+          "side": "away",
+          "score": {
+            "home": 21,
+            "away": 17
+          },
+          "type": "Tor",
+          "shirt": "7",
+          "name": "LEHNER, Florian"
+        },
+        {
+          "minute": "40:03",
+          "side": "home",
+          "score": {
+            "home": 22,
+            "away": 17
+          },
+          "type": "Tor",
+          "shirt": "11",
+          "name": "PETZOLD, Paul"
+        },
+        {
+          "minute": "40:26",
+          "side": "away",
+          "score": {
+            "home": 22,
+            "away": 18
+          },
+          "type": "Tor",
+          "shirt": "2",
+          "name": "WIESINGER, Johannes"
+        },
+        {
+          "minute": "41:41",
+          "side": "away",
+          "score": {
+            "home": 22,
+            "away": 18
+          },
+          "type": "7m vergeben",
+          "shirt": "22",
+          "name": "Ben Abid, Maher"
+        },
+        {
+          "minute": "42:17",
+          "side": "home",
+          "score": {
+            "home": 23,
+            "away": 18
+          },
+          "type": "Tor",
+          "shirt": "15",
+          "name": "Mertens, Florian"
+        },
+        {
+          "minute": "42:43",
+          "side": "away",
+          "score": {
+            "home": 23,
+            "away": 19
+          },
+          "type": "Tor",
+          "shirt": "22",
+          "name": "Ben Abid, Maher"
+        },
+        {
+          "minute": "43:06",
+          "side": "away",
+          "score": {
+            "home": 23,
+            "away": 20
+          },
+          "type": "Tor",
+          "shirt": "2",
+          "name": "WIESINGER, Johannes"
+        },
+        {
+          "minute": "43:45",
+          "side": "home",
+          "score": {
+            "home": 24,
+            "away": 20
+          },
+          "type": "Tor",
+          "shirt": "9",
+          "name": "STALTNER, Jonas"
+        },
+        {
+          "minute": "45:34",
+          "side": "away",
+          "score": {
+            "home": 24,
+            "away": 21
+          },
+          "type": "Tor",
+          "shirt": "73",
+          "name": "ANDEXLINGER, Roman"
+        },
+        {
+          "minute": "45:54",
+          "side": "home",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "9",
+          "name": "STALTNER, Jonas"
+        },
+        {
+          "minute": "47:29",
+          "side": "away",
+          "score": {
+            "home": 24,
+            "away": 22
+          },
+          "type": "7m-Tor",
+          "shirt": "7",
+          "name": "LEHNER, Florian"
+        },
+        {
+          "minute": "48:51",
+          "side": "home",
+          "score": {
+            "home": 25,
+            "away": 22
+          },
+          "type": "Tor",
+          "shirt": "25",
+          "name": "FLOßMANN, Tarek"
+        },
+        {
+          "minute": "49:22",
+          "side": "home",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "15",
+          "name": "Mertens, Florian"
+        },
+        {
+          "minute": "49:25",
+          "side": "away",
+          "score": {
+            "home": 25,
+            "away": 23
+          },
+          "type": "7m-Tor",
+          "shirt": "7",
+          "name": "LEHNER, Florian"
+        },
+        {
+          "minute": "49:49",
+          "side": "home",
+          "score": {
+            "home": 26,
+            "away": 23
+          },
+          "type": "Tor",
+          "shirt": "7",
+          "name": "KOLB, Jonathan Navin"
+        },
+        {
+          "minute": "51:14",
+          "side": "home",
+          "score": {
+            "home": 27,
+            "away": 23
+          },
+          "type": "Tor",
+          "shirt": "25",
+          "name": "FLOßMANN, Tarek"
+        },
+        {
+          "minute": "52:23",
+          "side": "home",
+          "score": {
+            "home": 28,
+            "away": 23
+          },
+          "type": "Tor",
+          "shirt": "25",
+          "name": "FLOßMANN, Tarek"
+        },
+        {
+          "minute": "52:46",
+          "side": "away",
+          "score": {
+            "home": 28,
+            "away": 24
+          },
+          "type": "Tor",
+          "shirt": "73",
+          "name": "ANDEXLINGER, Roman"
+        },
+        {
+          "minute": "53:44",
+          "side": "away",
+          "score": {
+            "home": 28,
+            "away": 25
+          },
+          "type": "Tor",
+          "shirt": "7",
+          "name": "LEHNER, Florian"
+        },
+        {
+          "minute": "54:31",
+          "side": "away",
+          "score": {
+            "home": 28,
+            "away": 26
+          },
+          "type": "Tor",
+          "shirt": "2",
+          "name": "WIESINGER, Johannes"
+        },
+        {
+          "minute": "55:02",
+          "side": "home",
+          "score": {
+            "home": 29,
+            "away": 26
+          },
+          "type": "Tor",
+          "shirt": "9",
+          "name": "STALTNER, Jonas"
+        },
+        {
+          "minute": "55:17",
+          "side": "away",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "22",
+          "name": "Ben Abid, Maher"
+        },
+        {
+          "minute": "56:42",
+          "side": "away",
+          "score": {
+            "home": 29,
+            "away": 27
+          },
+          "type": "Tor",
+          "shirt": "73",
+          "name": "ANDEXLINGER, Roman"
+        },
+        {
+          "minute": "57:25",
+          "side": "home",
+          "score": {
+            "home": 30,
+            "away": 27
+          },
+          "type": "Tor",
+          "shirt": "11",
+          "name": "PETZOLD, Paul"
+        },
+        {
+          "minute": "59:31",
+          "side": "away",
+          "score": {
+            "home": 30,
+            "away": 28
+          },
+          "type": "Tor",
+          "shirt": "73",
+          "name": "ANDEXLINGER, Roman"
+        }
+      ]
     },
     "93319": {
       "id": "93319",
@@ -1255,7 +2058,822 @@
           "timeouts": 1,
           "disqualifications": 1
         }
-      }
+      },
+      "timeline": [
+        {
+          "minute": "02:24",
+          "side": "home",
+          "score": null,
+          "type": "Verwarnung",
+          "shirt": "28",
+          "name": "Eid, Hussain"
+        },
+        {
+          "minute": "03:35",
+          "side": "home",
+          "score": {
+            "home": 1,
+            "away": 0
+          },
+          "type": "Tor",
+          "shirt": "99",
+          "name": "HRNCIC, Armin"
+        },
+        {
+          "minute": "04:09",
+          "side": "away",
+          "score": {
+            "home": 1,
+            "away": 1
+          },
+          "type": "Tor",
+          "shirt": "15",
+          "name": "Mertens, Florian"
+        },
+        {
+          "minute": "04:48",
+          "side": "home",
+          "score": {
+            "home": 2,
+            "away": 1
+          },
+          "type": "Tor",
+          "shirt": "35",
+          "name": "HERZOG, Luca"
+        },
+        {
+          "minute": "06:38",
+          "side": "home",
+          "score": {
+            "home": 3,
+            "away": 1
+          },
+          "type": "Tor",
+          "shirt": "32",
+          "name": "Bosnjak, Gabriel"
+        },
+        {
+          "minute": "08:16",
+          "side": "home",
+          "score": {
+            "home": 4,
+            "away": 1
+          },
+          "type": "Tor",
+          "shirt": "99",
+          "name": "HRNCIC, Armin"
+        },
+        {
+          "minute": "08:37",
+          "side": "away",
+          "score": {
+            "home": 4,
+            "away": 2
+          },
+          "type": "Tor",
+          "shirt": "7",
+          "name": "KOLB, Jonathan Navin"
+        },
+        {
+          "minute": "09:17",
+          "side": "home",
+          "score": {
+            "home": 5,
+            "away": 2
+          },
+          "type": "Tor",
+          "shirt": "8",
+          "name": "MEIRINGER, David"
+        },
+        {
+          "minute": "10:11",
+          "side": "home",
+          "score": {
+            "home": 6,
+            "away": 2
+          },
+          "type": "Tor",
+          "shirt": "35",
+          "name": "HERZOG, Luca"
+        },
+        {
+          "minute": "10:56",
+          "side": "home",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "28",
+          "name": "Eid, Hussain"
+        },
+        {
+          "minute": "11:07",
+          "side": "away",
+          "score": {
+            "home": 6,
+            "away": 3
+          },
+          "type": "Tor",
+          "shirt": "24",
+          "name": "FINK, Robert"
+        },
+        {
+          "minute": "11:33",
+          "side": "home",
+          "score": {
+            "home": 7,
+            "away": 3
+          },
+          "type": "Tor",
+          "shirt": "14",
+          "name": "Kukla, Andreas Jr."
+        },
+        {
+          "minute": "11:51",
+          "side": "home",
+          "score": {
+            "home": 8,
+            "away": 3
+          },
+          "type": "Tor",
+          "shirt": "8",
+          "name": "MEIRINGER, David"
+        },
+        {
+          "minute": "12:25",
+          "side": "home",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "35",
+          "name": "HERZOG, Luca"
+        },
+        {
+          "minute": "14:26",
+          "side": "away",
+          "score": {
+            "home": 8,
+            "away": 4
+          },
+          "type": "7m-Tor",
+          "shirt": "15",
+          "name": "Mertens, Florian"
+        },
+        {
+          "minute": "14:58",
+          "side": "away",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "33",
+          "name": "BACHMANN, Maximilian"
+        },
+        {
+          "minute": "15:11",
+          "side": "home",
+          "score": {
+            "home": 9,
+            "away": 4
+          },
+          "type": "Tor",
+          "shirt": "18",
+          "name": "PETRISIC, David"
+        },
+        {
+          "minute": "15:31",
+          "side": "home",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "18",
+          "name": "PETRISIC, David"
+        },
+        {
+          "minute": "15:32",
+          "side": "away",
+          "score": {
+            "home": 9,
+            "away": 5
+          },
+          "type": "7m-Tor",
+          "shirt": "15",
+          "name": "Mertens, Florian"
+        },
+        {
+          "minute": "16:51",
+          "side": "away",
+          "score": {
+            "home": 9,
+            "away": 6
+          },
+          "type": "Tor",
+          "shirt": "15",
+          "name": "Mertens, Florian"
+        },
+        {
+          "minute": "17:25",
+          "side": "home",
+          "score": {
+            "home": 10,
+            "away": 6
+          },
+          "type": "Tor",
+          "shirt": "14",
+          "name": "Kukla, Andreas Jr."
+        },
+        {
+          "minute": "18:03",
+          "side": "home",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "99",
+          "name": "HRNCIC, Armin"
+        },
+        {
+          "minute": "18:23",
+          "side": "away",
+          "score": {
+            "home": 10,
+            "away": 7
+          },
+          "type": "7m-Tor",
+          "shirt": "15",
+          "name": "Mertens, Florian"
+        },
+        {
+          "minute": "19:08",
+          "side": "home",
+          "score": {
+            "home": 11,
+            "away": 7
+          },
+          "type": "Tor",
+          "shirt": "14",
+          "name": "Kukla, Andreas Jr."
+        },
+        {
+          "minute": "20:05",
+          "side": "home",
+          "score": {
+            "home": 12,
+            "away": 7
+          },
+          "type": "Tor",
+          "shirt": "18",
+          "name": "PETRISIC, David"
+        },
+        {
+          "minute": "20:51",
+          "side": "away",
+          "score": {
+            "home": 12,
+            "away": 8
+          },
+          "type": "Tor",
+          "shirt": "11",
+          "name": "PETZOLD, Paul"
+        },
+        {
+          "minute": "21:11",
+          "side": "away",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "33",
+          "name": "BACHMANN, Maximilian"
+        },
+        {
+          "minute": "23:36",
+          "side": "away",
+          "score": {
+            "home": 12,
+            "away": 9
+          },
+          "type": "Tor",
+          "shirt": "24",
+          "name": "FINK, Robert"
+        },
+        {
+          "minute": "26:05",
+          "side": "home",
+          "score": {
+            "home": 13,
+            "away": 9
+          },
+          "type": "7m-Tor",
+          "shirt": "32",
+          "name": "Bosnjak, Gabriel"
+        },
+        {
+          "minute": "27:40",
+          "side": "away",
+          "score": {
+            "home": 13,
+            "away": 10
+          },
+          "type": "Tor",
+          "shirt": "11",
+          "name": "PETZOLD, Paul"
+        },
+        {
+          "minute": "27:52",
+          "side": "home",
+          "score": {
+            "home": 14,
+            "away": 10
+          },
+          "type": "Tor",
+          "shirt": "8",
+          "name": "MEIRINGER, David"
+        },
+        {
+          "minute": "28:43",
+          "side": "away",
+          "score": {
+            "home": 14,
+            "away": 10
+          },
+          "type": "7m vergeben",
+          "shirt": "15",
+          "name": "Mertens, Florian"
+        },
+        {
+          "minute": "30:00",
+          "side": "away",
+          "score": {
+            "home": 14,
+            "away": 11
+          },
+          "type": "Tor",
+          "shirt": "15",
+          "name": "Mertens, Florian"
+        },
+        {
+          "minute": "30:43",
+          "side": "home",
+          "score": {
+            "home": 15,
+            "away": 11
+          },
+          "type": "Tor",
+          "shirt": "35",
+          "name": "HERZOG, Luca"
+        },
+        {
+          "minute": "31:43",
+          "side": "home",
+          "score": {
+            "home": 16,
+            "away": 11
+          },
+          "type": "Tor",
+          "shirt": "8",
+          "name": "MEIRINGER, David"
+        },
+        {
+          "minute": "32:51",
+          "side": "away",
+          "score": {
+            "home": 16,
+            "away": 12
+          },
+          "type": "Tor",
+          "shirt": "15",
+          "name": "Mertens, Florian"
+        },
+        {
+          "minute": "33:20",
+          "side": "away",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "7",
+          "name": "KOLB, Jonathan Navin"
+        },
+        {
+          "minute": "33:25",
+          "side": "home",
+          "score": {
+            "home": 17,
+            "away": 12
+          },
+          "type": "7m-Tor",
+          "shirt": "32",
+          "name": "Bosnjak, Gabriel"
+        },
+        {
+          "minute": "34:42",
+          "side": "away",
+          "score": {
+            "home": 17,
+            "away": 13
+          },
+          "type": "Tor",
+          "shirt": "33",
+          "name": "BACHMANN, Maximilian"
+        },
+        {
+          "minute": "34:51",
+          "side": "away",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "33",
+          "name": "BACHMANN, Maximilian"
+        },
+        {
+          "minute": "34:51",
+          "side": "away",
+          "score": null,
+          "type": "Disqualifikation",
+          "shirt": "33",
+          "name": "BACHMANN, Maximilian"
+        },
+        {
+          "minute": "34:55",
+          "side": "home",
+          "score": {
+            "home": 18,
+            "away": 13
+          },
+          "type": "7m-Tor",
+          "shirt": "32",
+          "name": "Bosnjak, Gabriel"
+        },
+        {
+          "minute": "35:18",
+          "side": "away",
+          "score": {
+            "home": 18,
+            "away": 13
+          },
+          "type": "7m vergeben",
+          "shirt": "15",
+          "name": "Mertens, Florian"
+        },
+        {
+          "minute": "37:13",
+          "side": "home",
+          "score": {
+            "home": 19,
+            "away": 13
+          },
+          "type": "Tor",
+          "shirt": "8",
+          "name": "MEIRINGER, David"
+        },
+        {
+          "minute": "37:41",
+          "side": "away",
+          "score": {
+            "home": 19,
+            "away": 14
+          },
+          "type": "Tor",
+          "shirt": "11",
+          "name": "PETZOLD, Paul"
+        },
+        {
+          "minute": "38:53",
+          "side": "home",
+          "score": {
+            "home": 20,
+            "away": 14
+          },
+          "type": "Tor",
+          "shirt": "32",
+          "name": "Bosnjak, Gabriel"
+        },
+        {
+          "minute": "39:58",
+          "side": "home",
+          "score": {
+            "home": 21,
+            "away": 14
+          },
+          "type": "7m-Tor",
+          "shirt": "32",
+          "name": "Bosnjak, Gabriel"
+        },
+        {
+          "minute": "40:32",
+          "side": "away",
+          "score": {
+            "home": 21,
+            "away": 15
+          },
+          "type": "Tor",
+          "shirt": "7",
+          "name": "KOLB, Jonathan Navin"
+        },
+        {
+          "minute": "40:41",
+          "side": "home",
+          "score": {
+            "home": 22,
+            "away": 15
+          },
+          "type": "Tor",
+          "shirt": "32",
+          "name": "Bosnjak, Gabriel"
+        },
+        {
+          "minute": "41:29",
+          "side": "away",
+          "score": {
+            "home": 22,
+            "away": 16
+          },
+          "type": "Tor",
+          "shirt": "9",
+          "name": "STALTNER, Jonas"
+        },
+        {
+          "minute": "44:16",
+          "side": "away",
+          "score": {
+            "home": 22,
+            "away": 17
+          },
+          "type": "Tor",
+          "shirt": "7",
+          "name": "KOLB, Jonathan Navin"
+        },
+        {
+          "minute": "45:18",
+          "side": "home",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "32",
+          "name": "Bosnjak, Gabriel"
+        },
+        {
+          "minute": "45:23",
+          "side": "away",
+          "score": {
+            "home": 22,
+            "away": 18
+          },
+          "type": "7m-Tor",
+          "shirt": "11",
+          "name": "PETZOLD, Paul"
+        },
+        {
+          "minute": "46:35",
+          "side": "away",
+          "score": {
+            "home": 22,
+            "away": 19
+          },
+          "type": "Tor",
+          "shirt": "11",
+          "name": "PETZOLD, Paul"
+        },
+        {
+          "minute": "47:06",
+          "side": "home",
+          "score": {
+            "home": 23,
+            "away": 19
+          },
+          "type": "Tor",
+          "shirt": "14",
+          "name": "Kukla, Andreas Jr."
+        },
+        {
+          "minute": "47:26",
+          "side": "away",
+          "score": {
+            "home": 23,
+            "away": 20
+          },
+          "type": "Tor",
+          "shirt": "11",
+          "name": "PETZOLD, Paul"
+        },
+        {
+          "minute": "48:45",
+          "side": "home",
+          "score": {
+            "home": 24,
+            "away": 20
+          },
+          "type": "Tor",
+          "shirt": "18",
+          "name": "PETRISIC, David"
+        },
+        {
+          "minute": "49:24",
+          "side": "away",
+          "score": {
+            "home": 24,
+            "away": 21
+          },
+          "type": "Tor",
+          "shirt": "7",
+          "name": "KOLB, Jonathan Navin"
+        },
+        {
+          "minute": "49:43",
+          "side": "home",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "35",
+          "name": "HERZOG, Luca"
+        },
+        {
+          "minute": "49:45",
+          "side": "away",
+          "score": {
+            "home": 24,
+            "away": 21
+          },
+          "type": "7m vergeben",
+          "shirt": "11",
+          "name": "PETZOLD, Paul"
+        },
+        {
+          "minute": "50:09",
+          "side": "home",
+          "score": {
+            "home": 25,
+            "away": 21
+          },
+          "type": "Tor",
+          "shirt": "72",
+          "name": "DUDLAK, Michael Justin"
+        },
+        {
+          "minute": "50:48",
+          "side": "home",
+          "score": {
+            "home": 26,
+            "away": 21
+          },
+          "type": "Tor",
+          "shirt": "18",
+          "name": "PETRISIC, David"
+        },
+        {
+          "minute": "51:31",
+          "side": "home",
+          "score": {
+            "home": 27,
+            "away": 21
+          },
+          "type": "Tor",
+          "shirt": "8",
+          "name": "MEIRINGER, David"
+        },
+        {
+          "minute": "51:54",
+          "side": "away",
+          "score": {
+            "home": 27,
+            "away": 22
+          },
+          "type": "Tor",
+          "shirt": "7",
+          "name": "KOLB, Jonathan Navin"
+        },
+        {
+          "minute": "52:55",
+          "side": "away",
+          "score": {
+            "home": 27,
+            "away": 23
+          },
+          "type": "Tor",
+          "shirt": "7",
+          "name": "KOLB, Jonathan Navin"
+        },
+        {
+          "minute": "54:05",
+          "side": "away",
+          "score": {
+            "home": 27,
+            "away": 24
+          },
+          "type": "Tor",
+          "shirt": "15",
+          "name": "Mertens, Florian"
+        },
+        {
+          "minute": "54:05",
+          "side": "home",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "35",
+          "name": "HERZOG, Luca"
+        },
+        {
+          "minute": "54:05",
+          "side": "home",
+          "score": null,
+          "type": "Disqualifikation",
+          "shirt": "35",
+          "name": "HERZOG, Luca"
+        },
+        {
+          "minute": "54:27",
+          "side": "home",
+          "score": {
+            "home": 28,
+            "away": 24
+          },
+          "type": "Tor",
+          "shirt": "8",
+          "name": "MEIRINGER, David"
+        },
+        {
+          "minute": "55:35",
+          "side": "home",
+          "score": {
+            "home": 29,
+            "away": 24
+          },
+          "type": "Tor",
+          "shirt": "18",
+          "name": "PETRISIC, David"
+        },
+        {
+          "minute": "55:57",
+          "side": "home",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "28",
+          "name": "Eid, Hussain"
+        },
+        {
+          "minute": "55:58",
+          "side": "away",
+          "score": {
+            "home": 29,
+            "away": 24
+          },
+          "type": "7m vergeben",
+          "shirt": "9",
+          "name": "STALTNER, Jonas"
+        },
+        {
+          "minute": "56:00",
+          "side": "away",
+          "score": {
+            "home": 29,
+            "away": 25
+          },
+          "type": "Tor",
+          "shirt": "9",
+          "name": "STALTNER, Jonas"
+        },
+        {
+          "minute": "56:39",
+          "side": "home",
+          "score": {
+            "home": 30,
+            "away": 25
+          },
+          "type": "Tor",
+          "shirt": "72",
+          "name": "DUDLAK, Michael Justin"
+        },
+        {
+          "minute": "58:21",
+          "side": "home",
+          "score": {
+            "home": 31,
+            "away": 25
+          },
+          "type": "Tor",
+          "shirt": "32",
+          "name": "Bosnjak, Gabriel"
+        },
+        {
+          "minute": "59:08",
+          "side": "away",
+          "score": {
+            "home": 31,
+            "away": 26
+          },
+          "type": "7m-Tor",
+          "shirt": "9",
+          "name": "STALTNER, Jonas"
+        },
+        {
+          "minute": "59:31",
+          "side": "home",
+          "score": {
+            "home": 32,
+            "away": 26
+          },
+          "type": "Tor",
+          "shirt": "18",
+          "name": "PETRISIC, David"
+        },
+        {
+          "minute": "59:45",
+          "side": "away",
+          "score": {
+            "home": 32,
+            "away": 27
+          },
+          "type": "Tor",
+          "shirt": "24",
+          "name": "FINK, Robert"
+        }
+      ]
     },
     "93320": {
       "id": "93320",
@@ -1557,7 +3175,882 @@
           "timeouts": 2,
           "disqualifications": 0
         }
-      }
+      },
+      "timeline": [
+        {
+          "minute": "01:44",
+          "side": "home",
+          "score": {
+            "home": 1,
+            "away": 0
+          },
+          "type": "Tor",
+          "shirt": "99",
+          "name": "GOLUBOVIC, Dejan"
+        },
+        {
+          "minute": "01:59",
+          "side": "away",
+          "score": {
+            "home": 1,
+            "away": 1
+          },
+          "type": "Tor",
+          "shirt": "28",
+          "name": "GEORGIOU, Kyriakos"
+        },
+        {
+          "minute": "02:42",
+          "side": "home",
+          "score": {
+            "home": 2,
+            "away": 1
+          },
+          "type": "Tor",
+          "shirt": "17",
+          "name": "GHENT, Leon-Pawel"
+        },
+        {
+          "minute": "03:53",
+          "side": "away",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "35",
+          "name": "HERZOG, Luca"
+        },
+        {
+          "minute": "03:55",
+          "side": "home",
+          "score": {
+            "home": 3,
+            "away": 1
+          },
+          "type": "Tor",
+          "shirt": "17",
+          "name": "GHENT, Leon-Pawel"
+        },
+        {
+          "minute": "05:24",
+          "side": "away",
+          "score": {
+            "home": 3,
+            "away": 2
+          },
+          "type": "Tor",
+          "shirt": "32",
+          "name": "Bosnjak, Gabriel"
+        },
+        {
+          "minute": "06:01",
+          "side": "home",
+          "score": {
+            "home": 4,
+            "away": 2
+          },
+          "type": "Tor",
+          "shirt": "17",
+          "name": "GHENT, Leon-Pawel"
+        },
+        {
+          "minute": "06:04",
+          "side": "away",
+          "score": {
+            "home": 4,
+            "away": 3
+          },
+          "type": "Tor",
+          "shirt": "35",
+          "name": "HERZOG, Luca"
+        },
+        {
+          "minute": "06:32",
+          "side": "away",
+          "score": {
+            "home": 4,
+            "away": 4
+          },
+          "type": "Tor",
+          "shirt": "32",
+          "name": "Bosnjak, Gabriel"
+        },
+        {
+          "minute": "06:52",
+          "side": "home",
+          "score": {
+            "home": 5,
+            "away": 4
+          },
+          "type": "Tor",
+          "shirt": "11",
+          "name": "VAHRAM, Chris Martin"
+        },
+        {
+          "minute": "07:45",
+          "side": "away",
+          "score": {
+            "home": 5,
+            "away": 5
+          },
+          "type": "Tor",
+          "shirt": "28",
+          "name": "GEORGIOU, Kyriakos"
+        },
+        {
+          "minute": "08:36",
+          "side": "home",
+          "score": {
+            "home": 6,
+            "away": 5
+          },
+          "type": "Tor",
+          "shirt": "99",
+          "name": "GOLUBOVIC, Dejan"
+        },
+        {
+          "minute": "09:20",
+          "side": "home",
+          "score": {
+            "home": 7,
+            "away": 5
+          },
+          "type": "Tor",
+          "shirt": "13",
+          "name": "WÖß, Florian"
+        },
+        {
+          "minute": "09:52",
+          "side": "away",
+          "score": {
+            "home": 7,
+            "away": 6
+          },
+          "type": "Tor",
+          "shirt": "35",
+          "name": "HERZOG, Luca"
+        },
+        {
+          "minute": "10:27",
+          "side": "away",
+          "score": {
+            "home": 7,
+            "away": 7
+          },
+          "type": "7m-Tor",
+          "shirt": "32",
+          "name": "Bosnjak, Gabriel"
+        },
+        {
+          "minute": "11:35",
+          "side": "home",
+          "score": {
+            "home": 8,
+            "away": 7
+          },
+          "type": "Tor",
+          "shirt": "27",
+          "name": "Vogel, David"
+        },
+        {
+          "minute": "12:08",
+          "side": "home",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "13",
+          "name": "WÖß, Florian"
+        },
+        {
+          "minute": "12:23",
+          "side": "away",
+          "score": {
+            "home": 8,
+            "away": 8
+          },
+          "type": "Tor",
+          "shirt": "28",
+          "name": "GEORGIOU, Kyriakos"
+        },
+        {
+          "minute": "13:04",
+          "side": "home",
+          "score": {
+            "home": 9,
+            "away": 8
+          },
+          "type": "Tor",
+          "shirt": "99",
+          "name": "GOLUBOVIC, Dejan"
+        },
+        {
+          "minute": "13:49",
+          "side": "away",
+          "score": {
+            "home": 9,
+            "away": 9
+          },
+          "type": "Tor",
+          "shirt": "12",
+          "name": "Mair, Tobias"
+        },
+        {
+          "minute": "14:26",
+          "side": "away",
+          "score": {
+            "home": 9,
+            "away": 10
+          },
+          "type": "Tor",
+          "shirt": "32",
+          "name": "Bosnjak, Gabriel"
+        },
+        {
+          "minute": "15:04",
+          "side": "home",
+          "score": {
+            "home": 10,
+            "away": 10
+          },
+          "type": "Tor",
+          "shirt": "27",
+          "name": "Vogel, David"
+        },
+        {
+          "minute": "15:19",
+          "side": "away",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "32",
+          "name": "Bosnjak, Gabriel"
+        },
+        {
+          "minute": "15:56",
+          "side": "home",
+          "score": {
+            "home": 11,
+            "away": 10
+          },
+          "type": "7m-Tor",
+          "shirt": "17",
+          "name": "GHENT, Leon-Pawel"
+        },
+        {
+          "minute": "18:58",
+          "side": "away",
+          "score": {
+            "home": 11,
+            "away": 11
+          },
+          "type": "Tor",
+          "shirt": "18",
+          "name": "PETRISIC, David"
+        },
+        {
+          "minute": "18:58",
+          "side": "home",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "17",
+          "name": "GHENT, Leon-Pawel"
+        },
+        {
+          "minute": "19:26",
+          "side": "away",
+          "score": {
+            "home": 11,
+            "away": 12
+          },
+          "type": "Tor",
+          "shirt": "32",
+          "name": "Bosnjak, Gabriel"
+        },
+        {
+          "minute": "20:23",
+          "side": "home",
+          "score": {
+            "home": 12,
+            "away": 12
+          },
+          "type": "Tor",
+          "shirt": "13",
+          "name": "WÖß, Florian"
+        },
+        {
+          "minute": "20:40",
+          "side": "away",
+          "score": {
+            "home": 12,
+            "away": 13
+          },
+          "type": "Tor",
+          "shirt": "28",
+          "name": "GEORGIOU, Kyriakos"
+        },
+        {
+          "minute": "21:24",
+          "side": "home",
+          "score": {
+            "home": 13,
+            "away": 13
+          },
+          "type": "Tor",
+          "shirt": "27",
+          "name": "Vogel, David"
+        },
+        {
+          "minute": "22:05",
+          "side": "home",
+          "score": {
+            "home": 14,
+            "away": 13
+          },
+          "type": "Tor",
+          "shirt": "13",
+          "name": "WÖß, Florian"
+        },
+        {
+          "minute": "22:45",
+          "side": "away",
+          "score": {
+            "home": 14,
+            "away": 14
+          },
+          "type": "7m-Tor",
+          "shirt": "32",
+          "name": "Bosnjak, Gabriel"
+        },
+        {
+          "minute": "23:37",
+          "side": "home",
+          "score": {
+            "home": 15,
+            "away": 14
+          },
+          "type": "Tor",
+          "shirt": "11",
+          "name": "VAHRAM, Chris Martin"
+        },
+        {
+          "minute": "23:46",
+          "side": "away",
+          "score": {
+            "home": 15,
+            "away": 15
+          },
+          "type": "Tor",
+          "shirt": "32",
+          "name": "Bosnjak, Gabriel"
+        },
+        {
+          "minute": "24:16",
+          "side": "home",
+          "score": {
+            "home": 16,
+            "away": 15
+          },
+          "type": "Tor",
+          "shirt": "27",
+          "name": "Vogel, David"
+        },
+        {
+          "minute": "25:30",
+          "side": "away",
+          "score": {
+            "home": 16,
+            "away": 16
+          },
+          "type": "Tor",
+          "shirt": "18",
+          "name": "PETRISIC, David"
+        },
+        {
+          "minute": "26:05",
+          "side": "away",
+          "score": {
+            "home": 16,
+            "away": 17
+          },
+          "type": "Tor",
+          "shirt": "13",
+          "name": "MEIRINGER, David"
+        },
+        {
+          "minute": "26:34",
+          "side": "away",
+          "score": {
+            "home": 16,
+            "away": 18
+          },
+          "type": "Tor",
+          "shirt": "32",
+          "name": "Bosnjak, Gabriel"
+        },
+        {
+          "minute": "27:04",
+          "side": "home",
+          "score": {
+            "home": 17,
+            "away": 18
+          },
+          "type": "Tor",
+          "shirt": "9",
+          "name": "NADAREVIC, Eldar"
+        },
+        {
+          "minute": "29:18",
+          "side": "home",
+          "score": {
+            "home": 18,
+            "away": 18
+          },
+          "type": "Tor",
+          "shirt": "13",
+          "name": "WÖß, Florian"
+        },
+        {
+          "minute": "30:55",
+          "side": "away",
+          "score": {
+            "home": 18,
+            "away": 19
+          },
+          "type": "Tor",
+          "shirt": "13",
+          "name": "MEIRINGER, David"
+        },
+        {
+          "minute": "31:52",
+          "side": "home",
+          "score": {
+            "home": 19,
+            "away": 19
+          },
+          "type": "7m-Tor",
+          "shirt": "17",
+          "name": "GHENT, Leon-Pawel"
+        },
+        {
+          "minute": "32:38",
+          "side": "home",
+          "score": {
+            "home": 20,
+            "away": 19
+          },
+          "type": "Tor",
+          "shirt": "99",
+          "name": "GOLUBOVIC, Dejan"
+        },
+        {
+          "minute": "32:51",
+          "side": "away",
+          "score": {
+            "home": 20,
+            "away": 20
+          },
+          "type": "Tor",
+          "shirt": "99",
+          "name": "HRNCIC, Armin"
+        },
+        {
+          "minute": "33:10",
+          "side": "home",
+          "score": {
+            "home": 21,
+            "away": 20
+          },
+          "type": "Tor",
+          "shirt": "13",
+          "name": "WÖß, Florian"
+        },
+        {
+          "minute": "33:23",
+          "side": "away",
+          "score": {
+            "home": 21,
+            "away": 21
+          },
+          "type": "Tor",
+          "shirt": "28",
+          "name": "GEORGIOU, Kyriakos"
+        },
+        {
+          "minute": "33:44",
+          "side": "home",
+          "score": {
+            "home": 22,
+            "away": 21
+          },
+          "type": "7m-Tor",
+          "shirt": "17",
+          "name": "GHENT, Leon-Pawel"
+        },
+        {
+          "minute": "34:27",
+          "side": "away",
+          "score": {
+            "home": 22,
+            "away": 22
+          },
+          "type": "Tor",
+          "shirt": "13",
+          "name": "MEIRINGER, David"
+        },
+        {
+          "minute": "35:17",
+          "side": "home",
+          "score": {
+            "home": 23,
+            "away": 22
+          },
+          "type": "Tor",
+          "shirt": "27",
+          "name": "Vogel, David"
+        },
+        {
+          "minute": "36:20",
+          "side": "home",
+          "score": {
+            "home": 24,
+            "away": 22
+          },
+          "type": "Tor",
+          "shirt": "15",
+          "name": "MÜHLEDER, Michael"
+        },
+        {
+          "minute": "37:42",
+          "side": "home",
+          "score": {
+            "home": 25,
+            "away": 22
+          },
+          "type": "Tor",
+          "shirt": "9",
+          "name": "NADAREVIC, Eldar"
+        },
+        {
+          "minute": "38:13",
+          "side": "home",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "27",
+          "name": "Vogel, David"
+        },
+        {
+          "minute": "38:17",
+          "side": "away",
+          "score": {
+            "home": 25,
+            "away": 23
+          },
+          "type": "7m-Tor",
+          "shirt": "32",
+          "name": "Bosnjak, Gabriel"
+        },
+        {
+          "minute": "39:05",
+          "side": "home",
+          "score": {
+            "home": 26,
+            "away": 23
+          },
+          "type": "Tor",
+          "shirt": "11",
+          "name": "VAHRAM, Chris Martin"
+        },
+        {
+          "minute": "39:40",
+          "side": "home",
+          "score": {
+            "home": 27,
+            "away": 23
+          },
+          "type": "Tor",
+          "shirt": "99",
+          "name": "GOLUBOVIC, Dejan"
+        },
+        {
+          "minute": "40:15",
+          "side": "home",
+          "score": {
+            "home": 28,
+            "away": 23
+          },
+          "type": "Tor",
+          "shirt": "17",
+          "name": "GHENT, Leon-Pawel"
+        },
+        {
+          "minute": "41:19",
+          "side": "away",
+          "score": {
+            "home": 28,
+            "away": 24
+          },
+          "type": "Tor",
+          "shirt": "35",
+          "name": "HERZOG, Luca"
+        },
+        {
+          "minute": "41:49",
+          "side": "home",
+          "score": {
+            "home": 29,
+            "away": 24
+          },
+          "type": "Tor",
+          "shirt": "13",
+          "name": "WÖß, Florian"
+        },
+        {
+          "minute": "42:55",
+          "side": "home",
+          "score": {
+            "home": 30,
+            "away": 24
+          },
+          "type": "Tor",
+          "shirt": "9",
+          "name": "NADAREVIC, Eldar"
+        },
+        {
+          "minute": "44:07",
+          "side": "away",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "99",
+          "name": "HRNCIC, Armin"
+        },
+        {
+          "minute": "45:14",
+          "side": "home",
+          "score": {
+            "home": 31,
+            "away": 24
+          },
+          "type": "7m-Tor",
+          "shirt": "17",
+          "name": "GHENT, Leon-Pawel"
+        },
+        {
+          "minute": "46:05",
+          "side": "home",
+          "score": {
+            "home": 32,
+            "away": 24
+          },
+          "type": "Tor",
+          "shirt": "27",
+          "name": "Vogel, David"
+        },
+        {
+          "minute": "46:44",
+          "side": "away",
+          "score": {
+            "home": 32,
+            "away": 25
+          },
+          "type": "Tor",
+          "shirt": "28",
+          "name": "GEORGIOU, Kyriakos"
+        },
+        {
+          "minute": "47:34",
+          "side": "away",
+          "score": {
+            "home": 32,
+            "away": 26
+          },
+          "type": "Tor",
+          "shirt": "28",
+          "name": "GEORGIOU, Kyriakos"
+        },
+        {
+          "minute": "48:27",
+          "side": "home",
+          "score": {
+            "home": 33,
+            "away": 26
+          },
+          "type": "Tor",
+          "shirt": "27",
+          "name": "Vogel, David"
+        },
+        {
+          "minute": "48:45",
+          "side": "home",
+          "score": {
+            "home": 34,
+            "away": 26
+          },
+          "type": "Tor",
+          "shirt": "11",
+          "name": "VAHRAM, Chris Martin"
+        },
+        {
+          "minute": "49:05",
+          "side": "away",
+          "score": {
+            "home": 34,
+            "away": 27
+          },
+          "type": "Tor",
+          "shirt": "18",
+          "name": "PETRISIC, David"
+        },
+        {
+          "minute": "50:37",
+          "side": "away",
+          "score": {
+            "home": 34,
+            "away": 28
+          },
+          "type": "Tor",
+          "shirt": "18",
+          "name": "PETRISIC, David"
+        },
+        {
+          "minute": "51:35",
+          "side": "home",
+          "score": {
+            "home": 35,
+            "away": 28
+          },
+          "type": "Tor",
+          "shirt": "17",
+          "name": "GHENT, Leon-Pawel"
+        },
+        {
+          "minute": "51:55",
+          "side": "away",
+          "score": {
+            "home": 35,
+            "away": 29
+          },
+          "type": "Tor",
+          "shirt": "18",
+          "name": "PETRISIC, David"
+        },
+        {
+          "minute": "54:02",
+          "side": "home",
+          "score": {
+            "home": 36,
+            "away": 29
+          },
+          "type": "Tor",
+          "shirt": "99",
+          "name": "GOLUBOVIC, Dejan"
+        },
+        {
+          "minute": "54:34",
+          "side": "away",
+          "score": {
+            "home": 36,
+            "away": 30
+          },
+          "type": "7m-Tor",
+          "shirt": "32",
+          "name": "Bosnjak, Gabriel"
+        },
+        {
+          "minute": "55:33",
+          "side": "home",
+          "score": {
+            "home": 37,
+            "away": 30
+          },
+          "type": "Tor",
+          "shirt": "27",
+          "name": "Vogel, David"
+        },
+        {
+          "minute": "56:05",
+          "side": "away",
+          "score": {
+            "home": 37,
+            "away": 31
+          },
+          "type": "Tor",
+          "shirt": "18",
+          "name": "PETRISIC, David"
+        },
+        {
+          "minute": "56:48",
+          "side": "home",
+          "score": {
+            "home": 38,
+            "away": 31
+          },
+          "type": "Tor",
+          "shirt": "13",
+          "name": "WÖß, Florian"
+        },
+        {
+          "minute": "57:15",
+          "side": "away",
+          "score": {
+            "home": 38,
+            "away": 32
+          },
+          "type": "Tor",
+          "shirt": "35",
+          "name": "HERZOG, Luca"
+        },
+        {
+          "minute": "57:23",
+          "side": "home",
+          "score": {
+            "home": 39,
+            "away": 32
+          },
+          "type": "Tor",
+          "shirt": "99",
+          "name": "GOLUBOVIC, Dejan"
+        },
+        {
+          "minute": "58:25",
+          "side": "away",
+          "score": {
+            "home": 39,
+            "away": 33
+          },
+          "type": "Tor",
+          "shirt": "35",
+          "name": "HERZOG, Luca"
+        },
+        {
+          "minute": "58:36",
+          "side": "home",
+          "score": {
+            "home": 40,
+            "away": 33
+          },
+          "type": "Tor",
+          "shirt": "13",
+          "name": "WÖß, Florian"
+        },
+        {
+          "minute": "59:36",
+          "side": "home",
+          "score": {
+            "home": 41,
+            "away": 33
+          },
+          "type": "Tor",
+          "shirt": "17",
+          "name": "GHENT, Leon-Pawel"
+        },
+        {
+          "minute": "59:44",
+          "side": "away",
+          "score": {
+            "home": 41,
+            "away": 34
+          },
+          "type": "Tor",
+          "shirt": "28",
+          "name": "GEORGIOU, Kyriakos"
+        }
+      ]
     },
     "93325": {
       "id": "93325",
@@ -1809,7 +4302,807 @@
           "timeouts": 2,
           "disqualifications": 1
         }
-      }
+      },
+      "timeline": [
+        {
+          "minute": "01:53",
+          "side": "home",
+          "score": {
+            "home": 1,
+            "away": 0
+          },
+          "type": "Tor",
+          "shirt": "49",
+          "name": "VIKTOR, Ivo"
+        },
+        {
+          "minute": "02:46",
+          "side": "away",
+          "score": {
+            "home": 1,
+            "away": 1
+          },
+          "type": "Tor",
+          "shirt": "73",
+          "name": "ANDEXLINGER, Roman"
+        },
+        {
+          "minute": "03:59",
+          "side": "away",
+          "score": {
+            "home": 1,
+            "away": 2
+          },
+          "type": "7m-Tor",
+          "shirt": "22",
+          "name": "Ben Abid, Maher"
+        },
+        {
+          "minute": "05:17",
+          "side": "away",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "73",
+          "name": "ANDEXLINGER, Roman"
+        },
+        {
+          "minute": "06:13",
+          "side": "home",
+          "score": {
+            "home": 2,
+            "away": 2
+          },
+          "type": "Tor",
+          "shirt": "5",
+          "name": "STACHELBERGER, Nick"
+        },
+        {
+          "minute": "06:56",
+          "side": "away",
+          "score": {
+            "home": 2,
+            "away": 3
+          },
+          "type": "Tor",
+          "shirt": "22",
+          "name": "Ben Abid, Maher"
+        },
+        {
+          "minute": "07:55",
+          "side": "home",
+          "score": {
+            "home": 3,
+            "away": 3
+          },
+          "type": "Tor",
+          "shirt": "67",
+          "name": "LETIC, Milos"
+        },
+        {
+          "minute": "08:23",
+          "side": "away",
+          "score": {
+            "home": 3,
+            "away": 4
+          },
+          "type": "Tor",
+          "shirt": "73",
+          "name": "ANDEXLINGER, Roman"
+        },
+        {
+          "minute": "09:04",
+          "side": "away",
+          "score": {
+            "home": 3,
+            "away": 5
+          },
+          "type": "Tor",
+          "shirt": "73",
+          "name": "ANDEXLINGER, Roman"
+        },
+        {
+          "minute": "09:14",
+          "side": "home",
+          "score": {
+            "home": 4,
+            "away": 5
+          },
+          "type": "Tor",
+          "shirt": "13",
+          "name": "HINTERREITER, Moritz"
+        },
+        {
+          "minute": "09:55",
+          "side": "away",
+          "score": {
+            "home": 4,
+            "away": 6
+          },
+          "type": "Tor",
+          "shirt": "25",
+          "name": "Hötzel, Moritz"
+        },
+        {
+          "minute": "10:38",
+          "side": "home",
+          "score": {
+            "home": 5,
+            "away": 6
+          },
+          "type": "Tor",
+          "shirt": "24",
+          "name": "COUFAL, Jan"
+        },
+        {
+          "minute": "11:22",
+          "side": "away",
+          "score": {
+            "home": 5,
+            "away": 7
+          },
+          "type": "Tor",
+          "shirt": "73",
+          "name": "ANDEXLINGER, Roman"
+        },
+        {
+          "minute": "12:24",
+          "side": "away",
+          "score": {
+            "home": 5,
+            "away": 8
+          },
+          "type": "Tor",
+          "shirt": "22",
+          "name": "Ben Abid, Maher"
+        },
+        {
+          "minute": "12:52",
+          "side": "home",
+          "score": {
+            "home": 6,
+            "away": 8
+          },
+          "type": "Tor",
+          "shirt": "24",
+          "name": "COUFAL, Jan"
+        },
+        {
+          "minute": "13:15",
+          "side": "away",
+          "score": {
+            "home": 6,
+            "away": 9
+          },
+          "type": "Tor",
+          "shirt": "22",
+          "name": "Ben Abid, Maher"
+        },
+        {
+          "minute": "13:26",
+          "side": "home",
+          "score": {
+            "home": 7,
+            "away": 9
+          },
+          "type": "Tor",
+          "shirt": "13",
+          "name": "HINTERREITER, Moritz"
+        },
+        {
+          "minute": "15:34",
+          "side": "home",
+          "score": {
+            "home": 8,
+            "away": 9
+          },
+          "type": "Tor",
+          "shirt": "5",
+          "name": "STACHELBERGER, Nick"
+        },
+        {
+          "minute": "16:27",
+          "side": "away",
+          "score": {
+            "home": 8,
+            "away": 10
+          },
+          "type": "Tor",
+          "shirt": "3",
+          "name": "ROITHMAIR, Christoph"
+        },
+        {
+          "minute": "17:50",
+          "side": "away",
+          "score": {
+            "home": 8,
+            "away": 11
+          },
+          "type": "Tor",
+          "shirt": "22",
+          "name": "Ben Abid, Maher"
+        },
+        {
+          "minute": "18:17",
+          "side": "home",
+          "score": {
+            "home": 9,
+            "away": 11
+          },
+          "type": "Tor",
+          "shirt": "24",
+          "name": "COUFAL, Jan"
+        },
+        {
+          "minute": "19:07",
+          "side": "away",
+          "score": {
+            "home": 9,
+            "away": 12
+          },
+          "type": "Tor",
+          "shirt": "3",
+          "name": "ROITHMAIR, Christoph"
+        },
+        {
+          "minute": "20:22",
+          "side": "away",
+          "score": {
+            "home": 9,
+            "away": 13
+          },
+          "type": "Tor",
+          "shirt": "2",
+          "name": "WIESINGER, Johannes"
+        },
+        {
+          "minute": "20:38",
+          "side": "home",
+          "score": {
+            "home": 10,
+            "away": 13
+          },
+          "type": "Tor",
+          "shirt": "24",
+          "name": "COUFAL, Jan"
+        },
+        {
+          "minute": "21:21",
+          "side": "away",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "22",
+          "name": "Ben Abid, Maher"
+        },
+        {
+          "minute": "21:23",
+          "side": "home",
+          "score": {
+            "home": 11,
+            "away": 13
+          },
+          "type": "7m-Tor",
+          "shirt": "24",
+          "name": "COUFAL, Jan"
+        },
+        {
+          "minute": "22:08",
+          "side": "home",
+          "score": {
+            "home": 12,
+            "away": 13
+          },
+          "type": "Tor",
+          "shirt": "22",
+          "name": "KENT, Jakob Alexander"
+        },
+        {
+          "minute": "23:44",
+          "side": "away",
+          "score": {
+            "home": 12,
+            "away": 14
+          },
+          "type": "Tor",
+          "shirt": "73",
+          "name": "ANDEXLINGER, Roman"
+        },
+        {
+          "minute": "24:14",
+          "side": "away",
+          "score": {
+            "home": 12,
+            "away": 15
+          },
+          "type": "Tor",
+          "shirt": "3",
+          "name": "ROITHMAIR, Christoph"
+        },
+        {
+          "minute": "25:41",
+          "side": "away",
+          "score": {
+            "home": 12,
+            "away": 16
+          },
+          "type": "7m-Tor",
+          "shirt": "22",
+          "name": "Ben Abid, Maher"
+        },
+        {
+          "minute": "26:43",
+          "side": "home",
+          "score": {
+            "home": 13,
+            "away": 16
+          },
+          "type": "Tor",
+          "shirt": "22",
+          "name": "KENT, Jakob Alexander"
+        },
+        {
+          "minute": "27:34",
+          "side": "home",
+          "score": {
+            "home": 14,
+            "away": 16
+          },
+          "type": "Tor",
+          "shirt": "34",
+          "name": "GRÜNBERGER, Yannick"
+        },
+        {
+          "minute": "28:06",
+          "side": "away",
+          "score": {
+            "home": 14,
+            "away": 17
+          },
+          "type": "Tor",
+          "shirt": "3",
+          "name": "ROITHMAIR, Christoph"
+        },
+        {
+          "minute": "29:14",
+          "side": "away",
+          "score": {
+            "home": 14,
+            "away": 18
+          },
+          "type": "Tor",
+          "shirt": "3",
+          "name": "ROITHMAIR, Christoph"
+        },
+        {
+          "minute": "29:39",
+          "side": "home",
+          "score": {
+            "home": 15,
+            "away": 18
+          },
+          "type": "Tor",
+          "shirt": "39",
+          "name": "Schinagl, Levin"
+        },
+        {
+          "minute": "31:41",
+          "side": "away",
+          "score": {
+            "home": 15,
+            "away": 19
+          },
+          "type": "Tor",
+          "shirt": "73",
+          "name": "ANDEXLINGER, Roman"
+        },
+        {
+          "minute": "32:08",
+          "side": "home",
+          "score": {
+            "home": 16,
+            "away": 19
+          },
+          "type": "Tor",
+          "shirt": "49",
+          "name": "VIKTOR, Ivo"
+        },
+        {
+          "minute": "32:08",
+          "side": "away",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "22",
+          "name": "Ben Abid, Maher"
+        },
+        {
+          "minute": "32:29",
+          "side": "away",
+          "score": {
+            "home": 16,
+            "away": 20
+          },
+          "type": "Tor",
+          "shirt": "3",
+          "name": "ROITHMAIR, Christoph"
+        },
+        {
+          "minute": "32:39",
+          "side": "home",
+          "score": {
+            "home": 17,
+            "away": 20
+          },
+          "type": "Tor",
+          "shirt": "5",
+          "name": "STACHELBERGER, Nick"
+        },
+        {
+          "minute": "34:40",
+          "side": "away",
+          "score": {
+            "home": 17,
+            "away": 20
+          },
+          "type": "7m vergeben",
+          "shirt": "22",
+          "name": "Ben Abid, Maher"
+        },
+        {
+          "minute": "35:11",
+          "side": "home",
+          "score": {
+            "home": 18,
+            "away": 20
+          },
+          "type": "Tor",
+          "shirt": "13",
+          "name": "HINTERREITER, Moritz"
+        },
+        {
+          "minute": "35:39",
+          "side": "away",
+          "score": {
+            "home": 18,
+            "away": 21
+          },
+          "type": "Tor",
+          "shirt": "10",
+          "name": "Weinmann, Lorenz"
+        },
+        {
+          "minute": "36:44",
+          "side": "away",
+          "score": {
+            "home": 18,
+            "away": 22
+          },
+          "type": "Tor",
+          "shirt": "73",
+          "name": "ANDEXLINGER, Roman"
+        },
+        {
+          "minute": "36:55",
+          "side": "home",
+          "score": {
+            "home": 19,
+            "away": 22
+          },
+          "type": "Tor",
+          "shirt": "13",
+          "name": "HINTERREITER, Moritz"
+        },
+        {
+          "minute": "37:24",
+          "side": "home",
+          "score": {
+            "home": 20,
+            "away": 22
+          },
+          "type": "Tor",
+          "shirt": "5",
+          "name": "STACHELBERGER, Nick"
+        },
+        {
+          "minute": "37:57",
+          "side": "away",
+          "score": {
+            "home": 20,
+            "away": 23
+          },
+          "type": "Tor",
+          "shirt": "73",
+          "name": "ANDEXLINGER, Roman"
+        },
+        {
+          "minute": "39:30",
+          "side": "home",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "67",
+          "name": "LETIC, Milos"
+        },
+        {
+          "minute": "39:50",
+          "side": "away",
+          "score": {
+            "home": 20,
+            "away": 24
+          },
+          "type": "Tor",
+          "shirt": "2",
+          "name": "WIESINGER, Johannes"
+        },
+        {
+          "minute": "41:12",
+          "side": "away",
+          "score": {
+            "home": 20,
+            "away": 25
+          },
+          "type": "Tor",
+          "shirt": "3",
+          "name": "ROITHMAIR, Christoph"
+        },
+        {
+          "minute": "41:46",
+          "side": "home",
+          "score": {
+            "home": 21,
+            "away": 25
+          },
+          "type": "Tor",
+          "shirt": "49",
+          "name": "VIKTOR, Ivo"
+        },
+        {
+          "minute": "41:58",
+          "side": "away",
+          "score": {
+            "home": 21,
+            "away": 26
+          },
+          "type": "Tor",
+          "shirt": "2",
+          "name": "WIESINGER, Johannes"
+        },
+        {
+          "minute": "42:37",
+          "side": "away",
+          "score": {
+            "home": 21,
+            "away": 27
+          },
+          "type": "Tor",
+          "shirt": "10",
+          "name": "Weinmann, Lorenz"
+        },
+        {
+          "minute": "42:46",
+          "side": "home",
+          "score": {
+            "home": 22,
+            "away": 27
+          },
+          "type": "Tor",
+          "shirt": "49",
+          "name": "VIKTOR, Ivo"
+        },
+        {
+          "minute": "43:38",
+          "side": "home",
+          "score": {
+            "home": 23,
+            "away": 27
+          },
+          "type": "Tor",
+          "shirt": "49",
+          "name": "VIKTOR, Ivo"
+        },
+        {
+          "minute": "44:03",
+          "side": "away",
+          "score": {
+            "home": 23,
+            "away": 28
+          },
+          "type": "Tor",
+          "shirt": "2",
+          "name": "WIESINGER, Johannes"
+        },
+        {
+          "minute": "44:25",
+          "side": "home",
+          "score": {
+            "home": 24,
+            "away": 28
+          },
+          "type": "Tor",
+          "shirt": "13",
+          "name": "HINTERREITER, Moritz"
+        },
+        {
+          "minute": "46:34",
+          "side": "home",
+          "score": {
+            "home": 25,
+            "away": 28
+          },
+          "type": "Tor",
+          "shirt": "49",
+          "name": "VIKTOR, Ivo"
+        },
+        {
+          "minute": "47:15",
+          "side": "away",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "22",
+          "name": "Ben Abid, Maher"
+        },
+        {
+          "minute": "47:15",
+          "side": "away",
+          "score": null,
+          "type": "Disqualifikation",
+          "shirt": "22",
+          "name": "Ben Abid, Maher"
+        },
+        {
+          "minute": "48:11",
+          "side": "home",
+          "score": {
+            "home": 26,
+            "away": 28
+          },
+          "type": "Tor",
+          "shirt": "67",
+          "name": "LETIC, Milos"
+        },
+        {
+          "minute": "48:12",
+          "side": "away",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "2",
+          "name": "WIESINGER, Johannes"
+        },
+        {
+          "minute": "49:19",
+          "side": "home",
+          "score": {
+            "home": 27,
+            "away": 28
+          },
+          "type": "Tor",
+          "shirt": "33",
+          "name": "SINZINGER, Yanik"
+        },
+        {
+          "minute": "52:53",
+          "side": "home",
+          "score": {
+            "home": 28,
+            "away": 28
+          },
+          "type": "Tor",
+          "shirt": "49",
+          "name": "VIKTOR, Ivo"
+        },
+        {
+          "minute": "53:59",
+          "side": "away",
+          "score": {
+            "home": 28,
+            "away": 29
+          },
+          "type": "Tor",
+          "shirt": "73",
+          "name": "ANDEXLINGER, Roman"
+        },
+        {
+          "minute": "55:06",
+          "side": "away",
+          "score": {
+            "home": 28,
+            "away": 30
+          },
+          "type": "Tor",
+          "shirt": "3",
+          "name": "ROITHMAIR, Christoph"
+        },
+        {
+          "minute": "55:53",
+          "side": "away",
+          "score": {
+            "home": 28,
+            "away": 31
+          },
+          "type": "Tor",
+          "shirt": "73",
+          "name": "ANDEXLINGER, Roman"
+        },
+        {
+          "minute": "55:55",
+          "side": "home",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "49",
+          "name": "VIKTOR, Ivo"
+        },
+        {
+          "minute": "57:13",
+          "side": "away",
+          "score": {
+            "home": 28,
+            "away": 32
+          },
+          "type": "Tor",
+          "shirt": "2",
+          "name": "WIESINGER, Johannes"
+        },
+        {
+          "minute": "57:15",
+          "side": "home",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "13",
+          "name": "HINTERREITER, Moritz"
+        },
+        {
+          "minute": "58:41",
+          "side": "home",
+          "score": {
+            "home": 29,
+            "away": 32
+          },
+          "type": "Tor",
+          "shirt": "34",
+          "name": "GRÜNBERGER, Yannick"
+        },
+        {
+          "minute": "59:11",
+          "side": "away",
+          "score": {
+            "home": 29,
+            "away": 33
+          },
+          "type": "Tor",
+          "shirt": "3",
+          "name": "ROITHMAIR, Christoph"
+        },
+        {
+          "minute": "59:33",
+          "side": "away",
+          "score": {
+            "home": 29,
+            "away": 34
+          },
+          "type": "Tor",
+          "shirt": "2",
+          "name": "WIESINGER, Johannes"
+        },
+        {
+          "minute": "59:46",
+          "side": "home",
+          "score": {
+            "home": 30,
+            "away": 34
+          },
+          "type": "Tor",
+          "shirt": "22",
+          "name": "KENT, Jakob Alexander"
+        },
+        {
+          "minute": "60:00",
+          "side": "away",
+          "score": {
+            "home": 30,
+            "away": 35
+          },
+          "type": "Tor",
+          "shirt": "25",
+          "name": "Hötzel, Moritz"
+        }
+      ]
     },
     "93331": {
       "id": "93331",
@@ -2141,7 +5434,812 @@
           "timeouts": 1,
           "disqualifications": 1
         }
-      }
+      },
+      "timeline": [
+        {
+          "minute": "01:40",
+          "side": "away",
+          "score": {
+            "home": 0,
+            "away": 1
+          },
+          "type": "Tor",
+          "shirt": "17",
+          "name": "GHENT, Leon-Pawel"
+        },
+        {
+          "minute": "02:04",
+          "side": "home",
+          "score": {
+            "home": 1,
+            "away": 1
+          },
+          "type": "7m-Tor",
+          "shirt": "73",
+          "name": "ANDEXLINGER, Roman"
+        },
+        {
+          "minute": "02:36",
+          "side": "away",
+          "score": {
+            "home": 1,
+            "away": 2
+          },
+          "type": "Tor",
+          "shirt": "17",
+          "name": "GHENT, Leon-Pawel"
+        },
+        {
+          "minute": "03:12",
+          "side": "home",
+          "score": {
+            "home": 2,
+            "away": 2
+          },
+          "type": "Tor",
+          "shirt": "7",
+          "name": "LEHNER, Florian"
+        },
+        {
+          "minute": "03:54",
+          "side": "away",
+          "score": {
+            "home": 2,
+            "away": 2
+          },
+          "type": "7m vergeben",
+          "shirt": "17",
+          "name": "GHENT, Leon-Pawel"
+        },
+        {
+          "minute": "05:44",
+          "side": "away",
+          "score": {
+            "home": 2,
+            "away": 3
+          },
+          "type": "Tor",
+          "shirt": "4",
+          "name": "GOLUBOVIC, Dejan"
+        },
+        {
+          "minute": "06:28",
+          "side": "away",
+          "score": {
+            "home": 2,
+            "away": 4
+          },
+          "type": "7m-Tor",
+          "shirt": "17",
+          "name": "GHENT, Leon-Pawel"
+        },
+        {
+          "minute": "07:52",
+          "side": "home",
+          "score": {
+            "home": 3,
+            "away": 4
+          },
+          "type": "Tor",
+          "shirt": "3",
+          "name": "ROITHMAIR, Christoph"
+        },
+        {
+          "minute": "08:40",
+          "side": "home",
+          "score": {
+            "home": 4,
+            "away": 4
+          },
+          "type": "Tor",
+          "shirt": "7",
+          "name": "LEHNER, Florian"
+        },
+        {
+          "minute": "09:20",
+          "side": "away",
+          "score": {
+            "home": 4,
+            "away": 5
+          },
+          "type": "Tor",
+          "shirt": "34",
+          "name": "BALIC, Kenan"
+        },
+        {
+          "minute": "10:59",
+          "side": "away",
+          "score": {
+            "home": 4,
+            "away": 6
+          },
+          "type": "Tor",
+          "shirt": "34",
+          "name": "BALIC, Kenan"
+        },
+        {
+          "minute": "11:19",
+          "side": "away",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "11",
+          "name": "VAHRAM, Chris Martin"
+        },
+        {
+          "minute": "12:16",
+          "side": "home",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "2",
+          "name": "WIESINGER, Johannes"
+        },
+        {
+          "minute": "12:16",
+          "side": "away",
+          "score": {
+            "home": 4,
+            "away": 7
+          },
+          "type": "Tor",
+          "shirt": "17",
+          "name": "GHENT, Leon-Pawel"
+        },
+        {
+          "minute": "13:01",
+          "side": "away",
+          "score": {
+            "home": 4,
+            "away": 8
+          },
+          "type": "Tor",
+          "shirt": "4",
+          "name": "GOLUBOVIC, Dejan"
+        },
+        {
+          "minute": "13:36",
+          "side": "home",
+          "score": {
+            "home": 5,
+            "away": 8
+          },
+          "type": "Tor",
+          "shirt": "9",
+          "name": "HINTERHÖLZL, Stefan"
+        },
+        {
+          "minute": "14:18",
+          "side": "home",
+          "score": {
+            "home": 6,
+            "away": 8
+          },
+          "type": "Tor",
+          "shirt": "2",
+          "name": "WIESINGER, Johannes"
+        },
+        {
+          "minute": "14:26",
+          "side": "away",
+          "score": {
+            "home": 6,
+            "away": 9
+          },
+          "type": "Tor",
+          "shirt": "9",
+          "name": "NADAREVIC, Eldar"
+        },
+        {
+          "minute": "15:25",
+          "side": "home",
+          "score": {
+            "home": 7,
+            "away": 9
+          },
+          "type": "Tor",
+          "shirt": "73",
+          "name": "ANDEXLINGER, Roman"
+        },
+        {
+          "minute": "15:57",
+          "side": "away",
+          "score": {
+            "home": 7,
+            "away": 10
+          },
+          "type": "Tor",
+          "shirt": "13",
+          "name": "WÖß, Florian"
+        },
+        {
+          "minute": "16:05",
+          "side": "home",
+          "score": {
+            "home": 8,
+            "away": 10
+          },
+          "type": "Tor",
+          "shirt": "2",
+          "name": "WIESINGER, Johannes"
+        },
+        {
+          "minute": "16:16",
+          "side": "away",
+          "score": {
+            "home": 8,
+            "away": 11
+          },
+          "type": "Tor",
+          "shirt": "27",
+          "name": "Vogel, David"
+        },
+        {
+          "minute": "17:06",
+          "side": "home",
+          "score": {
+            "home": 9,
+            "away": 11
+          },
+          "type": "Tor",
+          "shirt": "2",
+          "name": "WIESINGER, Johannes"
+        },
+        {
+          "minute": "17:18",
+          "side": "away",
+          "score": {
+            "home": 9,
+            "away": 12
+          },
+          "type": "Tor",
+          "shirt": "6",
+          "name": "SCHILDE, Tim"
+        },
+        {
+          "minute": "18:25",
+          "side": "away",
+          "score": {
+            "home": 9,
+            "away": 13
+          },
+          "type": "Tor",
+          "shirt": "17",
+          "name": "GHENT, Leon-Pawel"
+        },
+        {
+          "minute": "19:42",
+          "side": "away",
+          "score": {
+            "home": 9,
+            "away": 14
+          },
+          "type": "7m-Tor",
+          "shirt": "17",
+          "name": "GHENT, Leon-Pawel"
+        },
+        {
+          "minute": "20:49",
+          "side": "home",
+          "score": {
+            "home": 10,
+            "away": 14
+          },
+          "type": "Tor",
+          "shirt": "3",
+          "name": "ROITHMAIR, Christoph"
+        },
+        {
+          "minute": "21:35",
+          "side": "away",
+          "score": {
+            "home": 10,
+            "away": 15
+          },
+          "type": "7m-Tor",
+          "shirt": "17",
+          "name": "GHENT, Leon-Pawel"
+        },
+        {
+          "minute": "22:10",
+          "side": "home",
+          "score": {
+            "home": 11,
+            "away": 15
+          },
+          "type": "Tor",
+          "shirt": "73",
+          "name": "ANDEXLINGER, Roman"
+        },
+        {
+          "minute": "23:56",
+          "side": "away",
+          "score": {
+            "home": 11,
+            "away": 16
+          },
+          "type": "Tor",
+          "shirt": "6",
+          "name": "SCHILDE, Tim"
+        },
+        {
+          "minute": "24:50",
+          "side": "away",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "5",
+          "name": "OBE, Anasemi Bliss"
+        },
+        {
+          "minute": "24:51",
+          "side": "home",
+          "score": {
+            "home": 11,
+            "away": 16
+          },
+          "type": "7m vergeben",
+          "shirt": "73",
+          "name": "ANDEXLINGER, Roman"
+        },
+        {
+          "minute": "26:02",
+          "side": "away",
+          "score": {
+            "home": 11,
+            "away": 17
+          },
+          "type": "Tor",
+          "shirt": "9",
+          "name": "NADAREVIC, Eldar"
+        },
+        {
+          "minute": "27:28",
+          "side": "away",
+          "score": {
+            "home": 11,
+            "away": 17
+          },
+          "type": "7m vergeben",
+          "shirt": "17",
+          "name": "GHENT, Leon-Pawel"
+        },
+        {
+          "minute": "29:11",
+          "side": "home",
+          "score": {
+            "home": 12,
+            "away": 17
+          },
+          "type": "Tor",
+          "shirt": "2",
+          "name": "WIESINGER, Johannes"
+        },
+        {
+          "minute": "29:47",
+          "side": "away",
+          "score": {
+            "home": 12,
+            "away": 18
+          },
+          "type": "Tor",
+          "shirt": "17",
+          "name": "GHENT, Leon-Pawel"
+        },
+        {
+          "minute": "29:58",
+          "side": "home",
+          "score": {
+            "home": 13,
+            "away": 18
+          },
+          "type": "Tor",
+          "shirt": "10",
+          "name": "Weinmann, Lorenz"
+        },
+        {
+          "minute": "31:21",
+          "side": "home",
+          "score": {
+            "home": 14,
+            "away": 18
+          },
+          "type": "7m-Tor",
+          "shirt": "7",
+          "name": "LEHNER, Florian"
+        },
+        {
+          "minute": "31:56",
+          "side": "away",
+          "score": {
+            "home": 14,
+            "away": 19
+          },
+          "type": "Tor",
+          "shirt": "13",
+          "name": "WÖß, Florian"
+        },
+        {
+          "minute": "33:12",
+          "side": "away",
+          "score": {
+            "home": 14,
+            "away": 20
+          },
+          "type": "Tor",
+          "shirt": "6",
+          "name": "SCHILDE, Tim"
+        },
+        {
+          "minute": "33:22",
+          "side": "home",
+          "score": {
+            "home": 15,
+            "away": 20
+          },
+          "type": "Tor",
+          "shirt": "7",
+          "name": "LEHNER, Florian"
+        },
+        {
+          "minute": "33:47",
+          "side": "away",
+          "score": {
+            "home": 15,
+            "away": 21
+          },
+          "type": "Tor",
+          "shirt": "4",
+          "name": "GOLUBOVIC, Dejan"
+        },
+        {
+          "minute": "34:01",
+          "side": "home",
+          "score": {
+            "home": 16,
+            "away": 21
+          },
+          "type": "Tor",
+          "shirt": "7",
+          "name": "LEHNER, Florian"
+        },
+        {
+          "minute": "34:33",
+          "side": "away",
+          "score": {
+            "home": 16,
+            "away": 22
+          },
+          "type": "7m-Tor",
+          "shirt": "13",
+          "name": "WÖß, Florian"
+        },
+        {
+          "minute": "35:19",
+          "side": "away",
+          "score": {
+            "home": 16,
+            "away": 23
+          },
+          "type": "Tor",
+          "shirt": "13",
+          "name": "WÖß, Florian"
+        },
+        {
+          "minute": "35:53",
+          "side": "home",
+          "score": {
+            "home": 17,
+            "away": 23
+          },
+          "type": "Tor",
+          "shirt": "2",
+          "name": "WIESINGER, Johannes"
+        },
+        {
+          "minute": "36:25",
+          "side": "away",
+          "score": {
+            "home": 17,
+            "away": 24
+          },
+          "type": "Tor",
+          "shirt": "4",
+          "name": "GOLUBOVIC, Dejan"
+        },
+        {
+          "minute": "37:18",
+          "side": "away",
+          "score": {
+            "home": 17,
+            "away": 25
+          },
+          "type": "Tor",
+          "shirt": "17",
+          "name": "GHENT, Leon-Pawel"
+        },
+        {
+          "minute": "39:54",
+          "side": "home",
+          "score": {
+            "home": 18,
+            "away": 25
+          },
+          "type": "Tor",
+          "shirt": "3",
+          "name": "ROITHMAIR, Christoph"
+        },
+        {
+          "minute": "42:03",
+          "side": "home",
+          "score": {
+            "home": 19,
+            "away": 25
+          },
+          "type": "Tor",
+          "shirt": "25",
+          "name": "Hötzel, Moritz"
+        },
+        {
+          "minute": "42:11",
+          "side": "away",
+          "score": {
+            "home": 19,
+            "away": 26
+          },
+          "type": "Tor",
+          "shirt": "27",
+          "name": "Vogel, David"
+        },
+        {
+          "minute": "43:52",
+          "side": "away",
+          "score": {
+            "home": 19,
+            "away": 27
+          },
+          "type": "Tor",
+          "shirt": "17",
+          "name": "GHENT, Leon-Pawel"
+        },
+        {
+          "minute": "45:03",
+          "side": "home",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "2",
+          "name": "WIESINGER, Johannes"
+        },
+        {
+          "minute": "45:22",
+          "side": "away",
+          "score": {
+            "home": 19,
+            "away": 28
+          },
+          "type": "Tor",
+          "shirt": "11",
+          "name": "VAHRAM, Chris Martin"
+        },
+        {
+          "minute": "46:17",
+          "side": "away",
+          "score": {
+            "home": 19,
+            "away": 29
+          },
+          "type": "Tor",
+          "shirt": "4",
+          "name": "GOLUBOVIC, Dejan"
+        },
+        {
+          "minute": "46:36",
+          "side": "home",
+          "score": {
+            "home": 20,
+            "away": 29
+          },
+          "type": "Tor",
+          "shirt": "22",
+          "name": "Ben Abid, Maher"
+        },
+        {
+          "minute": "47:41",
+          "side": "away",
+          "score": {
+            "home": 20,
+            "away": 30
+          },
+          "type": "Tor",
+          "shirt": "9",
+          "name": "NADAREVIC, Eldar"
+        },
+        {
+          "minute": "48:15",
+          "side": "home",
+          "score": {
+            "home": 21,
+            "away": 30
+          },
+          "type": "Tor",
+          "shirt": "2",
+          "name": "WIESINGER, Johannes"
+        },
+        {
+          "minute": "49:17",
+          "side": "away",
+          "score": {
+            "home": 21,
+            "away": 31
+          },
+          "type": "Tor",
+          "shirt": "34",
+          "name": "BALIC, Kenan"
+        },
+        {
+          "minute": "49:30",
+          "side": "away",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "34",
+          "name": "BALIC, Kenan"
+        },
+        {
+          "minute": "50:56",
+          "side": "away",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "20",
+          "name": "BALIC, Edin"
+        },
+        {
+          "minute": "51:07",
+          "side": "home",
+          "score": {
+            "home": 22,
+            "away": 31
+          },
+          "type": "Tor",
+          "shirt": "22",
+          "name": "Ben Abid, Maher"
+        },
+        {
+          "minute": "52:54",
+          "side": "away",
+          "score": {
+            "home": 22,
+            "away": 32
+          },
+          "type": "Tor",
+          "shirt": "17",
+          "name": "GHENT, Leon-Pawel"
+        },
+        {
+          "minute": "53:47",
+          "side": "away",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "9",
+          "name": "NADAREVIC, Eldar"
+        },
+        {
+          "minute": "53:47",
+          "side": "home",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "2",
+          "name": "WIESINGER, Johannes"
+        },
+        {
+          "minute": "53:47",
+          "side": "home",
+          "score": null,
+          "type": "Disqualifikation",
+          "shirt": "2",
+          "name": "WIESINGER, Johannes"
+        },
+        {
+          "minute": "54:47",
+          "side": "home",
+          "score": {
+            "home": 23,
+            "away": 32
+          },
+          "type": "Tor",
+          "shirt": "69",
+          "name": "ANDEXLINGER, Stephan"
+        },
+        {
+          "minute": "55:48",
+          "side": "away",
+          "score": null,
+          "type": "Disqualifikation",
+          "shirt": "23",
+          "name": "WÖẞ, Albrecht"
+        },
+        {
+          "minute": "55:48",
+          "side": "home",
+          "score": {
+            "home": 24,
+            "away": 32
+          },
+          "type": "7m-Tor",
+          "shirt": "7",
+          "name": "LEHNER, Florian"
+        },
+        {
+          "minute": "56:44",
+          "side": "away",
+          "score": {
+            "home": 24,
+            "away": 33
+          },
+          "type": "Tor",
+          "shirt": "2",
+          "name": "SOLLMANN, Moritz"
+        },
+        {
+          "minute": "56:57",
+          "side": "home",
+          "score": {
+            "home": 25,
+            "away": 33
+          },
+          "type": "Tor",
+          "shirt": "7",
+          "name": "LEHNER, Florian"
+        },
+        {
+          "minute": "57:45",
+          "side": "away",
+          "score": {
+            "home": 25,
+            "away": 34
+          },
+          "type": "Tor",
+          "shirt": "17",
+          "name": "GHENT, Leon-Pawel"
+        },
+        {
+          "minute": "58:10",
+          "side": "away",
+          "score": null,
+          "type": "2 Minuten",
+          "shirt": "5",
+          "name": "OBE, Anasemi Bliss"
+        },
+        {
+          "minute": "58:12",
+          "side": "home",
+          "score": {
+            "home": 26,
+            "away": 34
+          },
+          "type": "7m-Tor",
+          "shirt": "7",
+          "name": "LEHNER, Florian"
+        },
+        {
+          "minute": "59:32",
+          "side": "home",
+          "score": {
+            "home": 27,
+            "away": 34
+          },
+          "type": "Tor",
+          "shirt": "9",
+          "name": "HINTERHÖLZL, Stefan"
+        },
+        {
+          "minute": "60:00",
+          "side": "home",
+          "score": {
+            "home": 28,
+            "away": 34
+          },
+          "type": "Tor",
+          "shirt": "73",
+          "name": "ANDEXLINGER, Roman"
+        }
+      ]
     }
   },
   "stats": {
@@ -3109,5 +7207,52 @@
         "draws": 0
       }
     ]
+  },
+  "venues": {
+    "18369": {
+      "id": "18369",
+      "name": "SH Harbach, Linz",
+      "address": [
+        "In der Aichwiesen 16",
+        "4020 Linz"
+      ],
+      "resin": "nicht erlaubt"
+    },
+    "18376": {
+      "id": "18376",
+      "name": "SMS Kleinmünchen, Linz",
+      "address": [
+        "Meindlstraße 25",
+        "4030 Linz"
+      ],
+      "resin": "erlaubt Besonderes Haftmittel: nur wasserlösliche Haftmittel zugelassen"
+    },
+    "18386": {
+      "id": "18386",
+      "name": "BSH Eferding",
+      "address": [
+        "Bräuhausstraße 5",
+        "4070 Eferding"
+      ],
+      "resin": "erlaubt Besonderes Haftmittel: Nur wasserlösliche Harzmittel zugelassen"
+    },
+    "18391": {
+      "id": "18391",
+      "name": "SH Hüttnerschule, Linz",
+      "address": [
+        "Wieningerstraße 15",
+        "4020 Linz"
+      ],
+      "resin": "nicht erlaubt"
+    },
+    "18394": {
+      "id": "18394",
+      "name": "SH Pernau, Wels - Sterner Arena",
+      "address": [
+        "Handel Mazetti Straße 5",
+        "4600 Wels"
+      ],
+      "resin": "nicht erlaubt"
+    }
   }
 }

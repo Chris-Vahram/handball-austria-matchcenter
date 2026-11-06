@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Chevron, LEFT } from "@ui/chevron";
-import { Footer, Header } from "@ui/shell";
+import { Footer, SubHeader } from "@ui/shell";
 import { COMPETITIONS, COMPETITION_IDS, getDataset, isCompetitionId } from "@/data";
-import type { ReportTeam } from "@/domain/schema";
-import { formatDay } from "@/lib/format";
+import type { ReportTeam, TimelineEvent } from "@/domain/schema";
+import { mapsUrl } from "@/lib/dashboard";
+import { displayName, formatDay } from "@/lib/format";
 
 type Props = { params: Promise<{ competition: string; meeting: string }> };
 
@@ -49,32 +50,72 @@ function Lineup({ team, side, showcase }: { team: ReportTeam; side: string; show
             <th scope="col" className="nm">Spieler</th>
             <th scope="col">Tore</th>
             <th scope="col"><abbr title="7-Meter Tore/Versuche">7m</abbr></th>
+            <th scope="col"><abbr title="Zeitstrafen (2 Minuten)">2′</abbr></th>
             <th scope="col"><abbr title="Gelbe Karte">G</abbr></th>
-            <th scope="col"><abbr title="2-Minuten-Strafen">2′</abbr></th>
-            <th scope="col"><abbr title="Disqualifikation">D</abbr></th>
+            <th scope="col"><abbr title="Rote Karte / Disqualifikation">R</abbr></th>
           </tr>
         </thead>
         <tbody>
           {team.players.map((p) => (
             <tr key={p.shirt + p.name}>
               <td className="nr">{p.shirt}</td>
-              <th scope="row" className="nm">{p.name}</th>
-              <td className={p.goals ? "g" : "z"}>{p.goals || "–"}</td>
-              <td className={p.sevenMAttempts ? undefined : "z"}>{p.sevenMAttempts ? `${p.sevenMGoals}/${p.sevenMAttempts}` : "–"}</td>
-              <td>{p.yellow ? <Card color="#f2c200" edge="#6b5600" label="Gelbe Karte" /> : ""}</td>
+              <th scope="row" className="nm">{displayName(p.name)}</th>
+              <td className="g">{p.goals || ""}</td>
+              <td>{p.sevenMAttempts ? `${p.sevenMGoals}/${p.sevenMAttempts}` : ""}</td>
               <td>{p.twoMin || ""}</td>
-              <td>{p.disqualified ? <Card color="#c8102e" edge="#7a0a1c" label="Disqualifikation" /> : ""}</td>
+              <td>{p.yellow ? <Card color="#f2c200" edge="#6b5600" label="Gelbe Karte" /> : ""}</td>
+              <td>{p.disqualified ? <Card color="#c8102e" edge="#7a0a1c" label="Rote Karte / Disqualifikation" /> : ""}</td>
             </tr>
           ))}
         </tbody>
       </table>
       <dl className="totals">
         <div><dt><abbr title="7-Meter Tore/Versuche">7m</abbr></dt><dd>{team.totals.sevenMGoals}/{team.totals.sevenMAttempts}</dd></div>
-        <div><dt><abbr title="2-Minuten-Strafen">2-Min</abbr></dt><dd>{team.totals.twoMin}</dd></div>
-        <div><dt><abbr title="Gelbe Karten">Gelb</abbr></dt><dd>{team.totals.yellow}</dd></div>
-        <div><dt><abbr title="Disqualifikationen">Disq.</abbr></dt><dd>{team.totals.disqualifications}</dd></div>
+        <div><dt><abbr title="Zeitstrafen (2 Minuten)">2′</abbr></dt><dd>{team.totals.twoMin}</dd></div>
+        <div><dt><abbr title="Gelbe Karten">G</abbr></dt><dd>{team.totals.yellow}</dd></div>
+        <div><dt><abbr title="Rote Karten / Disqualifikationen">R</abbr></dt><dd>{team.totals.disqualifications}</dd></div>
         <div><dt>Timeouts</dt><dd>{team.totals.timeouts}</dd></div>
       </dl>
+    </section>
+  );
+}
+
+const ICON: Record<TimelineEvent["type"], string> = {
+  "Tor": "Tor", "7m-Tor": "7m-Tor", "7m vergeben": "7m vergeben", "Verwarnung": "Gelb",
+  "2 Minuten": "2 Min", "Disqualifikation": "Rot", "Disqualifikation mit Bericht": "Rot (Bericht)"
+};
+
+/** Spielverlauf (ADR-005 amendment 2026-11-01): collapsed by default, split by half; minute | home | score | away. */
+function Timeline({ events, home, away }: { events: TimelineEvent[]; home: string; away: string }) {
+  const halves = [
+    { title: "1. Halbzeit", list: events.filter((e) => e.minute < "30:00") },
+    { title: "2. Halbzeit", list: events.filter((e) => e.minute >= "30:00") }
+  ].filter((h) => h.list.length);
+  const row = (e: TimelineEvent, i: number) => {
+    const who = e.shirt ? `${e.shirt} ${displayName(e.name ?? "")}`.trim() : "Mannschaftsoffizieller";
+    const goal = e.type === "Tor" || e.type === "7m-Tor";
+    const ev = <><span className="tl-type">{ICON[e.type]}</span> {who}<span className="sr-only"> ({e.side === "home" ? home : away})</span></>;
+    return (
+      <li key={i} className={`tl${goal ? " goal" : ""}`}>
+        <span className="tl-min">{e.minute}</span>
+        <span className="tl-home">{e.side === "home" ? ev : null}</span>
+        <span className="tl-score">{e.score ? `${e.score.home}:${e.score.away}` : ""}</span>
+        <span className="tl-away">{e.side === "away" ? ev : null}</span>
+      </li>
+    );
+  };
+  return (
+    <section className="panel timeline" aria-labelledby="h-timeline">
+      <details>
+        <summary><h2 className="section-title" id="h-timeline">Spielverlauf <small>{events.length} Ereignisse</small></h2></summary>
+        <p className="tl-sides" aria-hidden="true"><span /><span>{home}</span><span /><span>{away}</span></p>
+        {halves.map((h) => (
+          <div key={h.title}>
+            <h3 className="day">{h.title}</h3>
+            <ol>{h.list.map(row)}</ol>
+          </div>
+        ))}
+      </details>
     </section>
   );
 }
@@ -87,14 +128,15 @@ export default async function ReportPage({ params }: Props) {
   const showcase = COMPETITIONS[x.competition].showcaseTeam;
   const homeWin = r.score.home > r.score.away;
   const awayWin = r.score.away > r.score.home;
+  const venue = match.venueId ? data.venues[match.venueId] : undefined;
 
   return (
     <>
-      <Header id={x.competition} importedAt={data.source.importedAt} tab="spiel" subpage />
+      <SubHeader id={x.competition} importedAt={data.source.importedAt} crumb="Spielbericht" />
       <main className="page report">
         <section className="panel scoreboard" aria-labelledby="h-match">
           <h1 className="sr-only" id="h-match">Spielbericht {r.home.name} gegen {r.away.name}, Spiel Nr. {r.number}</h1>
-          <Link className="back" href={`/${x.competition}?runde=${match.round}#spielplan`}><Chevron d={LEFT} size={16} />Runde {match.round}</Link>
+          <Link className="back" href={`/${x.competition}/spielplan?runde=${match.round}`}><Chevron d={LEFT} size={16} />Runde {match.round}</Link>
           <div className="teams">
             <p className={`${homeWin ? "win " : ""}${r.home.name === showcase ? "me" : ""}`}>{r.home.name}</p>
             <p className="score" aria-label={`Endstand ${r.score.home} zu ${r.score.away}`}>
@@ -104,7 +146,8 @@ export default async function ReportPage({ params }: Props) {
             <p className={`${awayWin ? "win " : ""}${r.away.name === showcase ? "me" : ""}`}>{r.away.name}</p>
           </div>
           <p className="facts">
-            Spiel Nr. {r.number} · {formatDay(r.date)}{r.time && `, ${r.time}`}{r.venue && ` · ${r.venue}`}
+            Spiel Nr. {r.number} · {formatDay(r.date)}{r.time && `, ${r.time}`}
+            {venue ? <> · <Link href={`/halle/${venue.id}`}>{venue.name}</Link> · <a href={mapsUrl(venue.address, venue.name)} target="_blank" rel="noopener noreferrer">Route</a></> : r.venue && ` · ${r.venue}`}
           </p>
           <p className={`status${r.approved ? "" : " pending"}`}>
             {r.approved ? "Spielbericht genehmigt" : "Spielbericht noch nicht genehmigt"}
@@ -114,6 +157,8 @@ export default async function ReportPage({ params }: Props) {
           <Lineup team={r.home} side="Heim" showcase={showcase} />
           <Lineup team={r.away} side="Gast" showcase={showcase} />
         </div>
+        <p className="legend lineup-legend">7m = Tore/Versuche · 2′ = Zeitstrafen · G = Gelbe Karte · R = Rote Karte / Disqualifikation · Summen inkl. Mannschaftsoffizielle</p>
+        {r.timeline.length > 0 && <Timeline events={r.timeline} home={r.home.name} away={r.away.name} />}
       </main>
       <Footer id={x.competition} importedAt={data.source.importedAt} />
     </>

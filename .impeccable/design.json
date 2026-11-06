@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-01T00:00:00Z",
+  "generatedAt": "2026-11-01T12:00:00Z",
   "title": "Design System: Matchcenter v3",
   "extensions": {
     "colorMeta": {
@@ -173,7 +173,7 @@
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "League name H1, uppercase; 40px from 900px. Team page H1 at 28px/1.05 on mobile, 40px from 900px."
+        "purpose": "League name H1 and the Meine Teams / Bewerbe page titles, uppercase; 40px from 900px. Team and venue H1 at 28px/1.05 on mobile, team H1 40px from 900px."
       },
       "score": {
         "displayName": "Score",
@@ -181,15 +181,15 @@
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Section titles and wordmark, uppercase."
+        "purpose": "Section titles, wordmark and the next-match card heading (20px, 22px on the team page), uppercase."
       },
       "figure": {
         "displayName": "Figure",
-        "purpose": "The one deciding column per table (Pkt, Ranglisten value); 18px for the Statistik lead column."
+        "purpose": "The deciding figure: Pkt, Ranglisten value, and the scores in match and fixture rows; 18px for the Statistik lead column, 16px for timeline goal scores."
       },
       "title": {
         "displayName": "Title",
-        "purpose": "Team names, tab/segment/button labels."
+        "purpose": "Team names, opponents, tab/segment/button labels, picker rows."
       },
       "body": {
         "displayName": "Body",
@@ -201,7 +201,7 @@
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Column headers, day headers, legends, footer; sentence case."
+        "purpose": "Column headers, day headers, picker legends, H/A markers, legends, footnotes, footer; sentence case."
       }
     },
     "shadows": [
@@ -225,7 +225,8 @@
     "breakpoints": [
       {
         "name": "filter-row",
-        "value": "600px"
+        "value": "600px",
+        "purpose": "Ranglisten filter on one row; Statistik shows the Zuschauer column instead of the subline."
       },
       {
         "name": "wide",
@@ -258,7 +259,7 @@
       "name": "Underline Tabs",
       "kind": "nav",
       "refersTo": "tab",
-      "description": "Sticky section tabs with red inset underline.",
+      "description": "Four real pages as sticky tabs with red inset underline; none active on sub-pages.",
       "html": "<nav class=\"ds-tabs\"><a href=\"#\" aria-current=\"page\">Tabelle</a><a href=\"#\">Spielplan</a><a href=\"#\">Ranglisten</a><a href=\"#\">Statistik</a></nav>",
       "css": ".ds-tabs{display:flex;gap:18px;border-bottom:1px solid #e4e6ea;background:#fff;font-family:Barlow,system-ui,sans-serif}.ds-tabs a{font-size:15px;font-weight:600;color:#5e636b;min-height:44px;display:inline-flex;align-items:center;text-decoration:none}.ds-tabs a[aria-current=page]{color:#15171a;box-shadow:inset 0 -3px #c8102e}"
     },
@@ -282,25 +283,25 @@
       "name": "Match Row",
       "kind": "custom",
       "refersTo": "table-row",
-      "description": "Flashscore form: home over away, score per line, winner bold.",
-      "html": "<a class=\"ds-match\" href=\"#\"><time>18:00</time><span class=\"t win\">Bregenz Handball FT</span><span class=\"s win\">37</span><span class=\"t me\">SK Konstant Traun / Edelweiss</span><span class=\"s\">35</span><span class=\"meta\">Nr. 23 · Schendlingerhalle</span></a>",
-      "css": ".ds-match{display:grid;grid-template-columns:52px 1fr auto;gap:0 10px;padding:10px 16px;border-top:1px solid #e4e6ea;align-items:center;text-decoration:none;color:#15171a;background:#fff;font-family:Barlow,system-ui,sans-serif;font-variant-numeric:tabular-nums}.ds-match:hover{background:#fafafa}.ds-match:focus-visible{outline:2px solid #c8102e;outline-offset:2px}.ds-match time{font-size:13px;color:#5e636b;grid-row:span 2}.ds-match .t{font-size:15px;line-height:22px}.ds-match .s{font-size:16px;line-height:22px;font-weight:600;text-align:right}.ds-match .win{font-weight:700}.ds-match .me{color:#a50d26;font-weight:700}.ds-match .meta{grid-column:2/-1;font-size:12px;color:#5e636b;margin-top:2px}"
+      "description": "Flashscore form: home over away, condensed score per line, stretched report link with chevron, venue link above it.",
+      "html": "<div class=\"ds-match\"><time>18:00</time><span class=\"t win\">Bregenz Handball FT</span><span class=\"s win\">37</span><span class=\"t me\">SK Konstant Traun / Edelweiss</span><span class=\"s\">35<sup>*</sup></span><span class=\"meta\"><a class=\"venue\" href=\"#\">Schendlingerhalle</a></span><a class=\"go\" href=\"#\" aria-label=\"Spielbericht\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 18l6-6-6-6\"/></svg></a></div><p class=\"ds-foot\">* Spielbericht noch nicht genehmigt</p>",
+      "css": ".ds-match{position:relative;display:grid;grid-template-columns:52px 1fr auto 18px;gap:0 10px;padding:10px 16px;border-top:1px solid #e4e6ea;align-items:center;color:#15171a;background:#fff;font-family:Barlow,system-ui,sans-serif;font-variant-numeric:tabular-nums}.ds-match time{font-size:13px;color:#5e636b;grid-row:span 2;grid-column:1}.ds-match .t{grid-column:2;font-size:15px;line-height:22px}.ds-match .s{grid-column:3;text-align:right;font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:700;font-size:20px;line-height:22px;color:#3d4249}.ds-match .s.win{font-weight:800;color:#15171a}.ds-match .s sup{font-family:Barlow,system-ui,sans-serif;font-size:11px;color:#5e636b}.ds-match .win{font-weight:700}.ds-match .me{color:#a50d26;font-weight:700}.ds-match .meta{grid-column:2/4;font-size:12px;color:#5e636b;margin-top:2px}.ds-match .venue{position:relative;z-index:1;color:inherit;text-decoration:underline;text-decoration-color:#c9ccd1;text-underline-offset:2px}.ds-match .venue:hover{text-decoration-color:currentColor}.ds-match .go{position:absolute;inset:0;display:flex;align-items:center;justify-content:flex-end;padding-right:10px;color:#5e636b}.ds-match .go:hover{background:rgba(21,23,26,.03)}.ds-match .go:focus-visible{outline:2px solid #c8102e;outline-offset:-2px}.ds-foot{margin:0;padding:8px 16px 12px;font-family:Barlow,system-ui,sans-serif;font-size:12px;color:#5e636b;border-top:1px solid #e4e6ea}"
     },
     {
       "name": "Round Flipper",
       "kind": "custom",
       "refersTo": "round-flipper",
-      "description": "Steps through the season; disabled side at 35% opacity.",
-      "html": "<div class=\"ds-rn\"><a href=\"#\" aria-label=\"Runde 5\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M15 18l-6-6 6-6\"/></svg></a><strong>Runde 6<small>31.10. – 01.11.2026</small></strong><span class=\"off\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 18l6-6-6-6\"/></svg></span></div>",
-      "css": ".ds-rn{display:flex;align-items:center;justify-content:space-between;padding:0 8px 10px;font-family:Barlow,system-ui,sans-serif;color:#15171a;background:#fff}.ds-rn a,.ds-rn .off{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:#f3f4f6;color:#15171a}.ds-rn a:focus-visible{outline:2px solid #c8102e;outline-offset:2px}.ds-rn .off{opacity:.35}.ds-rn strong{font-size:15px;text-align:center}.ds-rn small{display:block;font-size:12px;color:#5e636b;font-weight:500}"
+      "description": "Two circular steppers around a native round select; disabled side at 35% opacity.",
+      "html": "<div class=\"ds-rn\"><a href=\"#\" aria-label=\"Runde 5\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M15 18l-6-6 6-6\"/></svg></a><select aria-label=\"Runde wählen\"><option>Runde 6 · 31.10. – 01.11.2026</option></select><span class=\"off\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 18l6-6-6-6\"/></svg></span></div>",
+      "css": ".ds-rn{display:flex;align-items:center;justify-content:space-between;padding:0 8px 10px;font-family:Barlow,system-ui,sans-serif;color:#15171a;background:#fff}.ds-rn a,.ds-rn .off{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:#f3f4f6;color:#15171a}.ds-rn a:focus-visible{outline:2px solid #c8102e;outline-offset:2px}.ds-rn .off{opacity:.35}.ds-rn select{font:inherit;font-size:16px;font-weight:700;min-height:44px;padding:0 32px 0 12px;border:1px solid #c9ccd1;border-radius:6px;background:#fff;color:#15171a}.ds-rn select:focus-visible{outline:2px solid #c8102e;outline-offset:2px}"
     },
     {
       "name": "Search Field",
       "kind": "input",
       "refersTo": "search-field",
-      "description": "Header search on every page; plain GET form to /suche, blush halo on focus.",
-      "html": "<form class=\"ds-search\" role=\"search\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"M20 20l-3.5-3.5\"/></svg><input type=\"search\" placeholder=\"Team oder Spieler\" aria-label=\"Team oder Spieler suchen\"></form>",
-      "css": ".ds-search{position:relative;max-width:280px;font-family:Barlow,system-ui,sans-serif}.ds-search svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#5e636b;pointer-events:none}.ds-search input{width:100%;min-height:44px;font:inherit;font-size:16px;padding:0 10px 0 32px;border:1px solid #c9ccd1;border-radius:6px;background:#f3f4f6;color:#15171a}.ds-search input:focus{background:#fff;border-color:#15171a;outline:none;box-shadow:0 0 0 2px #fce8eb}"
+      "description": "Header search on every page; GET form to /suche with a combobox suggestion list, blush halo on focus.",
+      "html": "<form class=\"ds-search\" role=\"search\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"M20 20l-3.5-3.5\"/></svg><input type=\"search\" placeholder=\"Team oder Spieler\" aria-label=\"Team oder Spieler suchen\"><ul class=\"ds-suggest\" role=\"listbox\"><li role=\"option\" aria-selected=\"true\"><span class=\"kind\">Team</span><span class=\"lbl\">SK Konstant Traun / Edelweiss<small>HLA Challenge West</small></span></li><li role=\"option\"><span class=\"kind\">Spieler</span><span class=\"lbl\">Halilovic, Maid<small>SK Konstant Traun / Edelweiss</small></span></li></ul></form>",
+      "css": ".ds-search{position:relative;max-width:280px;font-family:Barlow,system-ui,sans-serif}.ds-search svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#5e636b;pointer-events:none}.ds-search input{width:100%;min-height:44px;font:inherit;font-size:16px;padding:0 10px 0 32px;border:1px solid #c9ccd1;border-radius:6px;background:#f3f4f6;color:#15171a}.ds-search input:focus{background:#fff;border-color:#15171a;outline:none;box-shadow:0 0 0 2px #fce8eb}.ds-suggest{position:absolute;top:calc(100% + 4px);left:0;right:0;min-width:280px;margin:0;padding:4px 0;list-style:none;background:#fff;border:1px solid #c9ccd1;border-radius:6px}.ds-suggest li{display:grid;grid-template-columns:56px 1fr;gap:8px;align-items:center;padding:8px 12px;min-height:44px;cursor:pointer}.ds-suggest li[aria-selected=true],.ds-suggest li:hover{background:#f3f4f6}.ds-suggest .kind{font-size:11px;font-weight:700;color:#5e636b}.ds-suggest .lbl{font-size:15px;font-weight:600}.ds-suggest small{display:block;font-weight:400;font-size:12px;color:#5e636b}"
     },
     {
       "name": "Team Head",
@@ -317,37 +318,72 @@
       "description": "Schedule day strip; today's date in Deep Red Ink, the only live red.",
       "html": "<h3 class=\"ds-day\">Samstag, 31. Oktober</h3><h3 class=\"ds-day today\"><span>Heute</span> · Sonntag, 1. November</h3>",
       "css": ".ds-day{font-family:Barlow,system-ui,sans-serif;font-size:12px;font-weight:700;color:#5e636b;background:#f3f4f6;padding:6px 16px;margin:0}.ds-day.today{color:#a50d26}.ds-day.today span{font-weight:800}"
+    },
+    {
+      "name": "Next-Match Card",
+      "kind": "card",
+      "refersTo": "next-match-card",
+      "description": "The one dark surface: next match, one thought per line, on-dark Route planen.",
+      "html": "<section class=\"ds-nc\"><h3>Nächstes Spiel · Sonntag, 15. November, 18:00</h3><p class=\"vs\">Heim gegen <strong>SMC Innsbruck Handball Tirol</strong></p><p class=\"venue\"><a href=\"#\">Sportzentrum Traun</a><br>Am Nordsaum 160, 4050 Traun</p><p class=\"meta\"><a class=\"route\" href=\"#\">Route planen</a><span>Runde 7 · Harz nicht erlaubt</span></p></section>",
+      "css": ".ds-nc{background:#15171a;color:#fff;border-radius:8px;padding:14px 16px;font-family:Barlow,system-ui,sans-serif}.ds-nc h3{margin:0;font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:800;font-size:20px;line-height:1.15;text-transform:uppercase}.ds-nc .vs{margin:8px 0 6px;font-size:16px}.ds-nc strong{font-weight:800}.ds-nc .venue{margin:4px 0 0;font-size:13px;color:#dfe2e6}.ds-nc a{color:#fff;text-decoration:underline;text-decoration-color:rgba(255,255,255,.45);text-underline-offset:3px}.ds-nc a:hover{text-decoration-color:#fff}.ds-nc .meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin:10px 0 0;font-size:13px;color:#dfe2e6}.ds-nc a.route{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1.5px solid #fff;border-radius:6px;font-weight:700;text-decoration:none}.ds-nc a.route:hover{background:#fff;color:#15171a}.ds-nc a:focus-visible{outline:2px solid #c8102e;outline-offset:2px}"
+    },
+    {
+      "name": "Fixture Row",
+      "kind": "custom",
+      "refersTo": "fixture-row",
+      "description": "Team-page row: result chip, date, H/A, opponent only, own score first, chevron.",
+      "html": "<div class=\"ds-fx\"><i class=\"n\">N</i><time>Sa., 31.10.<br>18:00</time><span class=\"ha\">A</span><span class=\"opp\">Bregenz Handball FT<small><a href=\"#\">Schendlingerhalle</a></small></span><span class=\"s\">35:37</span><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 18l6-6-6-6\"/></svg></div>",
+      "css": ".ds-fx{display:grid;grid-template-columns:22px 52px 22px 1fr auto 18px;gap:0 8px;align-items:center;padding:10px 16px;border-top:1px solid #e4e6ea;min-height:56px;background:#fff;color:#15171a;font-family:Barlow,system-ui,sans-serif;font-variant-numeric:tabular-nums}.ds-fx:hover{background:rgba(21,23,26,.03)}.ds-fx i{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:3px;font-style:normal;font-size:11px;font-weight:700}.ds-fx i.n{background:#fff;color:#5e636b;box-shadow:inset 0 0 0 1px #a3a8af}.ds-fx time{font-size:12px;color:#5e636b;line-height:1.3}.ds-fx .ha{font-size:12px;font-weight:700;color:#5e636b;text-align:center}.ds-fx .opp{font-size:15px;font-weight:600;min-width:0}.ds-fx small{display:block;font-weight:400;font-size:12px;color:#5e636b}.ds-fx small a{color:inherit;text-decoration:underline;text-decoration-color:#c9ccd1;text-underline-offset:2px}.ds-fx .s{font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:800;font-size:20px;white-space:nowrap}.ds-fx svg{color:#5e636b}"
+    },
+    {
+      "name": "Mein-Team Picker",
+      "kind": "input",
+      "refersTo": "team-pick-row",
+      "description": "Home picker: checkbox rows grouped by competition; selected rows take the blush.",
+      "html": "<fieldset class=\"ds-pick\"><legend>HLA Challenge West</legend><label class=\"on\"><input type=\"checkbox\" checked> SK Konstant Traun / Edelweiss</label><label><input type=\"checkbox\"> HSC Wels</label></fieldset>",
+      "css": ".ds-pick{border:0;margin:0;padding:0;background:#fff;font-family:Barlow,system-ui,sans-serif;color:#15171a}.ds-pick legend{font-size:12px;font-weight:700;color:#5e636b;background:#f3f4f6;padding:6px 16px;width:100%}.ds-pick label{display:flex;align-items:center;gap:12px;min-height:48px;padding:0 16px;border-top:1px solid #e4e6ea;font-weight:600;font-size:15px;cursor:pointer}.ds-pick label.on{background:#fce8eb}.ds-pick input{width:20px;height:20px;accent-color:#15171a;margin:0}.ds-pick input:focus-visible{outline:2px solid #c8102e;outline-offset:2px}"
     }
   ],
   "narrative": {
     "northStar": "The Results Desk",
-    "overview": "A real sports results site, built properly. The full standings table is the first thing on screen, as a true table with full official club names, and the round's matches sit directly below it. The look follows the category convention set by HBL, laola1.at and Flashscore: a white page, dark ink, hairline rules, a condensed uppercase face for headings and the numbers that matter. Craft goes into density, alignment and tabular figures, not decoration.\n\nRed is Austrian, not ornamental. It marks a fixed set of things: the 4px rule across the top, the active tab underline, the second half of the wordmark, focus and selection, today's day heading in the schedule, and the own team wherever it appears (standings, schedule, report, rankings, team page, Statistik). Everything else is ink, grey and white. The confirmed rejection is the v2 look: pill tabs, initial circles, letter-spaced caps labels, soft shadows, card mosaics standing in for a table.\n\nOn phones (390px) every section runs edge to edge, separated by 8px strips of the grey field. From 900px up the same sections become white panels with 8px corners floating on that grey field, so standings and the round column read as two separate work areas.",
+    "overview": "A real sports results site, built properly. The full standings table is the first thing on a league page, as a true table with full official club names, and the round's matches sit directly below it. The home page is \"Meine Teams\": the visitor's remembered teams as dashboard cards, then the list of Bewerbe. The look follows the category convention set by HBL, laola1.at and Flashscore: a white page, dark ink, hairline rules, a condensed uppercase face for headings and the numbers that matter. Craft goes into density, alignment and tabular figures, not decoration.\n\nRed is Austrian, not ornamental. It marks a fixed set of things: the 4px rule across the top, the active tab underline, the second half of the wordmark, focus and selection, today's day heading in the schedule, and the own team wherever it appears (standings, schedule, report, rankings, team page, Statistik). Everything else is ink, grey and white, with one deliberate exception in weight rather than hue: the next match is the single dark (ink) surface in its context. The confirmed rejection is the v2 look: pill tabs, initial circles, letter-spaced caps labels, soft shadows, card mosaics standing in for a table.\n\nOn phones (390px) every section runs edge to edge, separated by 8px strips of the grey field. From 900px up the same sections become white panels with 8px corners floating on that grey field, so standings and the round column read as two separate work areas. Everything that can be tapped looks tappable: links carry a soft underline or a chevron.",
     "keyCharacteristics": [
       "Table first, with real `<table>` semantics and full club names that wrap to at most two lines, never abbreviated or scrolled sideways.",
-      "Two typefaces from one family: Barlow for text and figures, Barlow Condensed 800 uppercase for headings, the score and the deciding column.",
+      "Two typefaces from one family: Barlow for text and figures, Barlow Condensed 800 uppercase for headings, the score and the deciding figures.",
       "Tabular numerals everywhere (set on `body`).",
       "Red has a closed list of jobs; the own team is the signature use.",
-      "Flat: no drop shadows. Depth comes from white surfaces on a grey field."
+      "Flat: no drop shadows. Depth comes from white surfaces on a grey field, and the one ink card for the next match.",
+      "Visible link affordances: soft underlines on names and venues, a chevron on every row that opens a report."
     ],
     "rules": [
       {
         "name": "The Red Has a Job Rule",
-        "body": "Red appears only on the top rule, the active tab, the wordmark half, focus and selection, the disqualification card, today's day heading, and the own team. If an element isn't on that list, it isn't red.",
+        "body": "Red appears only on the top rule, the active tab, the wordmark half, focus and selection (including picked and remembered Mein-Team state), the disqualification card, today's day heading, and the own team. If an element isn't on that list, it isn't red.",
         "section": "colors"
       },
       {
         "name": "The Pending Stays Neutral Rule",
-        "body": "States like \"Bericht noch nicht genehmigt\" or \"angesetzt\" use ink or mute, never red, even on the own team's match.",
+        "body": "States like \"Bericht noch nicht genehmigt\" use ink or mute, never red, even on the own team's match: a mute superscript asterisk after the score, one mute footnote per list, a dashed neutral status tag on the report.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Dark Surface Rule",
+        "body": "Ink is used as a fill for exactly one card per team context: the next match (on the team page, and inside each Meine-Teams card). Nothing else goes dark.",
         "section": "colors"
       },
       {
         "name": "The Condensed Means Weight Rule",
-        "body": "Barlow Condensed 800 is reserved for headings, the score and the single deciding column per table. Never use it for running text or secondary figures.",
+        "body": "Barlow Condensed 800 is reserved for headings, the score, the single deciding column per table and the score in a result row. Never use it for running text or secondary figures.",
         "section": "typography"
       },
       {
         "name": "The Tabular Figures Rule",
         "body": "Tabular numerals are on globally. Numeric columns align right, and names align left.",
+        "section": "typography"
+      },
+      {
+        "name": "The Title Case Names Rule",
+        "body": "Player surnames published in all caps by nuLiga are shown in title case (\"KRITZINGER, Maurice\" reads \"Kritzinger, Maurice\") at render time; the stored data stays unchanged. Mixed-case names are left alone.",
         "section": "typography"
       },
       {
@@ -357,18 +393,24 @@
       }
     ],
     "dos": [
-      "**Do** put the full standings table first, using real `<table>`, `<th scope>` and `<abbr>` semantics.",
+      "**Do** put the full standings table first on a league page, using real `<table>`, `<th scope>` and `<abbr>` semantics.",
       "**Do** carry the own team in red across every surface: blush row tint plus Deep Red Ink name in tables, and Deep Red Ink name in match rows, the scoreboard and lineup headings.",
-      "**Do** set headings, the score and the single deciding column in Barlow Condensed 800 uppercase, and everything else in Barlow.",
+      "**Do** set headings, the score and the deciding figures in Barlow Condensed 800, and everything else in Barlow.",
       "**Do** use the 1.5px ink border with 6px corners for every switch and button, and the inset red underline for tabs.",
       "**Do** keep sections flat: white on Field Grey, with 8px panel corners from 900px only.",
-      "**Do** keep full official team names and let them wrap to two lines at 390px."
+      "**Do** keep full official team names and let them wrap to two lines at 390px.",
+      "**Do** make every link visible: a soft Control Line underline on names and venues, a chevron on every row that opens something.",
+      "**Do** keep the next match as the single ink card in its context, one thought per line.",
+      "**Do** collect pending states in one footnote per list, marked by an asterisk on the score.",
+      "**Do** leave zero cells blank in lineup and player tables, and use the shared Tore · 7m · 2′ · G · R columns with their legend."
     ],
     "donts": [
       "**Don't** use pill tabs, initial circles, letter-spaced uppercase labels, soft shadows, or cards in place of a table (the rejected v2 look).",
       "**Don't** use red for decoration, for pending or unapproved states, or for anything outside The Red Has a Job Rule.",
       "**Don't** abbreviate club names or make a table scroll horizontally on phones.",
-      "**Don't** add drop shadows; depth is tonal."
+      "**Don't** add drop shadows; depth is tonal.",
+      "**Don't** add a second dark surface next to the next-match card.",
+      "**Don't** repeat a pending note on every row."
     ]
   }
 }

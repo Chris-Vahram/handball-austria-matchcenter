@@ -39,3 +39,10 @@ Queries shorter than 2 characters SHALL show a hint instead of results; a query 
 #### Scenario: No hits
 - **WHEN** the user searches "xyzq"
 - **THEN** the page states that nothing was found for "xyzq"
+
+### Requirement: Suggestions while typing
+The header search SHALL suggest matching teams and players after two characters without submitting, and selecting a suggestion opens its target; submitting still opens the results page.
+
+#### Scenario: Type a surname
+- **WHEN** the user types "hali"
+- **THEN** "HALILOVIC, Maid" appears as a suggestion before submitting

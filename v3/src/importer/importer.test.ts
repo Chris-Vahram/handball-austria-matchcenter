@@ -4,7 +4,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { isAllowedSourceUrl, sourceUrls } from "./config";
 import { createFetcher } from "./fetcher";
-import { parseGroupStats, parseReport, parseSchedule, parseStandings, parseStats } from "./parse";
+import { parseGroupStats, parseReport, parseSchedule, parseStandings, parseStats, parseVenue } from "./parse";
 import { assignRounds, currentRound } from "../lib/rounds";
 import { teamResolver } from "./import";
 
@@ -133,7 +133,7 @@ describe("stat team resolution", () => {
 });
 
 describe("rounds", () => {
-  const base = { time: null, venue: null, status: "played" as const, score: null, halftime: null, reportId: null, reportApproved: null, note: null };
+  const base = { time: null, venue: null, venueId: null, status: "played" as const, score: null, halftime: null, reportId: null, reportApproved: null, note: null };
   it("falls back to calendar weeks when numbering is not contiguous", () => {
     const out = assignRounds([
       { ...base, number: 3, date: "2026-10-17", home: "A", away: "B" },
@@ -173,6 +173,41 @@ describe("group and team statistics", () => {
   });
   it("is allowlisted", () => {
     expect(isAllowedSourceUrl(sourceUrls.groupStats("hla-challenge-west"))).toBe(true);
+  });
+});
+
+describe("venues and timeline (improve-v3-usability)", () => {
+  it("reads venue facts only", async () => {
+    const html = await fixture("court-18346.html");
+    expect(parseVenue(html, "18346")).toEqual({ id: "18346", name: "Handball-Arena Bregenz", address: ["Untere Burggräflergasse 11", "6900 Bregenz"], resin: "nicht erlaubt" });
+    expect(JSON.stringify(parseVenue(html, "18346"))).not.toMatch(/SRAA|Elite Cup|MEISTERLIGA/);
+  });
+
+  it("never keeps phone numbers or e-mails published below a venue address", async () => {
+    const html = (await fixture("court-18346.html")).replace("6900 Bregenz <br />", "6900 Bregenz <br /> Mobil: +43 664 1234567 <br /> <script>encodeEmail('at','x','y','')</script> <br />");
+    const v = parseVenue(html, "18346");
+    expect(v.address).toEqual(["Untere Burggräflergasse 11", "6900 Bregenz"]);
+    expect(JSON.stringify(v)).not.toMatch(/\+43|Mobil|Tel|encodeEmail|@/);
+  });
+
+  it("allowlists court pages of configured championships only", () => {
+    expect(isAllowedSourceUrl(sourceUrls.venue("hla-challenge-west", "18346"))).toBe(true);
+    expect(isAllowedSourceUrl(`${B}/courtInfo?federation=%C3%96HB&roundTyp=0&championship=%C3%96HB+25%2F26&location=18346`)).toBe(false);
+    expect(isAllowedSourceUrl(`${B}/courtInfo?federation=%C3%96HB&roundTyp=0&championship=%C3%96HB+26%2F27&location=18346&month=Mai`)).toBe(false);
+  });
+
+  it("schedule rows carry the venue id", async () => {
+    const m = parseSchedule(await fixture("schedule.html")).find((x) => x.number === 2)!;
+    expect(m.venueId).toBe("18346");
+  });
+
+  it("reads the Spielverlauf with players and without officials' names", async () => {
+    const r = parseReport(await fixture("report-93135.html"), "93135");
+    expect(r.timeline[0]).toEqual({ minute: "02:12", side: "away", score: { home: 0, away: 1 }, type: "Tor", shirt: "15", name: "HALILOVIC, Maid" });
+    const goals = r.timeline.filter((e) => e.type === "Tor" || e.type === "7m-Tor").length;
+    expect(goals).toBe(72);
+    expect(JSON.stringify(r.timeline)).not.toMatch(/OFFIZIELL|SCHIRI/);
+    expect(r.timeline.some((e) => e.type === "Disqualifikation")).toBe(true);
   });
 });
 

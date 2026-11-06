@@ -38,16 +38,18 @@ Next.js, React, TypeScript, Tailwind CSS, Zod, Vitest, Playwright (ADR-001). Com
 - Before `rm`, `mv`, recursive operations, or glob patterns: explain what's affected and wait for approval.
 
 ## OpenSpec workflow
-`openspec/` is set up (`specs/`, `changes/`, `decisions/` for ADRs, `docs/` for FSD/SDD/risk/handoff docs). 6 changes (`bootstrap-pilot-spec`, `expand-oehb-competitions-and-reports`, `sales-demo-readiness`, `finalize-nuliga-sales-prototype`, `sales-preview-polish`, `unify-edelweiss-traun-club-context`) are fully implemented and committed but not yet archived — Chris approved archiving these (2026-06-11), see `continuations/sales-outreach-next-steps-2026-06-11.md`.
+`openspec/` is set up (`specs/`, `changes/`, `decisions/` for ADRs, `docs/` for FSD/SDD/risk/handoff docs). v3 changes `add-matchcenter-v3` and `improve-v3-usability` are archived (2026-11-01); their capabilities live in `openspec/specs/`. ADR-005 (adult player names + amendments for player search and Spielverlauf) and the ADR-004 2026/27 section govern v3 data. 6 older changes (`bootstrap-pilot-spec`, `expand-oehb-competitions-and-reports`, `sales-demo-readiness`, `finalize-nuliga-sales-prototype`, `sales-preview-polish`, `unify-edelweiss-traun-club-context`) are fully implemented and committed but not yet archived — Chris approved archiving these (2026-06-11), see `continuations/sales-outreach-next-steps-2026-06-11.md`.
 
 ## Current status / what's left
 - **v3 (2026-11-01, archived change `2026-11-01-add-matchcenter-v3`):** mobile-first sports-site matchcenter in `v3/` (port 3030) with real nuLiga 26/27 data for HLA Challenge West + OÖ Landesliga: Tabelle, Spielplan, Spielbericht, Ranglisten, Statistik, team pages, search (teams + players), print/PDF. Data update: `cd v3 && npm run import -- all`, review snapshot diff, commit. Design record: `DESIGN.md`, contract `.impeccable/surfaces/v3-app-liga.md`.
+- **v3 usability pass (2026-11-01, archived `improve-v3-usability`):** home "Meine Teams", Bewerbe by association, Spielplan page with round picker, venue pages (address/route/resin), .ics export, Spielverlauf (ADR-005 amendment), search suggestions. Out of scope by design: officials' tools/result entry.
 - Sales prototype is feature-complete and deployed to a Vercel preview (`/pitch`, `/demo` routes). See `openspec/docs/sales-demo-handoff.md` for live URLs and outreach template (contains real contact info — keep local, don't post publicly).
-- Outreach: email to ÖHB sent (2026-06-11), awaiting response — no further outreach action without Chris.
+- Git: `main` has v2 + v3 first batch (PR #1). Branch `improve-v3-usability` is pushed but **not merged** — merge only on Chris's go.
+- Outreach: wave 1 email to ÖHB sent (2026-06-11), no documented answer. Wave 2 draft to nu Datenautomaten (CC ÖHB) in `continuations/email-nu-datenautomaten-2026-11-05.md` — **not sent**; Chris deploys v3 himself and sends. No outreach action without Chris.
 - Public-launch checklist remains intentionally open (placeholders, legal/privacy review, public domain) — do not treat as a coding TODO without Chris explicitly asking.
 
 ## Out of scope (do not add without explicit request)
 Automated/broad scraping, login-protected access, U18 player-level publication, login/admin/result-entry, live score ingestion, English UI/dark mode, native app, push notifications, analytics, backend/database, productive nuLiga integration.
 
 ## Cold-restart entry point
-See `continuations/sales-outreach-next-steps-2026-06-11.md` for current state and likely next steps (OpenSpec archiving of the 6 changes is ready-to-execute).
+See `continuations/v3-handoff-2026-11-05.md` for the current v3 state and next options. Older context: `continuations/sales-outreach-next-steps-2026-06-11.md` (archiving of the 6 older changes is still ready-to-execute).

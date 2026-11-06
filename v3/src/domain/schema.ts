@@ -17,6 +17,7 @@ export const matchSchema = z.object({
   date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
   time: z.string().regex(/^\d{2}:\d{2}$/).nullable(),
   venue: z.string().nullable(),
+  venueId: z.string().regex(/^\d+$/).nullable(),
   home: z.string().min(1),
   away: z.string().min(1),
   status: z.enum(["played", "scheduled"]),
@@ -44,6 +45,22 @@ export const reportTeamSchema = z.object({
   totals: z.object({ sevenMAttempts: count, sevenMGoals: count, twoMin: count, yellow: count, timeouts: count, disqualifications: count }).strict()
 }).strict();
 
+export const timelineEventSchema = z.object({
+  minute: z.string().regex(/^\d{1,2}:\d{2}$/),
+  side: z.enum(["home", "away"]),
+  score: score.nullable(),
+  type: z.enum(["Tor", "7m-Tor", "7m vergeben", "Verwarnung", "2 Minuten", "Disqualifikation", "Disqualifikation mit Bericht"]),
+  shirt: z.string().max(3).nullable(),
+  name: z.string().nullable()
+}).strict();
+
+export const venueSchema = z.object({
+  id: z.string().regex(/^\d+$/),
+  name: z.string().min(1),
+  address: z.array(z.string().min(1)).max(4),
+  resin: z.string().nullable()
+}).strict();
+
 export const reportSchema = z.object({
   id: z.string().regex(/^\d+$/),
   number: z.number().int().min(1),
@@ -54,7 +71,8 @@ export const reportSchema = z.object({
   score: score,
   halftime: score.nullable(),
   home: reportTeamSchema,
-  away: reportTeamSchema
+  away: reportTeamSchema,
+  timeline: z.array(timelineEventSchema)
 }).strict();
 
 export const statRowSchema = z.object({
@@ -91,7 +109,8 @@ export const datasetSchema = z.object({
   matches: z.array(matchSchema),
   reports: z.record(z.string(), reportSchema),
   stats: z.record(z.string(), z.array(statRowSchema)),
-  groupStats: z.object({ group: teamStatsSchema, teams: z.array(teamStatsSchema) }).strict().nullable()
+  groupStats: z.object({ group: teamStatsSchema, teams: z.array(teamStatsSchema) }).strict().nullable(),
+  venues: z.record(z.string(), venueSchema)
 }).strict();
 
 export type StandingRow = z.infer<typeof standingRowSchema>;
@@ -101,3 +120,5 @@ export type ReportTeam = z.infer<typeof reportTeamSchema>;
 export type StatRow = z.infer<typeof statRowSchema>;
 export type Dataset = z.infer<typeof datasetSchema>;
 export type TeamStats = z.infer<typeof teamStatsSchema>;
+export type Venue = z.infer<typeof venueSchema>;
+export type TimelineEvent = z.infer<typeof timelineEventSchema>;

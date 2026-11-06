@@ -42,3 +42,11 @@ Owner decision (Chris, 2026-10-31): "ja die suche kann auch spieler finden
  using only the nuLiga player rankings ("Statistiken und Ranglisten") of adult
  competitions as source. Hits show name, team and competition and link to the
  team page; no person profile pages are created.
+
+## Amendment 2026-11-01: match timeline (Spielverlauf)
+
+Owner decision (Chris, 2026-11-01): Spielverlauf "Ja, mit Namen". For adult
+competitions the Spielbericht may show the published timeline: minute, score,
+event type (goal, 7m, warning, 2 minutes, disqualification), side, shirt number
+and player name. Events of team officials are kept without a name. Referees and
+table officials remain excluded. Change: `improve-v3-usability`.

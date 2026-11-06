@@ -1,34 +1,29 @@
 import { expect, test } from "@playwright/test";
 
-test.describe("Torschützen", () => {
-  test("shows the goals ranking and filters to Traun", async ({ page }) => {
+test.describe("Ranglisten", () => {
+  test("goals ranking; team filter applies immediately", async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto("/hla-challenge-west/torschuetzen");
+    await expect(page.locator(".tabs [aria-current=page]")).toHaveText("Ranglisten");
     const rows = page.locator("table.ranking tbody tr");
-    await expect(rows.first()).toContainText("ARNDT, Arvid");
+    await expect(rows.first()).toContainText("Arndt, Arvid");
     await page.selectOption("#team", "SK Konstant Traun / Edelweiss");
-    await page.getByRole("button", { name: "Anzeigen" }).click();
     await expect(page).toHaveURL(/team=SK/);
-    const clubs = await rows.locator("small").allInnerTexts();
-    expect(clubs.length).toBeGreaterThan(0);
-    expect(new Set(clubs)).toEqual(new Set(["SK Konstant Traun / Edelweiss"]));
-    const { scroll, client } = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
-    expect(scroll).toBe(client);
+    await expect(rows.first()).toContainText("Halilovic, Maid");
+    await expect(rows.locator("small")).toHaveCount(0); // team name is not repeated under every player when filtered
+    await expect(page.locator("#team")).toHaveValue("SK Konstant Traun / Edelweiss");
     expect(await page.content()).not.toContain("person=");
   });
 
-  test("switches between lists keeping the club filter", async ({ page }) => {
-    await page.goto("/hla-challenge-west/torschuetzen?team=SK%20Konstant%20Traun%20%2F%20Edelweiss");
-    await page.getByRole("link", { name: "2-Min" }).click();
-    await expect(page.locator("#h-stats")).toHaveText("Zeitstrafen");
-    await expect(page).toHaveURL(/liste=zeitstrafen&team=SK/);
+  test("per-game lists lead with nuLiga's sort key", async ({ page }) => {
+    await page.goto("/hla-challenge-west/torschuetzen?liste=zeitstrafen");
+    const first = page.locator("table.ranking tbody tr").first();
+    await expect(first).toContainText("Dilys, Devanas");
+    await expect(first.locator("td.val")).toHaveText("2,00");
   });
-});
 
-test("per-game lists lead with the value nuLiga sorts by", async ({ page }) => {
-  await page.goto("/hla-challenge-west/torschuetzen?liste=zeitstrafen");
-  await expect(page.locator("table.ranking thead")).toContainText("Ges.");
-  const first = page.locator("table.ranking tbody tr").first();
-  await expect(first).toContainText("DILYS, Devanas");
-  await expect(first.locator("td.val")).toHaveText("2,00");
+  test("thin data is explained in the Landesliga", async ({ page }) => {
+    await page.goto("/landesliga-ooe/torschuetzen");
+    await expect(page.locator(".thin")).toContainText("von 40 Spielen");
+  });
 });
