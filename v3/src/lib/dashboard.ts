@@ -1,7 +1,7 @@
 import { COMPETITIONS, COMPETITION_IDS, getDataset, type CompetitionId } from "../data";
 import type { Dataset, Match, Venue } from "../domain/schema";
 import { lastFive, type Result } from "./form";
-import { teamMatches, teamSlug } from "./teams";
+import { nextMatch, teamMatches, teamSlug } from "./teams";
 
 export type VenueRef = { id: string; name: string; address: string[]; resin: string | null } | null;
 
@@ -19,7 +19,8 @@ export type TeamCard = {
   last: { date: string; opponent: string; home: boolean; own: number; other: number; result: Result; reportHref: string | null } | null;
 };
 
-export const teamKey = (competitionId: string, team: string) => `${competitionId}|${team}`;
+export { teamKey } from "./favorites";
+import { teamKey } from "./favorites";
 
 export function venueOf(data: Dataset, m: Match): VenueRef {
   const v: Venue | undefined = m.venueId ? data.venues[m.venueId] : undefined;
@@ -37,7 +38,7 @@ export function allTeamCards(): TeamCard[] {
     if (!data) return [];
     return data.standings.map((s): TeamCard => {
       const matches = teamMatches(data, s.team);
-      const next = matches.find((m) => m.status === "scheduled");
+      const next = nextMatch(data, s.team);
       const last = [...matches].reverse().find((m) => m.score);
       const side = (m: Match) => m.home === s.team;
       return {

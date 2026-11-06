@@ -1,81 +1,40 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import type { ReactNode } from "react";
+import { COMPETITIONS_KEY, TEAMS } from "@/lib/favorites";
 import type { TeamCard } from "@/lib/dashboard";
-
-const KEY = "matchcenter:my-teams";
-
-export function readTeams(): string[] {
-  try { return JSON.parse(localStorage.getItem(KEY) ?? "[]"); } catch { return []; }
-}
-function writeTeams(keys: string[]) {
-  try { localStorage.setItem(KEY, JSON.stringify(keys)); } catch { /* private mode: session only */ }
-  window.dispatchEvent(new Event("my-teams"));
-}
-export function useMyTeams(): [string[], (keys: string[]) => void, boolean] {
-  const [keys, setKeys] = useState<string[]>([]);
-  const [ready, setReady] = useState(false);
-  useEffect(() => {
-    const sync = () => setKeys(readTeams());
-    sync(); setReady(true);
-    window.addEventListener("my-teams", sync);
-    window.addEventListener("storage", sync);
-    return () => { window.removeEventListener("my-teams", sync); window.removeEventListener("storage", sync); };
-  }, []);
-  return [keys, (next) => { setKeys(next); writeTeams(next); }, ready];
-}
-
-/** "Als Mein Team merken" toggle on team pages. */
-export function RememberButton({ teamKey, team }: { teamKey: string; team: string }) {
-  const [keys, setKeys] = useMyTeams();
-  const on = keys.includes(teamKey);
-  return (
-    <button type="button" className={on ? "btn remember on" : "btn remember"} aria-pressed={on}
-      onClick={() => setKeys(on ? keys.filter((k) => k !== teamKey) : [...keys, teamKey])}>
-      {on ? "Gemerkt als Mein Team" : "Als Mein Team merken"}<span className="sr-only">: {team}</span>
-    </button>
-  );
-}
+import { useFavorites } from "./favorites";
+import { SearchBox } from "./search-box";
 
 const RESULT = { S: "Sieg", U: "Unentschieden", N: "Niederlage" } as const;
 const day = (iso: string) => new Intl.DateTimeFormat("de-AT", { weekday: "long", day: "numeric", month: "long", timeZone: "UTC" }).format(new Date(`${iso}T12:00:00Z`));
 const maps = (name: string, address: string[]) => `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent([name, ...address].join(", "))}`;
 
-/** Home: remembered teams as dashboard cards, otherwise a picker. Everything else is server-rendered around it. */
-export function MyTeams({ cards, groups }: { cards: TeamCard[]; groups: { competition: string; teams: { key: string; team: string }[] }[] }) {
-  const [keys, setKeys, ready] = useMyTeams();
-  const [editing, setEditing] = useState(false);
-  const mine = keys.map((k) => cards.find((c) => c.key === k)).filter((c): c is TeamCard => !!c);
-  const picking = ready && (editing || mine.length === 0);
-  // Stay in the picker until "Fertig", so several teams can be chosen in one go.
-  const toggle = (k: string) => { setEditing(true); setKeys(keys.includes(k) ? keys.filter((x) => x !== k) : [...keys, k]); };
-
-  if (!ready) return <section className="panel my" aria-busy="true"><p className="empty">Meine Teams werden geladen …</p></section>;
+/**
+ * Home: followed teams (cards) and followed Bewerbe (server-rendered blocks, kept in the DOM and toggled with `hidden`
+ * so the favorite highlighter can mark their rows). Without favorites: a search and a hint how ★ works.
+ * ponytail: every team card and Bewerb block ships with the page; fetch per favorite once there are many Bewerbe.
+ */
+export function FavoritesHome({ cards, blocks }: { cards: TeamCard[]; blocks: { id: string; node: ReactNode }[] }) {
+  const [teams, , teamsReady] = useFavorites(TEAMS);
+  const [comps, , compsReady] = useFavorites(COMPETITIONS_KEY);
+  const ready = teamsReady && compsReady;
+  const mine = teams.map((k) => cards.find((c) => c.key === k)).filter((c): c is TeamCard => !!c);
+  const followed = new Set(comps);
+  const any = mine.length > 0 || blocks.some((b) => followed.has(b.id));
 
   return (
-    <section className="my" aria-labelledby="h-my">
-      <div className="my-head">
-        <h1 id="h-my">{mine.length && !editing ? "Meine Teams" : "Mein Team wählen"}</h1>
-        {mine.length > 0 && <button type="button" className="link-btn" onClick={() => setEditing(!editing)}>{editing ? "Fertig" : "Ändern"}</button>}
-      </div>
-      {picking ? (
-        <div className="panel picker">
-          <p className="hint">Tippe dein Team an. Mehrere sind möglich, z. B. derselbe Verein in zwei Bewerben. Gespeichert wird nur auf diesem Gerät.</p>
-          {groups.map((g) => (
-            <fieldset key={g.competition}>
-              <legend>{g.competition}</legend>
-              {g.teams.map((t) => (
-                <label key={t.key} className={keys.includes(t.key) ? "pick on" : "pick"}>
-                  <input type="checkbox" checked={keys.includes(t.key)} onChange={() => toggle(t.key)} />
-                  <span>{t.team}</span>
-                </label>
-              ))}
-            </fieldset>
-          ))}
-          {mine.length > 0 && <button type="button" className="btn solid" onClick={() => setEditing(false)}>Fertig</button>}
-        </div>
-      ) : (
+    <>
+      {ready && !any && (
+        <section className="panel entry" aria-labelledby="h-entry">
+          <h1 id="h-entry">Finde dein Team</h1>
+          <SearchBox placeholder="Team, Verein oder Bewerb" className="search big" />
+          <p className="hint">Tippe bei einem Team oder Bewerb auf <svg className="hint-star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" /></svg><span className="sr-only">den Stern</span>, dann siehst du es hier mit nächstem Spiel und Tabelle. Gespeichert nur auf diesem Gerät.</p>
+        </section>
+      )}
+      {ready && any && <h1 className="home-title">Meine Favoriten</h1>}
+      {mine.length > 0 && (
         <div className="cards">
           {mine.map((c) => (
             <article key={c.key} className="card">
@@ -93,9 +52,10 @@ export function MyTeams({ cards, groups }: { cards: TeamCard[]; groups: { compet
                       {c.next.venue.address.length > 0 && <><br />{c.next.venue.address.join(", ")}</>}
                     </p>
                   )}
-                  {c.next.venue && c.next.venue.address.length > 0 && (
-                    <p className="nc-meta"><a className="nc-route" href={maps(c.next.venue.name, c.next.venue.address)} target="_blank" rel="noopener noreferrer">Route planen</a></p>
-                  )}
+                  <p className="nc-meta">
+                    {c.next.venue && c.next.venue.address.length > 0 && <a className="nc-route" href={maps(c.next.venue.name, c.next.venue.address)} target="_blank" rel="noopener noreferrer">Route planen</a>}
+                    <Link href={`/${c.competitionId}/vorschau/${c.next.number}`}>Vorschau</Link>
+                  </p>
                 </div>
               )}
               {c.last && (
@@ -111,6 +71,7 @@ export function MyTeams({ cards, groups }: { cards: TeamCard[]; groups: { compet
           ))}
         </div>
       )}
-    </section>
+      {blocks.map((b) => <div key={b.id} hidden={!followed.has(b.id)}>{b.node}</div>)}
+    </>
   );
 }

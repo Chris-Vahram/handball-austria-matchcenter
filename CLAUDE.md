@@ -23,8 +23,7 @@ Next.js, React, TypeScript, Tailwind CSS, Zod, Vitest, Playwright (ADR-001). Com
 - (No auth/DB in this project currently — Argon2/bcrypt/JWT/Prisma rules in AGENTS.md are template boilerplate, not yet applicable.)
 - **Project-specific privacy rules (binding, status: partially-approved as of 2026-06-05)**:
   - Adult player-level stats OK only from allowlisted public match reports, fields limited to: display name, shirt number, team, goals, 7m summary, card counts, 2-min penalties.
-  - U18 player-level publication: **disabled**, do not enable without a new documented/approved privacy decision.
-  - **v3 exception (ADR-005, owner decision 2026-10-31):** in adult competitions v3 shows player names of all teams as nuLiga publishes them; youth competitions stay off. Allowlist: ADR-004 "2026/27" section.
+  - **v3 (ADR-005, owner decisions 2026-10-31 + amendment 2026-11-06):** v3 shows player names of all teams as nuLiga publishes them, in adult **and youth** competitions alike (same allowed fields). Allowlist: ADR-004 "2026/27" section. (Root `src/`/v2 rule "U18 player-level disabled" is historical.)
   - Never include contacts, phone numbers, emails, referee data, source-person IDs, or player portrait links.
 
 ## Data strategy (ADR-002, ADR-004 — do not change without explicit request)
@@ -43,13 +42,14 @@ Next.js, React, TypeScript, Tailwind CSS, Zod, Vitest, Playwright (ADR-001). Com
 ## Current status / what's left
 - **v3 (2026-11-01, archived change `2026-11-01-add-matchcenter-v3`):** mobile-first sports-site matchcenter in `v3/` (port 3030) with real nuLiga 26/27 data for HLA Challenge West + OÖ Landesliga: Tabelle, Spielplan, Spielbericht, Ranglisten, Statistik, team pages, search (teams + players), print/PDF. Data update: `cd v3 && npm run import -- all`, review snapshot diff, commit. Design record: `DESIGN.md`, contract `.impeccable/surfaces/v3-app-liga.md`.
 - **v3 usability pass (2026-11-01, archived `improve-v3-usability`):** home "Meine Teams", Bewerbe by association, Spielplan page with round picker, venue pages (address/route/resin), .ics export, Spielverlauf (ADR-005 amendment), search suggestions. Out of scope by design: officials' tools/result entry.
+- **streamline-v3 (2026-11-06, open change `streamline-v3`, branch `streamline-v3`, not committed yet):** roast/pre-mortem fixes + Codex reviews: score-alignment bug fixed, date-based next match/current Runde ("Ergebnis ausständig"), ★ favorites for teams + Bewerbe (red = favorites only, no showcase team), favorites home / "Finde dein Team", Verband › Bewerb line (switch removed), 3 tabs (Ranglisten → Statistik top 10 + "Alle Ranglisten"), search finds Bewerbe + Verein aliases, Spielbericht Kurzfazit, Spielvorschau `/[bewerb]/vorschau/[nr]`, PDF link only on Tabelle/Spielplan, youth like adult (ADR-005 amendment). Later ideas (season archive, International/ÖMS/ÖHB entry) in the change's design.md.
 - Sales prototype is feature-complete and deployed to a Vercel preview (`/pitch`, `/demo` routes). See `openspec/docs/sales-demo-handoff.md` for live URLs and outreach template (contains real contact info — keep local, don't post publicly).
-- Git: `main` has v2 + v3 first batch (PR #1). Branch `improve-v3-usability` is pushed but **not merged** — merge only on Chris's go.
+- Git: `main` has v2 + v3 first batch (PR #1). Branch `improve-v3-usability` is pushed but **not merged** — merge only on Chris's go. Branch `streamline-v3` (local, from `improve-v3-usability`) holds the streamline work + refreshed 05.11.2026 snapshots, uncommitted.
 - Outreach: wave 1 email to ÖHB sent (2026-06-11), no documented answer. Wave 2 draft to nu Datenautomaten (CC ÖHB) in `continuations/email-nu-datenautomaten-2026-11-05.md` — **not sent**; Chris deploys v3 himself and sends. No outreach action without Chris.
 - Public-launch checklist remains intentionally open (placeholders, legal/privacy review, public domain) — do not treat as a coding TODO without Chris explicitly asking.
 
 ## Out of scope (do not add without explicit request)
-Automated/broad scraping, login-protected access, U18 player-level publication, login/admin/result-entry, live score ingestion, English UI/dark mode, native app, push notifications, analytics, backend/database, productive nuLiga integration.
+Automated/broad scraping, login-protected access, login/admin/result-entry, live score ingestion, English UI/dark mode, native app, push notifications, analytics, backend/database, productive nuLiga integration.
 
 ## Cold-restart entry point
 See `continuations/v3-handoff-2026-11-05.md` for the current v3 state and next options. Older context: `continuations/sales-outreach-next-steps-2026-06-11.md` (archiving of the 6 older changes is still ready-to-execute).

@@ -213,6 +213,8 @@ Scope: this system governs the `v3/` app only. The root `src/` app and `v2/` are
 
 ## Overview
 
+> **streamline-v3 (2026-11-06) overrides older text below where they disagree:** red "own team" = the visitor's ★ favorites (no hard-coded showcase team; nothing red without favorites); the two-segment competition switch is gone (a "Verband › Bewerb" line above the H1 links to `/bewerbe#<verband>`); three tabs (Tabelle, Spielplan, Statistik; full Ranglisten are a sub-page); home = favorites overview (team cards, followed Bewerb blocks with top-3 mini table) or, without favorites, "Finde dein Team" search + Bewerbe nach Verband; match rows place each score on its team's line; new Spielvorschau (`/[bewerb]/vorschau/[nr]`) and Spielbericht Kurzfazit; PDF link only on Tabelle and Spielplan.
+
 **Creative North Star: "The Results Desk"**
 
 A real sports results site, built properly. The full standings table is the first thing on a league page, as a true table with full official club names, and the round's matches sit directly below it. The home page is "Meine Teams": the visitor's remembered teams as dashboard cards, then the list of Bewerbe. The look follows the category convention set by HBL, laola1.at and Flashscore: a white page, dark ink, hairline rules, a condensed uppercase face for headings and the numbers that matter. Craft goes into density, alignment and tabular figures, not decoration.
@@ -320,11 +322,11 @@ Mostly square, with small and purposeful corners: 3px on form and result chips, 
 - **Focus:** global 2px Austrian Red outline with a 2px offset.
 
 ### Segmented Controls
-- **Style:** a grid of equal segments inside a 1.5px ink border with 6px corners. The competition switch has two segments; the Ranglisten list switch has five (Tore, 7m, 2′, Gelb, Rot), divided by hairlines.
+- **Style:** a grid of equal segments inside a 1.5px ink border with 6px corners. The Ranglisten list switch has five (Tore, 7m, 2′, Gelb, Rot), divided by hairlines.
 - **State:** the active segment (`aria-current="page"`) fills ink with white text. Inactive segments show ink on white.
 
 ### Tabs
-- Four underline tabs, each a real page (Tabelle, Spielplan, Ranglisten, Statistik), in a row with 18px gaps, 15px/600 mute text, 44px tall, sticky at the top over a hairline bottom border. On sub-pages none is active.
+- Three underline tabs, each a real page (Tabelle, Spielplan, Statistik), in a row with 18px gaps, 15px/600 mute text, 44px tall, sticky at the top over a hairline bottom border. On sub-pages none is active.
 - **Active:** ink text with an inset 3px Austrian Red underline. There is no pill or background.
 
 ### Breadcrumb (sub-pages)
@@ -345,8 +347,8 @@ Mostly square, with small and purposeful corners: 3px on form and result chips, 
 - **Form column (desktop ≥900px only):** the last five results as 18px squares with 3px corners and an 11px/700 letter, oldest to newest left to right: S is filled ink, U is Control Line grey, N is white with a 1px grey inset outline and a mute letter. Never red, which belongs to the own team. A legend sentence explains the reading direction. On the phone the column is hidden, so all required columns still fit without horizontal scrolling.
 
 ### Header Bar
-- Phone: wordmark and search share the first row; on competition pages the two-segment competition switch spans the second. The wordmark links home.
-- Desktop (≥900px): one row, wordmark | switch (max 420px) | search (max 280px), 64px tall, 24px gaps. Competition pages follow with the title and the sticky tabs; sub-pages with the breadcrumb and tabs; home, Bewerbe, venue and search show the bar alone.
+- Phone and desktop: wordmark and search share one row (64px on desktop). The wordmark links home. Competition pages show a 13px "Verband › Bewerb" line above the H1, with a ★ follow star (40px, outline mute; filled Austrian Red when followed) right of the H1.
+- Desktop (≥900px): Competition pages follow with the title and the sticky tabs; sub-pages with the breadcrumb and tabs; home, Bewerbe, venue and search show the bar alone.
 
 ### Match Row
 - Flashscore form: time on the left spanning both lines (with the date above it where needed), home team over away team, one score per line in the Figure style (winner in ink 800, loser lighter at 700), and the chevron column on report-linked rows. A 12px meta line (venue link · note) runs underneath.
@@ -366,10 +368,11 @@ Mostly square, with small and purposeful corners: 3px on form and result chips, 
 ### Round Flipper and Picker (signature)
 - Two 44px circular field-grey buttons with chevrons flank a native select (16px/700, 44px, Control Line border, 6px corners) listing every round as "Runde N · <date span>". Choosing a round submits the GET form; a no-JS button remains. When there is no previous or next round, the circle stays in place at 35% opacity.
 
-### Meine Teams (home)
-- **Picker** (no team remembered, or "Ändern"): a 14px mute hint, then one fieldset per competition with its name as a field-grey legend strip, and 48px hairline-separated checkbox rows (20px ink checkbox, 15px/600 full team name). Selected rows take the blush tint. Several teams can be chosen; "Fertig" (solid) closes it. Stored on the device only.
+### Meine Favoriten (home)
+- **No favorites:** a white panel "Finde dein Team" (Display), a 48px search "Team, Verein oder Bewerb" and a 14px mute hint how ★ works. No team list.
+- **Favorites:** "Meine Favoriten" title, team cards first, then one block per followed Bewerb: linked name, a mini table (#, Team, Sp, Pkt; top 3 plus followed teams' rows, blush + red), "Ganze Tabelle", then the current round's match rows.
 - **Dashboard cards:** white cards (square on phones, 8px from 900px). Team name 18px/800 as a link, a 13px mute line (competition · rank · points · record), the next-match card, a "Zuletzt" line (result chip, opponent, bold score linking to the report), and a "Spiele, Form und Spieler" link.
-- Below: the "Bewerbe" panel with the competition rows and "Alle Bewerbe nach Verband".
+- Below, always: "Bewerbe nach Verband" (the same directory as `/bewerbe`, Verband sections as anchors).
 
 ### Bewerbe and Venue Pages
 - **Bewerbe:** a Display title and a 13px mute scope line, then one panel per association with the association as a day-header strip and 56px full-row links (16px bold name, 13px mute subline with phase, round and games, right chevron).

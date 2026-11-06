@@ -50,3 +50,20 @@ competitions the Spielbericht may show the published timeline: minute, score,
 event type (goal, 7m, warning, 2 minutes, disqualification), side, shirt number
 and player name. Events of team officials are kept without a name. Referees and
 table officials remain excluded. Change: `improve-v3-usability`.
+
+## Amendment 2026-11-06: youth competitions like adult
+
+Owner decision (Chris, 2026-11-06), after the Codex adversarial review flagged
+youth timelines: "die jugend spieler werden ja auch nuliga verwenden, die wollen
+das, das passt so für die, das hat jetzt jahre jahre jahre immer schon so
+gepasst" and "ja ich will das mit den jugend ding lockern, so wie normal bei den
+erwachsenen, speichere das".
+
+Youth competitions (U18 and younger) are treated exactly like adult
+competitions: player names, shirt numbers and the same allowed stat fields
+(goals, 7m, cards, 2-minute suspensions, Spielverlauf) may be shown as nuLiga
+publishes them. This supersedes "Youth competitions: player-level data stays
+off" above. Unchanged: the never-stored list (referees, table officials, team
+officials' names, contacts, birthdates, pass numbers, source-person IDs,
+portrait links), allowlisted sources only (ADR-004), removal on request.
+Change: `streamline-v3`.

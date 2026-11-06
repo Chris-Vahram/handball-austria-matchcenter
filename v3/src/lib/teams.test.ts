@@ -13,7 +13,13 @@ describe("team pages data", () => {
   });
 
   it("next match is Nr. 25 against Innsbruck on 15.11.2026", () => {
-    expect(nextMatch(hla, traun)).toMatchObject({ number: 25, date: "2026-11-15", away: "SMC Innsbruck Handball Tirol" });
+    expect(nextMatch(hla, traun, "2026-11-06")).toMatchObject({ number: 25, date: "2026-11-15", away: "SMC Innsbruck Handball Tirol" });
+  });
+
+  it("an unplayed match from yesterday is not the next match", () => {
+    const n25 = hla.matches.find((m) => m.number === 25)!;
+    expect(nextMatch(hla, traun, "2026-11-16")?.number).not.toBe(n25.number);
+    expect(nextMatch(hla, traun, "2026-11-16")!.date >= "2026-11-16").toBe(true);
   });
 
   it("home/away records add up to the table", () => {

@@ -1,33 +1,65 @@
 import { expect, test } from "@playwright/test";
 
-test.describe("Startseite Meine Teams", () => {
-  test("pick two teams, dashboard persists after reload, change again", async ({ page }) => {
+test.describe("Startseite", () => {
+  test("first visit: search and Verband list, no team checklist", async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto("/");
-    await expect(page.locator("#h-my")).toHaveText("Mein Team wählen");
-    await page.getByText("SK Konstant Traun / Edelweiss").first().click();
-    await page.getByText("Sportunion EDELWEISS Linz / SK Traun").first().click();
-    await page.getByRole("button", { name: "Fertig" }).first().click();
-    await expect(page.locator(".card")).toHaveCount(2);
-    await expect(page.locator(".card").first()).toContainText("SMC Innsbruck Handball Tirol");
-    await expect(page.locator(".card").first()).toContainText("Sportzentrum Traun");
-    await page.reload();
-    await expect(page.locator("#h-my")).toHaveText("Meine Teams");
-    await expect(page.locator(".card")).toHaveCount(2);
-    await page.getByRole("button", { name: "Ändern" }).click();
-    await expect(page.locator(".picker")).toBeVisible();
+    await expect(page.locator("#h-entry")).toHaveText("Finde dein Team");
+    await expect(page.locator(".entry input[type=search]")).toBeInViewport();
+    await expect(page.locator("input[type=checkbox]")).toHaveCount(0);
+    await expect(page.locator("#oehb")).toContainText("HLA Challenge West");
+    await expect(page.locator("#ooehv")).toContainText("Landesliga OÖ");
   });
 
-  test("remember from the team page, competitions one tap away", async ({ page }) => {
-    await page.goto("/hla-challenge-west/team/hsc-wels");
-    await page.getByRole("button", { name: /Als Mein Team merken/ }).click();
-    await expect(page.getByRole("button", { name: /Gemerkt als Mein Team/ })).toHaveAttribute("aria-pressed", "true");
+  test("★ on team and Bewerb shows them on the home, persists, and unfollows", async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto("/hla-challenge-west/team/sk-konstant-traun-edelweiss");
+    const star = page.locator(".team-head .star");
+    await star.click();
+    await expect(star).toHaveAttribute("aria-pressed", "true");
+    await expect(star).toHaveAccessibleName(/folgst du/);
+    await page.goto("/hla-challenge-west");
+    await page.locator(".title-row .star").click();
     await page.goto("/");
-    await expect(page.locator(".card")).toContainText("HSC Wels");
-    await page.getByRole("link", { name: "Alle Bewerbe nach Verband" }).click();
-    await expect(page.locator(".bewerbe")).toContainText("ÖHB – Österreichischer Handballbund");
-    await expect(page.locator(".bewerbe")).toContainText("OÖHV – Oberösterreichischer Handballverband");
-    await expect(page.locator(".scope")).toContainText("Prototyp");
+    await expect(page.locator(".card")).toHaveCount(1);
+    await expect(page.locator(".card")).toContainText("SMC Innsbruck Handball Tirol");
+    const block = page.locator(".comp-block").filter({ hasText: "HLA Challenge West" });
+    await expect(block).toBeVisible();
+    // top 3 plus the followed team's row
+    await expect(block.locator(".mini tbody tr:visible")).toHaveCount(4);
+    await expect(block.locator(".mini tr.me")).toContainText("SK Konstant Traun / Edelweiss");
+    await expect(page.locator(".comp-block").filter({ hasText: "Landesliga OÖ" })).toBeHidden();
+    await page.reload();
+    await expect(page.locator(".card")).toHaveCount(1);
+    await page.goto("/hla-challenge-west/team/sk-konstant-traun-edelweiss");
+    await page.locator(".team-head .star").click();
+    await page.goto("/hla-challenge-west");
+    await page.locator(".title-row .star").click();
+    await page.goto("/");
+    await expect(page.locator("#h-entry")).toBeVisible();
+  });
+});
+
+test.describe("Favoriten-Markierung", () => {
+  test("no favorites: nothing red", async ({ page }) => {
+    await page.goto("/hla-challenge-west");
+    await expect(page.locator("table.standings tr.me")).toHaveCount(0);
+  });
+
+  test("followed team stays marked through client navigation and back", async ({ page }) => {
+    await page.goto("/hla-challenge-west/team/sk-konstant-traun-edelweiss");
+    await page.locator(".team-head .star").click();
+    await page.locator(".tabs").getByRole("link", { name: "Tabelle" }).click();
+    await expect(page.locator("table.standings tr.me")).toContainText("SK Konstant Traun / Edelweiss");
+    await page.locator(".tabs").getByRole("link", { name: "Statistik" }).click();
+    await expect(page.locator("table.compare tr.me")).toContainText("SK Konstant Traun / Edelweiss");
+    await page.locator(".tabs").getByRole("link", { name: "Spielplan" }).click();
+    await page.selectOption("#runde", "7");
+    await expect(page).toHaveURL(/runde=7/);
+    await expect(page.locator("#spielplan .t.me")).toHaveText("SK Konstant Traun / Edelweiss");
+    await page.goBack();
+    await page.goBack();
+    await expect(page.locator("table.compare tr.me")).toHaveCount(1);
   });
 });
 

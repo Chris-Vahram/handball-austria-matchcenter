@@ -25,8 +25,7 @@ export const COMPETITIONS = {
     association: "ÖHB – Österreichischer Handballbund",
     phase: "Hauptrunde",
     season: "2026/27",
-    category: "adult",
-    showcaseTeam: "SK Konstant Traun / Edelweiss"
+    category: "adult"
   },
   "landesliga-ooe": {
     championship: "OÖHV 26/27",
@@ -36,12 +35,11 @@ export const COMPETITIONS = {
     association: "OÖHV – Oberösterreichischer Handballverband",
     phase: "Grunddurchgang",
     season: "2026/27",
-    category: "adult",
-    showcaseTeam: "Sportunion EDELWEISS Linz / SK Traun"
+    category: "adult"
   }
 } as const satisfies Record<string, {
   championship: string; group: string; name: string; fullName: string; association: string; phase: string;
-  season: string; category: "adult" | "youth"; showcaseTeam: string;
+  season: string; category: "adult" | "youth";
 }>;
 
 export type CompetitionId = keyof typeof COMPETITIONS;

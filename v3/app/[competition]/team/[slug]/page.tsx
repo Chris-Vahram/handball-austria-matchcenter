@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { RememberButton } from "@ui/client/my-teams";
+import { FollowStar } from "@ui/client/favorites";
 import { FixtureRow, PendingNote } from "@ui/schedule";
 import { Footer, SubHeader } from "@ui/shell";
 import { COMPETITIONS, COMPETITION_IDS, getDataset, isCompetitionId } from "@/data";
 import { mapsUrl, resinRule, teamKey, venueOf } from "@/lib/dashboard";
 import { lastFive } from "@/lib/form";
 import { displayName, formatDay, formatDiff } from "@/lib/format";
+import { isOverdue, isUpcoming } from "@/lib/rounds";
 import { homeAway, nextMatch, teamBySlug, teamMatches, teamPlayers, teamSlug } from "@/lib/teams";
 
 type Props = { params: Promise<{ competition: string; slug: string }> };
@@ -48,11 +49,12 @@ export default async function TeamPage({ params }: Props) {
   const nextVenue = next ? venueOf(data, next) : null;
   const resin = resinRule(nextVenue && nextVenue.id ? data.venues[nextVenue.id]?.resin ?? null : null);
   const matches = teamMatches(data, team);
-  const played = matches.filter((m) => m.score).reverse();
+  // Overdue matches (past, no result) sit with the results as "Ergebnis ausständig".
+  const played = matches.filter((m) => m.score || isOverdue(m)).reverse();
   // The next match is the dark card; the list continues after it.
-  const later = matches.filter((m) => !m.score && m.number !== next?.number);
+  const later = matches.filter((m) => isUpcoming(m) && m.number !== next?.number);
   const stats = data.groupStats?.teams.find((t) => t.name === team) ?? null;
-  const players = c.category === "adult" ? teamPlayers(data, team) : [];
+  const players = teamPlayers(data, team);
   const per = (n: number) => (stats && stats.games ? (n / stats.games).toFixed(1).replace(".", ",") : "–");
   const result = (own: number, other: number) => (own > other ? "S" : own < other ? "N" : "U");
 
@@ -61,7 +63,7 @@ export default async function TeamPage({ params }: Props) {
       <SubHeader id={x.competition} importedAt={data.source.importedAt} crumb="Team" />
       <main className="page team">
         <section className="panel team-head" aria-labelledby="h-team">
-          <h1 id="h-team" className={team === c.showcaseTeam ? "me" : undefined}>{team}</h1>
+          <div className="title-row"><h1 id="h-team" data-team={teamKey(x.competition, team)}>{team}</h1><FollowStar kind="team" id={teamKey(x.competition, team)} label={team} /></div>
           <p className="team-line">
             <strong>{row.rank}. Platz</strong> · {row.points} Punkte · {row.won}-{row.drawn}-{row.lost} · {row.goalsFor}:{row.goalsAgainst} ({formatDiff(row.goalDiff)})
           </p>
@@ -73,10 +75,6 @@ export default async function TeamPage({ params }: Props) {
             <div><dt>Heim</dt><dd>{home.won}-{home.drawn}-{home.lost}</dd></div>
             <div><dt>Auswärts</dt><dd>{away.won}-{away.drawn}-{away.lost}</dd></div>
           </dl>
-          <div className="team-actions">
-            <RememberButton teamKey={teamKey(x.competition, team)} team={team} />
-            <a className="btn" href={`/${x.competition}/team/${slug}/kalender.ics`} download={`${slug}.ics`}>Spiele in Kalender</a>
-          </div>
         </section>
 
         {next && (
@@ -91,19 +89,22 @@ export default async function TeamPage({ params }: Props) {
             )}
             <p className="nc-meta">
               {nextVenue && nextVenue.address.length > 0 && <a className="nc-route" href={mapsUrl(nextVenue.address, nextVenue.name)} target="_blank" rel="noopener noreferrer">Route planen</a>}
-              <span>Runde {next.round}{resin && <> · Harz {resin.rule}</>}</span>
+              <span>Runde {next.round}{resin && <> · Harz {resin.rule}</>} · <Link href={`/${x.competition}/vorschau/${next.number}`}>Vorschau</Link></span>
             </p>
           </section>
         )}
 
+        <p className="team-actions"><a className="link-action" href={`/${x.competition}/team/${slug}/kalender.ics`} download={`${slug}.ics`}>Alle Spiele in den Kalender (.ics)</a></p>
+
         <div className="team-cols">
           <div className="col">
             <section className="panel" aria-labelledby="h-results">
-              <h2 className="section-title" id="h-results">Ergebnisse <small>{played.length} Spiele</small></h2>
+              <h2 className="section-title" id="h-results">Ergebnisse <small>{played.filter((m) => m.score).length} Spiele</small></h2>
               {played.length === 0 && <p className="empty">Noch keine Spiele gespielt.</p>}
               {played.map((m) => {
-                const own = m.home === team ? m.score!.home : m.score!.away;
-                const other = m.home === team ? m.score!.away : m.score!.home;
+                if (!m.score) return <div key={m.number} className="result-row"><span className="chip" aria-hidden="true">–</span><FixtureRow id={x.competition} m={m} data={data} team={team} /></div>;
+                const own = m.home === team ? m.score.home : m.score.away;
+                const other = m.home === team ? m.score.away : m.score.home;
                 const r = result(own, other);
                 return (
                   <div key={m.number} className="result-row">
@@ -139,7 +140,7 @@ export default async function TeamPage({ params }: Props) {
                   <div><dt><abbr title="Rote Karten / Disqualifikationen">R</abbr></dt><dd>{stats.red}</dd></div>
                   {stats.spectators !== null && <div><dt>Zuschauer/Sp.</dt><dd>{per(stats.spectators).replace(/,\d$/, "")}</dd></div>}
                 </dl>
-                <p className="legend">nuLiga-Mannschaftsstatistik, {stats.games} von {stats.scheduled} Spielen. Karten inkl. Mannschaftsoffizielle, daher kann die Summe über der Spielerliste liegen.</p>
+                <p className="legend">nuLiga-Mannschaftsstatistik, {stats.games} von {stats.scheduled} Spielen; Karten inkl. Mannschaftsoffizielle.</p>
               </section>
             )}
 
@@ -171,7 +172,7 @@ export default async function TeamPage({ params }: Props) {
                     ))}
                   </tbody>
                 </table>
-                <p className="legend">7m = Tore/Versuche · 2′ = Zeitstrafen · G = Gelbe Karte · R = Rote Karte / Disqualifikation. Aus den nuLiga-Ranglisten; wer in keiner Liste steht, fehlt.</p>
+                <p className="legend">Aus den nuLiga-Ranglisten; wer in keiner Liste steht, fehlt.</p>
               </section>
             )}
           </div>

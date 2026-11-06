@@ -1,5 +1,7 @@
 import Link from "next/link";
 import type { Dataset, Match } from "@/domain/schema";
+import { teamKey } from "@/lib/favorites";
+import { isOverdue } from "@/lib/rounds";
 import { formatDay, formatShortDate, formatWeekdayDate, todayInVienna } from "@/lib/format";
 import { roundsOf } from "@/lib/rounds";
 import { Chevron, LEFT, RIGHT } from "./chevron";
@@ -13,7 +15,7 @@ const span = (matches: Match[]) => {
 };
 
 /** Matches of one round, grouped by day ("Heute" in red on match day). */
-export function RoundMatches({ id, data, round, showcase }: { id: string; data: Dataset; round: number; showcase: string }) {
+export function RoundMatches({ id, data, round }: { id: string; data: Dataset; round: number }) {
   const inRound = data.matches.filter((m) => m.round === round).sort(byTime);
   const days = [...new Set(inRound.map((m) => m.date))];
   const today = todayInVienna();
@@ -22,7 +24,7 @@ export function RoundMatches({ id, data, round, showcase }: { id: string; data: 
       {days.map((day) => (
         <div key={day}>
           <h3 className={day === today ? "day today" : "day"}>{day === today ? <><span>Heute</span> · </> : null}{formatDay(day)}</h3>
-          {inRound.filter((m) => m.date === day).map((m) => <MatchRow key={m.number} id={id} m={m} data={data} showcase={showcase} />)}
+          {inRound.filter((m) => m.date === day).map((m) => <MatchRow key={m.number} id={id} m={m} data={data} />)}
         </div>
       ))}
       <PendingNote matches={inRound} />
@@ -64,28 +66,27 @@ export function RoundPicker({ id, data, round }: { id: string; data: Dataset; ro
  * One match in Flashscore form. The report link stretches over the whole row (visible chevron);
  * the venue link sits above it so both stay tappable. `showDate` puts the date in the time column.
  */
-export function MatchRow({ id, m, data, showcase, showDate = false }: { id: string; m: Match; data: Dataset; showcase: string; showDate?: boolean }) {
+export function MatchRow({ id, m, data, showDate = false }: { id: string; m: Match; data: Dataset; showDate?: boolean }) {
   const homeWin = !!m.score && m.score.home > m.score.away;
   const awayWin = !!m.score && m.score.away > m.score.home;
-  const cls = (team: string, win: boolean) => ["t", team === showcase ? "me" : "", win ? "win" : ""].filter(Boolean).join(" ");
+  const cls = (win: boolean) => (win ? "t win" : "t");
   const venue = m.venueId ? data.venues[m.venueId] : undefined;
-  const label = `${m.home} gegen ${m.away}${m.score ? `, ${m.score.home}:${m.score.away}` : ", angesetzt"} – Spielbericht`;
+  const label = `${m.home} gegen ${m.away}${m.score ? `, ${m.score.home}:${m.score.away}` : ", angesetzt"} – ${m.reportId ? "Spielbericht" : "Vorschau"}`;
   return (
-    <div className={m.reportId ? "match linked" : "match"}>
+    <div className="match linked">
       <time dateTime={`${m.date}${m.time ? `T${m.time}` : ""}`}>{showDate ? <>{formatWeekdayDate(m.date)}<br /></> : null}{m.time ?? "–"}</time>
-      <span className={cls(m.home, homeWin)}>{m.home}</span>
-      {m.score && <span className={`s${homeWin ? " win" : ""}`}>{m.score.home}</span>}
-      <span className={cls(m.away, awayWin)}>{m.away}</span>
-      {m.score && <span className={`s${awayWin ? " win" : ""}`}>{m.score.away}<Pending m={m} /></span>}
+      <span className={`${cls(homeWin)} r1`} data-team={teamKey(id, m.home)}>{m.home}</span>
+      {m.score && <span className={`s r1${homeWin ? " win" : ""}`}>{m.score.home}</span>}
+      <span className={`${cls(awayWin)} r2`} data-team={teamKey(id, m.away)}>{m.away}</span>
+      {m.score && <span className={`s r2${awayWin ? " win" : ""}`}>{m.score.away}<Pending m={m} /></span>}
+      {isOverdue(m) && <span className="s pending">Ergebnis ausständig</span>}
       <span className="meta">
-        {venue ? <Link href={`/halle/${venue.id}`} className="venue">{venue.name}</Link> : m.venue}
+        Nr. {m.number} · {venue ? <Link href={`/halle/${venue.id}`} className="venue">{venue.name}</Link> : m.venue}
         {m.note && <> · {m.note}</>}
       </span>
-      {m.reportId && (
-        <Link className="stretch" href={`/${id}/spiel/${m.reportId}`} aria-label={label}>
-          <Chevron d={RIGHT} size={16} />
-        </Link>
-      )}
+      <Link className="stretch" href={m.reportId ? `/${id}/spiel/${m.reportId}` : `/${id}/vorschau/${m.number}`} aria-label={label}>
+        <Chevron d={RIGHT} size={16} />
+      </Link>
     </div>
   );
 }
@@ -101,18 +102,18 @@ export function FixtureRow({ id, m, data, team }: { id: string; m: Match; data: 
   const other = m.score ? (atHome ? m.score.away : m.score.home) : null;
   const venue = m.venueId ? data.venues[m.venueId] : undefined;
   return (
-    <div className={m.reportId ? "fixture linked" : "fixture"}>
+    <div className="fixture linked">
       <time dateTime={`${m.date}${m.time ? `T${m.time}` : ""}`}>{formatWeekdayDate(m.date)}<br />{m.time ?? "–"}</time>
       <span className="ha" title={atHome ? "Heimspiel" : "Auswärtsspiel"}><span aria-hidden="true">{atHome ? "H" : "A"}</span><span className="sr-only">{atHome ? "Heimspiel gegen" : "Auswärts bei"}</span></span>
       <span className="opp">{opponent}
         <small>{venue ? <Link href={`/halle/${venue.id}`} className="venue">{venue.name}</Link> : m.venue}{m.note && <> · {m.note}</>}</small>
       </span>
       {own !== null && <span className="s">{own}:{other}<Pending m={m} /></span>}
-      {m.reportId && (
-        <Link className="stretch" href={`/${id}/spiel/${m.reportId}`} aria-label={`${opponent}, ${own}:${other} – Spielbericht`}>
-          <Chevron d={RIGHT} size={16} />
-        </Link>
-      )}
+      {isOverdue(m) && <span className="s pending">Ergebnis ausständig</span>}
+      <Link className="stretch" href={m.reportId ? `/${id}/spiel/${m.reportId}` : `/${id}/vorschau/${m.number}`}
+        aria-label={m.reportId ? `${opponent}, ${own}:${other} – Spielbericht` : `${atHome ? "Heim gegen" : "Auswärts bei"} ${opponent} – Vorschau`}>
+        <Chevron d={RIGHT} size={16} />
+      </Link>
     </div>
   );
 }

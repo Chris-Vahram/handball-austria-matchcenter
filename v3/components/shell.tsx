@@ -2,10 +2,12 @@ import Link from "next/link";
 import { COMPETITIONS, COMPETITION_IDS, isStale, type CompetitionId } from "@/data";
 import { sourceUrls } from "@/importer/config";
 import { formatStand } from "@/lib/format";
+import { verbandSlug } from "@/lib/overview";
 import { Chevron, LEFT } from "./chevron";
+import { FollowStar } from "./client/favorites";
 import { SearchBox } from "./client/search-box";
 
-export type Tab = "tabelle" | "spielplan" | "ranglisten" | "statistik" | null;
+export type Tab = "tabelle" | "spielplan" | "statistik" | null;
 
 /** Wordmark, optional middle slot (competition switch) and search with suggestions. */
 export function TopBar({ query = "", children }: { query?: string; children?: React.ReactNode }) {
@@ -18,20 +20,9 @@ export function TopBar({ query = "", children }: { query?: string; children?: Re
   );
 }
 
-function Switch({ id }: { id: CompetitionId }) {
-  return (
-    <nav className="switch" aria-label="Bewerb">
-      {COMPETITION_IDS.map((other) => (
-        <Link key={other} href={`/${other}`} aria-current={other === id ? "page" : undefined}>{COMPETITIONS[other].name}</Link>
-      ))}
-    </nav>
-  );
-}
-
 const TABS: { tab: Exclude<Tab, null>; label: string; path: string }[] = [
   { tab: "tabelle", label: "Tabelle", path: "" },
   { tab: "spielplan", label: "Spielplan", path: "/spielplan" },
-  { tab: "ranglisten", label: "Ranglisten", path: "/torschuetzen" },
   { tab: "statistik", label: "Statistik", path: "/statistik" }
 ];
 
@@ -64,10 +55,11 @@ export function Header({ id, importedAt, tab }: { id: CompetitionId; importedAt:
   return (
     <>
       <header className="app-head">
-        <TopBar><Switch id={id} /></TopBar>
+        <TopBar />
         <div className="head-inner">
           <div className="title">
-            <h1 className="h1">{COMPETITIONS[id].name}</h1>
+            <p className="verband"><Link href={`/bewerbe#${verbandSlug(COMPETITIONS[id].association)}`}>{COMPETITIONS[id].association.split(" – ")[0]}</Link><span aria-hidden="true"> › </span><span className="sr-only">, </span>{COMPETITIONS[id].name}</p>
+            <div className="title-row"><h1 className="h1">{COMPETITIONS[id].name}</h1><FollowStar kind="competition" id={id} label={COMPETITIONS[id].name} /></div>
             <p><StandLine id={id} importedAt={importedAt} /></p>
           </div>
         </div>
@@ -94,10 +86,11 @@ export function SubHeader({ id, importedAt, crumb }: { id: CompetitionId; import
   );
 }
 
-export function Footer({ id, importedAt }: { id?: CompetitionId; importedAt?: string | null }) {
+/** `pdf` shows the "Tabelle & Spielplan als PDF" link (Tabelle and Spielplan pages only). */
+export function Footer({ id, importedAt, pdf = false }: { id?: CompetitionId; importedAt?: string | null; pdf?: boolean }) {
   return (
     <footer className="foot">
-      {id && <a className="btn" href={`/${id}/druck`}>Tabelle &amp; Spielplan als PDF</a>}
+      {id && pdf && <a className="link-action pdf" href={`/${id}/druck`}>Tabelle &amp; Spielplan als PDF</a>}
       <span>
         Quelle: {id ? <a href={sourceUrls.groupPage(id)} rel="noopener noreferrer">nuLiga ({COMPETITIONS[id].fullName})</a> : "nuLiga"}
         {id && importedAt && <> · Stand {formatStand(importedAt)}</>}.

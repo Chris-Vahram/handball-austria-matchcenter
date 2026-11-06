@@ -1,3 +1,4 @@
+import { teamKey } from "@/lib/favorites";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -7,6 +8,7 @@ import { COMPETITIONS, COMPETITION_IDS, getDataset, isCompetitionId } from "@/da
 import type { ReportTeam, TimelineEvent } from "@/domain/schema";
 import { mapsUrl } from "@/lib/dashboard";
 import { displayName, formatDay } from "@/lib/format";
+import { reportSummary } from "@/lib/report";
 
 type Props = { params: Promise<{ competition: string; meeting: string }> };
 
@@ -36,10 +38,10 @@ const Card = ({ color, edge, label }: { color: string; edge: string; label: stri
   <svg width="11" height="15" viewBox="0 0 11 15" role="img" aria-label={label}><rect x=".5" y=".5" width="10" height="14" rx="1.5" fill={color} stroke={edge} /></svg>
 );
 
-function Lineup({ team, side, showcase }: { team: ReportTeam; side: string; showcase: string }) {
+function Lineup({ team, side, competition }: { team: ReportTeam; side: string; competition: string }) {
   return (
     <section className="panel lineup" aria-labelledby={`h-${side}`}>
-      <h2 className={`section-title${team.name === showcase ? " me" : ""}`} id={`h-${side}`}>
+      <h2 className="section-title" data-team={teamKey(competition, team.name)} id={`h-${side}`}>
         {team.name}<span className="side">· {side}</span>
       </h2>
       <table className="roster">
@@ -125,7 +127,6 @@ export default async function ReportPage({ params }: Props) {
   const x = load(competition, meeting);
   if (!x) notFound();
   const { data, report: r, match } = x;
-  const showcase = COMPETITIONS[x.competition].showcaseTeam;
   const homeWin = r.score.home > r.score.away;
   const awayWin = r.score.away > r.score.home;
   const venue = match.venueId ? data.venues[match.venueId] : undefined;
@@ -138,12 +139,12 @@ export default async function ReportPage({ params }: Props) {
           <h1 className="sr-only" id="h-match">Spielbericht {r.home.name} gegen {r.away.name}, Spiel Nr. {r.number}</h1>
           <Link className="back" href={`/${x.competition}/spielplan?runde=${match.round}`}><Chevron d={LEFT} size={16} />Runde {match.round}</Link>
           <div className="teams">
-            <p className={`${homeWin ? "win " : ""}${r.home.name === showcase ? "me" : ""}`}>{r.home.name}</p>
+            <p className={homeWin ? "win" : undefined} data-team={teamKey(x.competition, r.home.name)}>{r.home.name}</p>
             <p className="score" aria-label={`Endstand ${r.score.home} zu ${r.score.away}`}>
               {r.score.home}<span>:</span>{r.score.away}
               {r.halftime && <small>Halbzeit {r.halftime.home}:{r.halftime.away}</small>}
             </p>
-            <p className={`${awayWin ? "win " : ""}${r.away.name === showcase ? "me" : ""}`}>{r.away.name}</p>
+            <p className={awayWin ? "win" : undefined} data-team={teamKey(x.competition, r.away.name)}>{r.away.name}</p>
           </div>
           <p className="facts">
             Spiel Nr. {r.number} · {formatDay(r.date)}{r.time && `, ${r.time}`}
@@ -153,9 +154,24 @@ export default async function ReportPage({ params }: Props) {
             {r.approved ? "Spielbericht genehmigt" : "Spielbericht noch nicht genehmigt"}
           </p>
         </section>
+        <section className="panel summary" aria-labelledby="h-summary">
+          <h2 className="section-title" id="h-summary">Kurzfazit</h2>
+          <div className="sum-cols">
+            {[r.home, r.away].map((t) => {
+              const s = reportSummary(t);
+              return (
+                <div key={t.name} className="sum-team">
+                  <h3 data-team={teamKey(x.competition, t.name)}>{t.name}</h3>
+                  <ol>{s.scorers.map((p) => <li key={p.shirt + p.name}><span>{displayName(p.name)}</span><strong>{p.goals}</strong></li>)}</ol>
+                  <p><abbr title="7-Meter Tore/Versuche">7m</abbr> {s.sevenM} · <abbr title="Zeitstrafen">2′</abbr> {s.twoMin}</p>
+                </div>
+              );
+            })}
+          </div>
+        </section>
         <div className="lineups">
-          <Lineup team={r.home} side="Heim" showcase={showcase} />
-          <Lineup team={r.away} side="Gast" showcase={showcase} />
+          <Lineup team={r.home} side="Heim" competition={x.competition} />
+          <Lineup team={r.away} side="Gast" competition={x.competition} />
         </div>
         <p className="legend lineup-legend">7m = Tore/Versuche · 2′ = Zeitstrafen · G = Gelbe Karte · R = Rote Karte / Disqualifikation · Summen inkl. Mannschaftsoffizielle</p>
         {r.timeline.length > 0 && <Timeline events={r.timeline} home={r.home.name} away={r.away.name} />}

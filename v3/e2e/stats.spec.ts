@@ -4,7 +4,8 @@ test.describe("Ranglisten", () => {
   test("goals ranking; team filter applies immediately", async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto("/hla-challenge-west/torschuetzen");
-    await expect(page.locator(".tabs [aria-current=page]")).toHaveText("Ranglisten");
+    await expect(page.locator(".tabs [aria-current=page]")).toHaveCount(0);
+    await expect(page.locator(".crumb")).toContainText("Alle Ranglisten");
     const rows = page.locator("table.ranking tbody tr");
     await expect(rows.first()).toContainText("Arndt, Arvid");
     await page.selectOption("#team", "SK Konstant Traun / Edelweiss");

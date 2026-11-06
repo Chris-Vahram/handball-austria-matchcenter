@@ -40,18 +40,18 @@ export default async function LigaPage({ params }: Props) {
           <>
             <section className="panel" id="tabelle" aria-labelledby="h-tabelle">
               <h2 className="section-title sr-only" id="h-tabelle">Tabelle</h2>
-              <Standings rows={data.standings} showcase={c.showcaseTeam} matches={data.matches} teamHref={(team) => `/${competition}/team/${teamSlug(team)}`} />
+              <Standings rows={data.standings} id={competition} matches={data.matches} teamHref={(team) => `/${competition}/team/${teamSlug(team)}`} />
               <p className="legend">Tabelle nach Punktestand, wie auf nuLiga. Nach Saisonende entscheidet der direkte Vergleich.<span className="form-hint"> Form: letzte 5 Spiele, neuestes rechts (S Sieg, U Unentschieden, N Niederlage).</span></p>
             </section>
             <section className="panel" aria-labelledby="h-runde">
               <h2 className="section-title" id="h-runde">Aktuelle Runde <small>Runde {round}</small></h2>
-              <RoundMatches id={competition} data={data} round={round} showcase={c.showcaseTeam} />
+              <RoundMatches id={competition} data={data} round={round} />
               <Link className="more" href={`/${competition}/spielplan?runde=${round}`}>Ganzer Spielplan<Chevron d={RIGHT} size={16} /></Link>
             </section>
           </>
         )}
       </main>
-      <Footer id={competition} importedAt={data?.source.importedAt ?? null} />
+      <Footer id={competition} importedAt={data?.source.importedAt ?? null} pdf />
     </>
   );
 }

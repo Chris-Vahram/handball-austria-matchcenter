@@ -41,18 +41,14 @@ export async function importCompetition(id: CompetitionId, get: (url: string) =>
     reports[m.reportId] = parseReport(await get(url), m.reportId);
   }
 
+  // ADR-005 amendment 2026-11-06: youth competitions are imported like adult ones.
   const stats: Dataset["stats"] = {};
-  if (COMPETITIONS[id].category === "adult") {
-    const teamOf = teamResolver(Object.values(reports));
-    for (const kind of Object.keys(STAT_KINDS) as StatKind[]) {
-      const url = sourceUrls.stats(id, kind);
-      urls.push(url);
-      const rows = parseStats(await get(url), STAT_VALUE_HEADER[kind]);
-      stats[kind] = rows.map((row) => ({ ...row, team: teamOf(row, rows) }));
-    }
-  } else {
-    // ADR-005: youth competitions carry no player-level data.
-    for (const r of Object.values(reports)) { r.home.players = []; r.away.players = []; }
+  const teamOf = teamResolver(Object.values(reports));
+  for (const kind of Object.keys(STAT_KINDS) as StatKind[]) {
+    const url = sourceUrls.stats(id, kind);
+    urls.push(url);
+    const rows = parseStats(await get(url), STAT_VALUE_HEADER[kind]);
+    stats[kind] = rows.map((row) => ({ ...row, team: teamOf(row, rows) }));
   }
 
   const groupStatsUrl = sourceUrls.groupStats(id);

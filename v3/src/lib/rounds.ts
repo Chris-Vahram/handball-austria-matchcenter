@@ -1,3 +1,4 @@
+import { todayInVienna } from "./format";
 import type { Match } from "../domain/schema";
 
 type Unrounded = Omit<Match, "round">;
@@ -23,12 +24,15 @@ export function assignRounds(matches: Unrounded[], teamCount: number): Match[] {
   return matches.map((m) => ({ ...m, round: weeks.indexOf(weekKey(m.date)) + 1 }));
 }
 
-/** First round with an unplayed match; the last round once everything is played. */
-export function currentRound(matches: Match[]): number {
-  const open = matches.filter((m) => m.status === "scheduled").map((m) => m.round);
-  if (open.length) return Math.min(...open);
-  return Math.max(1, ...matches.map((m) => m.round));
+/** Round of the earliest unplayed match dated today or later; the last round when none is left. Overdue matches don't hold it back. */
+export function currentRound(matches: Match[], today = todayInVienna()): number {
+  const upcoming = matches.filter((m) => isUpcoming(m, today)).sort((a, b) => a.date.localeCompare(b.date) || a.round - b.round);
+  return upcoming[0]?.round ?? Math.max(1, ...matches.map((m) => m.round));
 }
+
+export const isUpcoming = (m: Match, today = todayInVienna()) => m.status === "scheduled" && m.date >= today;
+/** Past date, no result yet: shown as "Ergebnis ausständig", never as the next match. */
+export const isOverdue = (m: Match, today = todayInVienna()) => m.status === "scheduled" && m.date < today;
 
 export function roundsOf(matches: Match[]): number[] {
   return [...new Set(matches.map((m) => m.round))].sort((a, b) => a - b);

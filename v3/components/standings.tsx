@@ -1,12 +1,13 @@
 import Link from "next/link";
 import type { Match, StandingRow } from "@/domain/schema";
 import { lastFive } from "@/lib/form";
+import { teamKey } from "@/lib/favorites";
 import { formatDiff } from "@/lib/format";
 
 const RESULT = { S: "Sieg", U: "Unentschieden", N: "Niederlage" } as const;
 
-/** `matches` adds the desktop-only form column (last five results). */
-export function Standings({ rows, showcase, matches, teamHref }: { rows: StandingRow[]; showcase: string; matches?: Match[]; teamHref?: (team: string) => string }) {
+/** `matches` adds the desktop-only form column; `id` enables favorite highlighting (omitted in print). */
+export function Standings({ rows, id, matches, teamHref }: { rows: StandingRow[]; id?: string; matches?: Match[]; teamHref?: (team: string) => string }) {
   return (
     <table className="standings">
       <caption className="sr-only">Tabelle</caption>
@@ -23,12 +24,10 @@ export function Standings({ rows, showcase, matches, teamHref }: { rows: Standin
         </tr>
       </thead>
       <tbody>
-        {rows.map((r) => {
-          const me = r.team === showcase;
-          return (
-            <tr key={r.team} className={me ? "me" : undefined}>
+        {rows.map((r) => (
+            <tr key={r.team} data-team={id ? teamKey(id, r.team) : undefined}>
               <td className="rk">{r.rank}</td>
-              <th scope="row" className="tm">{teamHref ? <Link href={teamHref(r.team)}>{r.team}</Link> : r.team}{me && <span className="sr-only"> (Showcase-Team)</span>}</th>
+              <th scope="row" className="tm">{teamHref ? <Link href={teamHref(r.team)}>{r.team}</Link> : r.team}</th>
               <td className="sp">{r.played}</td>
               <td className="sun">{r.won}-{r.drawn}-{r.lost}</td>
               <td className="goals">{r.goalsFor}:{r.goalsAgainst}</td>
@@ -41,8 +40,7 @@ export function Standings({ rows, showcase, matches, teamHref }: { rows: Standin
                 </td>
               )}
             </tr>
-          );
-        })}
+        ))}
       </tbody>
     </table>
   );
