@@ -15,4 +15,4 @@
 - [x] 3.1 e2e: released list shows ranked goals; U18/pending shows gated state; team top-scorers card present.
 - [x] 3.2 Refresh screenshots.
 - [x] 3.3 Run v2 `npm test`, `lint`, `typecheck`, `build`, `test:e2e`; all green.
-- [ ] 3.4 Commit/push when the owner asks.
+- [x] 3.4 Commit/push when the owner asks. (committed: see git log)

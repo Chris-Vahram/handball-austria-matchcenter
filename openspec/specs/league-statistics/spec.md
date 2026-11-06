@@ -18,3 +18,10 @@ The Statistik view SHALL list every team with its per-game values in one table t
 #### Scenario: Phone
 - **WHEN** the Statistik view renders at 390 px
 - **THEN** the document scroll width equals the viewport width
+
+### Requirement: Statistik tab order
+The Statistik tab SHALL show, in this order, the Torschützen top 10, the team comparison and the group totals, so the most asked figure comes first.
+
+#### Scenario: Open Statistik
+- **WHEN** the Statistik tab of HLA West opens on a 390 px phone
+- **THEN** the Torschützen top 10 heading is the first section below the tabs

@@ -30,4 +30,4 @@
 - [x] 9.2 Refresh screenshots under `v2/output/playwright/`.
 - [x] 9.3 Run v2 `npm test`, `lint`, `typecheck`, `build`, `test:e2e`; all green.
 - [x] 9.4 Confirm privacy gate intact; remove unused broadcast components.
-- [ ] 9.5 Commit the rework + this change when the owner asks.
+- [x] 9.5 Commit the rework + this change when the owner asks. (committed: see git log)

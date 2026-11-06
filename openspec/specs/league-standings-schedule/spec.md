@@ -6,10 +6,10 @@ The Liga page shows the full Tabelle and the season Spielplan of one competition
 ## Requirements
 
 ### Requirement: Competition switch
-The app SHALL offer the configured competitions (HLA Challenge West Hauptrunde 26/27, OÖHV Landesliga LLM-Grunddurchgang 26/27) and show one Liga page per competition, titled with competition, phase and season.
+Every Bewerb page SHALL show a "Verband › Bewerb" line above its title, where the Verband links to the competition overview scrolled to that Verband's section; the overview MUST always list all Verbände and their Bewerbe (no exclusive filter), and the navigation MUST NOT depend on the number of configured competitions.
 
 #### Scenario: Switch competition
-- **WHEN** the user selects "Landesliga OÖ" on the HLA West page
+- **WHEN** the user on the HLA West page taps "ÖHB", then "Landesliga OÖ" in the OÖHV section of the overview
 - **THEN** the Landesliga Liga page is shown with its own table and schedule
 
 ### Requirement: Complete standings table
@@ -30,23 +30,20 @@ At a viewport width of 390 px the page SHALL show every table column and the ful
 - **WHEN** the Liga page renders at 390 px width
 - **THEN** the document scroll width equals the viewport width and no team name is truncated
 
-### Requirement: Showcase team highlighted
-The showcase team (SK Konstant Traun / Edelweiss and its Landesliga entry) SHALL be visually marked in the table and in the schedule.
-
-#### Scenario: Traun row
-- **WHEN** the HLA West table is shown
-- **THEN** the Traun row is marked distinctly from other rows, not by colour alone
-
 ### Requirement: Season schedule by Runde
-The page SHALL show the whole season's Spielplan grouped by Runde, opening on the current Runde (the first Runde with an unplayed match, or the last Runde when all are played), with controls to step to earlier and later Runden. Each match shows date, time, Spielnummer, home, away and result or "angesetzt".
+The page SHALL show the whole season's Spielplan grouped by Runde, opening on the current Runde: the Runde of the earliest match dated today or later (Europe/Vienna), or the last Runde when no such match exists. Matches dated before today without a result MUST NOT hold back the current Runde. Controls step to earlier and later Runden. Each match shows date, time, Spielnummer, home, away and result, "angesetzt" or "Ergebnis ausständig".
 
 #### Scenario: Current round on open
-- **WHEN** the HLA West page opens on 31.10.2026
-- **THEN** Runde 6 is shown with matches 21–24 and match 24 marked as not yet played
+- **WHEN** the HLA West page opens on 06.11.2026 with the 05.11.2026 data
+- **THEN** Runde 7 is shown
+
+#### Scenario: Postponed match
+- **WHEN** a Runde-6 match was moved to February and the page opens in January
+- **THEN** the Runde of the next dated match is shown, and the moved match appears in its Runde with its new date
 
 #### Scenario: Step rounds
-- **WHEN** the user steps forward from Runde 6
-- **THEN** Runde 7 is shown
+- **WHEN** the user steps forward from Runde 7
+- **THEN** Runde 8 is shown
 
 ### Requirement: Today marker
 Matches on the current day (Europe/Vienna) SHALL be marked "Heute" in red in the schedule; red is otherwise reserved for the showcase team and navigation state.
@@ -84,7 +81,7 @@ Every element that navigates SHALL look interactive without hover: match rows ca
 - **THEN** team names are visibly marked as links and each played match row shows a chevron
 
 ### Requirement: Tabs are real pages
-The competition tabs SHALL be Tabelle, Spielplan, Ranglisten and Statistik, each a separate page with exactly one active tab; sub-pages (team, report) show a compact breadcrumb instead of a second large competition heading.
+The competition tabs SHALL be Tabelle, Spielplan and Statistik, each a separate page with exactly one active tab; sub-pages (team, report, preview, full ranking lists) show a compact breadcrumb instead of a second large competition heading.
 
 #### Scenario: Active tab
 - **WHEN** the user opens the Spielplan tab
@@ -98,8 +95,27 @@ The Spielplan page SHALL let the user jump to any Runde directly (with its date 
 - **THEN** Runde 10 is shown
 
 ### Requirement: Compact match rows
-Match rows SHALL show the score in the figure style and keep the meta line to match number and venue name (linking to the venue); approval and rescheduling notes appear only when they apply.
+Match rows SHALL show home and away team on separate lines, each score on the same line as its team in the figure style, and keep the meta line to match number and venue name (linking to the venue); approval and rescheduling notes appear only when they apply. A match dated before today (Europe/Vienna) without a result SHALL show "Ergebnis ausständig". Rows of played matches with a report link to the report; rows of matches without a result link to the preview.
 
 #### Scenario: Played match
 - **WHEN** match 23 is listed
-- **THEN** the score 37:35 is the most prominent figure in the row and the venue links to its venue page
+- **THEN** 37 is on the line of Bregenz Handball FT, 35 on the line of SK Konstant Traun / Edelweiss, the score is the most prominent figure in the row and the venue links to its venue page
+
+#### Scenario: Result missing
+- **WHEN** a match dated before today has no result
+- **THEN** its row shows "Ergebnis ausständig" instead of an empty score
+
+### Requirement: Favorite teams highlighted
+Tables, match rows and ranking lists SHALL highlight the visitor's favorite teams; without favorites no row is highlighted.
+
+#### Scenario: Traun is a favorite
+- **WHEN** Traun is a favorite and the HLA West Tabelle opens
+- **THEN** the Traun row is tinted and its name is red
+
+#### Scenario: Internal navigation
+- **WHEN** Traun is a favorite and the user moves Tabelle → Statistik → Spielplan via links, the round picker and browser back, without a reload
+- **THEN** Traun's rows are highlighted on every page
+
+#### Scenario: No favorites
+- **WHEN** a visitor without favorites opens the HLA West Tabelle
+- **THEN** no row is highlighted
