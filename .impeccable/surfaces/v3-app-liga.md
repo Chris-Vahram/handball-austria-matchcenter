@@ -30,3 +30,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
 Owner: "die app sollte später ein kompletter nuliga handball österreich ersatz sein … eine übersicht … über das team und bewerb was man halt favoritisiert hat"; red marks "Nur Favoriten"; tabs "Zusammenlegen, 3 Tabs". FIRST VIEWPORT now: no competition switch; "Verband › Bewerb" line + ★ beside the H1; tabs Tabelle / Spielplan / Statistik. The signature "own team in red" is the visitor's favorites. Home is a favorites overview (or "Finde dein Team" without favorites).
 
+
+## Amendment 2026-11-22 (declutter-v3-first-glance)
+
+A friend of the owner opened the home for the first time and found it "a bit overwhelming and bloated at first glance". Owner picked "Eine Spieleliste": home with favorites = "Meine nächsten Spiele" (match rows → Spielvorschau), "Zuletzt" (result rows → report), "Meine Bewerbe" (rank/points or leader → Tabelle), "Alle Bewerbe" link; no dark next-match card, mini table or round list on the home. Without favorites: one search field (header search hidden) + Verband rows. Captures: `.impeccable/review/declutter-home-*.png`.

@@ -1,21 +1,22 @@
 import { describe, expect, it } from "vitest";
 import { getDataset } from "../data";
 import { teamCalendar } from "./calendar";
-import { allTeamCards, allVenues, mapsUrl, resinRule } from "./dashboard";
+import { allVenues, homeData, mapsUrl, resinRule } from "./dashboard";
 
 const traun = "SK Konstant Traun / Edelweiss";
 
 describe("home dashboard", () => {
-  it("summarises Traun: next match with venue, last result, rank", () => {
-    const card = allTeamCards().find((c) => c.team === traun)!;
-    expect(card).toMatchObject({ rank: 7, points: 6, record: "3-0-3", href: "/hla-challenge-west/team/sk-konstant-traun-edelweiss" });
-    expect(card.next).toMatchObject({ date: "2026-11-15", opponent: "SMC Innsbruck Handball Tirol", home: true, number: 25 });
-    expect(card.next?.venue).toMatchObject({ name: "Sportzentrum Traun", address: ["Am Nordsaum 160", "4050 Traun"] });
-    expect(card.last).toMatchObject({ opponent: "Bregenz Handball FT", own: 35, other: 37, result: "N" });
+  it("summarises Traun on 06.11.2026: next match links to the preview, last result to the report", () => {
+    const t = homeData("2026-11-06").teams.find((c) => c.team === traun)!;
+    expect(t.next).toMatchObject({ date: "2026-11-15", home: traun, away: "SMC Innsbruck Handball Tirol", href: "/hla-challenge-west/vorschau/25" });
+    expect(t.last).toMatchObject({ opponent: "Bregenz Handball FT", own: 35, other: 37, result: "N" });
+    expect(t.last?.href).toMatch(/^\/hla-challenge-west\/spiel\/\d+$/);
   });
 
-  it("covers every team of both competitions", () => {
-    expect(allTeamCards()).toHaveLength(13);
+  it("covers every team and competition", () => {
+    const d = homeData("2026-11-06");
+    expect(d.teams).toHaveLength(13);
+    expect(d.competitions.map((c) => c.id)).toEqual(["hla-challenge-west", "landesliga-ooe"]);
   });
 });
 
