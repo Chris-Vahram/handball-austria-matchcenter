@@ -213,7 +213,7 @@ Scope: this system governs the `v3/` app only. The root `src/` app and `v2/` are
 
 ## Overview
 
-> **streamline-v3 (2026-11-06) overrides older text below where they disagree:** red "own team" = the visitor's ★ favorites (no hard-coded showcase team; nothing red without favorites); the two-segment competition switch is gone (a "Verband › Bewerb" line above the H1 links to `/bewerbe#<verband>`); three tabs (Tabelle, Spielplan, Statistik; full Ranglisten are a sub-page); home = favorites overview (team cards, followed Bewerb blocks with top-3 mini table) or, without favorites, "Finde dein Team" search + Bewerbe nach Verband; match rows place each score on its team's line; new Spielvorschau (`/[bewerb]/vorschau/[nr]`) and Spielbericht Kurzfazit; PDF link only on Tabelle and Spielplan.
+> **streamline-v3 (2026-11-06) overrides older text below where they disagree:** red "own team" = the visitor's ★ favorites (no hard-coded showcase team; nothing red without favorites); the two-segment competition switch is gone (a "Verband › Bewerb" line above the H1 links to `/bewerbe#<verband>`); three tabs (Tabelle, Spielplan, Statistik; full Ranglisten are a sub-page); home = favorites overview (since declutter-v3-first-glance 2026-11-22: three compact lists — next matches, last results, my Bewerbe) or, without favorites, "Finde dein Team" search + Verband rows; match rows place each score on its team's line; new Spielvorschau (`/[bewerb]/vorschau/[nr]`) and Spielbericht Kurzfazit; PDF link only on Tabelle and Spielplan.
 
 **Creative North Star: "The Results Desk"**
 
@@ -257,7 +257,7 @@ A neutral ink-and-grey palette with one national red and a red tint.
 
 **The Pending Stays Neutral Rule.** States like "Bericht noch nicht genehmigt" use ink or mute, never red, even on the own team's match: a mute superscript asterisk after the score, one mute footnote per list, a dashed neutral status tag on the report.
 
-**The One Dark Surface Rule.** Ink is used as a fill for exactly one card per team context: the next match (on the team page, and inside each Meine-Teams card). Nothing else goes dark.
+**The One Dark Surface Rule.** Ink is used as a fill for exactly one card per team context: the next match on the team page (the home has no dark card since declutter-v3-first-glance). Nothing else goes dark.
 
 ## Typography
 
@@ -285,7 +285,7 @@ A neutral ink-and-grey palette with one national red and a red tint.
 
 ## Layout
 
-Mobile-first, single column at 390px with a 16px gutter (`--gutter`) that widens to 24px from 900px. Content is capped at 1200px. The print view is capped at 900px; on desktop the Ranglisten and search pages are capped at 760px and Statistik at 860px; home, Bewerbe and venue pages use the full 1200px.
+Mobile-first, single column at 390px with a 16px gutter (`--gutter`) that widens to 24px from 900px. Content is capped at 1200px. The print view is capped at 900px; on desktop the Ranglisten and search pages are capped at 760px and Statistik at 860px; the home column is capped at 760px, left-aligned with the wordmark (declutter finish review 2026-11-22); Bewerbe and venue pages use the full 1200px.
 
 - **Mobile:** sections are full-width white blocks separated by 8px of field grey. Competition pages: the wordmark-and-search bar (52px), the competition switch (max 420px) wrapping below it, the title block, and sticky underline tabs. Sub-pages (team, report): the bar, a one-line breadcrumb, then the tabs with none active. Home, Bewerbe, venue and search: the bar alone.
 - **Desktop (≥900px):** the Liga page splits into a 1.6fr / 1fr grid (standings left, round right) with a 16px gap. The report puts its scoreboard over two lineups side by side. The team page puts results and fixtures left, statistics and players right. Meine-Teams cards flow in an auto-fill grid (min 380px, 16px gap). Sections become rounded panels. The footer splits into source text and a right-aligned PDF button.
@@ -369,10 +369,11 @@ Mostly square, with small and purposeful corners: 3px on form and result chips, 
 - Two 44px circular field-grey buttons with chevrons flank a native select (16px/700, 44px, Control Line border, 6px corners) listing every round as "Runde N · <date span>". Choosing a round submits the GET form; a no-JS button remains. When there is no previous or next round, the circle stays in place at 35% opacity.
 
 ### Meine Favoriten (home)
-- **No favorites:** a white panel "Finde dein Team" (Display), a 48px search "Team, Verein oder Bewerb" and a 14px mute hint how ★ works. No team list.
-- **Favorites:** "Meine Favoriten" title, team cards first, then one block per followed Bewerb: linked name, a mini table (#, Team, Sp, Pkt; top 3 plus followed teams' rows, blush + red), "Ganze Tabelle", then the current round's match rows.
-- **Dashboard cards:** white cards (square on phones, 8px from 900px). Team name 18px/800 as a link, a 13px mute line (competition · rank · points · record), the next-match card, a "Zuletzt" line (result chip, opponent, bold score linking to the report), and a "Spiele, Form und Spieler" link.
-- Below, always: "Bewerbe nach Verband" (the same directory as `/bewerbe`, Verband sections as anchors).
+> declutter-v3-first-glance (2026-11-22) replaces the team cards and Bewerb blocks: a first-time visitor found the 2,150 px home "overwhelming and bloated"; owner picked "Eine Spieleliste".
+- **No favorites:** a white panel "Finde dein Team" (Display), a 48px search "Team, Verein oder Bewerb" and a 14px mute hint how ★ works, then "Nach Verband" as 56px rows (association, 13px mute Bewerb count) linking to `/bewerbe#<verband>`. The header search is hidden while this panel exists (`body:has(.entry)`), so one search field per screen. No team list, no Bewerbe list.
+- **Favorites:** "Meine Favoriten" title on the field, then three panels: "Meine nächsten Spiele" (Flashscore match rows with a 72px date + time column — "Sa. 28.11." on one line over "18:00" — home over away, favorite in Deep Red Ink, 12px mute competition line, row links to the Spielvorschau), "Zuletzt" (56px rows: result chip, bold "30:24 bei <opponent>", 13px mute "<team> · <competition>", row links to the report), "Meine Bewerbe" (56px rows: Bewerb name, one 13px line per favorite team "<team> · 7. Platz · 6 Pkt" or "Erster: <leader> · 12 Pkt"), and an "Alle Bewerbe" row. No dark card, no mini table, no round list, no address on the home: they live one tap away on the Spielvorschau and team page.
+- Favorite team names inside list sublines are Deep Red Ink 700 (`.comp-list [data-team].me`).
+- The no-favorites view is the server-rendered default (also without JS and before hydration), so the first paint is never empty and the header search is hidden from the first frame; returning visitors see their lists one frame later.
 
 ### Bewerbe and Venue Pages
 - **Bewerbe:** a Display title and a 13px mute scope line, then one panel per association with the association as a day-header strip and 56px full-row links (16px bold name, 13px mute subline with phase, round and games, right chevron).

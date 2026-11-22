@@ -1,23 +1,9 @@
 import { COMPETITIONS, COMPETITION_IDS, getDataset, type CompetitionId } from "../data";
 import type { Dataset, Match, Venue } from "../domain/schema";
-import { lastFive, type Result } from "./form";
-import { nextMatch, teamMatches, teamSlug } from "./teams";
+import type { HomeCompetition, HomeTeam } from "./favorites";
+import { nextMatch, teamMatches } from "./teams";
 
 export type VenueRef = { id: string; name: string; address: string[]; resin: string | null } | null;
-
-export type TeamCard = {
-  key: string;
-  competitionId: CompetitionId;
-  competition: string;
-  team: string;
-  href: string;
-  rank: number;
-  points: number;
-  record: string;
-  form: Result[];
-  next: { date: string; time: string | null; opponent: string; home: boolean; number: number; venue: VenueRef } | null;
-  last: { date: string; opponent: string; home: boolean; own: number; other: number; result: Result; reportHref: string | null } | null;
-};
 
 export { teamKey } from "./favorites";
 import { teamKey } from "./favorites";
@@ -31,35 +17,34 @@ export function mapsUrl(address: string[], name: string) {
   return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent([name, ...address].join(", "))}`;
 }
 
-/** Compact summary of every team, used by the home page (client picks the remembered ones). */
-export function allTeamCards(): TeamCard[] {
-  return COMPETITION_IDS.flatMap((competitionId) => {
+/** Per team: next match and last result; per competition: standings. The client picks the favorites (`myLists`). */
+export function homeData(today?: string): { teams: HomeTeam[]; competitions: HomeCompetition[] } {
+  const teams: HomeTeam[] = [];
+  const competitions: HomeCompetition[] = [];
+  for (const competitionId of COMPETITION_IDS) {
     const data = getDataset(competitionId);
-    if (!data) return [];
-    return data.standings.map((s): TeamCard => {
-      const matches = teamMatches(data, s.team);
-      const next = nextMatch(data, s.team);
-      const last = [...matches].reverse().find((m) => m.score);
-      const side = (m: Match) => m.home === s.team;
-      return {
+    if (!data) continue;
+    const competition = COMPETITIONS[competitionId].name;
+    competitions.push({ id: competitionId, name: competition, standings: data.standings.map((s) => ({ key: teamKey(competitionId, s.team), team: s.team, rank: s.rank, points: s.points })) });
+    for (const s of data.standings) {
+      const next = nextMatch(data, s.team, today);
+      const last = [...teamMatches(data, s.team)].reverse().find((m) => m.score);
+      const atHome = (m: Match) => m.home === s.team;
+      teams.push({
         key: teamKey(competitionId, s.team),
-        competitionId,
-        competition: COMPETITIONS[competitionId].name,
         team: s.team,
-        href: `/${competitionId}/team/${teamSlug(s.team)}`,
-        rank: s.rank,
-        points: s.points,
-        record: `${s.won}-${s.drawn}-${s.lost}`,
-        form: lastFive(data.matches, s.team),
-        next: next ? { date: next.date, time: next.time, opponent: side(next) ? next.away : next.home, home: side(next), number: next.number, venue: venueOf(data, next) } : null,
-        last: last && last.score ? (() => {
-          const own = side(last) ? last.score.home : last.score.away;
-          const other = side(last) ? last.score.away : last.score.home;
-          return { date: last.date, opponent: side(last) ? last.away : last.home, home: side(last), own, other, result: own > other ? "S" : own < other ? "N" : "U", reportHref: last.reportId ? `/${competitionId}/spiel/${last.reportId}` : null };
+        competitionId,
+        competition,
+        next: next ? { date: next.date, time: next.time, home: next.home, away: next.away, href: `/${competitionId}/vorschau/${next.number}` } : null,
+        last: last?.score ? (() => {
+          const own = atHome(last) ? last.score.home : last.score.away;
+          const other = atHome(last) ? last.score.away : last.score.home;
+          return { opponent: atHome(last) ? last.away : last.home, home: atHome(last), own, other, result: own > other ? "S" : own < other ? "N" : "U", href: last.reportId ? `/${competitionId}/spiel/${last.reportId}` : null };
         })() : null
-      };
-    });
-  });
+      });
+    }
+  }
+  return { teams, competitions };
 }
 
 /** Resin text as published, split into the rule and an optional note ("Besonderes Haftmittel: …"). */

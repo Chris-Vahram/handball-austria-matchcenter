@@ -1,22 +1,20 @@
 import type { Metadata } from "next";
-import { CompetitionBlock } from "@ui/competition-block";
 import { FavoritesHome } from "@ui/client/my-teams";
-import { Directory } from "@ui/directory";
 import { Footer, TopBar } from "@ui/shell";
-import { COMPETITION_IDS } from "@/data";
-import { allTeamCards } from "@/lib/dashboard";
+import { homeData } from "@/lib/dashboard";
+import { competitionsByAssociation, verbandSlug } from "@/lib/overview";
 
 export const metadata: Metadata = { title: "Matchcenter – Meine Favoriten" };
 export const revalidate = 3600;
 
 export default function Home() {
+  const { teams, competitions } = homeData();
+  const verbande = competitionsByAssociation().map((g) => ({ slug: verbandSlug(g.association), association: g.association, count: g.competitions.length }));
   return (
     <>
       <header className="app-head"><TopBar /></header>
       <main className="page home">
-        <FavoritesHome cards={allTeamCards()} blocks={COMPETITION_IDS.map((id) => ({ id, node: <CompetitionBlock id={id} /> }))} />
-        <h2 className="section-title dir-title">Bewerbe nach Verband</h2>
-        <Directory headingLevel={3} />
+        <FavoritesHome teams={teams} competitions={competitions} verbande={verbande} />
       </main>
       <Footer />
     </>
